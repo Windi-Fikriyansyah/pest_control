@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%">
+  <!-- Permata Hijau Residence Logo -->
+  <g transform="translate(10, 8)">
+    <!-- Emerald / Green Diamonds Icon -->
+    <polygon points="18,5 30,17 18,29 6,17" fill="#00833D"/>
+    <polygon points="18,17 26,25 18,33 10,25" fill="#43B02A"/>
+    <!-- Text -->
+    <text x="40" y="22" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#00833D" letter-spacing="1">PERMATA HIJAU</text>
+    <text x="40" y="36" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="10" fill="#43B02A" letter-spacing="2">RESIDENCE</text>
+  </g>
+</svg>
