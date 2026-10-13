@@ -359,6 +359,13 @@ export default function Home() {
   const [mobileLayananOpen, setMobileLayananOpen] = useState(false);
   const layananDropdownRef = useRef<HTMLDivElement | null>(null);
   const [currentLang, setCurrentLang] = useState<"ID" | "EN">("ID");
+  const [isLangModalOpen, setIsLangModalOpen] = useState(false);
+  const [tempLang, setTempLang] = useState<"ID" | "EN">("ID");
+
+  const openLangModal = () => {
+    setTempLang(currentLang);
+    setIsLangModalOpen(true);
+  };
 
   // Outside click listener untuk menutup dropdown Layanan Kami
   useEffect(() => {
@@ -806,9 +813,9 @@ export default function Home() {
             {/* Language Button [ EN / ID ] + Globe Icon (Tanpa Background, Sesuai Warna Menu Header) */}
             <button
               type="button"
-              onClick={() => setCurrentLang((prev) => (prev === "EN" ? "ID" : "EN"))}
+              onClick={openLangModal}
               className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
-              title="Ganti Bahasa / Switch Language"
+              title="Pilih Preferensi Bahasa"
             >
               <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs lg:text-sm tracking-wider uppercase transition-colors">
                 {currentLang}
@@ -948,7 +955,10 @@ export default function Home() {
               <span className="text-xs font-bold text-zinc-500">Pilihan Bahasa:</span>
               <button
                 type="button"
-                onClick={() => setCurrentLang((prev) => (prev === "EN" ? "ID" : "EN"))}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openLangModal();
+                }}
                 className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
               >
                 <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-colors">
@@ -2377,7 +2387,91 @@ export default function Home() {
               </div>
             </div>
           )}
+
         </footer>
+
+        {/* ======================================================== */}
+        {/* MODAL PREFERENSI BAHASA (BLUR BACKGROUND PENUH &         */}
+        {/* DESAIN SESUAI REFERENSI DENGAN WARNA BRAND VECOS)        */}
+        {/* ======================================================== */}
+        {isLangModalOpen && (
+          <div
+            className="fixed inset-0 z-[999] bg-black/60 flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
+            style={{
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+            }}
+            onClick={() => setIsLangModalOpen(false)}
+          >
+            <div
+              className="relative max-w-lg w-full animate-in zoom-in-95 duration-200"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Tombol Close (X) di samping kanan atas card sesuai desain referensi */}
+              <button
+                type="button"
+                onClick={() => setIsLangModalOpen(false)}
+                className="absolute -top-12 right-0 sm:-right-14 sm:top-0 p-2.5 rounded-xl bg-[#1c2230]/90 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-300 hover:text-white transition-colors cursor-pointer shadow-lg"
+                aria-label="Tutup preferensi bahasa"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Card Dialog Modal */}
+              <div className="bg-[#141923] border border-zinc-700/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  Pilih preferensi bahasa Anda
+                </h3>
+
+                {/* Input Dropdown: Hanya Pilihan Bahasa (Tanpa Negara) */}
+                <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-3 transition-all">
+                  <label htmlFor="modal-lang-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
+                    Bahasa
+                  </label>
+                  <div className="relative flex items-center">
+                    <select
+                      id="modal-lang-select"
+                      value={tempLang}
+                      onChange={(e) => setTempLang(e.target.value as "ID" | "EN")}
+                      className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
+                    >
+                      <option value="ID" className="bg-[#1c2333] text-white">
+                        Bahasa Indonesia
+                      </option>
+                      <option value="EN" className="bg-[#1c2333] text-white">
+                        English
+                      </option>
+                    </select>
+                    <svg
+                      className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Tombol Aksi: Warna Brand Merah VECOS (#C81E27) */}
+                <div className="flex justify-end pt-1">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setCurrentLang(tempLang);
+                      setIsLangModalOpen(false);
+                    }}
+                    className="bg-[#C81E27] hover:bg-[#b01820] active:scale-95 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-red-900/30 transition-all cursor-pointer"
+                  >
+                    Perbarui preferensi
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
