@@ -193,6 +193,98 @@ const offerSlides: OfferSlide[] = [
         "Sesuai standar audit HACCP restoran dan dapur hotel internasional."
       ]
     }
+  },
+  {
+    id: 5,
+    title: "Perlindungan Pest Control Restaurant & Cafe",
+    subtitle:
+      "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area makan dengan inspeksi berkala berstandar kebersihan tinggi.",
+    image: "/images/banner6.jpg",
+    tag: "Restoran & Kuliner",
+    article: {
+      title: "Manajemen Pengendalian Hama Bisnis Kuliner & Restoran",
+      date: "3 Oktober 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Industri kuliner sangat rentan terhadap serangan hama kecoa, tikus, dan lalat yang dapat mencemari makanan serta menurunkan reputasi bisnis.",
+        "VECOS menyediakan program penanganan terintegrasi tanpa mengganggu operasional dapur dan ruang makan pelanggan.",
+        "Setiap treatment dilakukan di luar jam operasional dengan bahan kimia tersertifikasi food-grade yang aman."
+      ],
+      keyPoints: [
+        "Bahan aktif food-grade aman untuk area pengolahan makanan.",
+        "Jadwal perlakuan fleksibel di luar jam operasional bisnis.",
+        "Laporan kepatuhan sanitasi siap audit berkala."
+      ]
+    }
+  },
+  {
+    id: 6,
+    title: "Perlindungan Fasilitas Medis & Rumah Sakit",
+    subtitle:
+      "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan untuk memutus rantai penularan kuman dan infeksi.",
+    image: "/images/banner7.jpg",
+    tag: "Healthcare & Medis",
+    article: {
+      title: "Protokol Pengendalian Hama Fasilitas Kesehatan & Rumah Sakit",
+      date: "1 Oktober 2026",
+      readTime: "4 Menit Baca",
+      content: [
+        "Fasilitas kesehatan memerlukan standar higienitas tertinggi tanpa toleransi terhadap hama pembawa vektor penyakit.",
+        "VECOS menerapkan sterilisasi dan monitoring tanpa pestisida berbahaya pada ruang rawat inap dan ruang operasi.",
+        "Semua proses mengacu pada pedoman PPI (Pencegahan dan Pengendalian Infeksi) rumah sakit."
+      ],
+      keyPoints: [
+        "Prosedur aman bagi pasien dengan kondisi kesehatan sensitif.",
+        "Monitoring perangkap tertutup tanpa residu aerosol berbahaya.",
+        "Sesuai regulasi akreditasi rumah sakit dan Kemenkes RI."
+      ]
+    }
+  },
+  {
+    id: 7,
+    title: "Perlindungan Pengendalian Hama Bandara & Transportasi",
+    subtitle:
+      "Mitra terpercaya pengendalian hama bandara, terminal, dan sarana transportasi publik berskala besar untuk kenyamanan mobilitas publik.",
+    image: "/images/banner8.jpg",
+    tag: "Transportasi Publik",
+    article: {
+      title: "Pengendalian Hama Vektor Transportasi Publik & Bandara Internasional",
+      date: "28 September 2026",
+      readTime: "4 Menit Baca",
+      content: [
+        "Fasilitas transportasi umum dengan arus penumpang ribuan orang per jam membutuhkan pengawasan sanitasi ketat.",
+        "VECOS berpengalaman menangani area kargo, ruang tunggu terminal, hingga hanggar dengan pemetaan titik rawan terpadu.",
+        "Layanan terjadwal memastikan nol gangguan pada jadwal penerbangan dan kenyamanan penumpang."
+      ],
+      keyPoints: [
+        "Cakupan area luas (wide-area IPM solution).",
+        "Penanganan senyap dan terorganisir 24/7.",
+        "Pemberantasan vektor karantina kesehatan pelabuhan & bandara."
+      ]
+    }
+  },
+  {
+    id: 8,
+    title: "Perlindungan Gudang Logistik & Fasilitas Pabrik",
+    subtitle:
+      "Proteksi komprehensif stok barang, bahan baku, dan mesin industri dari kerusakan akibat gigitan tikus dan serangga perusak.",
+    image: "/images/banner2.jpg",
+    tag: "Industri & Gudang",
+    article: {
+      title: "Sistem Manajemen Proteksi Gudang Logistik dan Manufaktur",
+      date: "25 September 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Gudang penyimpanan bahan baku dan produk jadi sering menjadi sasaran empuk tikus dan serangga perusak kemasan.",
+        "VECOS memasang barrier perimeter luar dan monitoring umpan terenkapsulasi untuk memutus jalur masuk hama.",
+        "Perlindungan menyeluruh menghindarkan perusahaan dari risiko kerugian barang reject bernilai tinggi."
+      ],
+      keyPoints: [
+        "Perlindungan perimeter fondasi dan celah pintu loading dock.",
+        "Pemberantasan tuntas sarang tikus tanpa bangkai berceceran.",
+        "Sertifikasi laporan sanitasi logistik berstandar ISO."
+      ]
+    }
   }
 ];
 
@@ -264,7 +356,26 @@ export default function Home() {
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [layananDropdownOpen, setLayananDropdownOpen] = useState(false);
+  const [mobileLayananOpen, setMobileLayananOpen] = useState(false);
+  const layananDropdownRef = useRef<HTMLDivElement | null>(null);
   const [currentLang, setCurrentLang] = useState<"ID" | "EN">("ID");
+
+  // Outside click listener untuk menutup dropdown Layanan Kami
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        layananDropdownRef.current &&
+        !layananDropdownRef.current.contains(event.target as Node)
+      ) {
+        setLayananDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   // Hero Carousel State (Berganti otomatis setiap 5 detik murni tanpa icon)
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -283,6 +394,12 @@ export default function Home() {
   const [offerProgress, setOfferProgress] = useState(0);
   const [isOfferPaused, setIsOfferPaused] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<OfferSlide | null>(null);
+
+  // Legal Modals State (Kebijakan Privasi, Ketentuan Layanan, Pengaturan Cookie)
+  const [legalModal, setLegalModal] = useState<"privacy" | "terms" | "cookie" | null>(null);
+  const [analyticsCookies, setAnalyticsCookies] = useState(true);
+  const [functionalCookies, setFunctionalCookies] = useState(true);
+  const [cookieSaved, setCookieSaved] = useState(false);
 
   // Timer loading progress 5 detik untuk Banner Penawaran
   useEffect(() => {
@@ -343,6 +460,112 @@ export default function Home() {
   const [selectedPest, setSelectedPest] = useState("Serangga Semut");
   const [selectedProperty, setSelectedProperty] = useState("Rumah Tinggal");
   const [selectedLocation, setSelectedLocation] = useState("Jakarta");
+  const [detectedAddress, setDetectedAddress] = useState("");
+  const [locationDetecting, setLocationDetecting] = useState(false);
+
+  // Fungsi reverse geocoding untuk mendapatkan alamat lengkap (jalan, kelurahan, kecamatan, kota, kodepos)
+  const fetchFullAddress = async (lat: number, lon: number): Promise<string> => {
+    // 1. Nominatim OpenStreetMap (Detail sampai nama jalan dan nomor)
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`,
+        {
+          headers: {
+            "Accept-Language": "id",
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if (data.address) {
+          const a = data.address;
+          const road = a.road || a.pedestrian || a.street || a.building;
+          const suburb = a.suburb || a.village || a.neighbourhood || a.quarter;
+          const district = a.city_district || a.subdistrict || a.district;
+          const city = a.city || a.town || a.county || a.municipality;
+          const state = a.state;
+          const postcode = a.postcode;
+
+          const addressParts = [road, suburb, district, city, state, postcode].filter(Boolean);
+          if (addressParts.length >= 2) {
+            return addressParts.join(", ");
+          }
+        }
+        if (data.display_name) {
+          return data.display_name;
+        }
+      }
+    } catch {
+      // Lanjut ke fallback
+    }
+
+    // 2. Fallback BigDataCloud API
+    try {
+      const res = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=id`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        const parts = [data.locality, data.city, data.principalSubdivision, data.countryName].filter(Boolean);
+        if (parts.length > 0) {
+          return parts.join(", ");
+        }
+      }
+    } catch {
+      // Fallback
+    }
+
+    return `Lokasi (${lat.toFixed(4)}, ${lon.toFixed(4)})`;
+  };
+
+  const handleUseCurrentLocation = () => {
+    setLocationDetecting(true);
+    setSelectedLocation("Mendeteksi alamat lengkap...");
+
+    if (typeof window !== "undefined" && "geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          try {
+            const fullAddress = await fetchFullAddress(pos.coords.latitude, pos.coords.longitude);
+            setDetectedAddress(fullAddress);
+            setSelectedLocation(fullAddress);
+            setFormData((prev) => ({ ...prev, location: fullAddress }));
+          } catch {
+            const fallback = `Lokasi (${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)})`;
+            setDetectedAddress(fallback);
+            setSelectedLocation(fallback);
+            setFormData((prev) => ({ ...prev, location: fallback }));
+          } finally {
+            setLocationDetecting(false);
+          }
+        },
+        async () => {
+          // Fallback jika izin GPS browser belum diberikan
+          try {
+            const res = await fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?localityLanguage=id");
+            if (res.ok) {
+              const data = await res.json();
+              const parts = [data.locality, data.city, data.principalSubdivision].filter(Boolean);
+              const ipAddress = parts.length > 0 ? parts.join(", ") : "Jakarta, Indonesia";
+              setDetectedAddress(ipAddress);
+              setSelectedLocation(ipAddress);
+              setFormData((prev) => ({ ...prev, location: ipAddress }));
+            } else {
+              setSelectedLocation("Jakarta");
+            }
+          } catch {
+            setSelectedLocation("Jakarta");
+          } finally {
+            setLocationDetecting(false);
+          }
+        },
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+      );
+    } else {
+      setSelectedLocation("Jakarta");
+      setLocationDetecting(false);
+    }
+  };
 
   // Survey Form state
   const [formData, setFormData] = useState({
@@ -509,45 +732,62 @@ export default function Home() {
             </a>
 
             {/* Dropdown Layanan Kami */}
-            <div className="relative">
+            <div className="relative" ref={layananDropdownRef}>
               <button
                 type="button"
-                onClick={() => setLayananDropdownOpen(!layananDropdownOpen)}
-                onBlur={() => setTimeout(() => setLayananDropdownOpen(false), 200)}
-                className="flex items-center gap-1.5 text-xs lg:text-sm font-extrabold uppercase text-zinc-800 hover:text-[#C81E27] tracking-wider transition-colors cursor-pointer"
+                onClick={() => setLayananDropdownOpen((prev) => !prev)}
+                className="flex items-center gap-1.5 text-xs lg:text-sm font-extrabold uppercase text-zinc-800 hover:text-[#C81E27] tracking-wider transition-colors cursor-pointer select-none"
+                aria-expanded={layananDropdownOpen}
               >
                 <span>LAYANAN KAMI</span>
-                <span className="text-[10px] transform transition-transform">▼</span>
+                {/* Icon panah: berubah arah ke atas saat dropdown dibuka dan ke bawah saat ditutup */}
+                <svg
+                  className="w-3.5 h-3.5 origin-center inline-block transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: layananDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    color: layananDropdownOpen ? "#C81E27" : "#52525b",
+                  }}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
 
               {layananDropdownOpen && (
                 <div className="absolute top-full left-0 mt-3 w-56 bg-white rounded-xl shadow-xl border border-zinc-200 py-2 z-50 animate-in fade-in-50">
                   <a
                     href="#layanan"
+                    onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
                     Pembasmi Serangga
                   </a>
                   <a
                     href="#layanan"
+                    onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
                     Pembasmi Tikus
                   </a>
                   <a
                     href="#layanan"
+                    onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
                     Anti Rayap Fondasi
                   </a>
                   <a
                     href="#penawaran"
+                    onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
                     Disinfeksi Ruangan
                   </a>
                   <a
                     href="#prime-shield"
+                    onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
                     Prime Shield-01 Trap
@@ -616,13 +856,82 @@ export default function Home() {
             >
               HUBUNGI KAMI
             </a>
-            <a
-              href="#layanan"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-extrabold uppercase text-zinc-800 py-2 border-b border-zinc-100"
-            >
-              LAYANAN KAMI
-            </a>
+            <div>
+              <button
+                type="button"
+                onClick={() => setMobileLayananOpen((prev) => !prev)}
+                className="w-full flex items-center justify-between text-sm font-extrabold uppercase text-zinc-800 py-2 border-b border-zinc-100 cursor-pointer"
+              >
+                <span>LAYANAN KAMI</span>
+                {/* Icon panah mobile: berputar ke atas saat dibuka dan ke bawah saat ditutup */}
+                <svg
+                  className="w-4 h-4 origin-center inline-block transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: mobileLayananOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    color: mobileLayananOpen ? "#C81E27" : "#52525b",
+                  }}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileLayananOpen && (
+                <div className="pl-4 py-2 space-y-2 bg-zinc-50 border-b border-zinc-100 rounded-lg my-1 animate-in fade-in-50">
+                  <a
+                    href="#layanan"
+                    onClick={() => {
+                      setMobileLayananOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
+                  >
+                    • Pembasmi Serangga
+                  </a>
+                  <a
+                    href="#layanan"
+                    onClick={() => {
+                      setMobileLayananOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
+                  >
+                    • Pembasmi Tikus
+                  </a>
+                  <a
+                    href="#layanan"
+                    onClick={() => {
+                      setMobileLayananOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
+                  >
+                    • Anti Rayap Fondasi
+                  </a>
+                  <a
+                    href="#penawaran"
+                    onClick={() => {
+                      setMobileLayananOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
+                  >
+                    • Disinfeksi Ruangan
+                  </a>
+                  <a
+                    href="#prime-shield"
+                    onClick={() => {
+                      setMobileLayananOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
+                  >
+                    • Prime Shield-01 Trap
+                  </a>
+                </div>
+              )}
+            </div>
             <a
               href="#tentang"
               onClick={() => setMobileMenuOpen(false)}
@@ -742,10 +1051,10 @@ export default function Home() {
             {/* Form Putih 3 Kolom Input + Tombol Merah */}
             <form
               onSubmit={handleQuickSubmit}
-              className="w-full bg-white rounded-lg sm:rounded-2xl p-1 sm:p-1.5 flex flex-col md:flex-row items-stretch md:items-center shadow-lg divide-y md:divide-y-0 md:divide-x divide-zinc-200"
+              className="w-full bg-white rounded-lg sm:rounded-2xl p-1 sm:p-1.5 flex flex-col md:flex-row items-stretch md:items-center shadow-lg"
             >
               {/* Kolom 1: Serangga Semut */}
-              <div className="flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3">
+              <div className="flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3 border-b md:border-b-0 md:border-r-2 border-zinc-300 md:border-zinc-400">
                 <div className="text-zinc-900 shrink-0">
                   {/* Insect / Bug Icon */}
                   <svg className="w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -784,7 +1093,7 @@ export default function Home() {
               </div>
 
               {/* Kolom 2: Jenis Properti Anda */}
-              <div className="flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3">
+              <div className="flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3 border-b md:border-b-0 md:border-r-2 border-zinc-300 md:border-zinc-400">
                 <div className="text-zinc-900 shrink-0">
                   {/* Building Icon */}
                   <svg className="w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -807,19 +1116,49 @@ export default function Home() {
               </div>
 
               {/* Kolom 3: Lokasi Anda */}
-              <div className="flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3">
+              <div
+                className={`flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3 border-b md:border-b-0 md:border-r-2 border-zinc-300 md:border-zinc-400 transition-colors duration-200 ${
+                  detectedAddress ? "bg-blue-50/70" : ""
+                }`}
+              >
                 <div className="text-zinc-900 shrink-0">
-                  {/* Map Pin Icon */}
-                  <svg className="w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                  </svg>
+                  {detectedAddress ? (
+                    <svg
+                      className="w-4 h-4 sm:w-6 sm:h-6 text-[#00629b]"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="7" />
+                      <line x1="12" y1="1" x2="12" y2="4" />
+                      <line x1="12" y1="20" x2="12" y2="23" />
+                      <line x1="1" y1="12" x2="4" y2="12" />
+                      <line x1="20" y1="12" x2="23" y2="12" />
+                      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    </svg>
+                  ) : (
+                    /* Map Pin Icon */
+                    <svg className="w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  )}
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <select
                     value={selectedLocation}
                     onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
+                    className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5 truncate"
+                    title={selectedLocation}
                   >
+                    {locationDetecting && (
+                      <option value="Mendeteksi alamat lengkap...">Mendeteksi alamat lengkap...</option>
+                    )}
+                    {detectedAddress && (
+                      <option value={detectedAddress}>{detectedAddress}</option>
+                    )}
                     <option value="Jakarta">Lokasi Anda (Jakarta)</option>
                     <option value="Tangerang">Tangerang & BSD</option>
                     <option value="Bekasi">Bekasi</option>
@@ -840,9 +1179,44 @@ export default function Home() {
               </div>
             </form>
 
-            {/* Catatan Kaki: *Aktifkan Lokasi Anda */}
-            <div className="pt-1.5 sm:pt-2 text-[10px] sm:text-xs text-white/90 font-medium tracking-wide pl-1">
-              *Aktifkan Lokasi Anda
+            {/* Gunakan lokasi saya saat ini (Persis seperti gambar referensi) */}
+            <div className="pt-2 sm:pt-2.5 pl-1 flex items-center">
+              <button
+                type="button"
+                onClick={handleUseCurrentLocation}
+                className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border shadow-sm text-xs sm:text-sm font-semibold transition-all cursor-pointer group select-none ${
+                  detectedAddress
+                    ? "bg-blue-50 border-blue-300 text-[#00629b]"
+                    : "bg-white/95 hover:bg-white border-zinc-200/90 text-[#00629b] hover:text-[#004e7c]"
+                }`}
+                title="Gunakan lokasi saya saat ini"
+              >
+                {/* Target / Crosshair Icon persis seperti di gambar referensi */}
+                <svg
+                  className={`w-4 h-4 text-[#00629b] shrink-0 transition-colors ${
+                    locationDetecting ? "animate-spin" : ""
+                  }`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="7" />
+                  <line x1="12" y1="1" x2="12" y2="4" />
+                  <line x1="12" y1="20" x2="12" y2="23" />
+                  <line x1="1" y1="12" x2="4" y2="12" />
+                  <line x1="20" y1="12" x2="23" y2="12" />
+                  <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                </svg>
+                <span>{locationDetecting ? "Mendeteksi alamat lengkap..." : "Gunakan lokasi saya saat ini"}</span>
+                {detectedAddress && !locationDetecting && (
+                  <span className="text-[11px] font-bold text-emerald-600 bg-emerald-100/90 px-1.5 py-0.5 rounded ml-1 animate-in fade-in">
+                    ✓ Alamat Terisi
+                  </span>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -859,35 +1233,15 @@ export default function Home() {
         {/* ======================================================== */}
         <section
           id="penawaran"
-          className="space-y-4 w-full"
-          onMouseEnter={() => setIsOfferPaused(true)}
-          onMouseLeave={() => setIsOfferPaused(false)}
+          className="space-y-3 w-full"
         >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-                Penawaran Terbaik untuk Properti Anda
-              </h2>
-            </div>
-
-            {/* Icon Loading / Timer Progress Indicator */}
-            <div className="flex items-center gap-2 self-start sm:self-auto bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-bold text-zinc-700">
-              {/* Icon Loading Berputar */}
-              <svg className="w-3.5 h-3.5 text-[#C81E27] animate-spin" viewBox="0 0 24 24" fill="none">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <span>Auto 5s</span>
-              <div className="w-12 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-[#C81E27] transition-all duration-75"
-                  style={{ width: `${offerProgress}%` }}
-                ></div>
-              </div>
-            </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
+              Penawaran Terbaik untuk Properti Anda
+            </h2>
           </div>
 
-          {/* Banner Container Carousel */}
+          {/* Banner Container Carousel (Card Bersih Tanpa Icon Overlay Yang Mengganggu) */}
           <div className="w-full relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-zinc-200/90 aspect-16/9 sm:aspect-21/9 min-h-[300px] sm:min-h-[380px] md:min-h-[440px] lg:min-h-[480px] group">
             {/* Slide List */}
             {offerSlides.map((slide, idx) => {
@@ -947,60 +1301,108 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
 
-            {/* Icon Loading Bar Horizontal di Bagian Bawah Banner */}
-            <div className="absolute top-0 inset-x-0 z-20 h-1 bg-white/20">
-              <div
-                className="h-full bg-[#C81E27] transition-all duration-75"
-                style={{ width: `${offerProgress}%` }}
-              ></div>
+          {/* Controls Bar di Bawah Card Gambar (Persis Seperti Gambar Referensi) */}
+          <div className="flex items-center justify-between pt-3 px-1">
+            {/* Sisi Kiri: Tombol Swipe Kiri & Kanan dengan Bentuk Lingkaran & Progress Arc Persis di Gambar */}
+            <div className="flex items-center gap-3">
+              {/* Tombol Swipe Kiri (<) */}
+              <button
+                type="button"
+                onClick={prevOffer}
+                aria-label="Geser Penawaran Sebelumnya"
+                className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
+              >
+                {/* Thin Hollow Circle Ring */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 44 44">
+                  <circle
+                    cx="22"
+                    cy="22"
+                    r="19"
+                    fill="none"
+                    stroke="#e2e8f0"
+                    strokeWidth="2"
+                    className="group-hover:stroke-red-200 transition-colors"
+                  />
+                </svg>
+
+                {/* Chevron Kiri (<) - Posisi Tetap Diam Tidak Bergeser */}
+                <svg
+                  className="w-5 h-5 sm:w-5.5 sm:h-5.5 relative z-10 transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Tombol Swipe Kanan (>) dengan Circular Progress Arc Loading */}
+              <button
+                type="button"
+                onClick={nextOffer}
+                aria-label="Geser Penawaran Selanjutnya"
+                className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
+              >
+                {/* Circular Progress Arc */}
+                <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 44 44">
+                  {/* Faint Background Track Ring */}
+                  <circle
+                    cx="22"
+                    cy="22"
+                    r="19"
+                    fill="none"
+                    stroke="#e2e8f0"
+                    strokeWidth="2"
+                  />
+                  {/* Active Progress Loading Arc (Merah #C81E27 Sesuai Tema Web) */}
+                  <circle
+                    cx="22"
+                    cy="22"
+                    r="19"
+                    fill="none"
+                    stroke="#C81E27"
+                    strokeWidth="2.5"
+                    strokeDasharray={119.38}
+                    strokeDashoffset={119.38 * (1 - Math.min(100, Math.max(0, offerProgress)) / 100)}
+                    strokeLinecap="round"
+                    className="transition-all duration-75"
+                  />
+                </svg>
+
+                {/* Chevron Kanan (>) - Posisi Tetap Diam Tidak Bergeser */}
+                <svg
+                  className="w-5 h-5 sm:w-5.5 sm:h-5.5 relative z-10 transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
 
-            {/* Icon Geser (Navigasi Panah Kiri) */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                prevOffer();
-              }}
-              aria-label="Geser Penawaran Sebelumnya"
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-[#C81E27] text-white flex items-center justify-center backdrop-blur-xs transition-colors cursor-pointer shadow-lg"
-            >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {/* Icon Geser (Navigasi Panah Kanan) */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                nextOffer();
-              }}
-              aria-label="Geser Penawaran Selanjutnya"
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-[#C81E27] text-white flex items-center justify-center backdrop-blur-xs transition-colors cursor-pointer shadow-lg"
-            >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Icon Titik (Dots Navigation) di sudut kanan bawah */}
-            <div className="absolute bottom-3 right-4 sm:bottom-5 sm:right-6 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              {offerSlides.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToOffer(idx);
-                  }}
-                  aria-label={`Lihat penawaran ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all cursor-pointer ${idx === currentOffer ? "w-6 bg-[#C81E27]" : "w-2 bg-white/60 hover:bg-white"
+            {/* Sisi Kanan: Titik-titik (Pagination Dots) Sesuai Warna Web (#C81E27) */}
+            <div className="flex items-center gap-2">
+              {offerSlides.map((_, idx) => {
+                const isActive = idx === currentOffer;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => goToOffer(idx)}
+                    aria-label={`Lihat penawaran ${idx + 1}`}
+                    className={`rounded-full transition-all cursor-pointer ${
+                      isActive
+                        ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#C81E27] scale-110"
+                        : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-200 hover:bg-[#C81E27]/50"
                     }`}
-                />
-              ))}
+                  />
+                );
+              })}
             </div>
           </div>
 
@@ -1577,13 +1979,25 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="pt-0.5 sm:pt-1">
+                <div className="pt-0.5 sm:pt-1 space-y-2">
                   <button
                     type="submit"
                     className="w-full bg-[#E5282E] hover:bg-[#d02026] text-white font-bold text-xs sm:text-sm md:text-base py-2.5 sm:py-3.5 rounded-xl shadow-lg transition-colors cursor-pointer"
                   >
                     Amankan Properti Anda
                   </button>
+
+                  <p className="text-[11px] sm:text-xs text-center text-zinc-200/90 leading-relaxed px-2 font-normal">
+                    Lihat{" "}
+                    <button
+                      type="button"
+                      onClick={() => setLegalModal("privacy")}
+                      className="text-white underline underline-offset-2 hover:text-red-400 font-semibold cursor-pointer transition-colors"
+                    >
+                      kebijakan privasi kami
+                    </button>{" "}
+                    untuk melihat komitmen kami untuk melindungi dan menghormati privasi anda serta cara mengelola preferensi anda.
+                  </p>
                 </div>
               </form>
             )}
@@ -1644,7 +2058,7 @@ export default function Home() {
                 <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
                 <li><a href="#layanan" className="hover:underline transition-all">Layanan kami</a></li>
                 <li><a href="#tentang" className="hover:underline transition-all">Tentang Vecos</a></li>
-                <li><a href="#" className="hover:underline transition-all">Privacy Policy</a></li>
+
               </ul>
 
               <ul className="space-y-1.5 sm:space-y-2">
@@ -1652,6 +2066,7 @@ export default function Home() {
                 <li><a href="#layanan" className="hover:underline transition-all">Pembasmi Tikus</a></li>
                 <li><a href="#layanan" className="hover:underline transition-all">Anti Rayap</a></li>
                 <li><a href="#penawaran" className="hover:underline transition-all">Disinfeksi</a></li>
+                <li><a href="#prime-shield" className="hover:underline transition-all">Prime Shield-01</a></li>
               </ul>
             </div>
 
@@ -1679,9 +2094,8 @@ export default function Home() {
                   0857-4368-1500
                 </div>
 
-                <div className="text-[8px] sm:text-[11px] text-white/90 leading-tight">
-                  <p>©2026 Vecos Indonesia</p>
-                  <p>PT Vecos Indonesia Berjaya</p>
+                <div className="text-[10px] sm:text-xs text-white/90 leading-tight">
+                  <p>PT Vecos Intitama Mulya</p>
                 </div>
               </div>
 
@@ -1707,21 +2121,253 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Strip Bahasa Paling Bawah Sesuai Gambar Mockup */}
-          <div className="bg-[#c8ccd4] py-2.5 px-4 text-center sm:text-left text-[10px] sm:text-xs font-bold text-zinc-800">
-            <div className="w-full flex flex-wrap items-center justify-center sm:justify-start gap-1">
-              <span className="uppercase text-zinc-900">LANGUAGE :</span>
-              <a href="#" className="text-blue-700 hover:underline">INDONESIA</a>
-              <span className="text-zinc-600">/</span>
-              <a href="#" className="text-blue-700 hover:underline">ENGLISH</a>
-              <span className="text-zinc-600">/</span>
-              <a href="#" className="text-blue-700 hover:underline">GERMAN</a>
-              <span className="text-zinc-600">/</span>
-              <a href="#" className="text-blue-700 hover:underline">CHINA</a>
-              <span className="text-zinc-600">/</span>
-              <a href="#" className="text-blue-700 hover:underline">RUSIA</a>
+          {/* Strip Paling Bawah: Copyright Kiri & Menu Legal Biru Kanan (Sesuai Referensi) */}
+          <div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
+              {/* Sisi Kiri: Copyright */}
+              <div className="text-zinc-600 font-normal">
+                Copyright © 2026 PT Vecos Intitama Mulya . All Rights Reserved
+              </div>
+
+              {/* Sisi Kanan: Menu Kebijakan Privasi, Ketentuan Layanan, Pengaturan Cookie */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-7 font-normal">
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("privacy")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Kebijakan Privasi
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("terms")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Ketentuan Layanan
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("cookie")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Pengaturan Cookie
+                </button>
+              </div>
             </div>
           </div>
+
+          {/* ======================================================== */}
+          {/* MODAL DIALOG: KEBIJAKAN PRIVASI, KETENTUAN, & COOKIE     */}
+          {/* ======================================================== */}
+          {legalModal && (
+            <div
+              className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
+              onClick={() => setLegalModal(null)}
+            >
+              <div
+                className="bg-white text-zinc-900 rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-zinc-200 p-5 sm:p-8 space-y-5 animate-in zoom-in-95 duration-200"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Header Modal */}
+                <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-red-100 text-[#C81E27] flex items-center justify-center font-bold text-sm">
+                      {legalModal === "privacy" && "🛡️"}
+                      {legalModal === "terms" && "📜"}
+                      {legalModal === "cookie" && "🍪"}
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-black text-zinc-950">
+                        {legalModal === "privacy" && "Kebijakan Privasi"}
+                        {legalModal === "terms" && "Ketentuan Layanan"}
+                        {legalModal === "cookie" && "Pengaturan Cookie"}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs text-zinc-500 font-medium">
+                        PT Vecos Indonesia Berjaya • Pembaruan Terakhir 2026
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setLegalModal(null)}
+                    aria-label="Tutup modal"
+                    className="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 flex items-center justify-center font-bold transition-colors cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                {/* Konten Kebijakan Privasi */}
+                {legalModal === "privacy" && (
+                  <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                    <p>
+                      Selamat datang di VECOS (PT Vecos Indonesia Berjaya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
+                    </p>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">1. Data yang Kami Kumpulkan</h4>
+                      <p>
+                        Informasi yang Anda berikan melalui form survey atau kontak WhatsApp, meliputi: Nama, Nomor Telepon/WhatsApp, Alamat/Lokasi Properti, Jenis Properti, dan Keluhan Infestasi Hama yang dialami.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">2. Penggunaan Data</h4>
+                      <p>
+                        Data digunakan secara eksklusif untuk keperluan penjadwalan survey lokasi gratis, konsultasi teknis Integrated Pest Management (IPM), penerbitan sertifikat garansi pengerjaan, dan pelayanan pelanggan purna jual. Kami <strong>tidak pernah</strong> menjual atau menyebarluaskan data Anda kepada pihak ketiga.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">3. Keamanan Informasi</h4>
+                      <p>
+                        Seluruh formulir dan transmisi data diproteksi dengan enkripsi berstandar industri. Hanya teknisi berwenang dan tim operasional resmi VECOS yang memiliki hak akses terbatas untuk kunjungan survey lokasi.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Konten Ketentuan Layanan */}
+                {legalModal === "terms" && (
+                  <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                    <p>
+                      Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Indonesia Berjaya.
+                    </p>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">1. Survey & Konsultasi Gratis</h4>
+                      <p>
+                        Layanan inspeksi dan estimasi biaya awal oleh tim teknisi bersertifikasi VECOS adalah 100% Bebas Biaya (Gratis) tanpa kewajiban pemesanan langsung bagi pelanggan di wilayah jangkauan kami.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">2. Standar Keselamatan Kimia</h4>
+                      <p>
+                        Semua bahan pestisida, termitisida, dan disinfektan yang diaplikasikan telah terdaftar resmi di Kementerian Pertanian dan Kementerian Kesehatan RI, diformulasikan ramah lingkungan (*odorless & eco-friendly*), aman bagi anak-anak serta hewan peliharaan.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-extrabold text-zinc-900 text-sm">3. Sertifikat Garansi Resmi</h4>
+                      <p>
+                        Setiap pengerjaan anti rayap (termitisida barrier & baiting) dan paket komersial bergaransi dilengkapi sertifikat garansi tertulis. Jika hama muncul kembali selama masa garansi aktif, VECOS akan melakukan penanganan ulang (re-treatment) tanpa biaya tambahan.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Konten Pengaturan Cookie */}
+                {legalModal === "cookie" && (
+                  <div className="space-y-5 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                    <p>
+                      Website VECOS menggunakan cookie untuk meningkatkan pengalaman navigasi, mengingat preferensi layanan, dan menganalisis trafik kunjungan secara anonim. Anda dapat menyesuaikan izin cookie di bawah ini:
+                    </p>
+
+                    <div className="space-y-3">
+                      {/* Cookie 1: Esensial */}
+                      <div className="flex items-start justify-between gap-4 p-3.5 bg-zinc-50 rounded-xl border border-zinc-200">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-zinc-900">Cookie Esensial</span>
+                            <span className="text-[10px] bg-zinc-200 text-zinc-700 px-2 py-0.5 rounded-full font-bold">Wajib</span>
+                          </div>
+                          <p className="text-[11px] sm:text-xs text-zinc-500">
+                            Diperlukan untuk keamanan website, pemrosesan form survey, dan fungsionalitas dasar navigasi.
+                          </p>
+                        </div>
+                        <input type="checkbox" checked disabled className="mt-1 h-4 w-4 accent-[#C81E27] cursor-not-allowed" />
+                      </div>
+
+                      {/* Cookie 2: Fungsional */}
+                      <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
+                        <div className="space-y-0.5">
+                          <span className="font-bold text-zinc-900">Cookie Fungsionalitas</span>
+                          <p className="text-[11px] sm:text-xs text-zinc-500">
+                            Mengingat pilihan bahasa, preferensi wilayah, dan riwayat kalkulasi kebutuhan hama Anda.
+                          </p>
+                        </div>
+                        <input
+                          type="checkbox"
+                          checked={functionalCookies}
+                          onChange={(e) => setFunctionalCookies(e.target.checked)}
+                          className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
+                        />
+                      </div>
+
+                      {/* Cookie 3: Analitik */}
+                      <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
+                        <div className="space-y-0.5">
+                          <span className="font-bold text-zinc-900">Cookie Kinerja & Analisis</span>
+                          <p className="text-[11px] sm:text-xs text-zinc-500">
+                            Membantu kami memahami halaman yang paling banyak diakses untuk meningkatkan performa situs.
+                          </p>
+                        </div>
+                        <input
+                          type="checkbox"
+                          checked={analyticsCookies}
+                          onChange={(e) => setAnalyticsCookies(e.target.checked)}
+                          className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
+                        />
+                      </div>
+                    </div>
+
+                    {cookieSaved && (
+                      <div className="p-2.5 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-800 text-xs font-bold text-center animate-in fade-in">
+                        ✓ Preferensi cookie Anda berhasil disimpan!
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Footer Modal: Tombol Aksi */}
+                <div className="pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-end gap-2.5">
+                  {legalModal === "cookie" ? (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setAnalyticsCookies(true);
+                          setFunctionalCookies(true);
+                          setCookieSaved(true);
+                          setTimeout(() => {
+                            setCookieSaved(false);
+                            setLegalModal(null);
+                          }, 1200);
+                        }}
+                        className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-colors cursor-pointer"
+                      >
+                        Terima Semua
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setCookieSaved(true);
+                          setTimeout(() => {
+                            setCookieSaved(false);
+                            setLegalModal(null);
+                          }, 1200);
+                        }}
+                        className="px-5 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
+                      >
+                        Simpan Pengaturan
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setLegalModal(null)}
+                      className="px-6 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
+                    >
+                      Saya Mengerti & Tutup
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </footer>
       </div>
     </div>
