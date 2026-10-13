@@ -803,26 +803,30 @@ export default function Home() {
               TENTANG VECOS
             </a>
 
-            {/* Language Box [ EN | ID ] */}
-            <div className="flex items-center border border-zinc-400 rounded bg-white/70 px-2.5 py-1 text-[11px] font-bold text-zinc-700">
-              <button
-                type="button"
-                onClick={() => setCurrentLang("EN")}
-                className={`hover:text-[#C81E27] transition-colors ${currentLang === "EN" ? "text-[#C81E27] font-black" : "text-zinc-500"
-                  }`}
+            {/* Language Button [ EN / ID ] + Globe Icon (Tanpa Background, Sesuai Warna Menu Header) */}
+            <button
+              type="button"
+              onClick={() => setCurrentLang((prev) => (prev === "EN" ? "ID" : "EN"))}
+              className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
+              title="Ganti Bahasa / Switch Language"
+            >
+              <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs lg:text-sm tracking-wider uppercase transition-colors">
+                {currentLang}
+              </span>
+              <svg
+                className="w-4 h-4 text-zinc-800 group-hover:text-[#C81E27] shrink-0 transition-colors"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                EN
-              </button>
-              <span className="mx-1 text-zinc-300">|</span>
-              <button
-                type="button"
-                onClick={() => setCurrentLang("ID")}
-                className={`hover:text-[#C81E27] transition-colors ${currentLang === "ID" ? "text-[#C81E27] font-black" : "text-zinc-500"
-                  }`}
-              >
-                ID
-              </button>
-            </div>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </button>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -942,23 +946,28 @@ export default function Home() {
 
             <div className="pt-2 flex items-center justify-between">
               <span className="text-xs font-bold text-zinc-500">Pilihan Bahasa:</span>
-              <div className="flex items-center border border-zinc-400 rounded px-3 py-1 text-xs font-bold">
-                <button
-                  type="button"
-                  onClick={() => setCurrentLang("EN")}
-                  className={currentLang === "EN" ? "text-[#C81E27]" : "text-zinc-500"}
+              <button
+                type="button"
+                onClick={() => setCurrentLang((prev) => (prev === "EN" ? "ID" : "EN"))}
+                className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
+              >
+                <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-colors">
+                  {currentLang}
+                </span>
+                <svg
+                  className="w-4 h-4 text-zinc-800 group-hover:text-[#C81E27] shrink-0 transition-colors"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  EN
-                </button>
-                <span className="mx-1.5 text-zinc-300">|</span>
-                <button
-                  type="button"
-                  onClick={() => setCurrentLang("ID")}
-                  className={currentLang === "ID" ? "text-[#C81E27]" : "text-zinc-500"}
-                >
-                  ID
-                </button>
-              </div>
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </button>
             </div>
           </div>
         )}
