@@ -239,6 +239,27 @@ const specialOfferServices = [
   },
 ];
 
+// =========================================================================
+// DATA CLIENT LOGOS (2 BARIS ANIMASI BERGERAK SALING LAWAN ARAH)
+// =========================================================================
+const clientLogosRow1 = [
+  { name: "UPH", image: "/images/logo_uph.svg" },
+  { name: "PKOS", image: "/images/logo_pkos.svg" },
+  { name: "Tzu Chi", image: "/images/logo_tzuchi.svg" },
+  { name: "ExsaMap", image: "/images/logo_examap.svg" },
+  { name: "Wuling", image: "/images/logo_wuling.svg" },
+  { name: "Permata Hijau", image: "/images/logo_permata.svg" },
+];
+
+const clientLogosRow2 = [
+  { name: "Wuling", image: "/images/logo_wuling.svg" },
+  { name: "Permata Hijau", image: "/images/logo_permata.svg" },
+  { name: "UPH", image: "/images/logo_uph.svg" },
+  { name: "Tzu Chi", image: "/images/logo_tzuchi.svg" },
+  { name: "ExsaMap", image: "/images/logo_examap.svg" },
+  { name: "PKOS", image: "/images/logo_pkos.svg" },
+];
+
 export default function Home() {
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -1145,11 +1166,10 @@ export default function Home() {
                 onClick={() => setPestPage(0)}
                 disabled={pestPage === 0}
                 aria-label="Lihat hama sebelumnya"
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  pestPage === 0
-                    ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
-                    : "bg-white text-zinc-800 hover:bg-[#C81E27] hover:text-white border border-zinc-300 shadow-sm cursor-pointer"
-                }`}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${pestPage === 0
+                  ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
+                  : "bg-white text-zinc-800 hover:bg-[#C81E27] hover:text-white border border-zinc-300 shadow-sm cursor-pointer"
+                  }`}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
@@ -1170,11 +1190,10 @@ export default function Home() {
                 onClick={() => setPestPage(1)}
                 disabled={pestPage === 1}
                 aria-label="Lihat hama selanjutnya"
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  pestPage === 1
-                    ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
-                    : "bg-[#C81E27] text-white hover:bg-[#b01820] shadow-md shadow-red-600/30 cursor-pointer"
-                }`}
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all ${pestPage === 1
+                  ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
+                  : "bg-[#C81E27] text-white hover:bg-[#b01820] shadow-md shadow-red-600/30 cursor-pointer"
+                  }`}
               >
                 <span>Selanjutnya</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1401,31 +1420,68 @@ export default function Home() {
         </section>
 
         {/* ======================================================== */}
-        {/* 8. SECTION: OUR CLIENT (FULL WIDTH 6 LOGO)               */}
+        {/* 8. SECTION: OUR CLIENT (2 BARIS BERGERAK SALING LAWAN ARAH)*/}
+        {/* Baris 1 bergerak lambat ke kanan, Baris 2 ke kiri        */}
         {/* ======================================================== */}
-        <section id="tentang" className="space-y-4 w-full">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-            Our Client
-          </h2>
+        <section id="tentang" className="space-y-5 w-full overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+            <div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
+                Our Client
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-500 font-medium">
+                Dipercaya oleh institusi, fasilitas publik, perhotelan, dan korporasi terkemuka
+              </p>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-x-3 xs:gap-x-6 gap-y-5 sm:gap-10 items-center justify-items-center py-4 sm:py-8 w-full">
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_uph.svg" alt="UPH" fill className="object-contain" />
+          <div className="relative w-full py-2 space-y-3 sm:space-y-4 overflow-hidden">
+            {/* Soft Edge Gradient Fade Masks (Kiri & Kanan) */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#eef1f5] via-[#eef1f5]/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#eef1f5] via-[#eef1f5]/80 to-transparent z-10 pointer-events-none" />
+
+            {/* BARIS 1: Bergerak Lambat ke Kanan */}
+            <div className="w-full overflow-hidden">
+              <div className="animate-marquee-right flex items-center gap-3 sm:gap-5 py-1">
+                {[...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1].map((client, idx) => (
+                  <div
+                    key={`row1-${idx}`}
+                    className="h-14 sm:h-20 w-36 xs:w-44 sm:w-52 px-4 sm:px-6 py-2 sm:py-3 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                    title={client.name}
+                  >
+                    <div className="relative w-full h-full max-h-8 sm:max-h-12 flex items-center justify-center">
+                      <Image
+                        src={client.image}
+                        alt={client.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_pkos.svg" alt="PKOS" fill className="object-contain" />
-            </div>
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_tzuchi.svg" alt="Tzu Chi" fill className="object-contain" />
-            </div>
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_examap.svg" alt="ExsaMap" fill className="object-contain" />
-            </div>
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_wuling.svg" alt="Wuling" fill className="object-contain" />
-            </div>
-            <div className="h-10 xs:h-12 sm:h-16 w-full max-w-[95px] xs:max-w-[115px] sm:w-40 sm:max-w-none relative flex items-center justify-center">
-              <Image src="/images/logo_permata.svg" alt="Permata Hijau" fill className="object-contain" />
+
+            {/* BARIS 2: Bergerak Lambat ke Kiri */}
+            <div className="w-full overflow-hidden">
+              <div className="animate-marquee-left flex items-center gap-3 sm:gap-5 py-1">
+                {[...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2].map((client, idx) => (
+                  <div
+                    key={`row2-${idx}`}
+                    className="h-14 sm:h-20 w-36 xs:w-44 sm:w-52 px-4 sm:px-6 py-2 sm:py-3 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                    title={client.name}
+                  >
+                    <div className="relative w-full h-full max-h-8 sm:max-h-12 flex items-center justify-center">
+                      <Image
+                        src={client.image}
+                        alt={client.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -1442,12 +1498,14 @@ export default function Home() {
           {/* Foto Customer Asli */}
           <div className="absolute inset-0">
             <Image
-              src="/images/customer.jpg"
+              src="/images/image_form.png"
               alt="Survey & Konsultasi Tim Vecos"
               fill
               className="object-cover object-center"
               priority
             />
+            {/* Pelapis Gelap (Dark Overlay) agar background lebih kontras & sedikit gelap */}
+            <div className="absolute inset-0 bg-black/50 pointer-events-none" />
           </div>
 
           {/* Form Input di Tengah Section */}
