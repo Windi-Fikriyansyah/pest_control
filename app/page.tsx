@@ -196,6 +196,49 @@ const offerSlides: OfferSlide[] = [
   }
 ];
 
+// =========================================================================
+// =========================================================================
+// DATA SPECIAL OFFER (7 LAYANAN DENGAN ICON GESER)
+// Gambar diduplikasi sementara, silakan ganti image & title sesuai kebutuhan:
+// =========================================================================
+const specialOfferServices = [
+  {
+    id: 1,
+    title: "RUMAH TINGGAL",
+    image: "/images/offer_rumah.jpg", // Gambar 1
+  },
+  {
+    id: 2,
+    title: "OFFICE",
+    image: "/images/offer_office.jpg", // Gambar 2
+  },
+  {
+    id: 3,
+    title: "HOTEL / RESORT",
+    image: "/images/offer_hotel.jpg", // Gambar 3
+  },
+  {
+    id: 4,
+    title: "RESTORAN & CAFE",
+    image: "/images/offer_rumah.jpg", // Gambar 4 (duplikat)
+  },
+  {
+    id: 5,
+    title: "PABRIK & GUDANG",
+    image: "/images/offer_office.jpg", // Gambar 5 (duplikat)
+  },
+  {
+    id: 6,
+    title: "RUMAH SAKIT",
+    image: "/images/offer_hotel.jpg", // Gambar 6 (duplikat)
+  },
+  {
+    id: 7,
+    title: "SEKOLAH / KAMPUS",
+    image: "/images/offer_rumah.jpg", // Gambar 7 (duplikat)
+  },
+];
+
 export default function Home() {
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -256,6 +299,25 @@ export default function Home() {
     setOfferProgress(0);
   };
 
+  // Special Offer Slider Ref & Handlers (7 Layanan dengan Icon Geser)
+  const specialOfferSliderRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollSpecialOfferLeft = () => {
+    if (specialOfferSliderRef.current) {
+      const card = specialOfferSliderRef.current.firstElementChild as HTMLElement;
+      const scrollStep = (card?.offsetWidth || 340) + 24;
+      specialOfferSliderRef.current.scrollBy({ left: -scrollStep, behavior: "smooth" });
+    }
+  };
+
+  const scrollSpecialOfferRight = () => {
+    if (specialOfferSliderRef.current) {
+      const card = specialOfferSliderRef.current.firstElementChild as HTMLElement;
+      const scrollStep = (card?.offsetWidth || 340) + 24;
+      specialOfferSliderRef.current.scrollBy({ left: scrollStep, behavior: "smooth" });
+    }
+  };
+
   // Quick booking state
   const [selectedPest, setSelectedPest] = useState("Serangga Semut");
   const [selectedProperty, setSelectedProperty] = useState("Rumah Tinggal");
@@ -270,6 +332,9 @@ export default function Home() {
     location: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  // Pest pagination state: 0 = 6 hama pertama (1-6), 1 = sisanya (7-11)
+  const [pestPage, setPestPage] = useState(0);
 
   // FAQ state
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -311,7 +376,7 @@ export default function Home() {
     }, 4500);
   };
 
-  // Pest items data - 6 items
+  // Pest items data - 11 Macam Hama (Tampilan 6 hama utama, sisanya 5 hama via icon selanjutnya)
   const pestList = [
     {
       name: "Rayap Tanah",
@@ -342,6 +407,31 @@ export default function Home() {
       name: "Semut Api",
       latin: "Solenopsis invicta",
       image: "/images/pest_semut.svg",
+    },
+    {
+      name: "Nyamuk Aedes",
+      latin: "Aedes aegypti",
+      image: "/images/pest_nyamuk.svg",
+    },
+    {
+      name: "Tawon Sengat",
+      latin: "Vespa affinis",
+      image: "/images/pest_tawon.svg",
+    },
+    {
+      name: "Kelabang / Lipan",
+      latin: "Scolopendra subspinipes",
+      image: "/images/pest_kelabang.svg",
+    },
+    {
+      name: "Kutu Hewan / Pinjal",
+      latin: "Ctenocephalides felis",
+      image: "/images/pest_pinjal.svg",
+    },
+    {
+      name: "Ngengat Pakaian",
+      latin: "Tineola bisselliella",
+      image: "/images/pest_ngengat.svg",
     },
   ];
 
@@ -657,12 +747,17 @@ export default function Home() {
                     onChange={(e) => setSelectedPest(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
                   >
-                    <option value="Serangga Semut">Serangga Semut</option>
-                    <option value="Rayap Tanah & Kayu">Rayap Tanah & Kayu</option>
-                    <option value="Tikus Got & Rumah">Tikus Got & Rumah</option>
+                    <option value="Rayap Tanah">Rayap Tanah</option>
+                    <option value="Lalat Hijau">Lalat Hijau</option>
                     <option value="Kecoa / Coro">Kecoa / Coro</option>
+                    <option value="Tikus Got">Tikus Got</option>
                     <option value="Kutu Busuk">Kutu Busuk</option>
-                    <option value="Lalat & Nyamuk">Lalat & Nyamuk</option>
+                    <option value="Semut Api">Semut Api</option>
+                    <option value="Nyamuk Aedes">Nyamuk Aedes</option>
+                    <option value="Tawon Sengat">Tawon Sengat</option>
+                    <option value="Kelabang / Lipan">Kelabang / Lipan</option>
+                    <option value="Kutu Hewan / Pinjal">Kutu Hewan / Pinjal</option>
+                    <option value="Ngengat Pakaian">Ngengat Pakaian</option>
                   </select>
                 </div>
               </div>
@@ -1028,17 +1123,80 @@ export default function Home() {
         </section>
 
         {/* ======================================================== */}
-        {/* 5. SECTION: PEST TYPE (FULL WIDTH 6 KOLOM)               */}
+        {/* 5. SECTION: PEST TYPE (TOTAL 11 MACAM, TAMPILAN 6, SISANYA ICON SELANJUTNYA) */}
         {/* ======================================================== */}
         <section id="layanan" className="space-y-6 w-full">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-            Pest Type
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
+                Pest Type
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-500 font-medium">
+                {pestPage === 0
+                  ? "Menampilkan 6 hama utama (Halaman 1 dari 2)"
+                  : "Menampilkan 5 hama lainnya (Halaman 2 dari 2)"}
+              </p>
+            </div>
 
-          {/* 3 Kolom x 2 Baris */}
-          <div className="grid grid-cols-3 gap-y-8 gap-x-4 sm:gap-x-6 lg:gap-8 text-center w-full">
-            {pestList.map((pest, idx) => (
-              <div key={idx} className="flex flex-col items-center group cursor-pointer">
+            {/* Icon Navigasi: Sebelumnya & Selanjutnya */}
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <button
+                type="button"
+                onClick={() => setPestPage(0)}
+                disabled={pestPage === 0}
+                aria-label="Lihat hama sebelumnya"
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                  pestPage === 0
+                    ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
+                    : "bg-white text-zinc-800 hover:bg-[#C81E27] hover:text-white border border-zinc-300 shadow-sm cursor-pointer"
+                }`}
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="hidden xs:inline">Sebelumnya</span>
+              </button>
+
+              {/* Indikator Halaman Titik / Badge */}
+              <div className="flex items-center gap-1.5 px-3 py-1 bg-zinc-100 rounded-full text-xs font-extrabold text-zinc-700 border border-zinc-200">
+                <span className={pestPage === 0 ? "text-[#C81E27] font-black" : "text-zinc-500"}>1</span>
+                <span className="text-zinc-400">/</span>
+                <span className={pestPage === 1 ? "text-[#C81E27] font-black" : "text-zinc-500"}>2</span>
+              </div>
+
+              {/* Icon Selanjutnya */}
+              <button
+                type="button"
+                onClick={() => setPestPage(1)}
+                disabled={pestPage === 1}
+                aria-label="Lihat hama selanjutnya"
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+                  pestPage === 1
+                    ? "bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
+                    : "bg-[#C81E27] text-white hover:bg-[#b01820] shadow-md shadow-red-600/30 cursor-pointer"
+                }`}
+              >
+                <span>Selanjutnya</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* 3 Kolom x 2 Baris Grid (Tampilan 6 Item) */}
+          <div className="grid grid-cols-3 gap-y-8 gap-x-4 sm:gap-x-6 lg:gap-8 text-center w-full min-h-[320px] transition-all duration-300">
+            {(pestPage === 0 ? pestList.slice(0, 6) : pestList.slice(6, 11)).map((pest) => (
+              <div
+                key={pest.name}
+                onClick={() => {
+                  setSelectedPest(pest.name);
+                  setFormData((prev) => ({ ...prev, pestType: pest.name }));
+                  scrollToSurvey();
+                }}
+                className="flex flex-col items-center group cursor-pointer"
+                title={`Pilih ${pest.name} untuk survey`}
+              >
                 <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#e9ecf0] border-2 border-zinc-200 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
                   <Image
                     src={pest.image}
@@ -1056,6 +1214,56 @@ export default function Home() {
                 </p>
               </div>
             ))}
+
+            {/* Slot ke-6 pada Halaman 2: Card Icon Kembali (Sebelumnya) agar Layout 3x2 Tetap Seimbang */}
+            {pestPage === 1 && (
+              <div
+                onClick={() => setPestPage(0)}
+                className="flex flex-col items-center group cursor-pointer"
+                title="Kembali ke halaman sebelumnya (6 hama utama)"
+              >
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full bg-zinc-100 hover:bg-red-50 border-2 border-dashed border-zinc-300 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all flex flex-col items-center justify-center text-zinc-600 group-hover:text-[#C81E27]">
+                  <svg className="w-7 h-7 sm:w-9 sm:h-9 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <span className="text-[10px] sm:text-xs font-bold mt-1">Ke Awal</span>
+                </div>
+
+                <h3 className="mt-3 text-xs sm:text-sm md:text-base font-bold text-zinc-600 group-hover:text-[#C81E27] transition-colors leading-tight">
+                  6 Hama Utama
+                </h3>
+                <p className="text-[10px] sm:text-xs text-zinc-400 italic mt-0.5 leading-tight">
+                  Kembali ke Halaman 1
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Tombol Footer Navigasi Cepat Antar Halaman */}
+          <div className="pt-2 flex items-center justify-center">
+            {pestPage === 0 ? (
+              <button
+                type="button"
+                onClick={() => setPestPage(1)}
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-white hover:bg-zinc-50 border border-zinc-300 text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#C81E27] shadow-xs hover:shadow-md transition-all cursor-pointer"
+              >
+                <span>Lihat 5 Jenis Hama Lainnya</span>
+                <div className="w-5 h-5 rounded-full bg-[#C81E27] text-white flex items-center justify-center text-xs">
+                  →
+                </div>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPestPage(0)}
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-white hover:bg-zinc-50 border border-zinc-300 text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#C81E27] shadow-xs hover:shadow-md transition-all cursor-pointer"
+              >
+                <div className="w-5 h-5 rounded-full bg-[#C81E27] text-white flex items-center justify-center text-xs">
+                  ←
+                </div>
+                <span>Kembali ke 6 Hama Utama</span>
+              </button>
+            )}
           </div>
         </section>
 
@@ -1088,64 +1296,107 @@ export default function Home() {
         </section>
 
         {/* ======================================================== */}
-        {/* 7. SECTION: SPECIAL OFFER (FULL WIDTH)                   */}
+        {/* 7. SECTION: SPECIAL OFFER (7 LAYANAN DENGAN ICON GESER)  */}
+        {/* Gambar diduplikasi, navigasi geser panah kiri & kanan     */}
         {/* ======================================================== */}
         <section className="space-y-4 w-full">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-            Special Offer
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
-            <div
-              onClick={scrollToSurvey}
-              className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-4/3 sm:aspect-16/10 md:aspect-square min-h-[240px] sm:min-h-[320px] shadow-sm border border-zinc-200 group cursor-pointer"
-            >
-              <Image
-                src="/images/offer_rumah.jpg"
-                alt="Special Offer Rumah Tinggal"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors flex items-center justify-center p-3 text-center">
-                <span className="text-sm sm:text-lg md:text-xl font-black text-white tracking-wider uppercase">
-                  RUMAH TINGGAL
-                </span>
-              </div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
+                Special Offer
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-500 font-medium">
+                Geser untuk menjelajahi 7 layanan penawaran khusus properti Anda
+              </p>
             </div>
 
+            {/* Icon Geser (Navigasi Panah Kiri & Kanan) */}
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <button
+                type="button"
+                onClick={scrollSpecialOfferLeft}
+                aria-label="Geser layanan ke kiri"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 bg-white hover:bg-[#C81E27] hover:text-white hover:border-[#C81E27] text-zinc-700 flex items-center justify-center transition-all shadow-xs hover:shadow-md cursor-pointer active:scale-95"
+                title="Geser ke kiri"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                onClick={scrollSpecialOfferRight}
+                aria-label="Geser layanan ke kanan"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C81E27] hover:bg-[#b01820] text-white flex items-center justify-center transition-all shadow-md shadow-red-700/30 hover:shadow-lg cursor-pointer active:scale-95"
+                title="Geser ke kanan"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Carousel Container dengan Icon Geser & Touch Swipe */}
+          <div className="relative group/carousel">
+            {/* Slider List */}
             <div
-              onClick={scrollToSurvey}
-              className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-4/3 sm:aspect-16/10 md:aspect-square min-h-[240px] sm:min-h-[320px] shadow-sm border border-zinc-200 group cursor-pointer"
+              ref={specialOfferSliderRef}
+              className="flex items-stretch gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-3 pt-1 scrollbar-none"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              <Image
-                src="/images/offer_office.jpg"
-                alt="Special Offer Office"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors flex items-center justify-center p-3 text-center">
-                <span className="text-sm sm:text-lg md:text-xl font-black text-white tracking-wider uppercase">
-                  OFFICE
-                </span>
-              </div>
+              {specialOfferServices.map((service) => (
+                <div
+                  key={service.id}
+                  onClick={() => {
+                    setSelectedProperty(service.title);
+                    setFormData((prev) => ({ ...prev, propertyType: service.title }));
+                    scrollToSurvey();
+                  }}
+                  className="w-[280px] xs:w-[320px] sm:w-[350px] md:w-[380px] shrink-0 snap-start relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-4/3 sm:aspect-16/11 shadow-sm hover:shadow-xl border border-zinc-200/90 group cursor-pointer transition-all duration-300"
+                  title={`Pilih penawaran ${service.title}`}
+                >
+                  {/* Foto Layanan (Duplikat, siap diubah) */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-108 transition-transform duration-700"
+                  />
+
+                  {/* Overlay Gelap dengan Tulisan di Tengah (Tanpa Deskripsi, Tombol, atau Badge) */}
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors flex items-center justify-center p-3 sm:p-4 text-center">
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-white tracking-wider uppercase drop-shadow-md">
+                      {service.title}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div
-              onClick={scrollToSurvey}
-              className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-4/3 sm:aspect-16/10 md:aspect-square min-h-[240px] sm:min-h-[320px] shadow-sm border border-zinc-200 group cursor-pointer"
+            {/* Tombol Panah Geser Mengambang di Desktop */}
+            <button
+              type="button"
+              onClick={scrollSpecialOfferLeft}
+              aria-label="Geser kiri"
+              className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-[#C81E27] text-white items-center justify-center backdrop-blur-xs opacity-0 group-hover/carousel:opacity-100 transition-all cursor-pointer shadow-lg"
             >
-              <Image
-                src="/images/offer_hotel.jpg"
-                alt="Special Offer Hotel & Resort"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors flex items-center justify-center p-3 text-center">
-                <span className="text-sm sm:text-lg md:text-xl font-black text-white tracking-wider uppercase">
-                  HOTEL / RESORT
-                </span>
-              </div>
-            </div>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              onClick={scrollSpecialOfferRight}
+              aria-label="Geser kanan"
+              className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-[#C81E27] text-white items-center justify-center backdrop-blur-xs opacity-0 group-hover/carousel:opacity-100 transition-all cursor-pointer shadow-lg"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </section>
 
