@@ -399,8 +399,8 @@ export default function Home() {
   // Banner Penawaran State (Berganti otomatis setiap 5 detik dengan icon titik, loading, dan geser)
   const [currentOffer, setCurrentOffer] = useState(0);
   const [offerProgress, setOfferProgress] = useState(0);
-  const [isOfferPaused, setIsOfferPaused] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<OfferSlide | null>(null);
+  const offerStartTimeRef = useRef<number>(0);
 
   // Legal Modals State (Kebijakan Privasi, Ketentuan Layanan, Pengaturan Cookie)
   const [legalModal, setLegalModal] = useState<"privacy" | "terms" | "cookie" | null>(null);
@@ -408,40 +408,46 @@ export default function Home() {
   const [functionalCookies, setFunctionalCookies] = useState(true);
   const [cookieSaved, setCookieSaved] = useState(false);
 
-  // Timer loading progress 5 detik untuk Banner Penawaran
+  // Timer loading progress 5 detik untuk Banner Penawaran (Akurat, tidak melangkah)
   useEffect(() => {
-    if (isOfferPaused || selectedArticle !== null) return;
+    if (selectedArticle !== null) return;
 
-    const intervalTime = 50; // update setiap 50ms
-    const totalTime = 5000;  // 5 detik
-    const step = (intervalTime / totalTime) * 100;
+    offerStartTimeRef.current = Date.now();
+    setOfferProgress(0);
 
-    const timer = setInterval(() => {
-      setOfferProgress((prev) => {
-        if (prev + step >= 100) {
-          setCurrentOffer((curr) => (curr + 1) % offerSlides.length);
-          return 0;
-        }
-        return prev + step;
-      });
-    }, intervalTime);
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const elapsed = now - offerStartTimeRef.current;
+      const duration = 5000; // 5 detik per slide
 
-    return () => clearInterval(timer);
-  }, [isOfferPaused, selectedArticle]);
+      if (elapsed >= duration) {
+        offerStartTimeRef.current = Date.now();
+        setOfferProgress(0);
+        setCurrentOffer((prev) => (prev + 1) % offerSlides.length);
+      } else {
+        setOfferProgress((elapsed / duration) * 100);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [selectedArticle]);
 
   const nextOffer = () => {
-    setCurrentOffer((prev) => (prev + 1) % offerSlides.length);
+    offerStartTimeRef.current = Date.now();
     setOfferProgress(0);
+    setCurrentOffer((prev) => (prev + 1) % offerSlides.length);
   };
 
   const prevOffer = () => {
-    setCurrentOffer((prev) => (prev - 1 + offerSlides.length) % offerSlides.length);
+    offerStartTimeRef.current = Date.now();
     setOfferProgress(0);
+    setCurrentOffer((prev) => (prev - 1 + offerSlides.length) % offerSlides.length);
   };
 
   const goToOffer = (idx: number) => {
-    setCurrentOffer(idx);
+    offerStartTimeRef.current = Date.now();
     setOfferProgress(0);
+    setCurrentOffer(idx);
   };
 
   // Special Offer Slider Ref & Handlers (7 Layanan dengan Icon Geser)
