@@ -85,40 +85,175 @@ const heroSlides = [
   },
 ];
 
+// Data Banner Penawaran (Promo Slides & Artikel Lengkap)
+interface OfferSlide {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  tag: string;
+  article: {
+    title: string;
+    date: string;
+    readTime: string;
+    content: string[];
+    keyPoints: string[];
+  };
+}
+
+const offerSlides: OfferSlide[] = [
+  {
+    id: 1,
+    title: "Disinfeksi & Sterilisasi Perlindungan Dari Virus Berbahaya",
+    subtitle:
+      "Sterilisasi menyeluruh dengan formulasi ramah lingkungan berstandar Kemenkes. Efektif membasmi 99,9% virus, kuman, dan bakteri untuk menjaga hunian serta tempat kerja Anda tetap higienis.",
+    image: "/images/banner2.jpg",
+    tag: "Disinfeksi & Sterilisasi",
+    article: {
+      title: "Prosedur Sterilisasi ULV Cold Fogging Berstandar Medis untuk Perlindungan Ruangan",
+      date: "13 Oktober 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Metode ULV (Ultra Low Volume) Cold Fogging menghasilkan partikel aerosol mikro berukuran 5-20 mikron yang mampu melayang di udara dan menjangkau sudut-sudut paling tersembunyi yang tidak dapat dijangkau pembersihan konvensional.",
+        "Senyawa aktif disinfektan yang digunakan VECOS telah teruji klinis memenuhi regulasi Kementerian Kesehatan RI, terbukti membunuh bakteri patogen, virus influenza, dan spora jamur tanpa meninggalkan residu korosif atau bau menyengat pada perabot dan alat elektronik.",
+        "Layanan ini sangat direkomendasikan secara berkala untuk kantor komersial, klinik, sekolah, dan hunian keluarga guna memastikan sirkulasi udara steril dan lingkungan bebas penularan penyakit."
+      ],
+      keyPoints: [
+        "Membasmi 99,9% virus dan bakteri pathogen di udara dan permukaan.",
+        "Formula food-grade non-korosif, aman bagi komputer dan furnitur.",
+        "Waktu aerasi cepat: ruangan dapat digunakan kembali dalam 30-45 menit."
+      ]
+    }
+  },
+  {
+    id: 2,
+    title: "Amankan Properti Anda dari Ancaman Kerusakan Rayap",
+    subtitle:
+      "Metode injeksi barrier kimiawi dan sistem umpan rayap bergaransi jangka panjang. Lindungi struktur bangunan dan interior kayu berharga Anda sebelum terlambat.",
+    image: "/images/banner3.jpg",
+    tag: "Anti Rayap Bergaransi",
+    article: {
+      title: "Strategi Proteksi Struktur Bangunan dari Koloni Rayap Tanah & Kayu",
+      date: "10 Oktober 2026",
+      readTime: "4 Menit Baca",
+      content: [
+        "Rayap adalah hama perusak sunyi (silent destroyer) yang kerap kali baru disadari keberadaannya setelah kusen, plafon, atau rangka atap mengalami kerusakan struktural fatal bernilai puluhan juta rupiah.",
+        "VECOS menerapkan kombinasi metode chemical barrier (injeksi termitisida non-repellent) di sekeliling perimeter fondasi serta monitoring baiting system berbasis hexaflumuron yang dibawa pekerja rayap ke sarang untuk memusnahkan ratu dan seluruh koloni secara tuntas.",
+        "Setiap pengerjaan anti rayap VECOS dilengkapi dengan sertifikat garansi resmi dan inspeksi berkala gratis untuk menjamin fondasi properti Anda aman dari serangan ulang."
+      ],
+      keyPoints: [
+        "Formula non-repellent termitisida ramah lingkungan tanpa bau menyengat.",
+        "Eliminasi hingga ke pusat sarang (elimination of the entire queen colony).",
+        "Sertifikat garansi resmi dan jadwal inspeksi berkala gratis."
+      ]
+    }
+  },
+  {
+    id: 3,
+    title: "Tempat Belajar & Bekerja yang Higienis dan Bebas Hama",
+    subtitle:
+      "Menciptakan lingkungan belajar dan kantor yang bersih, aman, dan terbebas dari hama tikus dan serangga demi kenyamanan serta produktivitas maksimal.",
+    image: "/images/banner4.jpg",
+    tag: "Solusi Komersial & Institusi",
+    article: {
+      title: "Standar Sanitasi dan Pengendalian Hama Fasilitas Publik & Pendidikan",
+      date: "8 Oktober 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Fasilitas umum seperti sekolah, universitas, dan perkantoran memiliki lalu lintas manusia yang padat dan area konsumsi makanan yang rentan menjadi magnet bagi hama tikus, kecoa, serta lalat.",
+        "Pendekatan IPM (Integrated Pest Management) dari VECOS menitikberatkan pada pencegahan mekanis, penutupan celah akses (proofing), dan penempatan bait station tertutup yang aman dari jangkauan anak-anak maupun staf.",
+        "Dokumentasi laporan servis transparan kami sediakan untuk melengkapi audit standar sanitasi dan akreditasi kebersihan instansi Anda."
+      ],
+      keyPoints: [
+        "Penempatan bait station terkunci aman dari anak-anak dan staf.",
+        "Inspeksi celah dan sanitasi menyeluruh di area pantry dan kantin.",
+        "Laporan audit berkala untuk pemenuhan standar kepatuhan dinas terkait."
+      ]
+    }
+  },
+  {
+    id: 4,
+    title: "Perlindungan Pest Control Hotel & Resort Bintang",
+    subtitle:
+      "Menjaga kenyamanan tamu, sanitasi kamar, dan reputasi bisnis Anda dari ancaman kutu busuk, serangga, dan hama dengan penanganan steril tanpa bau.",
+    image: "/images/banner5.jpg",
+    tag: "Hospitality & Tourism",
+    article: {
+      title: "Protokol Pencegahan Kutu Busuk (Bed Bugs) dan Hama Perhotelan",
+      date: "5 Oktober 2026",
+      readTime: "4 Menit Baca",
+      content: [
+        "Bagi industri perhotelan, satu komplain kutu busuk atau kecoa di ulasan online dapat merusak reputasi hotel bertahun-tahun. VECOS menghadirkan Hospitality Pest Program dengan respon cepat dan inspeksi tak terlihat (discreet service).",
+        "Pemeriksaan rutin menggunakan teknologi deteksi dini dan steam heat treatment khusus untuk matras dan linen memastikan kamar tidur terbebas dari kutu busuk tanpa merusak serat kain.",
+        "Perlakuan rutin di area dapur restoran hotel memastikan standar HACCP dan Food Safety terpenuhi secara konsisten."
+      ],
+      keyPoints: [
+        "Layanan senyap (discreet protocol) menjaga privasi dan ketenangan tamu.",
+        "Solusi terpadu kutu busuk matras dengan heat treatment dan residu aman.",
+        "Sesuai standar audit HACCP restoran dan dapur hotel internasional."
+      ]
+    }
+  }
+];
+
 export default function Home() {
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [layananDropdownOpen, setLayananDropdownOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<"ID" | "EN">("ID");
 
-  // Hero Carousel State
+  // Hero Carousel State (Berganti otomatis setiap 5 detik murni tanpa icon)
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const slideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-play slider effect (ganti slide otomatis setiap 5 detik)
+  // Auto-play slider effect Hero (setiap 5 detik konsisten tanpa jeda kursor)
   useEffect(() => {
-    if (isPaused) return;
-
-    slideTimerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
 
-    return () => {
-      if (slideTimerRef.current) clearInterval(slideTimerRef.current);
-    };
-  }, [isPaused]);
+    return () => clearInterval(timer);
+  }, []);
 
-  const goToSlide = (idx: number) => {
-    setCurrentSlide(idx);
+  // Banner Penawaran State (Berganti otomatis setiap 5 detik dengan icon titik, loading, dan geser)
+  const [currentOffer, setCurrentOffer] = useState(0);
+  const [offerProgress, setOfferProgress] = useState(0);
+  const [isOfferPaused, setIsOfferPaused] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState<OfferSlide | null>(null);
+
+  // Timer loading progress 5 detik untuk Banner Penawaran
+  useEffect(() => {
+    if (isOfferPaused || selectedArticle !== null) return;
+
+    const intervalTime = 50; // update setiap 50ms
+    const totalTime = 5000;  // 5 detik
+    const step = (intervalTime / totalTime) * 100;
+
+    const timer = setInterval(() => {
+      setOfferProgress((prev) => {
+        if (prev + step >= 100) {
+          setCurrentOffer((curr) => (curr + 1) % offerSlides.length);
+          return 0;
+        }
+        return prev + step;
+      });
+    }, intervalTime);
+
+    return () => clearInterval(timer);
+  }, [isOfferPaused, selectedArticle]);
+
+  const nextOffer = () => {
+    setCurrentOffer((prev) => (prev + 1) % offerSlides.length);
+    setOfferProgress(0);
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  const prevOffer = () => {
+    setCurrentOffer((prev) => (prev - 1 + offerSlides.length) % offerSlides.length);
+    setOfferProgress(0);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  const goToOffer = (idx: number) => {
+    setCurrentOffer(idx);
+    setOfferProgress(0);
   };
 
   // Quick booking state
@@ -414,8 +549,6 @@ export default function Home() {
       {/* ======================================================== */}
       <section
         id="beranda"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[620px] max-h-[1080px] overflow-hidden bg-zinc-900 shadow-md flex flex-col justify-between"
       >
         {/* Container Slide Gambar & Teks */}
@@ -465,14 +598,11 @@ export default function Home() {
                         {slide.ctaText}
                       </button>
 
-                      {/* Pill Call Center */}
+                      {/* Pill Call Center (Murni Teks Tanpa Icon Apapun) */}
                       <a
                         href={`tel:${slide.callCenter.replace(/[^0-9]/g, "")}`}
-                        className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/95 hover:bg-white text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold shadow-sm transition-all"
+                        className="inline-flex items-center bg-white/95 hover:bg-white text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold shadow-sm transition-all"
                       >
-                        <svg className="w-3.5 h-3.5 text-[#C81E27]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
                         <span>Call Center : {slide.callCenter}</span>
                       </a>
                     </div>
@@ -481,43 +611,6 @@ export default function Home() {
               </div>
             );
           })}
-        </div>
-
-        {/* Navigasi Panah Slide Kiri & Kanan (Hanya tampil di tablet/desktop agar layar mobile bersih) */}
-        <button
-          type="button"
-          onClick={prevSlide}
-          aria-label="Slide Sebelumnya"
-          className="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-[#C81E27] text-white items-center justify-center backdrop-blur-xs transition-colors cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          onClick={nextSlide}
-          aria-label="Slide Selanjutnya"
-          className="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-[#C81E27] text-white items-center justify-center backdrop-blur-xs transition-colors cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Indikator Titik (Dots) Slide di sudut kanan atas banner */}
-        <div className="absolute top-3 right-3 sm:top-4 sm:right-8 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full">
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => goToSlide(idx)}
-              aria-label={`Ke slide ${idx + 1}`}
-              className={`h-1.5 sm:h-2 rounded-full transition-all cursor-pointer ${idx === currentSlide ? "w-5 sm:w-6 bg-[#C81E27]" : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
-                }`}
-            />
-          ))}
         </div>
 
         {/* ======================================================== */}
@@ -644,32 +737,253 @@ export default function Home() {
       {/* ======================================================== */}
       <main className="w-full px-2 sm:px-4 md:px-6 lg:px-8 space-y-12 sm:space-y-16 py-10 sm:py-14">
         {/* ======================================================== */}
-        {/* 3. SECTION: PENAWARAN TERBAIK UNTUK PROPERTI ANDA (FULL)  */}
+        {/* 3. SECTION: PENAWARAN TERBAIK (CAROUSEL OTOMATIS 5 DETIK) */}
+        {/* Dilengkapi icon titik, icon loading bar, icon geser panah */}
+        {/* dan klik banner / tombol menuju artikel penawaran terkait */}
         {/* ======================================================== */}
-        <section id="penawaran" className="space-y-4 w-full">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-            Penawaran Terbaik untuk Properti Anda
-          </h2>
+        <section
+          id="penawaran"
+          className="space-y-4 w-full"
+          onMouseEnter={() => setIsOfferPaused(true)}
+          onMouseLeave={() => setIsOfferPaused(false)}
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
+                Penawaran Terbaik untuk Properti Anda
+              </h2>
+            </div>
 
-          <div className="w-full relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-zinc-200 aspect-16/9 sm:aspect-21/9 min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[500px]">
-            <Image
-              src="/images/banner2.jpg"
-              alt="Disinfeksi perlindungan Dari Virus Berbahaya"
-              fill
-              className="object-cover object-center"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent flex items-center">
-              <div className="p-6 sm:p-12 md:p-16 max-w-2xl text-white space-y-3 sm:space-y-4">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
-                  Disinfeksi perlindungan Dari Virus Berbahaya
-                </h3>
-                <p className="text-xs sm:text-sm md:text-base text-zinc-200 leading-relaxed max-w-xl">
-                  Sterilisasi menyeluruh dengan formulasi ramah lingkungan berstandar Kemenkes. Efektif membasmi 99,9% virus, kuman, dan bakteri untuk menjaga hunian serta tempat kerja Anda tetap aman, sehat, dan higienis.
-                </p>
+            {/* Icon Loading / Timer Progress Indicator */}
+            <div className="flex items-center gap-2 self-start sm:self-auto bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-bold text-zinc-700">
+              {/* Icon Loading Berputar */}
+              <svg className="w-3.5 h-3.5 text-[#C81E27] animate-spin" viewBox="0 0 24 24" fill="none">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span>Auto 5s</span>
+              <div className="w-12 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-[#C81E27] transition-all duration-75"
+                  style={{ width: `${offerProgress}%` }}
+                ></div>
               </div>
             </div>
           </div>
+
+          {/* Banner Container Carousel */}
+          <div className="w-full relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-zinc-200/90 aspect-16/9 sm:aspect-21/9 min-h-[300px] sm:min-h-[380px] md:min-h-[440px] lg:min-h-[480px] group">
+            {/* Slide List */}
+            {offerSlides.map((slide, idx) => {
+              const isActive = idx === currentOffer;
+              return (
+                <div
+                  key={slide.id}
+                  onClick={() => setSelectedArticle(slide)}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+                    }`}
+                  title="Klik untuk membuka artikel penawaran"
+                >
+                  {/* Foto Latar Penawaran */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    priority={idx === 0}
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  {/* Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/90 via-black/65 to-black/30 sm:to-transparent flex items-end sm:items-center">
+                    <div className="p-5 sm:p-10 md:p-14 max-w-2xl text-white space-y-2.5 sm:space-y-3.5">
+                      {/* Tag Kategori Penawaran */}
+                      <div className="inline-flex items-center gap-1.5 bg-[#C81E27] text-white px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-sm">
+                        <span>★</span>
+                        <span>{slide.tag}</span>
+                      </div>
+
+                      {/* Judul Penawaran */}
+                      <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-white drop-shadow-md">
+                        {slide.title}
+                      </h3>
+
+                      {/* Deskripsi Singkat */}
+                      <p className="text-xs sm:text-sm md:text-base text-zinc-200 leading-relaxed max-w-xl line-clamp-2 sm:line-clamp-3">
+                        {slide.subtitle}
+                      </p>
+
+                      {/* Tombol Klik Menuju Artikel */}
+                      <div className="pt-1">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedArticle(slide);
+                          }}
+                          className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-[#C81E27] font-black text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-lg transition-all cursor-pointer hover:shadow-xl hover:translate-x-1"
+                        >
+                          <span>Baca Artikel Penawaran</span>
+                          <span className="text-sm">→</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Icon Loading Bar Horizontal di Bagian Bawah Banner */}
+            <div className="absolute top-0 inset-x-0 z-20 h-1 bg-white/20">
+              <div
+                className="h-full bg-[#C81E27] transition-all duration-75"
+                style={{ width: `${offerProgress}%` }}
+              ></div>
+            </div>
+
+            {/* Icon Geser (Navigasi Panah Kiri) */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevOffer();
+              }}
+              aria-label="Geser Penawaran Sebelumnya"
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-[#C81E27] text-white flex items-center justify-center backdrop-blur-xs transition-colors cursor-pointer shadow-lg"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Icon Geser (Navigasi Panah Kanan) */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextOffer();
+              }}
+              aria-label="Geser Penawaran Selanjutnya"
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-[#C81E27] text-white flex items-center justify-center backdrop-blur-xs transition-colors cursor-pointer shadow-lg"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Icon Titik (Dots Navigation) di sudut kanan bawah */}
+            <div className="absolute bottom-3 right-4 sm:bottom-5 sm:right-6 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              {offerSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToOffer(idx);
+                  }}
+                  aria-label={`Lihat penawaran ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all cursor-pointer ${idx === currentOffer ? "w-6 bg-[#C81E27]" : "w-2 bg-white/60 hover:bg-white"
+                    }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Modal Pop-up Artikel Saat Banner Penawaran Ditekan */}
+          {selectedArticle && (
+            <div
+              className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
+              onClick={() => setSelectedArticle(null)}
+            >
+              <div
+                className="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-zinc-200 text-zinc-900"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Header Foto Artikel */}
+                <div className="relative w-full h-44 sm:h-60 bg-zinc-900">
+                  <Image
+                    src={selectedArticle.image}
+                    alt={selectedArticle.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-5">
+                    <span className="bg-[#C81E27] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                      {selectedArticle.tag}
+                    </span>
+                  </div>
+
+                  {/* Tombol Tutup X */}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedArticle(null)}
+                    aria-label="Tutup Artikel"
+                    className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/60 hover:bg-[#C81E27] text-white flex items-center justify-center transition-colors cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                {/* Konten Artikel Lengkap */}
+                <div className="p-5 sm:p-8 space-y-4">
+                  <div className="flex items-center gap-3 text-xs text-zinc-500 font-semibold border-b border-zinc-100 pb-3">
+                    <span>📅 {selectedArticle.article.date}</span>
+                    <span>•</span>
+                    <span>⏱️ {selectedArticle.article.readTime}</span>
+                    <span>•</span>
+                    <span className="text-emerald-700 font-bold">Resmi VECOS</span>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-zinc-900 leading-snug">
+                    {selectedArticle.article.title}
+                  </h3>
+
+                  {/* Paragraf Artikel */}
+                  <div className="space-y-3 text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">
+                    {selectedArticle.article.content.map((p, pIdx) => (
+                      <p key={pIdx}>{p}</p>
+                    ))}
+                  </div>
+
+                  {/* Poin Keunggulan / Key Highlights */}
+                  <div className="bg-red-50/70 border border-red-200/80 rounded-2xl p-4 sm:p-5 space-y-2">
+                    <h4 className="text-xs sm:text-sm font-extrabold text-[#C81E27] uppercase tracking-wide">
+                      Keunggulan Standar Layanan VECOS:
+                    </h4>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-zinc-800 font-medium">
+                      {selectedArticle.article.keyPoints.map((point, kIdx) => (
+                        <li key={kIdx} className="flex items-start gap-2">
+                          <span className="text-[#C81E27] font-bold shrink-0">✓</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Footer Modal: Tombol Aksi */}
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-zinc-100">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedArticle(null)}
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-zinc-300 hover:bg-zinc-100 text-zinc-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+                    >
+                      Tutup
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedArticle(null);
+                        scrollToSurvey();
+                      }}
+                      className="w-full sm:w-auto bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg transition-colors cursor-pointer"
+                    >
+                      Klaim Penawaran & Jadwalkan Survey Gratis →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* ======================================================== */}
