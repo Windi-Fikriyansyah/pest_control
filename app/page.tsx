@@ -798,7 +798,7 @@ export default function Home() {
       name: "Kutu Kasur",
       latin: "Cimex lectularius",
       image: "/images/binatang/kutu kasur.png",
-      imageClass: "object-contain p-2.5 sm:p-3",
+      imageClass: "object-contain p-4.5 sm:p-6",
     },
     {
       name: "Semut Rang Rang",
@@ -1675,12 +1675,12 @@ export default function Home() {
               priority
             />
 
-            {/* Teks: VECOS Prime Shield-01 */}
-            <div className="absolute top-3 sm:top-5 md:top-8 lg:top-10 left-[54%] z-10 pointer-events-none select-none">
-              <div className="text-white text-xs sm:text-base md:text-xl lg:text-2xl font-black tracking-wide leading-tight uppercase font-sans">
+            {/* Teks: VECOS Prime Shield-01 (Diperbesar sedikit agar lebih jelas & tegas) */}
+            <div className="absolute top-3.5 sm:top-6 md:top-8 lg:top-11 left-[54%] z-10 pointer-events-none select-none">
+              <div className="text-white text-sm sm:text-xl md:text-2xl lg:text-3xl font-black tracking-wide leading-tight uppercase font-sans">
                 VECOS
               </div>
-              <div className="text-white text-[10px] sm:text-sm md:text-lg lg:text-xl font-bold tracking-tight leading-tight font-sans">
+              <div className="text-white text-xs sm:text-base md:text-xl lg:text-2xl font-bold tracking-tight leading-tight font-sans">
                 Prime Shield-01
               </div>
             </div>
