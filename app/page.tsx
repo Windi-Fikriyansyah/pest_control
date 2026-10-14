@@ -312,22 +312,22 @@ const specialOfferServices = [
   {
     id: 4,
     title: "RESTORAN & CAFE",
-    image: "/images/penawaran/9.png", // Gambar 4 (duplikat)
+    image: "/images/offer/restaurant.jpeg", // Gambar 4 (duplikat)
   },
   {
     id: 5,
     title: "PABRIK & GUDANG",
-    image: "/images/penawaran/11.png", // Gambar 5 (duplikat)
+    image: "/images/offer/warehouse.jpeg", // Gambar 5 (duplikat)
   },
   {
     id: 6,
     title: "RUMAH SAKIT",
-    image: "/images/penawaran/10.png", // Gambar 6 (duplikat)
+    image: "/images/offer/hospital.jpeg", // Gambar 6 (duplikat)
   },
   {
     id: 7,
     title: "SEKOLAH / KAMPUS",
-    image: "/images/penawaran/8.png", // Gambar 7 (duplikat)
+    image: "/images/offer/kampus.jpeg", // Gambar 7 (duplikat)
   },
 ];
 
@@ -340,7 +340,7 @@ const clientLogosRow1 = [
   { name: "Logo 3", image: "/images/logo/3.png" },
   { name: "Logo 4", image: "/images/logo/4.png" },
   { name: "Logo 5", image: "/images/logo/5.png" },
-  { name: "Logo 6", image: "/images/logo/6.png" },
+  { name: "Logo 6", image: "/images/logo/6.png", noZoom: true },
   { name: "Logo 7", image: "/images/logo/7.png" },
   { name: "Logo 8", image: "/images/logo/8.png" },
   { name: "Logo 9", image: "/images/logo/9.png" },
@@ -358,19 +358,150 @@ const clientLogosRow2 = [
   { name: "Logo 18", image: "/images/logo/18.png" },
 ];
 
+// =========================================================================
+// DATA NEGARA & BAHASA UNTUK TRANSLASI OTOMATIS
+// =========================================================================
+const countryList = [
+  { code: "ID", name: "Indonesia", flag: "🇮🇩", defaultLang: "id" },
+  { code: "US", name: "United States (Amerika Serikat)", flag: "🇺🇸", defaultLang: "en" },
+  { code: "GB", name: "United Kingdom (Inggris)", flag: "🇬🇧", defaultLang: "en" },
+  { code: "SG", name: "Singapore (Singapura)", flag: "🇸🇬", defaultLang: "en" },
+  { code: "MY", name: "Malaysia", flag: "🇲🇾", defaultLang: "ms" },
+  { code: "CN", name: "China (Tiongkok)", flag: "🇨🇳", defaultLang: "zh-CN" },
+  { code: "JP", name: "Japan (Jepang)", flag: "🇯🇵", defaultLang: "ja" },
+  { code: "KR", name: "South Korea (Korea Selatan)", flag: "🇰🇷", defaultLang: "ko" },
+  { code: "SA", name: "Saudi Arabia (Arab Saudi)", flag: "🇸🇦", defaultLang: "ar" },
+  { code: "DE", name: "Germany (Jerman)", flag: "🇩🇪", defaultLang: "de" },
+  { code: "FR", name: "France (Prancis)", flag: "🇫🇷", defaultLang: "fr" },
+  { code: "NL", name: "Netherlands (Belanda)", flag: "🇳🇱", defaultLang: "nl" },
+  { code: "AU", name: "Australia", flag: "🇦🇺", defaultLang: "en" },
+  { code: "ES", name: "Spain (Spanyol)", flag: "🇪🇸", defaultLang: "es" },
+  { code: "IT", name: "Italy (Italia)", flag: "🇮🇹", defaultLang: "it" },
+  { code: "RU", name: "Russia (Rusia)", flag: "🇷🇺", defaultLang: "ru" },
+  { code: "TH", name: "Thailand", flag: "🇹🇭", defaultLang: "th" },
+  { code: "VN", name: "Vietnam", flag: "🇻🇳", defaultLang: "vi" },
+  { code: "PH", name: "Philippines (Filipina)", flag: "🇵🇭", defaultLang: "tl" },
+  { code: "IN", name: "India", flag: "🇮🇳", defaultLang: "hi" },
+  { code: "TR", name: "Turkey (Turki)", flag: "🇹🇷", defaultLang: "tr" },
+  { code: "BR", name: "Brazil (Brasil)", flag: "🇧🇷", defaultLang: "pt" },
+  { code: "GLOBAL", name: "Negara Lainnya (Other Country)", flag: "🌐", defaultLang: "en" },
+];
+
+const languageList = [
+  { code: "id", name: "Bahasa Indonesia", nativeName: "Bahasa Indonesia" },
+  { code: "en", name: "English", nativeName: "English" },
+  { code: "zh-CN", name: "Mandarin / Chinese", nativeName: "中文 (简体)" },
+  { code: "ja", name: "Japanese", nativeName: "日本語" },
+  { code: "ko", name: "Korean", nativeName: "한국어" },
+  { code: "ar", name: "Arabic", nativeName: "العربية" },
+  { code: "ms", name: "Bahasa Melayu", nativeName: "Bahasa Melayu" },
+  { code: "de", name: "German", nativeName: "Deutsch" },
+  { code: "fr", name: "French", nativeName: "Français" },
+  { code: "nl", name: "Dutch", nativeName: "Nederlands" },
+  { code: "es", name: "Spanish", nativeName: "Español" },
+  { code: "it", name: "Italian", nativeName: "Italiano" },
+  { code: "ru", name: "Russian", nativeName: "Русский" },
+  { code: "th", name: "Thai", nativeName: "ไทย" },
+  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt" },
+  { code: "tl", name: "Tagalog / Filipino", nativeName: "Tagalog" },
+  { code: "hi", name: "Hindi", nativeName: "हिन्दी" },
+  { code: "tr", name: "Turkish", nativeName: "Türkçe" },
+  { code: "pt", name: "Portuguese", nativeName: "Português" },
+];
+
 export default function Home() {
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [layananDropdownOpen, setLayananDropdownOpen] = useState(false);
   const [mobileLayananOpen, setMobileLayananOpen] = useState(false);
   const layananDropdownRef = useRef<HTMLDivElement | null>(null);
-  const [currentLang, setCurrentLang] = useState<"ID" | "EN">("ID");
+
+  // Preferred Country & Language State (Translasi Otomatis)
+  const [currentCountry, setCurrentCountry] = useState("ID");
+  const [currentLang, setCurrentLang] = useState("id");
   const [isLangModalOpen, setIsLangModalOpen] = useState(false);
-  const [tempLang, setTempLang] = useState<"ID" | "EN">("ID");
+  const [tempCountry, setTempCountry] = useState("ID");
+  const [tempLang, setTempLang] = useState("id");
 
   const openLangModal = () => {
+    setTempCountry(currentCountry);
     setTempLang(currentLang);
     setIsLangModalOpen(true);
+  };
+
+  const handleCountryChange = (cCode: string) => {
+    setTempCountry(cCode);
+    const country = countryList.find((c) => c.code === cCode);
+    if (country) {
+      setTempLang(country.defaultLang);
+    }
+  };
+
+  // Google Translate initialization & read active googtrans cookie
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+      if (match) {
+        const parts = match[1].split("/");
+        const targetLang = parts[parts.length - 1];
+        if (targetLang && targetLang !== "id") {
+          setCurrentLang(targetLang);
+          const found = countryList.find((c) => c.defaultLang === targetLang);
+          if (found) setCurrentCountry(found.code);
+        }
+      }
+
+      if (!document.getElementById("google-translate-script")) {
+        (window as any).googleTranslateElementInit = () => {
+          if ((window as any).google?.translate?.TranslateElement) {
+            new (window as any).google.translate.TranslateElement(
+              {
+                pageLanguage: "id",
+                autoDisplay: false,
+              },
+              "google_translate_element"
+            );
+          }
+        };
+
+        const script = document.createElement("script");
+        script.id = "google-translate-script";
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, []);
+
+  const applyLanguagePreference = (countryCode: string, langCode: string) => {
+    setCurrentCountry(countryCode);
+    setCurrentLang(langCode);
+    setIsLangModalOpen(false);
+
+    if (typeof document === "undefined") return;
+
+    if (langCode === "id") {
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${window.location.hostname}; path=/;`;
+      const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+      if (select) {
+        select.value = "id";
+        select.dispatchEvent(new Event("change"));
+      }
+      window.location.reload();
+      return;
+    }
+
+    document.cookie = `googtrans=/id/${langCode}; path=/;`;
+    document.cookie = `googtrans=/id/${langCode}; domain=${window.location.hostname}; path=/;`;
+
+    const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event("change"));
+    } else {
+      window.location.reload();
+    }
   };
 
   // Outside click listener untuk menutup dropdown Layanan Kami
@@ -828,15 +959,15 @@ export default function Home() {
               TENTANG VECOS
             </a>
 
-            {/* Language Button [ EN / ID ] + Globe Icon (Tanpa Background, Sesuai Warna Menu Header) */}
+            {/* Language Button [ FLAG / CODE ] + Globe Icon (Tanpa Background, Sesuai Warna Menu Header) */}
             <button
               type="button"
               onClick={openLangModal}
               className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
-              title="Pilih Preferensi Bahasa"
+              title="Pilih Preferensi Bahasa & Negara"
             >
               <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs lg:text-sm tracking-wider uppercase transition-colors">
-                {currentLang}
+                {currentLang.toUpperCase()}
               </span>
               <svg
                 className="w-4 h-4 text-zinc-800 group-hover:text-[#C81E27] shrink-0 transition-colors"
@@ -970,7 +1101,7 @@ export default function Home() {
             </a>
 
             <div className="pt-2 flex items-center justify-between">
-              <span className="text-xs font-bold text-zinc-500">Pilihan Bahasa:</span>
+              <span className="text-xs font-bold text-zinc-500">Pilihan Negara & Bahasa:</span>
               <button
                 type="button"
                 onClick={() => {
@@ -980,7 +1111,7 @@ export default function Home() {
                 className="flex items-center gap-1.5 text-zinc-800 hover:text-[#C81E27] py-1 transition-colors cursor-pointer group"
               >
                 <span className="border-b-2 border-zinc-800 group-hover:border-[#C81E27] pb-0.5 leading-none font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-colors">
-                  {currentLang}
+                  {currentLang.toUpperCase()}
                 </span>
                 <svg
                   className="w-4 h-4 text-zinc-800 group-hover:text-[#C81E27] shrink-0 transition-colors"
@@ -1286,13 +1417,13 @@ export default function Home() {
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                     }`}
                 >
-                  {/* Foto Latar Penawaran */}
+                  {/* Foto Latar Penawaran (Dizoom sedikit dengan scale-108) */}
                   <Image
                     src={slide.image}
                     alt={slide.title}
                     fill
                     priority={idx === 0}
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-center scale-108 group-hover:scale-112 transition-transform duration-700"
                   />
 
                   {/* Dark Gradient Overlay */}
@@ -1307,6 +1438,18 @@ export default function Home() {
                       <p className="text-xs sm:text-sm md:text-base text-zinc-200 leading-relaxed max-w-xl line-clamp-2 sm:line-clamp-3">
                         {slide.subtitle}
                       </p>
+
+                      {/* Tombol Penawaran */}
+                      <div className="pt-2">
+                        <button
+                          type="button"
+                          onClick={scrollToSurvey}
+                          className="inline-flex items-center gap-2 bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-900/40 hover:shadow-red-900/60 transition-all cursor-pointer hover:translate-x-1"
+                        >
+                          <span>Klaim Penawaran</span>
+                          <span className="text-sm">→</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1528,7 +1671,7 @@ export default function Home() {
               alt="VECOS Prime Shield-01"
               width={3419}
               height={2809}
-              className="w-full h-auto block"
+              className="w-full h-auto block scale-106 sm:scale-108 transition-transform duration-700"
               priority
             />
 
@@ -1847,15 +1990,19 @@ export default function Home() {
                 {[...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1].map((client, idx) => (
                   <div
                     key={`row1-${idx}`}
-                    className="h-14 sm:h-20 w-36 xs:w-44 sm:w-52 px-4 sm:px-6 py-2 sm:py-3 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                    className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
                     title={client.name}
                   >
-                    <div className="relative w-full h-full max-h-8 sm:max-h-12 flex items-center justify-center">
+                    <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
                       <Image
                         src={client.image}
                         alt={client.name}
                         fill
-                        className="object-contain"
+                        className={`object-contain transition-transform duration-300 ${
+                          (client as any).noZoom || client.image.includes("6.png")
+                            ? "scale-100"
+                            : "scale-120 sm:scale-130 hover:scale-135"
+                        }`}
                       />
                     </div>
                   </div>
@@ -1869,15 +2016,15 @@ export default function Home() {
                 {[...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2].map((client, idx) => (
                   <div
                     key={`row2-${idx}`}
-                    className="h-14 sm:h-20 w-36 xs:w-44 sm:w-52 px-4 sm:px-6 py-2 sm:py-3 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                    className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
                     title={client.name}
                   >
-                    <div className="relative w-full h-full max-h-8 sm:max-h-12 flex items-center justify-center">
+                    <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
                       <Image
                         src={client.image}
                         alt={client.name}
                         fill
-                        className="object-contain"
+                        className="object-contain scale-120 sm:scale-130 transition-transform duration-300 hover:scale-135"
                       />
                     </div>
                   </div>
@@ -2371,8 +2518,8 @@ export default function Home() {
         </footer>
 
         {/* ======================================================== */}
-        {/* MODAL PREFERENSI BAHASA (BLUR BACKGROUND PENUH &         */}
-        {/* DESAIN SESUAI REFERENSI DENGAN WARNA BRAND VECOS)        */}
+        {/* MODAL PREFERENSI BAHASA & NEGARA (OTOMATIS SEMUA NEGARA) */}
+        {/* DESAIN SESUAI REFERENSI DENGAN WARNA BRAND VECOS         */}
         {/* ======================================================== */}
         {isLangModalOpen && (
           <div
@@ -2400,49 +2547,94 @@ export default function Home() {
               </button>
 
               {/* Card Dialog Modal */}
-              <div className="bg-[#141923] border border-zinc-700/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
-                  Pilih preferensi bahasa Anda
-                </h3>
+              <div className="bg-[#141923] border border-zinc-700/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+                <div>
+                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                    Pilih preferensi bahasa & negara Anda
+                  </h3>
+                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                    Seluruh halaman website akan diterjemahkan secara otomatis sesuai preferensi negara & bahasa yang Anda pilih.
+                  </p>
+                </div>
 
-                {/* Input Dropdown: Hanya Pilihan Bahasa (Tanpa Negara) */}
-                <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-3 transition-all">
-                  <label htmlFor="modal-lang-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
-                    Bahasa
-                  </label>
-                  <div className="relative flex items-center">
-                    <select
-                      id="modal-lang-select"
-                      value={tempLang}
-                      onChange={(e) => setTempLang(e.target.value as "ID" | "EN")}
-                      className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
-                    >
-                      <option value="ID" className="bg-[#1c2333] text-white">
-                        Bahasa Indonesia
-                      </option>
-                      <option value="EN" className="bg-[#1c2333] text-white">
-                        English
-                      </option>
-                    </select>
-                    <svg
-                      className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                    </svg>
+                <div className="space-y-3.5">
+                  {/* Input Dropdown 1: Pilihan Negara / Wilayah */}
+                  <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-2.5 transition-all">
+                    <label htmlFor="modal-country-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
+                      Negara / Wilayah
+                    </label>
+                    <div className="relative flex items-center">
+                      <select
+                        id="modal-country-select"
+                        value={tempCountry}
+                        onChange={(e) => handleCountryChange(e.target.value)}
+                        className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
+                      >
+                        {countryList.map((country) => (
+                          <option key={country.code} value={country.code} className="bg-[#1c2333] text-white">
+                            {country.flag} {country.name}
+                          </option>
+                        ))}
+                      </select>
+                      <svg
+                        className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
+
+                  {/* Input Dropdown 2: Pilihan Bahasa */}
+                  <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-2.5 transition-all">
+                    <label htmlFor="modal-lang-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
+                      Bahasa Terjemahan
+                    </label>
+                    <div className="relative flex items-center">
+                      <select
+                        id="modal-lang-select"
+                        value={tempLang}
+                        onChange={(e) => setTempLang(e.target.value)}
+                        className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
+                      >
+                        {languageList.map((lang) => (
+                          <option key={lang.code} value={lang.code} className="bg-[#1c2333] text-white">
+                            {lang.name} — {lang.nativeName}
+                          </option>
+                        ))}
+                      </select>
+                      <svg
+                        className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info Card Status Bahasa */}
+                <div className="bg-[#1a202d] rounded-xl p-3 border border-zinc-700/50 flex items-center justify-between text-xs text-zinc-300">
+                  <span className="flex items-center gap-1.5">
+                    <span>{countryList.find((c) => c.code === tempCountry)?.flag || "🌐"}</span>
+                    <span>
+                      {countryList.find((c) => c.code === tempCountry)?.name.split("(")[0]}
+                    </span>
+                  </span>
+                  <span className="font-bold text-[#E5282E]">
+                    {languageList.find((l) => l.code === tempLang)?.nativeName || tempLang}
+                  </span>
                 </div>
 
                 {/* Tombol Aksi: Warna Brand Merah VECOS (#C81E27) */}
                 <div className="flex justify-end pt-1">
                   <button
                     type="button"
-                    onClick={() => {
-                      setCurrentLang(tempLang);
-                      setIsLangModalOpen(false);
-                    }}
+                    onClick={() => applyLanguagePreference(tempCountry, tempLang)}
                     className="bg-[#C81E27] hover:bg-[#b01820] active:scale-95 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-red-900/30 transition-all cursor-pointer"
                   >
                     Perbarui preferensi
@@ -2452,6 +2644,9 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Hidden Google Translate Element Container */}
+        <div id="google_translate_element" style={{ display: "none" }} />
       </div>
     </div>
   );
