@@ -302,12 +302,12 @@ const specialOfferServices = [
   {
     id: 2,
     title: "OFFICE",
-    image: "/images/penawaran/6.png", // Gambar 2
+    image: "/images/offer_office.jpg", // Gambar 2
   },
   {
     id: 3,
     title: "HOTEL / RESORT",
-    image: "/images/penawaran/4.png", // Gambar 3
+    image: "/images/offer_hotel.jpg", // Gambar 3
   },
   {
     id: 4,
@@ -335,13 +335,13 @@ const specialOfferServices = [
 // DATA CLIENT LOGOS (2 BARIS ANIMASI BERGERAK SALING LAWAN ARAH)
 // =========================================================================
 const clientLogosRow1 = [
-  { name: "Logo 1", image: "/images/logo/1.PNG" },
+  { name: "Logo 1", image: "/images/logo/1.PNG", extraZoom: true },
   { name: "Logo 2", image: "/images/logo/2.png" },
-  { name: "Logo 3", image: "/images/logo/3.png" },
+  { name: "Logo 3", image: "/images/logo/3.png", extraZoom: true },
   { name: "Logo 4", image: "/images/logo/4.png" },
   { name: "Logo 5", image: "/images/logo/5.png" },
   { name: "Logo 6", image: "/images/logo/6.png", noZoom: true },
-  { name: "Logo 7", image: "/images/logo/7.png" },
+  { name: "Logo 7", image: "/images/logo/7.png", extraZoom: true },
   { name: "Logo 8", image: "/images/logo/8.png" },
   { name: "Logo 9", image: "/images/logo/9.png" },
 ];
@@ -351,10 +351,10 @@ const clientLogosRow2 = [
   { name: "Logo 11", image: "/images/logo/11.png" },
   { name: "Logo 12", image: "/images/logo/12.png" },
   { name: "Logo 13", image: "/images/logo/13.png" },
-  { name: "Logo 14", image: "/images/logo/14.png" },
+  { name: "Logo 14", image: "/images/logo/14.png", extraZoom: true },
   { name: "Logo 15", image: "/images/logo/15.png" },
   { name: "Logo 16", image: "/images/logo/16.png" },
-  { name: "Logo 17", image: "/images/logo/17.png" },
+  { name: "Logo 17", image: "/images/logo/17.png", extraZoom: true },
   { name: "Logo 18", image: "/images/logo/18.png" },
 ];
 
@@ -408,6 +408,196 @@ const languageList = [
   { code: "tr", name: "Turkish", nativeName: "Türkçe" },
   { code: "pt", name: "Portuguese", nativeName: "Português" },
 ];
+
+// =========================================================================
+// KOMPONEN SELECT2 (SEARCHABLE SELECT DENGAN KOTAK PENCARIAN)
+// =========================================================================
+interface SearchableSelectOption {
+  value: string;
+  label: string;
+  subLabel?: string;
+  icon?: string;
+}
+
+function SearchableSelect({
+  label,
+  value,
+  options,
+  placeholder = "Cari...",
+  onChange,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  options: SearchableSelectOption[];
+  placeholder?: string;
+  onChange: (val: string) => void;
+  className?: string;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
+
+  const selectedOption = options.find((opt) => opt.value === value) || options[0];
+
+  useEffect(() => {
+    const handleOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutside);
+      const timer = setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 60);
+      return () => {
+        clearTimeout(timer);
+        document.removeEventListener("mousedown", handleOutside);
+      };
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+    };
+  }, [isOpen]);
+
+  const filteredOptions = options.filter((opt) => {
+    const q = searchTerm.toLowerCase().trim();
+    if (!q) return true;
+    return (
+      opt.label.toLowerCase().includes(q) ||
+      (opt.subLabel && opt.subLabel.toLowerCase().includes(q)) ||
+      opt.value.toLowerCase().includes(q)
+    );
+  });
+
+  return (
+    <div className={`relative ${className}`} ref={dropdownRef}>
+      <label className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
+        {label}
+      </label>
+
+      {/* Select2 Trigger Button */}
+      <button
+        type="button"
+        onClick={() => {
+          setIsOpen((prev) => !prev);
+          setSearchTerm("");
+        }}
+        className={`w-full bg-[#1c2333] border text-left rounded-xl px-3.5 py-2.5 flex items-center justify-between gap-2 transition-all cursor-pointer ${isOpen
+          ? "border-[#C81E27] ring-2 ring-[#C81E27]/30"
+          : "border-zinc-700/80 hover:border-zinc-600"
+          }`}
+      >
+        <div className="flex items-center gap-2 min-w-0">
+          {selectedOption?.icon && (
+            <span className="text-base shrink-0">{selectedOption.icon}</span>
+          )}
+          <span className="text-white font-bold text-xs sm:text-sm truncate">
+            {selectedOption?.label}
+          </span>
+          {selectedOption?.subLabel && (
+            <span className="text-zinc-400 text-xs shrink-0 truncate hidden xs:inline">
+              ({selectedOption.subLabel})
+            </span>
+          )}
+        </div>
+
+        {/* Chevron Icon */}
+        <svg
+          className={`w-4 h-4 text-zinc-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 text-[#C81E27]" : ""
+            }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {/* Dropdown Menu dengan Search Bar (Select2 Style) */}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-1.5 bg-[#18202f] border border-zinc-700/90 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in-50 zoom-in-95 duration-150">
+          {/* Search Box Input */}
+          <div className="p-2 border-b border-zinc-700/60 bg-[#141923]">
+            <div className="relative flex items-center">
+              <svg
+                className="w-4 h-4 text-zinc-400 absolute left-2.5 pointer-events-none"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder={placeholder}
+                className="w-full bg-[#1c2333] border border-zinc-700 focus:border-[#C81E27] focus:outline-hidden text-white placeholder:text-zinc-500 rounded-lg pl-8 pr-7 py-1.5 text-xs font-medium"
+              />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm("")}
+                  className="absolute right-2 text-zinc-400 hover:text-white text-xs p-0.5 cursor-pointer"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* List Options */}
+          <div className="max-h-48 sm:max-h-56 overflow-y-auto divide-y divide-zinc-800/40 p-1">
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((opt) => {
+                const isSelected = opt.value === value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => {
+                      onChange(opt.value);
+                      setIsOpen(false);
+                      setSearchTerm("");
+                    }}
+                    className={`w-full text-left px-3 py-2 rounded-lg flex items-center justify-between gap-2 transition-colors cursor-pointer text-xs sm:text-sm ${isSelected
+                      ? "bg-[#C81E27] text-white font-bold"
+                      : "text-zinc-200 hover:bg-[#232c3f]"
+                      }`}
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      {opt.icon && <span className="text-sm shrink-0">{opt.icon}</span>}
+                      <span className="truncate">{opt.label}</span>
+                      {opt.subLabel && (
+                        <span
+                          className={`text-xs shrink-0 ${isSelected ? "text-white/80" : "text-zinc-400"
+                            }`}
+                        >
+                          {opt.subLabel}
+                        </span>
+                      )}
+                    </div>
+                    {isSelected && (
+                      <span className="shrink-0 text-white font-black text-xs">✓</span>
+                    )}
+                  </button>
+                );
+              })
+            ) : (
+              <div className="p-4 text-center text-xs text-zinc-400">
+                Tidak ada hasil ditemukan
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   // Navigation & Drawer
@@ -776,18 +966,19 @@ export default function Home() {
       name: "Rayap Tanah",
       latin: "Coptotermes formosanus",
       image: "/images/binatang/rayap tanah.png",
-      imageClass: "object-contain p-2.5 sm:p-3",
+      imageClass: "object-contain p-0 scale-110",
     },
     {
       name: "Lalat Hijau",
       latin: "Lucilia sericata",
       image: "/images/binatang/lalat hijau.png",
+      imageClass: "object-contain p-0 w-full h-full scale-125",
     },
     {
       name: "Kecoa Amerikana",
       latin: "Periplaneta americana",
       image: "/images/binatang/kecoa amerikana.png",
-      imageClass: "object-contain p-2.5 sm:p-3",
+      imageClass: "object-contain p-0 w-full h-full scale-125",
     },
     {
       name: "Tikus",
@@ -2001,6 +2192,8 @@ export default function Home() {
                         className={`object-contain transition-transform duration-300 ${
                           (client as any).noZoom || client.image.includes("6.png")
                             ? "scale-100"
+                            : (client as any).extraZoom
+                            ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
                             : "scale-120 sm:scale-130 hover:scale-135"
                         }`}
                       />
@@ -2024,7 +2217,13 @@ export default function Home() {
                         src={client.image}
                         alt={client.name}
                         fill
-                        className="object-contain scale-120 sm:scale-130 transition-transform duration-300 hover:scale-135"
+                        className={`object-contain transition-transform duration-300 ${
+                          (client as any).noZoom || client.image.includes("6.png")
+                            ? "scale-100"
+                            : (client as any).extraZoom
+                            ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
+                            : "scale-120 sm:scale-130 hover:scale-135"
+                        }`}
                       />
                     </div>
                   </div>
@@ -2558,63 +2757,33 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-3.5">
-                  {/* Input Dropdown 1: Pilihan Negara / Wilayah */}
-                  <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-2.5 transition-all">
-                    <label htmlFor="modal-country-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
-                      Negara / Wilayah
-                    </label>
-                    <div className="relative flex items-center">
-                      <select
-                        id="modal-country-select"
-                        value={tempCountry}
-                        onChange={(e) => handleCountryChange(e.target.value)}
-                        className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
-                      >
-                        {countryList.map((country) => (
-                          <option key={country.code} value={country.code} className="bg-[#1c2333] text-white">
-                            {country.flag} {country.name}
-                          </option>
-                        ))}
-                      </select>
-                      <svg
-                        className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
+                  {/* Select2: Pilihan Negara / Wilayah */}
+                  <SearchableSelect
+                    label="Negara / Wilayah"
+                    value={tempCountry}
+                    placeholder="Ketik untuk mencari negara..."
+                    className="z-20"
+                    options={countryList.map((country) => ({
+                      value: country.code,
+                      label: country.name,
+                      icon: country.flag,
+                    }))}
+                    onChange={(val) => handleCountryChange(val)}
+                  />
 
-                  {/* Input Dropdown 2: Pilihan Bahasa */}
-                  <div className="relative bg-[#1c2333] border border-zinc-700/80 hover:border-zinc-600 focus-within:border-[#C81E27] focus-within:ring-2 focus-within:ring-[#C81E27]/30 rounded-xl px-4 py-2.5 transition-all">
-                    <label htmlFor="modal-lang-select" className="block text-[11px] sm:text-xs text-zinc-400 font-medium mb-1">
-                      Bahasa Terjemahan
-                    </label>
-                    <div className="relative flex items-center">
-                      <select
-                        id="modal-lang-select"
-                        value={tempLang}
-                        onChange={(e) => setTempLang(e.target.value)}
-                        className="w-full bg-transparent text-white font-bold text-sm sm:text-base focus:outline-hidden appearance-none cursor-pointer pr-8"
-                      >
-                        {languageList.map((lang) => (
-                          <option key={lang.code} value={lang.code} className="bg-[#1c2333] text-white">
-                            {lang.name} — {lang.nativeName}
-                          </option>
-                        ))}
-                      </select>
-                      <svg
-                        className="w-4 h-4 text-zinc-400 pointer-events-none absolute right-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
+                  {/* Select2: Pilihan Bahasa */}
+                  <SearchableSelect
+                    label="Bahasa Terjemahan"
+                    value={tempLang}
+                    placeholder="Ketik untuk mencari bahasa..."
+                    className="z-10"
+                    options={languageList.map((lang) => ({
+                      value: lang.code,
+                      label: lang.name,
+                      subLabel: lang.nativeName,
+                    }))}
+                    onChange={(val) => setTempLang(val)}
+                  />
                 </div>
 
                 {/* Info Card Status Bahasa */}
