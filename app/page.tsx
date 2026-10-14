@@ -106,8 +106,8 @@ const offerSlides: OfferSlide[] = [
     id: 1,
     title: "Disinfeksi & Sterilisasi Perlindungan Dari Virus Berbahaya",
     subtitle:
-      "Sterilisasi menyeluruh dengan formulasi ramah lingkungan berstandar Kemenkes. Efektif membasmi 99,9% virus, kuman, dan bakteri untuk menjaga hunian serta tempat kerja Anda tetap higienis.",
-    image: "/images/banner2.jpg",
+      "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari virus berbahaya",
+    image: "/images/penawaran/1.png",
     tag: "Disinfeksi & Sterilisasi",
     article: {
       title: "Prosedur Sterilisasi ULV Cold Fogging Berstandar Medis untuk Perlindungan Ruangan",
@@ -127,10 +127,10 @@ const offerSlides: OfferSlide[] = [
   },
   {
     id: 2,
-    title: "Amankan Properti Anda dari Ancaman Kerusakan Rayap",
+    title: "Inspeksi Menyeluruh Bisnis & Rumah Anda",
     subtitle:
-      "Metode injeksi barrier kimiawi dan sistem umpan rayap bergaransi jangka panjang. Lindungi struktur bangunan dan interior kayu berharga Anda sebelum terlambat.",
-    image: "/images/banner3.jpg",
+      "Dengan biaya 0 rupiah",
+    image: "/images/penawaran/2.png",
     tag: "Anti Rayap Bergaransi",
     article: {
       title: "Strategi Proteksi Struktur Bangunan dari Koloni Rayap Tanah & Kayu",
@@ -150,10 +150,10 @@ const offerSlides: OfferSlide[] = [
   },
   {
     id: 3,
-    title: "Tempat Belajar & Bekerja yang Higienis dan Bebas Hama",
+    title: "Amankan properti anda dari ancaman rayap",
     subtitle:
-      "Menciptakan lingkungan belajar dan kantor yang bersih, aman, dan terbebas dari hama tikus dan serangga demi kenyamanan serta produktivitas maksimal.",
-    image: "/images/banner4.jpg",
+      "garansi sampai 7 tahun.",
+    image: "/images/penawaran/3.png",
     tag: "Solusi Komersial & Institusi",
     article: {
       title: "Standar Sanitasi dan Pengendalian Hama Fasilitas Publik & Pendidikan",
@@ -176,7 +176,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pest Control Hotel & Resort Bintang",
     subtitle:
       "Menjaga kenyamanan tamu, sanitasi kamar, dan reputasi bisnis Anda dari ancaman kutu busuk, serangga, dan hama dengan penanganan steril tanpa bau.",
-    image: "/images/banner5.jpg",
+    image: "/images/penawaran/4.png",
     tag: "Hospitality & Tourism",
     article: {
       title: "Protokol Pencegahan Kutu Busuk (Bed Bugs) dan Hama Perhotelan",
@@ -199,7 +199,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pest Control Restaurant & Cafe",
     subtitle:
       "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area makan dengan inspeksi berkala berstandar kebersihan tinggi.",
-    image: "/images/banner6.jpg",
+    image: "/images/penawaran/9.png",
     tag: "Restoran & Kuliner",
     article: {
       title: "Manajemen Pengendalian Hama Bisnis Kuliner & Restoran",
@@ -222,7 +222,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Fasilitas Medis & Rumah Sakit",
     subtitle:
       "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan untuk memutus rantai penularan kuman dan infeksi.",
-    image: "/images/banner7.jpg",
+    image: "/images/penawaran/10.png",
     tag: "Healthcare & Medis",
     article: {
       title: "Protokol Pengendalian Hama Fasilitas Kesehatan & Rumah Sakit",
@@ -245,7 +245,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pengendalian Hama Bandara & Transportasi",
     subtitle:
       "Mitra terpercaya pengendalian hama bandara, terminal, dan sarana transportasi publik berskala besar untuk kenyamanan mobilitas publik.",
-    image: "/images/banner8.jpg",
+    image: "/images/penawaran/5.png",
     tag: "Transportasi Publik",
     article: {
       title: "Pengendalian Hama Vektor Transportasi Publik & Bandara Internasional",
@@ -268,7 +268,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Gudang Logistik & Fasilitas Pabrik",
     subtitle:
       "Proteksi komprehensif stok barang, bahan baku, dan mesin industri dari kerusakan akibat gigitan tikus dan serangga perusak.",
-    image: "/images/banner2.jpg",
+    image: "/images/penawaran/11.png",
     tag: "Industri & Gudang",
     article: {
       title: "Sistem Manajemen Proteksi Gudang Logistik dan Manufaktur",
@@ -302,32 +302,32 @@ const specialOfferServices = [
   {
     id: 2,
     title: "OFFICE",
-    image: "/images/offer_office.jpg", // Gambar 2
+    image: "/images/penawaran/6.png", // Gambar 2
   },
   {
     id: 3,
     title: "HOTEL / RESORT",
-    image: "/images/offer_hotel.jpg", // Gambar 3
+    image: "/images/penawaran/4.png", // Gambar 3
   },
   {
     id: 4,
     title: "RESTORAN & CAFE",
-    image: "/images/offer_rumah.jpg", // Gambar 4 (duplikat)
+    image: "/images/penawaran/9.png", // Gambar 4 (duplikat)
   },
   {
     id: 5,
     title: "PABRIK & GUDANG",
-    image: "/images/offer_office.jpg", // Gambar 5 (duplikat)
+    image: "/images/penawaran/11.png", // Gambar 5 (duplikat)
   },
   {
     id: 6,
     title: "RUMAH SAKIT",
-    image: "/images/offer_hotel.jpg", // Gambar 6 (duplikat)
+    image: "/images/penawaran/10.png", // Gambar 6 (duplikat)
   },
   {
     id: 7,
     title: "SEKOLAH / KAMPUS",
-    image: "/images/offer_rumah.jpg", // Gambar 7 (duplikat)
+    image: "/images/penawaran/8.png", // Gambar 7 (duplikat)
   },
 ];
 
@@ -335,21 +335,27 @@ const specialOfferServices = [
 // DATA CLIENT LOGOS (2 BARIS ANIMASI BERGERAK SALING LAWAN ARAH)
 // =========================================================================
 const clientLogosRow1 = [
-  { name: "UPH", image: "/images/logo_uph.svg" },
-  { name: "PKOS", image: "/images/logo_pkos.svg" },
-  { name: "Tzu Chi", image: "/images/logo_tzuchi.svg" },
-  { name: "ExsaMap", image: "/images/logo_examap.svg" },
-  { name: "Wuling", image: "/images/logo_wuling.svg" },
-  { name: "Permata Hijau", image: "/images/logo_permata.svg" },
+  { name: "Logo 1", image: "/images/logo/1.PNG" },
+  { name: "Logo 2", image: "/images/logo/2.png" },
+  { name: "Logo 3", image: "/images/logo/3.png" },
+  { name: "Logo 4", image: "/images/logo/4.png" },
+  { name: "Logo 5", image: "/images/logo/5.png" },
+  { name: "Logo 6", image: "/images/logo/6.png" },
+  { name: "Logo 7", image: "/images/logo/7.png" },
+  { name: "Logo 8", image: "/images/logo/8.png" },
+  { name: "Logo 9", image: "/images/logo/9.png" },
 ];
 
 const clientLogosRow2 = [
-  { name: "Wuling", image: "/images/logo_wuling.svg" },
-  { name: "Permata Hijau", image: "/images/logo_permata.svg" },
-  { name: "UPH", image: "/images/logo_uph.svg" },
-  { name: "Tzu Chi", image: "/images/logo_tzuchi.svg" },
-  { name: "ExsaMap", image: "/images/logo_examap.svg" },
-  { name: "PKOS", image: "/images/logo_pkos.svg" },
+  { name: "Logo 10", image: "/images/logo/10.png" },
+  { name: "Logo 11", image: "/images/logo/11.png" },
+  { name: "Logo 12", image: "/images/logo/12.png" },
+  { name: "Logo 13", image: "/images/logo/13.png" },
+  { name: "Logo 14", image: "/images/logo/14.png" },
+  { name: "Logo 15", image: "/images/logo/15.png" },
+  { name: "Logo 16", image: "/images/logo/16.png" },
+  { name: "Logo 17", image: "/images/logo/17.png" },
+  { name: "Logo 18", image: "/images/logo/18.png" },
 ];
 
 export default function Home() {
@@ -470,7 +476,7 @@ export default function Home() {
   };
 
   // Quick booking state
-  const [selectedPest, setSelectedPest] = useState("Serangga Semut");
+  const [selectedPest, setSelectedPest] = useState("Rayap Tanah");
   const [selectedProperty, setSelectedProperty] = useState("Rumah Tinggal");
   const [selectedLocation, setSelectedLocation] = useState("Jakarta");
   const [detectedAddress, setDetectedAddress] = useState("");
@@ -638,57 +644,63 @@ export default function Home() {
     {
       name: "Rayap Tanah",
       latin: "Coptotermes formosanus",
-      image: "/images/pest_rayap.jpg",
+      image: "/images/binatang/rayap tanah.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
       name: "Lalat Hijau",
       latin: "Lucilia sericata",
-      image: "/images/pest_lalat.jpg",
+      image: "/images/binatang/lalat hijau.png",
     },
     {
-      name: "Kecoa / Coro",
+      name: "Kecoa Amerikana",
       latin: "Periplaneta americana",
-      image: "/images/pest_kecoa.jpg",
+      image: "/images/binatang/kecoa amerikana.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
-      name: "Tikus Got",
+      name: "Tikus",
       latin: "Rattus norvegicus",
-      image: "/images/pest_tikus.jpg",
+      image: "/images/binatang/tikus.png",
     },
     {
-      name: "Kutu Busuk",
+      name: "Kutu Kasur",
       latin: "Cimex lectularius",
-      image: "/images/pest_kutubusuk.jpg",
+      image: "/images/binatang/kutu kasur.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
-      name: "Semut Api",
-      latin: "Solenopsis invicta",
-      image: "/images/pest_semut.svg",
+      name: "Semut Rang Rang",
+      latin: "Oecophylla smaragdina",
+      image: "/images/binatang/semut rang rang.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
-      name: "Nyamuk Aedes",
+      name: "Nyamuk Aeydes",
       latin: "Aedes aegypti",
-      image: "/images/pest_nyamuk.svg",
+      image: "/images/binatang/nyamuk aeydes.png",
     },
     {
-      name: "Tawon Sengat",
+      name: "Tawon Vespa",
       latin: "Vespa affinis",
-      image: "/images/pest_tawon.svg",
+      image: "/images/binatang/tawon vespa.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
-      name: "Kelabang / Lipan",
-      latin: "Scolopendra subspinipes",
-      image: "/images/pest_kelabang.svg",
+      name: "Kelelawar",
+      latin: "Chiroptera",
+      image: "/images/binatang/kelelawar.png",
     },
     {
-      name: "Kutu Hewan / Pinjal",
-      latin: "Ctenocephalides felis",
-      image: "/images/pest_pinjal.svg",
+      name: "Burung Greja",
+      latin: "Passer montanus",
+      image: "/images/binatang/burung greja.png",
     },
     {
-      name: "Ngengat Pakaian",
-      latin: "Tineola bisselliella",
-      image: "/images/pest_ngengat.svg",
+      name: "Ular Weling",
+      latin: "Bungarus candidus",
+      image: "/images/binatang/ular weling.png",
+      imageClass: "object-contain p-2.5 sm:p-3",
     },
   ];
 
@@ -789,7 +801,7 @@ export default function Home() {
                     onClick={() => setLayananDropdownOpen(false)}
                     className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
                   >
-                    Anti Rayap Fondasi
+                    Anti Rayap
                   </a>
                   <a
                     href="#penawaran"
@@ -1104,15 +1116,15 @@ export default function Home() {
                   >
                     <option value="Rayap Tanah">Rayap Tanah</option>
                     <option value="Lalat Hijau">Lalat Hijau</option>
-                    <option value="Kecoa / Coro">Kecoa / Coro</option>
-                    <option value="Tikus Got">Tikus Got</option>
-                    <option value="Kutu Busuk">Kutu Busuk</option>
-                    <option value="Semut Api">Semut Api</option>
-                    <option value="Nyamuk Aedes">Nyamuk Aedes</option>
-                    <option value="Tawon Sengat">Tawon Sengat</option>
-                    <option value="Kelabang / Lipan">Kelabang / Lipan</option>
-                    <option value="Kutu Hewan / Pinjal">Kutu Hewan / Pinjal</option>
-                    <option value="Ngengat Pakaian">Ngengat Pakaian</option>
+                    <option value="Kecoa Amerikana">Kecoa Amerikana</option>
+                    <option value="Tikus">Tikus</option>
+                    <option value="Kutu Kasur">Kutu Kasur</option>
+                    <option value="Semut Rang Rang">Semut Rang Rang</option>
+                    <option value="Nyamuk Aeydes">Nyamuk Aeydes</option>
+                    <option value="Tawon Vespa">Tawon Vespa</option>
+                    <option value="Kelelawar">Kelelawar</option>
+                    <option value="Burung Greja">Burung Greja</option>
+                    <option value="Ular Weling">Ular Weling</option>
                   </select>
                 </div>
               </div>
@@ -1142,9 +1154,8 @@ export default function Home() {
 
               {/* Kolom 3: Lokasi Anda */}
               <div
-                className={`flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3 border-b md:border-b-0 md:border-r-2 border-zinc-300 md:border-zinc-400 transition-colors duration-200 ${
-                  detectedAddress ? "bg-blue-50/70" : ""
-                }`}
+                className={`flex-1 flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2 sm:py-3 border-b md:border-b-0 md:border-r-2 border-zinc-300 md:border-zinc-400 transition-colors duration-200 ${detectedAddress ? "bg-blue-50/70" : ""
+                  }`}
               >
                 <div className="text-zinc-900 shrink-0">
                   {detectedAddress ? (
@@ -1209,18 +1220,16 @@ export default function Home() {
               <button
                 type="button"
                 onClick={handleUseCurrentLocation}
-                className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border shadow-sm text-xs sm:text-sm font-semibold transition-all cursor-pointer group select-none ${
-                  detectedAddress
-                    ? "bg-blue-50 border-blue-300 text-[#00629b]"
-                    : "bg-white/95 hover:bg-white border-zinc-200/90 text-[#00629b] hover:text-[#004e7c]"
-                }`}
+                className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border shadow-sm text-xs sm:text-sm font-semibold transition-all cursor-pointer group select-none ${detectedAddress
+                  ? "bg-blue-50 border-blue-300 text-[#00629b]"
+                  : "bg-white/95 hover:bg-white border-zinc-200/90 text-[#00629b] hover:text-[#004e7c]"
+                  }`}
                 title="Gunakan lokasi saya saat ini"
               >
                 {/* Target / Crosshair Icon persis seperti di gambar referensi */}
                 <svg
-                  className={`w-4 h-4 text-[#00629b] shrink-0 transition-colors ${
-                    locationDetecting ? "animate-spin" : ""
-                  }`}
+                  className={`w-4 h-4 text-[#00629b] shrink-0 transition-colors ${locationDetecting ? "animate-spin" : ""
+                    }`}
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -1274,10 +1283,8 @@ export default function Home() {
               return (
                 <div
                   key={slide.id}
-                  onClick={() => setSelectedArticle(slide)}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                     }`}
-                  title="Klik untuk membuka artikel penawaran"
                 >
                   {/* Foto Latar Penawaran */}
                   <Image
@@ -1291,12 +1298,6 @@ export default function Home() {
                   {/* Dark Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/90 via-black/65 to-black/30 sm:to-transparent flex items-end sm:items-center">
                     <div className="p-5 sm:p-10 md:p-14 max-w-2xl text-white space-y-2.5 sm:space-y-3.5">
-                      {/* Tag Kategori Penawaran */}
-                      <div className="inline-flex items-center gap-1.5 bg-[#C81E27] text-white px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-sm">
-                        <span>★</span>
-                        <span>{slide.tag}</span>
-                      </div>
-
                       {/* Judul Penawaran */}
                       <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-white drop-shadow-md">
                         {slide.title}
@@ -1306,21 +1307,6 @@ export default function Home() {
                       <p className="text-xs sm:text-sm md:text-base text-zinc-200 leading-relaxed max-w-xl line-clamp-2 sm:line-clamp-3">
                         {slide.subtitle}
                       </p>
-
-                      {/* Tombol Klik Menuju Artikel */}
-                      <div className="pt-1">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedArticle(slide);
-                          }}
-                          className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-[#C81E27] font-black text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-lg transition-all cursor-pointer hover:shadow-xl hover:translate-x-1"
-                        >
-                          <span>Baca Artikel Penawaran</span>
-                          <span className="text-sm">→</span>
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1420,11 +1406,10 @@ export default function Home() {
                     type="button"
                     onClick={() => goToOffer(idx)}
                     aria-label={`Lihat penawaran ${idx + 1}`}
-                    className={`rounded-full transition-all cursor-pointer ${
-                      isActive
-                        ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#C81E27] scale-110"
-                        : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-200 hover:bg-[#C81E27]/50"
-                    }`}
+                    className={`rounded-full transition-all cursor-pointer ${isActive
+                      ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#C81E27] scale-110"
+                      : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-200 hover:bg-[#C81E27]/50"
+                      }`}
                   />
                 );
               })}
@@ -1537,34 +1522,23 @@ export default function Home() {
             Prime Shield-01
           </h2>
 
-          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-zinc-200 bg-[#0c0d10] grid grid-cols-1 md:grid-cols-12">
-            {/* Gambar Kiri: Teknisi Instalasi */}
-            <div className="md:col-span-7 bg-zinc-900">
-              <img
-                src="/images/prime-shield-01.jpeg"
-                alt="Instalasi Prime Shield-01 oleh Teknisi VECOS"
-                className="w-full h-auto block"
-              />
-            </div>
+          <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-zinc-200 bg-[#0c0d10]">
+            <Image
+              src="/images/prime-shield.png"
+              alt="VECOS Prime Shield-01"
+              width={3419}
+              height={2809}
+              className="w-full h-auto block"
+              priority
+            />
 
-            {/* Gambar Kanan: 3 Sudut Produk */}
-            <div className="md:col-span-5 bg-[#0c0d10] p-3 sm:p-4 md:p-6 flex flex-col">
-              {/* Teks Atas Kiri: VECOS Prime Shield-01 */}
-              <div className="text-left mb-2 sm:mb-3 shrink-0">
-                <div className="text-white text-sm sm:text-base md:text-lg font-black tracking-wide leading-tight uppercase font-sans">
-                  VECOS
-                </div>
-                <div className="text-white text-xs sm:text-sm md:text-base font-bold tracking-tight leading-tight font-sans">
-                  Prime Shield-01
-                </div>
+            {/* Teks: VECOS Prime Shield-01 */}
+            <div className="absolute top-3 sm:top-5 md:top-8 lg:top-10 left-[54%] z-10 pointer-events-none select-none">
+              <div className="text-white text-xs sm:text-base md:text-xl lg:text-2xl font-black tracking-wide leading-tight uppercase font-sans">
+                VECOS
               </div>
-
-              <div className="flex-1 flex items-center justify-center">
-                <img
-                  src="/images/prime_shield_angles.jpg"
-                  alt="VECOS Prime Shield-01 Tiga Sudut Tampilan"
-                  className="w-full h-auto block"
-                />
+              <div className="text-white text-[10px] sm:text-sm md:text-lg lg:text-xl font-bold tracking-tight leading-tight font-sans">
+                Prime Shield-01
               </div>
             </div>
           </div>
@@ -1577,7 +1551,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-                Pest Type
+                Jenis Hama
               </h2>
               <p className="text-xs sm:text-sm text-zinc-500 font-medium">
                 {pestPage === 0
@@ -1648,7 +1622,7 @@ export default function Home() {
                     src={pest.image}
                     alt={pest.name}
                     fill
-                    className="object-cover group-hover:scale-108 transition-transform duration-300"
+                    className={`${pest.imageClass || "object-cover"} group-hover:scale-108 transition-transform duration-300`}
                   />
                 </div>
 
@@ -1749,7 +1723,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-                Special Offer
+                Penawaran Spesial
               </h2>
               <p className="text-xs sm:text-sm text-zinc-500 font-medium">
                 Geser untuk menjelajahi 7 layanan penawaran khusus properti Anda
