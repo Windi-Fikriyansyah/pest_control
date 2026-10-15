@@ -1818,7 +1818,7 @@ export default function Home() {
         {/* ======================================================== */}
         <section
           id="penawaran"
-          className="space-y-3 w-full"
+          className="space-y-3 w-full px-2 sm:px-0"
         >
           <div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
@@ -1984,7 +1984,7 @@ export default function Home() {
         {/* ======================================================== */}
         {/* 4. SECTION: PRIME SHIELD-01 (FULL WIDTH)                 */}
         {/* ======================================================== */}
-        <section id="prime-shield" className="space-y-4 w-full">
+        <section id="prime-shield" className="space-y-4 w-full px-2 sm:px-0">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
             Prime Shield-01
           </h2>
@@ -2014,7 +2014,7 @@ export default function Home() {
         {/* ======================================================== */}
         {/* 5. SECTION: PEST TYPE (TOTAL 11 MACAM, TAMPILAN 6, SISANYA ICON SELANJUTNYA) */}
         {/* ======================================================== */}
-        <section id="layanan" className="space-y-6 w-full">
+        <section id="layanan" className="space-y-6 w-full px-2 sm:px-0">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
