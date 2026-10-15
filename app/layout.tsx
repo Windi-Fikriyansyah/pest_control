@@ -9,6 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vecos.co.id"),
   title: "VECOS - Jasa Pengendalian Hama & Pest Control Profesional Bergaransi",
   description: "Solusi perlindungan hama terbaik untuk hunian dan bisnis Anda. Bersertifikasi resmi, aman untuk keluarga & hewan peliharaan, bergaransi dengan teknologi Vecos Proofing Defender.",
   keywords: "pest control, jasa pembasmi hama, anti rayap, pembasmi kecoa, pengendali tikus, disinfeksi ruangan, vecos",

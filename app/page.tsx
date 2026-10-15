@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // =========================================================================
 // PANDUAN PENGGANTIAN GAMBAR & KONTEN BANNER SLIDE UTAMA (HERO SECTION):
@@ -14,74 +16,99 @@ const heroSlides = [
     title: "Jangan Biarkan Hama Merusak Tempat yang Paling Anda Jaga",
     subtitle:
       "Baik untuk Bisnis Anda dari kerugian maupun kenyamanan Rumah Anda, ambil kembali kendali penuh dan lindungi aset berharga dari ancaman hama secara tuntas dan bergaransi.",
-    image: "/images/vecos.jpg", // Ganti gambar slide 1 di sini
+    image: "/images/banner/pc/1.png",
+    imageMobile: "/images/banner/mobile/1.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "rumah",
   },
   {
     id: 2,
     title: "Perlindungan Sterilisasi maksimal untuk Ruang Kerja dan Hunian Bebas Virus",
     subtitle:
       "Disinfeksi cold fogging uap mikro berstandar medis untuk membasmi 99.9% patogen dan virus berbahaya tanpa residu kimia berlebih.",
-    image: "/images/banner2.jpg", // Ganti gambar slide 3 di sini
+    image: "/images/banner/pc/2.png",
+    imageMobile: "/images/banner/mobile/2.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
-
+    slug: "disinfeksi",
   },
   {
     id: 3,
     title: "Amankan Properti Anda dari Ancaman Rayap",
     subtitle:
       "Garansi 7 Bulan.",
-    image: "/images/banner3.jpg", // Ganti gambar slide 2 di sini
+    image: "/images/banner/pc/3.png",
+    imageMobile: "/images/banner/mobile/3.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "layanan-vecos",
   },
   {
     id: 4,
     title: "Tempat Belajar yang Terbebas dari Hama",
     subtitle:
       "Menciptakan lingkungan belajar yang bersih, aman dan bebas hama bagi siswa dan staff.",
-    image: "/images/banner4.jpg", // Ganti gambar slide 4 di sini
+    image: "/images/banner/pc/4.png",
+    imageMobile: "/images/banner/mobile/4.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "kampus",
   },
   {
     id: 5,
     title: "Perlindungan Pest Control Hotel & Resort",
     subtitle:
       "Menjaga kenyamanan tamu kualitas sanitasi dan reputasi bisnis Anda dari ancaman Hama.",
-    image: "/images/banner5.jpg", // Ganti gambar slide 5 di sini
+    image: "/images/banner/pc/5.png",
+    imageMobile: "/images/banner/mobile/5.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "hotel",
   },
   {
     id: 6,
     title: "Perlindungan Pest Control Restaurant",
     subtitle:
       "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area Makan.",
-    image: "/images/banner6.jpg", // Ganti gambar slide 6 di sini
+    image: "/images/banner/pc/6.png",
+    imageMobile: "/images/banner/mobile/6.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "restauran",
   },
   {
     id: 7,
     title: "Perlindungan Pest Control Hospital",
     subtitle:
       "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan.",
-    image: "/images/banner7.jpg", // Ganti gambar slide 6 di sini
+    image: "/images/banner/pc/7.png",
+    imageMobile: "/images/banner/mobile/7.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "rumah-sakit",
   },
-
   {
     id: 8,
     title: "Perlindungan Pest Control Airport",
     subtitle:
       "Mitra terpercaya pengendalian Hama Bandara.",
-    image: "/images/banner8.jpg", // Ganti gambar slide 6 di sini
+    image: "/images/banner/pc/8.png",
+    imageMobile: "/images/banner/mobile/8.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
+    slug: "bandara",
+  },
+  {
+    id: 9,
+    title: "Sistem Pengendalian & Monitoring Hama Terpadu",
+    subtitle:
+      "Pemasangan monitoring bait station profesional untuk proteksi aset properti dan industri jangka panjang.",
+    image: "/images/banner/pc/9.png",
+    imageMobile: "/images/banner/mobile/9.png",
+    callCenter: "0857-4368-1500",
+    ctaText: "Amankan Properti Anda",
+    slug: "warehouse",
   },
 ];
 
@@ -92,6 +119,7 @@ interface OfferSlide {
   subtitle: string;
   image: string;
   tag: string;
+  slug: string;
   article: {
     title: string;
     date: string;
@@ -104,34 +132,12 @@ interface OfferSlide {
 const offerSlides: OfferSlide[] = [
   {
     id: 1,
-    title: "Disinfeksi & Sterilisasi Perlindungan Dari Virus Berbahaya",
+    title: "Inspeksi Menyeluruh Bebas Rayap & Hama Rumah Tinggal",
     subtitle:
-      "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari virus berbahaya",
-    image: "/images/penawaran/1.png",
-    tag: "Disinfeksi & Sterilisasi",
-    article: {
-      title: "Prosedur Sterilisasi ULV Cold Fogging Berstandar Medis untuk Perlindungan Ruangan",
-      date: "13 Oktober 2026",
-      readTime: "3 Menit Baca",
-      content: [
-        "Metode ULV (Ultra Low Volume) Cold Fogging menghasilkan partikel aerosol mikro berukuran 5-20 mikron yang mampu melayang di udara dan menjangkau sudut-sudut paling tersembunyi yang tidak dapat dijangkau pembersihan konvensional.",
-        "Senyawa aktif disinfektan yang digunakan VECOS telah teruji klinis memenuhi regulasi Kementerian Kesehatan RI, terbukti membunuh bakteri patogen, virus influenza, dan spora jamur tanpa meninggalkan residu korosif atau bau menyengat pada perabot dan alat elektronik.",
-        "Layanan ini sangat direkomendasikan secara berkala untuk kantor komersial, klinik, sekolah, dan hunian keluarga guna memastikan sirkulasi udara steril dan lingkungan bebas penularan penyakit."
-      ],
-      keyPoints: [
-        "Membasmi 99,9% virus dan bakteri pathogen di udara dan permukaan.",
-        "Formula food-grade non-korosif, aman bagi komputer dan furnitur.",
-        "Waktu aerasi cepat: ruangan dapat digunakan kembali dalam 30-45 menit."
-      ]
-    }
-  },
-  {
-    id: 2,
-    title: "Inspeksi Menyeluruh Bisnis & Rumah Anda",
-    subtitle:
-      "Dengan biaya 0 rupiah",
+      "Perlindungan maksimal struktur bangunan dan perabot kayu dengan metode barrier dan baiting ramah lingkungan tanpa bau menyengat.",
     image: "/images/penawaran/2.png",
-    tag: "Anti Rayap Bergaransi",
+    tag: "Hunian & Rumah Tinggal",
+    slug: "rumah",
     article: {
       title: "Strategi Proteksi Struktur Bangunan dari Koloni Rayap Tanah & Kayu",
       date: "10 Oktober 2026",
@@ -149,35 +155,37 @@ const offerSlides: OfferSlide[] = [
     }
   },
   {
-    id: 3,
-    title: "Amankan properti anda dari ancaman rayap",
+    id: 2,
+    title: "Perlindungan Pest Control Lingkungan Kerja Kantor Komersial",
     subtitle:
-      "garansi sampai 7 tahun.",
-    image: "/images/penawaran/3.png",
-    tag: "Solusi Komersial & Institusi",
+      "Menciptakan suasana kerja steril, sehat, dan produktif bebas dari gangguan hama tikus dan serangga tanpa mengganggu operasional staf.",
+    image: "/images/offer_office.jpg",
+    tag: "Perkantoran & Gedung Komersial",
+    slug: "kantor",
     article: {
-      title: "Standar Sanitasi dan Pengendalian Hama Fasilitas Publik & Pendidikan",
+      title: "Standar Sanitasi dan Pengendalian Hama Fasilitas Publik & Perkantoran",
       date: "8 Oktober 2026",
       readTime: "3 Menit Baca",
       content: [
-        "Fasilitas umum seperti sekolah, universitas, dan perkantoran memiliki lalu lintas manusia yang padat dan area konsumsi makanan yang rentan menjadi magnet bagi hama tikus, kecoa, serta lalat.",
-        "Pendekatan IPM (Integrated Pest Management) dari VECOS menitikberatkan pada pencegahan mekanis, penutupan celah akses (proofing), dan penempatan bait station tertutup yang aman dari jangkauan anak-anak maupun staf.",
-        "Dokumentasi laporan servis transparan kami sediakan untuk melengkapi audit standar sanitasi dan akreditasi kebersihan instansi Anda."
+        "Gedung perkantoran dengan lalu lintas pekerja yang padat dan area pantry konsumsi rentan menjadi sarang tersembunyi bagi hama tikus, kecoa, serta lalat.",
+        "Pendekatan IPM (Integrated Pest Management) dari VECOS menitikberatkan pada pencegahan mekanis, penutupan celah akses (proofing), dan penempatan bait station tertutup yang aman dari jangkauan staf dan kabel server.",
+        "Dokumentasi laporan servis transparan kami sediakan untuk melengkapi audit standar higienitas dan akreditasi kebersihan instansi Anda."
       ],
       keyPoints: [
-        "Penempatan bait station terkunci aman dari anak-anak dan staf.",
-        "Inspeksi celah dan sanitasi menyeluruh di area pantry dan kantin.",
+        "Penempatan bait station terkunci aman dari staf dan perangkat elektronik.",
+        "Inspeksi celah dan sanitasi menyeluruh di area pantry dan ruang kerja.",
         "Laporan audit berkala untuk pemenuhan standar kepatuhan dinas terkait."
       ]
     }
   },
   {
-    id: 4,
+    id: 3,
     title: "Perlindungan Pest Control Hotel & Resort Bintang",
     subtitle:
       "Menjaga kenyamanan tamu, sanitasi kamar, dan reputasi bisnis Anda dari ancaman kutu busuk, serangga, dan hama dengan penanganan steril tanpa bau.",
     image: "/images/penawaran/4.png",
-    tag: "Hospitality & Tourism",
+    tag: "Hospitality & Perhotelan",
+    slug: "hotel",
     article: {
       title: "Protokol Pencegahan Kutu Busuk (Bed Bugs) dan Hama Perhotelan",
       date: "5 Oktober 2026",
@@ -195,12 +203,13 @@ const offerSlides: OfferSlide[] = [
     }
   },
   {
-    id: 5,
-    title: "Perlindungan Pest Control Restaurant & Cafe",
+    id: 4,
+    title: "Perlindungan Pest Control Restaurant & Dapur Kuliner",
     subtitle:
-      "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area makan dengan inspeksi berkala berstandar kebersihan tinggi.",
-    image: "/images/penawaran/9.png",
-    tag: "Restoran & Kuliner",
+      "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area makan dengan formula food-grade berstandar higienitas tinggi.",
+    image: "/images/offer/restaurant.jpeg",
+    tag: "Restoran & Dapur Kuliner",
+    slug: "restauran",
     article: {
       title: "Manajemen Pengendalian Hama Bisnis Kuliner & Restoran",
       date: "3 Oktober 2026",
@@ -218,12 +227,61 @@ const offerSlides: OfferSlide[] = [
     }
   },
   {
+    id: 5,
+    title: "Perlindungan Pest Control Café & Coffee Shop",
+    subtitle:
+      "Menjaga estetika, higienitas bar kopi, dan kenyamanan nongkrong pelanggan bebas dari kecoa, semut, dan lalat dengan treatment senyap.",
+    image: "/images/penawaran/9.png",
+    tag: "Café & Coffee Shop",
+    slug: "cafe",
+    article: {
+      title: "Pengendalian Hama Higienis untuk Café & Kedai Kopi Modern",
+      date: "3 Oktober 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Café modern mengandalkan kenyamanan suasana dan higienitas area barista. Kehadiran lalat buah atau semut sirup dapat langsung merusak pengalaman nongkrong pelanggan.",
+        "VECOS menerapkan formula gel baiting tak berbau di balik mesin espresso, kulkas chiller, dan celah meja counter.",
+        "Perawatan berkala di luar jam buka menjaga café Anda selalu bersih dan aman dikunjungi setiap hari."
+      ],
+      keyPoints: [
+        "Penanganan khusus area mesin espresso, grinder, dan penyimpanan sirup.",
+        "Formula gel baiting tidak berbau, higienis dan tidak mencemari aroma kopi.",
+        "Layanan fleksibel di malam hari setelah jam operasional café tutup."
+      ]
+    }
+  },
+  {
     id: 6,
+    title: "Pengendalian Hama Fasilitas Pabrik Industri Makanan",
+    subtitle:
+      "Solusi terintegrasi audit HACCP, BRC, dan BPOM untuk memastikan lini produksi dan packaging bebas kontaminasi hama biologis.",
+    image: "/images/penawaran/11.png",
+    tag: "Pabrik Industri Makanan",
+    slug: "pabrik-makanan",
+    article: {
+      title: "Protokol Audit HACCP & Pengendalian Hama Industri Makanan",
+      date: "2 Oktober 2026",
+      readTime: "4 Menit Baca",
+      content: [
+        "Pabrik pengolahan makanan dan minuman menghadapi regulasi keamanan pangan ketat yang menuntut nol toleransi terhadap kontaminasi hama.",
+        "VECOS mengimplementasikan Insect Light Trap (ILT) shatterproof, rodent station bersertifikasi eksternal, dan audit celah menyeluruh di setiap ruang produksi.",
+        "Seluruh dokumentasi batch record dan pemetaan tren populasi hama disiapkan rapi untuk audit berkala auditor internasional."
+      ],
+      keyPoints: [
+        "Kepatuhan penuh standar audit ISO 22000, HACCP, FSSC, dan BPOM.",
+        "Pemasangan Insect Light Trap lampu anti-pecah (shatterproof).",
+        "Analisis tren digital populasi hama berkala (trend analysis reporting)."
+      ]
+    }
+  },
+  {
+    id: 7,
     title: "Perlindungan Fasilitas Medis & Rumah Sakit",
     subtitle:
       "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan untuk memutus rantai penularan kuman dan infeksi.",
     image: "/images/penawaran/10.png",
-    tag: "Healthcare & Medis",
+    tag: "Healthcare & Fasilitas Medis",
+    slug: "rumah-sakit",
     article: {
       title: "Protokol Pengendalian Hama Fasilitas Kesehatan & Rumah Sakit",
       date: "1 Oktober 2026",
@@ -241,12 +299,37 @@ const offerSlides: OfferSlide[] = [
     }
   },
   {
-    id: 7,
+    id: 8,
+    title: "Sanitasi & Pengendalian Hama Fasilitas Sekolah & Kampus",
+    subtitle:
+      "Perlindungan ruang kelas, laboratorium, kantin, dan perpustakaan dari gigitan serangga dan rayap kayu agar lingkungan belajar tetap aman dan kondusif.",
+    image: "/images/offer/kampus.jpeg",
+    tag: "Pendidikan & Kampus",
+    slug: "kampus",
+    article: {
+      title: "Manajemen Pengendalian Hama Institusi Pendidikan dan Sekolah",
+      date: "30 September 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Sekolah dan universitas memiliki area terbuka hijau, kantin, dan ruang belajar luas yang rentan menjadi sarang nyamuk, tikus, dan rayap.",
+        "VECOS menerapkan pengasapan larvasida untuk genangan air, perangkap tertutup ramah anak, dan perlindungan buku perpustakaan dari kutu buku dan rayap.",
+        "Perlakuan dilakukan di hari libur atau akhir pekan untuk memastikan nol paparan kimia pada siswa dan tenaga pendidik."
+      ],
+      keyPoints: [
+        "Aman bagi siswa: perlakuan terjadwal saat akhir pekan atau hari libur.",
+        "Pengendalian jentik nyamuk demam berdarah di lingkungan sekolah.",
+        "Proteksi koleksi buku perpustakaan dan laboratorium ilmiah."
+      ]
+    }
+  },
+  {
+    id: 9,
     title: "Perlindungan Pengendalian Hama Bandara & Transportasi",
     subtitle:
       "Mitra terpercaya pengendalian hama bandara, terminal, dan sarana transportasi publik berskala besar untuk kenyamanan mobilitas publik.",
     image: "/images/penawaran/5.png",
-    tag: "Transportasi Publik",
+    tag: "Transportasi Publik & Bandara",
+    slug: "bandara",
     article: {
       title: "Pengendalian Hama Vektor Transportasi Publik & Bandara Internasional",
       date: "28 September 2026",
@@ -264,12 +347,37 @@ const offerSlides: OfferSlide[] = [
     }
   },
   {
-    id: 8,
-    title: "Perlindungan Gudang Logistik & Fasilitas Pabrik",
+    id: 10,
+    title: "Manajemen Pest Control Hipermarket & Supermarket",
     subtitle:
-      "Proteksi komprehensif stok barang, bahan baku, dan mesin industri dari kerusakan akibat gigitan tikus dan serangga perusak.",
-    image: "/images/penawaran/11.png",
-    tag: "Industri & Gudang",
+      "Proteksi rak display produk segar, gudang sembako, dan lorong belanja dari gangguan hama tikus dan serangga demi kepuasan pelanggan.",
+    image: "/images/penawaran/retail.jpg",
+    tag: "Hipermarket & Retail Modern",
+    slug: "hipermarket",
+    article: {
+      title: "Standar Sanitasi dan Pengendalian Hama Hipermarket Skala Besar",
+      date: "26 September 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Hipermarket dan supermarket memiliki display produk makanan basah, buah-buahan, dan gudang stok yang memerlukan sanitasi prima 24 jam.",
+        "VECOS menempatkan stasiun umpan tertutup tamper-proof dan lampu perangkap serangga terbang di area non-display yang tersembunyi dari pengunjung.",
+        "Inspeksi terjadwal berkala menjamin seluruh produk di rak aman dari kontaminasi hama tikus maupun kecoa."
+      ],
+      keyPoints: [
+        "Pengawasan ketat area produk segar (meat, seafood, produce).",
+        "Penempatan stasiun perangkap tertutup aman dari jangkauan pengunjung.",
+        "Laporan audit berkala untuk pemenuhan standar sanitasi ritel modern."
+      ]
+    }
+  },
+  {
+    id: 11,
+    title: "Perlindungan Gudang Logistik & Fasilitas Penyimpanan",
+    subtitle:
+      "Proteksi komprehensif stok barang, bahan baku, dan mesin industri dari kerusakan fatal akibat gigitan tikus dan serangga perusak.",
+    image: "/images/offer/warehouse.jpeg",
+    tag: "Gudang Logistik & Warehouse",
+    slug: "warehouse",
     article: {
       title: "Sistem Manajemen Proteksi Gudang Logistik dan Manufaktur",
       date: "25 September 2026",
@@ -285,49 +393,109 @@ const offerSlides: OfferSlide[] = [
         "Sertifikasi laporan sanitasi logistik berstandar ISO."
       ]
     }
+  },
+  {
+    id: 12,
+    title: "Disinfeksi & Sterilisasi Perlindungan Dari Virus Berbahaya",
+    subtitle:
+      "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari kuman, bakteri patogen, dan virus berbahaya dengan metode ULV Cold Fogging.",
+    image: "/images/penawaran/1.png",
+    tag: "Disinfeksi & Sterilisasi",
+    slug: "disinfeksi",
+    article: {
+      title: "Prosedur Sterilisasi ULV Cold Fogging Berstandar Medis untuk Perlindungan Ruangan",
+      date: "24 September 2026",
+      readTime: "3 Menit Baca",
+      content: [
+        "Metode ULV (Ultra Low Volume) Cold Fogging menghasilkan partikel aerosol mikro berukuran 5-20 mikron yang mampu melayang di udara dan menjangkau sudut-sudut paling tersembunyi yang tidak dapat dijangkau pembersihan konvensional.",
+        "Senyawa aktif disinfektan yang digunakan VECOS telah teruji klinis memenuhi regulasi Kementerian Kesehatan RI, terbukti membunuh bakteri patogen, virus influenza, dan spora jamur tanpa meninggalkan residu korosif atau bau menyengat pada perabot dan alat elektronik.",
+        "Layanan ini sangat direkomendasikan secara berkala untuk kantor komersial, klinik, sekolah, dan hunian keluarga guna memastikan sirkulasi udara steril dan lingkungan bebas penularan penyakit."
+      ],
+      keyPoints: [
+        "Membasmi 99,9% virus dan bakteri pathogen di udara dan permukaan.",
+        "Formula food-grade non-korosif, aman bagi komputer dan furnitur.",
+        "Waktu aerasi cepat: ruangan dapat digunakan kembali dalam 30-45 menit."
+      ]
+    }
   }
 ];
 
 // =========================================================================
 // =========================================================================
-// DATA SPECIAL OFFER (7 LAYANAN DENGAN ICON GESER)
-// Gambar diduplikasi sementara, silakan ganti image & title sesuai kebutuhan:
+// DATA SPECIAL OFFER (12 LAYANAN BERDASARKAN FORM HERO SECTION)
 // =========================================================================
 const specialOfferServices = [
   {
     id: 1,
     title: "RUMAH TINGGAL",
-    image: "/images/offer_rumah.jpg", // Gambar 1
+    image: "/images/offer_rumah.jpg",
+    slug: "rumah",
   },
   {
     id: 2,
-    title: "OFFICE",
-    image: "/images/offer_office.jpg", // Gambar 2
+    title: "OFFICE / PERKANTORAN",
+    image: "/images/offer_office.jpg",
+    slug: "kantor",
   },
   {
     id: 3,
-    title: "HOTEL / RESORT",
-    image: "/images/offer_hotel.jpg", // Gambar 3
+    title: "HOTEL & RESORT",
+    image: "/images/offer_hotel.jpg",
+    slug: "hotel",
   },
   {
     id: 4,
-    title: "RESTORAN & CAFE",
-    image: "/images/offer/restaurant.jpeg", // Gambar 4 (duplikat)
+    title: "RESTORAN & KULINER",
+    image: "/images/offer/restaurant.jpeg",
+    slug: "restauran",
   },
   {
     id: 5,
-    title: "PABRIK & GUDANG",
-    image: "/images/offer/warehouse.jpeg", // Gambar 5 (duplikat)
+    title: "CAFÉ & COFFEE SHOP",
+    image: "/images/penawaran/9.png",
+    slug: "cafe",
   },
   {
     id: 6,
-    title: "RUMAH SAKIT",
-    image: "/images/offer/hospital.jpeg", // Gambar 6 (duplikat)
+    title: "PABRIK INDUSTRI MAKANAN",
+    image: "/images/penawaran/11.png",
+    slug: "pabrik-makanan",
   },
   {
     id: 7,
-    title: "SEKOLAH / KAMPUS",
-    image: "/images/offer/kampus.jpeg", // Gambar 7 (duplikat)
+    title: "RUMAH SAKIT & MEDIS",
+    image: "/images/offer/hospital.jpeg",
+    slug: "rumah-sakit",
+  },
+  {
+    id: 8,
+    title: "SEKOLAH & KAMPUS",
+    image: "/images/offer/kampus.jpeg",
+    slug: "kampus",
+  },
+  {
+    id: 9,
+    title: "BANDARA & TRANSPORTASI",
+    image: "/images/penawaran/5.png",
+    slug: "bandara",
+  },
+  {
+    id: 10,
+    title: "HIPERMARKET & SUPERMARKET",
+    image: "/images/penawaran/retail.jpg",
+    slug: "hipermarket",
+  },
+  {
+    id: 11,
+    title: "WAREHOUSE & LOGISTIK",
+    image: "/images/offer/warehouse.jpeg",
+    slug: "warehouse",
+  },
+  {
+    id: 12,
+    title: "DISINFEKSI & STERILISASI",
+    image: "/images/penawaran/1.png",
+    slug: "disinfeksi",
   },
 ];
 
@@ -590,6 +758,8 @@ function SearchableSelect({
 }
 
 export default function Home() {
+  const router = useRouter();
+
   // Navigation & Drawer
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [layananDropdownOpen, setLayananDropdownOpen] = useState(false);
@@ -807,7 +977,7 @@ export default function Home() {
 
   // Quick booking state
   const [selectedPest, setSelectedPest] = useState("Rayap Tanah");
-  const [selectedProperty, setSelectedProperty] = useState("Rumah Tinggal");
+  const [selectedProperty, setSelectedProperty] = useState("Rumah");
   const [selectedLocation, setSelectedLocation] = useState("Jakarta");
   const [detectedAddress, setDetectedAddress] = useState("");
   const [locationDetecting, setLocationDetecting] = useState(false);
@@ -943,6 +1113,33 @@ export default function Home() {
     }
   };
 
+  const getPropertySlug = (prop: string): string => {
+    const p = (prop || "").toLowerCase();
+    // 12 Properti sesuai form hero section
+    if (p.includes("pabrik makanan")) return "pabrik-makanan";
+    if (p.includes("cafe") || p.includes("coffee")) return "cafe";
+    if (p.includes("hotel") || p.includes("resor") || p.includes("resort")) return "hotel";
+    if (p.includes("restoran") || p.includes("restaurant")) return "restauran";
+    if (p.includes("kantor") || p.includes("office") || p.includes("gedung")) return "kantor";
+    if (p.includes("sakit") || p.includes("hospital") || p.includes("medis")) return "rumah-sakit";
+    if (p.includes("kampus") || p.includes("sekolah") || p.includes("pendidikan")) return "kampus";
+    if (p.includes("bandara") || p.includes("airport") || p.includes("transportasi")) return "bandara";
+    if (p.includes("hipermarket") || p.includes("supermarket") || p.includes("retail")) return "hipermarket";
+    if (p.includes("warehouse") || p.includes("gudang")) return "warehouse";
+    if (p.includes("disinfeksi") || p.includes("steril")) return "disinfeksi";
+    if (p.includes("rumah")) return "rumah";
+
+    // Fallbacks
+    if (p.includes("apartemen") || p.includes("kondominium")) return "apartemen";
+    if (p.includes("mall") || p.includes("shopping")) return "mall";
+    if (p.includes("data center") || p.includes("server")) return "data-center";
+    if (p.includes("bioskop") || p.includes("theater")) return "bioskop";
+    if (p.includes("manufaktur")) return "pabrik-manufaktur";
+    if (p.includes("ibadah") || p.includes("masjid") || p.includes("gereja")) return "tempat-ibadah";
+    if (p.includes("gym") || p.includes("kebugaran")) return "gym";
+    return "rumah";
+  };
+
   const handleQuickSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormData((prev) => ({
@@ -951,7 +1148,8 @@ export default function Home() {
       pestType: selectedPest,
       location: selectedLocation,
     }));
-    scrollToSurvey();
+    const targetSlug = getPropertySlug(selectedProperty);
+    router.push(`/artikel/${targetSlug}`);
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -1159,6 +1357,8 @@ export default function Home() {
               TENTANG VECOS
             </a>
 
+
+
             {/* Language Button [ FLAG / CODE ] + Globe Icon (Tanpa Background, Sesuai Warna Menu Header) */}
             <button
               type="button"
@@ -1300,6 +1500,8 @@ export default function Home() {
               TENTANG VECOS
             </a>
 
+
+
             <div className="pt-2 flex items-center justify-between">
               <span className="text-xs font-bold text-zinc-500">Pilihan Negara & Bahasa:</span>
               <button
@@ -1346,16 +1548,26 @@ export default function Home() {
             return (
               <div
                 key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+                onClick={() => router.push(`/artikel/${slide.slug}`)}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                   }`}
               >
-                {/* Background Image Slide: Penuh di dalam carousel dengan penyesuaian fokus visual di mobile */}
+                {/* Background Image Slide Mobile (< 768px) */}
+                <Image
+                  src={slide.imageMobile}
+                  alt={slide.title}
+                  fill
+                  priority={index === 0}
+                  className="md:hidden object-cover object-center scale-105 transition-transform duration-700"
+                />
+
+                {/* Background Image Slide Desktop (>= 768px) */}
                 <Image
                   src={slide.image}
                   alt={slide.title}
                   fill
                   priority={index === 0}
-                  className="object-cover object-[75%_center] sm:object-cover sm:object-center"
+                  className="hidden md:block object-cover object-center scale-110 transition-transform duration-700"
                 />
 
                 {/* Dark Gradient Overlay agar teks kontras dan terbaca jelas di atas gambar */}
@@ -1378,17 +1590,18 @@ export default function Home() {
 
                     {/* Tombol Amankan Properti Anda & Call Center di dalam gambar */}
                     <div className="pt-1 sm:pt-2 flex flex-wrap items-center gap-2 sm:gap-2.5">
-                      <button
-                        type="button"
-                        onClick={scrollToSurvey}
-                        className="bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-7 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-700/40 hover:shadow-red-700/60 transition-all cursor-pointer"
+                      <Link
+                        href={`/artikel/${slide.slug}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-7 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-700/40 hover:shadow-red-700/60 transition-all cursor-pointer inline-flex items-center"
                       >
                         {slide.ctaText}
-                      </button>
+                      </Link>
 
                       {/* Pill Call Center (Murni Teks Tanpa Icon Apapun) */}
                       <a
                         href={`tel:${slide.callCenter.replace(/[^0-9]/g, "")}`}
+                        onClick={(e) => e.stopPropagation()}
                         className="inline-flex items-center bg-white/95 hover:bg-white text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold shadow-sm transition-all"
                       >
                         <span>Call Center : {slide.callCenter}</span>
@@ -1474,11 +1687,18 @@ export default function Home() {
                     onChange={(e) => setSelectedProperty(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
                   >
-                    <option value="Rumah Tinggal">Jenis Properti Anda</option>
-                    <option value="Kantor / Gedung">Kantor / Gedung</option>
-                    <option value="Restoran & Cafe">Restoran & Cafe</option>
-                    <option value="Hotel & Resor">Hotel & Resor</option>
-                    <option value="Gudang & Pabrik">Gudang & Pabrik</option>
+                    <option value="Rumah">Rumah</option>
+                    <option value="Kantor">Kantor</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Restoran">Restoran</option>
+                    <option value="cafe">Café</option>
+                    <option value="Pabrik Makanan">Pabrik Makanan</option>
+                    <option value="Rumah Sakit">Rumah Sakit</option>
+                    <option value="Sekolah / Kampus">Sekolah & Kampus</option>
+                    <option value="Bandara">Bandara</option>
+                    <option value="Hipermarket">Hipermarket</option>
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Disinfeksi">Disinfeksi & Sterilisasi</option>
                   </select>
                 </div>
               </div>
@@ -1614,7 +1834,8 @@ export default function Home() {
               return (
                 <div
                   key={slide.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+                  onClick={() => router.push(`/artikel/${slide.slug}`)}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                     }`}
                 >
                   {/* Foto Latar Penawaran (Dizoom sedikit dengan scale-108) */}
@@ -1641,14 +1862,14 @@ export default function Home() {
 
                       {/* Tombol Penawaran */}
                       <div className="pt-2">
-                        <button
-                          type="button"
-                          onClick={scrollToSurvey}
+                        <Link
+                          href={`/artikel/${slide.slug}`}
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-2 bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-900/40 hover:shadow-red-900/60 transition-all cursor-pointer hover:translate-x-1"
                         >
                           <span>Klaim Penawaran</span>
                           <span className="text-sm">→</span>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -1972,7 +2193,7 @@ export default function Home() {
                 Penawaran Spesial
               </h2>
               <p className="text-xs sm:text-sm text-zinc-500 font-medium">
-                Geser untuk menjelajahi 7 layanan penawaran khusus properti Anda
+                Geser untuk menjelajahi layanan penawaran khusus properti Anda
               </p>
             </div>
 
@@ -2016,12 +2237,10 @@ export default function Home() {
                 <div
                   key={service.id}
                   onClick={() => {
-                    setSelectedProperty(service.title);
-                    setFormData((prev) => ({ ...prev, propertyType: service.title }));
-                    scrollToSurvey();
+                    router.push(`/artikel/${service.slug}`);
                   }}
                   className="w-[280px] xs:w-[320px] sm:w-[350px] md:w-[380px] shrink-0 snap-start relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-4/3 sm:aspect-16/11 shadow-sm hover:shadow-xl border border-zinc-200/90 group cursor-pointer transition-all duration-300"
-                  title={`Pilih penawaran ${service.title}`}
+                  title={`Lihat panduan penawaran ${service.title}`}
                 >
                   {/* Foto Layanan (Duplikat, siap diubah) */}
                   <Image
@@ -2313,6 +2532,7 @@ export default function Home() {
                 <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
                 <li><a href="#layanan" className="hover:underline transition-all">Layanan kami</a></li>
                 <li><a href="#tentang" className="hover:underline transition-all">Tentang Vecos</a></li>
+
 
               </ul>
 
