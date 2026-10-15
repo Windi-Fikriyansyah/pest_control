@@ -361,52 +361,42 @@ const clientLogosRow2 = [
 // =========================================================================
 // DATA NEGARA & BAHASA UNTUK TRANSLASI OTOMATIS
 // =========================================================================
-const countryList = [
-  { code: "ID", name: "Indonesia", flag: "🇮🇩", defaultLang: "id" },
-  { code: "US", name: "United States (Amerika Serikat)", flag: "🇺🇸", defaultLang: "en" },
-  { code: "GB", name: "United Kingdom (Inggris)", flag: "🇬🇧", defaultLang: "en" },
-  { code: "SG", name: "Singapore (Singapura)", flag: "🇸🇬", defaultLang: "en" },
-  { code: "MY", name: "Malaysia", flag: "🇲🇾", defaultLang: "ms" },
-  { code: "CN", name: "China (Tiongkok)", flag: "🇨🇳", defaultLang: "zh-CN" },
-  { code: "JP", name: "Japan (Jepang)", flag: "🇯🇵", defaultLang: "ja" },
-  { code: "KR", name: "South Korea (Korea Selatan)", flag: "🇰🇷", defaultLang: "ko" },
-  { code: "SA", name: "Saudi Arabia (Arab Saudi)", flag: "🇸🇦", defaultLang: "ar" },
-  { code: "DE", name: "Germany (Jerman)", flag: "🇩🇪", defaultLang: "de" },
-  { code: "FR", name: "France (Prancis)", flag: "🇫🇷", defaultLang: "fr" },
-  { code: "NL", name: "Netherlands (Belanda)", flag: "🇳🇱", defaultLang: "nl" },
-  { code: "AU", name: "Australia", flag: "🇦🇺", defaultLang: "en" },
-  { code: "ES", name: "Spain (Spanyol)", flag: "🇪🇸", defaultLang: "es" },
-  { code: "IT", name: "Italy (Italia)", flag: "🇮🇹", defaultLang: "it" },
-  { code: "RU", name: "Russia (Rusia)", flag: "🇷🇺", defaultLang: "ru" },
-  { code: "TH", name: "Thailand", flag: "🇹🇭", defaultLang: "th" },
-  { code: "VN", name: "Vietnam", flag: "🇻🇳", defaultLang: "vi" },
-  { code: "PH", name: "Philippines (Filipina)", flag: "🇵🇭", defaultLang: "tl" },
-  { code: "IN", name: "India", flag: "🇮🇳", defaultLang: "hi" },
-  { code: "TR", name: "Turkey (Turki)", flag: "🇹🇷", defaultLang: "tr" },
-  { code: "BR", name: "Brazil (Brasil)", flag: "🇧🇷", defaultLang: "pt" },
-  { code: "GLOBAL", name: "Negara Lainnya (Other Country)", flag: "🌐", defaultLang: "en" },
+interface CountryItem {
+  code: string;
+  name: string;
+  subLabel?: string;
+  flag: string;
+  defaultLang: string;
+  supportedLangs: string[];
+}
+
+const countryList: CountryItem[] = [
+  { code: "ID", name: "Indonesia", subLabel: "Indonesia", flag: "🇮🇩", defaultLang: "id", supportedLangs: ["en", "id"] },
+  { code: "SG", name: "Singapore", subLabel: "Singapura", flag: "🇸🇬", defaultLang: "en", supportedLangs: ["en"] },
+  { code: "MY", name: "Malaysia", subLabel: "Malaysia", flag: "🇲🇾", defaultLang: "en", supportedLangs: ["en"] },
+  { code: "TH", name: "Thailand", subLabel: "Thailand", flag: "🇹🇭", defaultLang: "th", supportedLangs: ["en", "th"] },
+  { code: "AU", name: "Australia", subLabel: "Australia", flag: "🇦🇺", defaultLang: "en", supportedLangs: ["en"] },
+  { code: "JP", name: "Japan", subLabel: "Jepang", flag: "🇯🇵", defaultLang: "ja", supportedLangs: ["en", "ja"] },
+  { code: "CN", name: "China", subLabel: "Tiongkok", flag: "🇨🇳", defaultLang: "zh-CN", supportedLangs: ["en", "zh-CN"] },
+  { code: "KR", name: "South Korea", subLabel: "Korea Selatan", flag: "🇰🇷", defaultLang: "ko", supportedLangs: ["en", "ko"] },
+  { code: "HK", name: "Hong Kong", subLabel: "Hong Kong", flag: "🇭🇰", defaultLang: "zh-CN", supportedLangs: ["en", "zh-CN"] },
+  { code: "QA", name: "Qatar", subLabel: "Qatar", flag: "🇶🇦", defaultLang: "ar", supportedLangs: ["en", "ar"] },
+  { code: "NL", name: "Netherlands", subLabel: "Belanda", flag: "🇳🇱", defaultLang: "nl", supportedLangs: ["en", "nl"] },
+  { code: "SA", name: "Saudi Arabia", subLabel: "Arab Saudi", flag: "🇸🇦", defaultLang: "ar", supportedLangs: ["en", "ar"] },
+  { code: "IN", name: "India", subLabel: "India", flag: "🇮🇳", defaultLang: "hi", supportedLangs: ["en", "hi"] },
+  { code: "OTHER", name: "Other Countries", subLabel: "Negara Lainnya", flag: "🌐", defaultLang: "en", supportedLangs: ["en"] },
 ];
 
 const languageList = [
-  { code: "id", name: "Bahasa Indonesia", nativeName: "Bahasa Indonesia" },
   { code: "en", name: "English", nativeName: "English" },
-  { code: "zh-CN", name: "Mandarin / Chinese", nativeName: "中文 (简体)" },
+  { code: "id", name: "Bahasa Indonesia", nativeName: "Bahasa Indonesia" },
+  { code: "th", name: "Thai", nativeName: "ไทย" },
   { code: "ja", name: "Japanese", nativeName: "日本語" },
+  { code: "zh-CN", name: "Chinese", nativeName: "中文" },
   { code: "ko", name: "Korean", nativeName: "한국어" },
   { code: "ar", name: "Arabic", nativeName: "العربية" },
-  { code: "ms", name: "Bahasa Melayu", nativeName: "Bahasa Melayu" },
-  { code: "de", name: "German", nativeName: "Deutsch" },
-  { code: "fr", name: "French", nativeName: "Français" },
   { code: "nl", name: "Dutch", nativeName: "Nederlands" },
-  { code: "es", name: "Spanish", nativeName: "Español" },
-  { code: "it", name: "Italian", nativeName: "Italiano" },
-  { code: "ru", name: "Russian", nativeName: "Русский" },
-  { code: "th", name: "Thai", nativeName: "ไทย" },
-  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt" },
-  { code: "tl", name: "Tagalog / Filipino", nativeName: "Tagalog" },
   { code: "hi", name: "Hindi", nativeName: "हिन्दी" },
-  { code: "tr", name: "Turkish", nativeName: "Türkçe" },
-  { code: "pt", name: "Portuguese", nativeName: "Português" },
 ];
 
 // =========================================================================
@@ -615,7 +605,12 @@ export default function Home() {
 
   const openLangModal = () => {
     setTempCountry(currentCountry);
-    setTempLang(currentLang);
+    const country = countryList.find((c) => c.code === currentCountry) || countryList[0];
+    if (country.supportedLangs.includes(currentLang)) {
+      setTempLang(currentLang);
+    } else {
+      setTempLang(country.defaultLang);
+    }
     setIsLangModalOpen(true);
   };
 
@@ -636,7 +631,7 @@ export default function Home() {
         const targetLang = parts[parts.length - 1];
         if (targetLang && targetLang !== "id") {
           setCurrentLang(targetLang);
-          const found = countryList.find((c) => c.defaultLang === targetLang);
+          const found = countryList.find((c) => c.defaultLang === targetLang || c.supportedLangs.includes(targetLang));
           if (found) setCurrentCountry(found.code);
         }
       }
@@ -2779,6 +2774,7 @@ export default function Home() {
                   options={countryList.map((country) => ({
                     value: country.code,
                     label: country.name,
+                    subLabel: country.subLabel,
                     icon: country.flag,
                   }))}
                   onChange={(val) => handleCountryChange(val)}
@@ -2790,11 +2786,18 @@ export default function Home() {
                   value={tempLang}
                   placeholder="Ketik untuk mencari bahasa..."
                   className="z-10"
-                  options={languageList.map((lang) => ({
-                    value: lang.code,
-                    label: lang.name,
-                    subLabel: lang.nativeName,
-                  }))}
+                  options={(() => {
+                    const activeCountry =
+                      countryList.find((c) => c.code === tempCountry) || countryList[0];
+                    return activeCountry.supportedLangs
+                      .map((langCode) => languageList.find((l) => l.code === langCode))
+                      .filter((l): l is (typeof languageList)[0] => Boolean(l))
+                      .map((lang) => ({
+                        value: lang.code,
+                        label: lang.name,
+                        subLabel: lang.nativeName,
+                      }));
+                  })()}
                   onChange={(val) => setTempLang(val)}
                 />
               </div>
@@ -2804,7 +2807,7 @@ export default function Home() {
                 <span className="flex items-center gap-1.5">
                   <span>{countryList.find((c) => c.code === tempCountry)?.flag || "🌐"}</span>
                   <span>
-                    {countryList.find((c) => c.code === tempCountry)?.name.split("(")[0]}
+                    {countryList.find((c) => c.code === tempCountry)?.name}
                   </span>
                 </span>
                 <span className="font-bold text-[#E5282E]">
