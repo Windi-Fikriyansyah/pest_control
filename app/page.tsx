@@ -335,7 +335,7 @@ const specialOfferServices = [
 // DATA CLIENT LOGOS (2 BARIS ANIMASI BERGERAK SALING LAWAN ARAH)
 // =========================================================================
 const clientLogosRow1 = [
-  { name: "Logo 1", image: "/images/logo/1.PNG", extraZoom: true },
+  { name: "Logo 1", image: "/images/logo/1.png", extraZoom: true },
   { name: "Logo 2", image: "/images/logo/2.png" },
   { name: "Logo 3", image: "/images/logo/3.png", extraZoom: true },
   { name: "Logo 4", image: "/images/logo/4.png" },
@@ -735,6 +735,20 @@ export default function Home() {
   const [functionalCookies, setFunctionalCookies] = useState(true);
   const [cookieSaved, setCookieSaved] = useState(false);
 
+  // Status apakah ada modal yang sedang terbuka
+  const isAnyModalOpen = Boolean(legalModal || selectedArticle || isLangModalOpen);
+
+  // Mencegah scroll pada body saat modal aktif agar tampilan stabil
+  useEffect(() => {
+    if (isAnyModalOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isAnyModalOpen]);
+
   // Timer loading progress 5 detik untuk Banner Penawaran (Akurat, tidak melangkah)
   useEffect(() => {
     if (selectedArticle !== null) return;
@@ -978,7 +992,7 @@ export default function Home() {
       name: "Kecoa Amerikana",
       latin: "Periplaneta americana",
       image: "/images/binatang/kecoa amerikana.png",
-      imageClass: "object-contain p-0 w-full h-full scale-125",
+      imageClass: "object-contain p-0 w-full h-full scale-125 translate-x-9",
     },
     {
       name: "Tikus",
@@ -1749,103 +1763,6 @@ export default function Home() {
               })}
             </div>
           </div>
-
-          {/* Modal Pop-up Artikel Saat Banner Penawaran Ditekan */}
-          {selectedArticle && (
-            <div
-              className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
-              onClick={() => setSelectedArticle(null)}
-            >
-              <div
-                className="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-zinc-200 text-zinc-900"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Header Foto Artikel */}
-                <div className="relative w-full h-44 sm:h-60 bg-zinc-900">
-                  <Image
-                    src={selectedArticle.image}
-                    alt={selectedArticle.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-5">
-                    <span className="bg-[#C81E27] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                      {selectedArticle.tag}
-                    </span>
-                  </div>
-
-                  {/* Tombol Tutup X */}
-                  <button
-                    type="button"
-                    onClick={() => setSelectedArticle(null)}
-                    aria-label="Tutup Artikel"
-                    className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/60 hover:bg-[#C81E27] text-white flex items-center justify-center transition-colors cursor-pointer"
-                  >
-                    ✕
-                  </button>
-                </div>
-
-                {/* Konten Artikel Lengkap */}
-                <div className="p-5 sm:p-8 space-y-4">
-                  <div className="flex items-center gap-3 text-xs text-zinc-500 font-semibold border-b border-zinc-100 pb-3">
-                    <span>📅 {selectedArticle.article.date}</span>
-                    <span>•</span>
-                    <span>⏱️ {selectedArticle.article.readTime}</span>
-                    <span>•</span>
-                    <span className="text-emerald-700 font-bold">Resmi VECOS</span>
-                  </div>
-
-                  <h3 className="text-xl sm:text-2xl font-black text-zinc-900 leading-snug">
-                    {selectedArticle.article.title}
-                  </h3>
-
-                  {/* Paragraf Artikel */}
-                  <div className="space-y-3 text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">
-                    {selectedArticle.article.content.map((p, pIdx) => (
-                      <p key={pIdx}>{p}</p>
-                    ))}
-                  </div>
-
-                  {/* Poin Keunggulan / Key Highlights */}
-                  <div className="bg-red-50/70 border border-red-200/80 rounded-2xl p-4 sm:p-5 space-y-2">
-                    <h4 className="text-xs sm:text-sm font-extrabold text-[#C81E27] uppercase tracking-wide">
-                      Keunggulan Standar Layanan VECOS:
-                    </h4>
-                    <ul className="space-y-1.5 text-xs sm:text-sm text-zinc-800 font-medium">
-                      {selectedArticle.article.keyPoints.map((point, kIdx) => (
-                        <li key={kIdx} className="flex items-start gap-2">
-                          <span className="text-[#C81E27] font-bold shrink-0">✓</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Footer Modal: Tombol Aksi */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-zinc-100">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedArticle(null)}
-                      className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-zinc-300 hover:bg-zinc-100 text-zinc-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
-                    >
-                      Tutup
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setSelectedArticle(null);
-                        scrollToSurvey();
-                      }}
-                      className="w-full sm:w-auto bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg transition-colors cursor-pointer"
-                    >
-                      Klaim Penawaran & Jadwalkan Survey Gratis →
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </section>
 
         {/* ======================================================== */}
@@ -2189,13 +2106,12 @@ export default function Home() {
                         src={client.image}
                         alt={client.name}
                         fill
-                        className={`object-contain transition-transform duration-300 ${
-                          (client as any).noZoom || client.image.includes("6.png")
-                            ? "scale-100"
-                            : (client as any).extraZoom
+                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || client.image.includes("6.png")
+                          ? "scale-100"
+                          : (client as any).extraZoom
                             ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
                             : "scale-120 sm:scale-130 hover:scale-135"
-                        }`}
+                          }`}
                       />
                     </div>
                   </div>
@@ -2217,13 +2133,12 @@ export default function Home() {
                         src={client.image}
                         alt={client.name}
                         fill
-                        className={`object-contain transition-transform duration-300 ${
-                          (client as any).noZoom || client.image.includes("6.png")
-                            ? "scale-100"
-                            : (client as any).extraZoom
+                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || client.image.includes("6.png")
+                          ? "scale-100"
+                          : (client as any).extraZoom
                             ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
                             : "scale-120 sm:scale-130 hover:scale-135"
-                        }`}
+                          }`}
                       />
                     </div>
                   </div>
@@ -2239,7 +2154,7 @@ export default function Home() {
       {/* 9. SECTION: SURVEY FORM, FAQ & FOOTER FLOW (FULL WIDTH)  */}
       {/* ======================================================== */}
 
-      <div className="relative w-full mt-10 sm:mt-16 overflow-visible">
+      <div className={`relative w-full mt-10 sm:mt-16 overflow-visible ${isAnyModalOpen ? "z-0" : ""}`}>
         {/* 1. Banner Survey dengan Foto Customer (Full Width) */}
         <div id="form-survey" className="w-full relative z-0 overflow-hidden shadow-2xl border-t-4 border-[#dc2626] min-h-[480px] sm:min-h-[640px] md:min-h-[740px] lg:min-h-[800px] flex items-center justify-center">
           {/* Foto Customer Asli */}
@@ -2350,7 +2265,7 @@ export default function Home() {
         </div>
 
         {/* 2. Card FAQ (Full Width Melayang Di Atas Survey dan Footer) */}
-        <div className="w-full relative z-20 -mt-12 sm:-mt-24 md:-mt-28 -mb-12 sm:-mb-24 md:-mb-28">
+        <div className={`w-full relative ${isAnyModalOpen ? "z-0 pointer-events-none" : "z-20"} -mt-12 sm:-mt-24 md:-mt-28 -mb-12 sm:-mb-24 md:-mb-28`}>
           <div className="w-full bg-[#d2d5dc] rounded-2xl sm:rounded-3xl lg:rounded-[36px] py-5 sm:py-10 md:py-12 px-3 sm:px-8 md:px-12 shadow-2xl border-y border-zinc-300/80">
             <div className="w-full max-w-7xl mx-auto grid grid-cols-12 gap-2.5 sm:gap-6 md:gap-8 items-center">
               {/* Sisi Kiri: Frequently Question for Vecos */}
@@ -2501,322 +2416,419 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ======================================================== */}
-          {/* MODAL DIALOG: KEBIJAKAN PRIVASI, KETENTUAN, & COOKIE     */}
-          {/* ======================================================== */}
-          {legalModal && (
-            <div
-              className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
-              onClick={() => setLegalModal(null)}
-            >
-              <div
-                className="bg-white text-zinc-900 rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-zinc-200 p-5 sm:p-8 space-y-5 animate-in zoom-in-95 duration-200"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Header Modal */}
-                <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-red-100 text-[#C81E27] flex items-center justify-center font-bold text-sm">
-                      {legalModal === "privacy" && "🛡️"}
-                      {legalModal === "terms" && "📜"}
-                      {legalModal === "cookie" && "🍪"}
-                    </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-black text-zinc-950">
-                        {legalModal === "privacy" && "Kebijakan Privasi"}
-                        {legalModal === "terms" && "Ketentuan Layanan"}
-                        {legalModal === "cookie" && "Pengaturan Cookie"}
-                      </h3>
-                      <p className="text-[11px] sm:text-xs text-zinc-500 font-medium">
-                        PT Vecos Indonesia Berjaya • Pembaruan Terakhir 2026
-                      </p>
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setLegalModal(null)}
-                    aria-label="Tutup modal"
-                    className="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 flex items-center justify-center font-bold transition-colors cursor-pointer"
-                  >
-                    ✕
-                  </button>
-                </div>
-
-                {/* Konten Kebijakan Privasi */}
-                {legalModal === "privacy" && (
-                  <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    <p>
-                      Selamat datang di VECOS (PT Vecos Indonesia Berjaya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
-                    </p>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">1. Data yang Kami Kumpulkan</h4>
-                      <p>
-                        Informasi yang Anda berikan melalui form survey atau kontak WhatsApp, meliputi: Nama, Nomor Telepon/WhatsApp, Alamat/Lokasi Properti, Jenis Properti, dan Keluhan Infestasi Hama yang dialami.
-                      </p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">2. Penggunaan Data</h4>
-                      <p>
-                        Data digunakan secara eksklusif untuk keperluan penjadwalan survey lokasi gratis, konsultasi teknis Integrated Pest Management (IPM), penerbitan sertifikat garansi pengerjaan, dan pelayanan pelanggan purna jual. Kami <strong>tidak pernah</strong> menjual atau menyebarluaskan data Anda kepada pihak ketiga.
-                      </p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">3. Keamanan Informasi</h4>
-                      <p>
-                        Seluruh formulir dan transmisi data diproteksi dengan enkripsi berstandar industri. Hanya teknisi berwenang dan tim operasional resmi VECOS yang memiliki hak akses terbatas untuk kunjungan survey lokasi.
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Konten Ketentuan Layanan */}
-                {legalModal === "terms" && (
-                  <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    <p>
-                      Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Indonesia Berjaya.
-                    </p>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">1. Survey & Konsultasi Gratis</h4>
-                      <p>
-                        Layanan inspeksi dan estimasi biaya awal oleh tim teknisi bersertifikasi VECOS adalah 100% Bebas Biaya (Gratis) tanpa kewajiban pemesanan langsung bagi pelanggan di wilayah jangkauan kami.
-                      </p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">2. Standar Keselamatan Kimia</h4>
-                      <p>
-                        Semua bahan pestisida, termitisida, dan disinfektan yang diaplikasikan telah terdaftar resmi di Kementerian Pertanian dan Kementerian Kesehatan RI, diformulasikan ramah lingkungan (*odorless & eco-friendly*), aman bagi anak-anak serta hewan peliharaan.
-                      </p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-extrabold text-zinc-900 text-sm">3. Sertifikat Garansi Resmi</h4>
-                      <p>
-                        Setiap pengerjaan anti rayap (termitisida barrier & baiting) dan paket komersial bergaransi dilengkapi sertifikat garansi tertulis. Jika hama muncul kembali selama masa garansi aktif, VECOS akan melakukan penanganan ulang (re-treatment) tanpa biaya tambahan.
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Konten Pengaturan Cookie */}
-                {legalModal === "cookie" && (
-                  <div className="space-y-5 text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    <p>
-                      Website VECOS menggunakan cookie untuk meningkatkan pengalaman navigasi, mengingat preferensi layanan, dan menganalisis trafik kunjungan secara anonim. Anda dapat menyesuaikan izin cookie di bawah ini:
-                    </p>
-
-                    <div className="space-y-3">
-                      {/* Cookie 1: Esensial */}
-                      <div className="flex items-start justify-between gap-4 p-3.5 bg-zinc-50 rounded-xl border border-zinc-200">
-                        <div className="space-y-0.5">
-                          <div className="flex items-center gap-2">
-                            <span className="font-bold text-zinc-900">Cookie Esensial</span>
-                            <span className="text-[10px] bg-zinc-200 text-zinc-700 px-2 py-0.5 rounded-full font-bold">Wajib</span>
-                          </div>
-                          <p className="text-[11px] sm:text-xs text-zinc-500">
-                            Diperlukan untuk keamanan website, pemrosesan form survey, dan fungsionalitas dasar navigasi.
-                          </p>
-                        </div>
-                        <input type="checkbox" checked disabled className="mt-1 h-4 w-4 accent-[#C81E27] cursor-not-allowed" />
-                      </div>
-
-                      {/* Cookie 2: Fungsional */}
-                      <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
-                        <div className="space-y-0.5">
-                          <span className="font-bold text-zinc-900">Cookie Fungsionalitas</span>
-                          <p className="text-[11px] sm:text-xs text-zinc-500">
-                            Mengingat pilihan bahasa, preferensi wilayah, dan riwayat kalkulasi kebutuhan hama Anda.
-                          </p>
-                        </div>
-                        <input
-                          type="checkbox"
-                          checked={functionalCookies}
-                          onChange={(e) => setFunctionalCookies(e.target.checked)}
-                          className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
-                        />
-                      </div>
-
-                      {/* Cookie 3: Analitik */}
-                      <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
-                        <div className="space-y-0.5">
-                          <span className="font-bold text-zinc-900">Cookie Kinerja & Analisis</span>
-                          <p className="text-[11px] sm:text-xs text-zinc-500">
-                            Membantu kami memahami halaman yang paling banyak diakses untuk meningkatkan performa situs.
-                          </p>
-                        </div>
-                        <input
-                          type="checkbox"
-                          checked={analyticsCookies}
-                          onChange={(e) => setAnalyticsCookies(e.target.checked)}
-                          className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
-                        />
-                      </div>
-                    </div>
-
-                    {cookieSaved && (
-                      <div className="p-2.5 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-800 text-xs font-bold text-center animate-in fade-in">
-                        ✓ Preferensi cookie Anda berhasil disimpan!
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {/* Footer Modal: Tombol Aksi */}
-                <div className="pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-end gap-2.5">
-                  {legalModal === "cookie" ? (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setAnalyticsCookies(true);
-                          setFunctionalCookies(true);
-                          setCookieSaved(true);
-                          setTimeout(() => {
-                            setCookieSaved(false);
-                            setLegalModal(null);
-                          }, 1200);
-                        }}
-                        className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-colors cursor-pointer"
-                      >
-                        Terima Semua
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setCookieSaved(true);
-                          setTimeout(() => {
-                            setCookieSaved(false);
-                            setLegalModal(null);
-                          }, 1200);
-                        }}
-                        className="px-5 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
-                      >
-                        Simpan Pengaturan
-                      </button>
-                    </>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => setLegalModal(null)}
-                      className="px-6 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
-                    >
-                      Saya Mengerti & Tutup
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
         </footer>
+      </div>
 
-        {/* ======================================================== */}
-        {/* MODAL PREFERENSI BAHASA & NEGARA (OTOMATIS SEMUA NEGARA) */}
-        {/* DESAIN SESUAI REFERENSI DENGAN WARNA BRAND VECOS         */}
-        {/* ======================================================== */}
-        {isLangModalOpen && (
+      {/* ======================================================== */}
+      {/* GLOBAL MODALS (ROOT LEVEL Z-[999])                       */}
+      {/* Menjamin modal selalu berada di atas FAQ & semua section */}
+      {/* ======================================================== */}
+
+      {/* 1. Modal Pop-up Artikel Saat Banner Penawaran Ditekan */}
+      {selectedArticle && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
+          onClick={() => setSelectedArticle(null)}
+        >
           <div
-            className="fixed inset-0 z-[999] bg-black/60 flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
-            style={{
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-            }}
-            onClick={() => setIsLangModalOpen(false)}
+            className="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-zinc-200 text-zinc-900"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className="relative max-w-lg w-full animate-in zoom-in-95 duration-200"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Tombol Close (X) di samping kanan atas card sesuai desain referensi */}
+            {/* Header Foto Artikel */}
+            <div className="relative w-full h-44 sm:h-60 bg-zinc-900">
+              <Image
+                src={selectedArticle.image}
+                alt={selectedArticle.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-5">
+                <span className="bg-[#C81E27] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                  {selectedArticle.tag}
+                </span>
+              </div>
+
+              {/* Tombol Tutup X */}
               <button
                 type="button"
-                onClick={() => setIsLangModalOpen(false)}
-                className="absolute -top-12 right-0 sm:-right-14 sm:top-0 p-2.5 rounded-xl bg-[#1c2230]/90 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-300 hover:text-white transition-colors cursor-pointer shadow-lg"
-                aria-label="Tutup preferensi bahasa"
+                onClick={() => setSelectedArticle(null)}
+                aria-label="Tutup Artikel"
+                className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/60 hover:bg-[#C81E27] text-white flex items-center justify-center transition-colors cursor-pointer"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ✕
               </button>
+            </div>
 
-              {/* Card Dialog Modal */}
-              <div className="bg-[#141923] border border-zinc-700/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
-                <div>
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
-                    Pilih preferensi bahasa & negara Anda
-                  </h3>
-                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-                    Seluruh halaman website akan diterjemahkan secara otomatis sesuai preferensi negara & bahasa yang Anda pilih.
-                  </p>
-                </div>
+            {/* Konten Artikel Lengkap */}
+            <div className="p-5 sm:p-8 space-y-4">
+              <div className="flex items-center gap-3 text-xs text-zinc-500 font-semibold border-b border-zinc-100 pb-3">
+                <span>📅 {selectedArticle.article.date}</span>
+                <span>•</span>
+                <span>⏱️ {selectedArticle.article.readTime}</span>
+                <span>•</span>
+                <span className="text-emerald-700 font-bold">Resmi VECOS</span>
+              </div>
 
-                <div className="space-y-3.5">
-                  {/* Select2: Pilihan Negara / Wilayah */}
-                  <SearchableSelect
-                    label="Negara / Wilayah"
-                    value={tempCountry}
-                    placeholder="Ketik untuk mencari negara..."
-                    className="z-20"
-                    options={countryList.map((country) => ({
-                      value: country.code,
-                      label: country.name,
-                      icon: country.flag,
-                    }))}
-                    onChange={(val) => handleCountryChange(val)}
-                  />
+              <h3 className="text-xl sm:text-2xl font-black text-zinc-900 leading-snug">
+                {selectedArticle.article.title}
+              </h3>
 
-                  {/* Select2: Pilihan Bahasa */}
-                  <SearchableSelect
-                    label="Bahasa Terjemahan"
-                    value={tempLang}
-                    placeholder="Ketik untuk mencari bahasa..."
-                    className="z-10"
-                    options={languageList.map((lang) => ({
-                      value: lang.code,
-                      label: lang.name,
-                      subLabel: lang.nativeName,
-                    }))}
-                    onChange={(val) => setTempLang(val)}
-                  />
-                </div>
+              {/* Paragraf Artikel */}
+              <div className="space-y-3 text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">
+                {selectedArticle.article.content.map((p, pIdx) => (
+                  <p key={pIdx}>{p}</p>
+                ))}
+              </div>
 
-                {/* Info Card Status Bahasa */}
-                <div className="bg-[#1a202d] rounded-xl p-3 border border-zinc-700/50 flex items-center justify-between text-xs text-zinc-300">
-                  <span className="flex items-center gap-1.5">
-                    <span>{countryList.find((c) => c.code === tempCountry)?.flag || "🌐"}</span>
-                    <span>
-                      {countryList.find((c) => c.code === tempCountry)?.name.split("(")[0]}
-                    </span>
-                  </span>
-                  <span className="font-bold text-[#E5282E]">
-                    {languageList.find((l) => l.code === tempLang)?.nativeName || tempLang}
-                  </span>
-                </div>
+              {/* Poin Keunggulan / Key Highlights */}
+              <div className="bg-red-50/70 border border-red-200/80 rounded-2xl p-4 sm:p-5 space-y-2">
+                <h4 className="text-xs sm:text-sm font-extrabold text-[#C81E27] uppercase tracking-wide">
+                  Keunggulan Standar Layanan VECOS:
+                </h4>
+                <ul className="space-y-1.5 text-xs sm:text-sm text-zinc-800 font-medium">
+                  {selectedArticle.article.keyPoints.map((point, kIdx) => (
+                    <li key={kIdx} className="flex items-start gap-2">
+                      <span className="text-[#C81E27] font-bold shrink-0">✓</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                {/* Tombol Aksi: Warna Brand Merah VECOS (#C81E27) */}
-                <div className="flex justify-end pt-1">
-                  <button
-                    type="button"
-                    onClick={() => applyLanguagePreference(tempCountry, tempLang)}
-                    className="bg-[#C81E27] hover:bg-[#b01820] active:scale-95 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-red-900/30 transition-all cursor-pointer"
-                  >
-                    Perbarui preferensi
-                  </button>
-                </div>
+              {/* Footer Modal: Tombol Aksi */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-zinc-100">
+                <button
+                  type="button"
+                  onClick={() => setSelectedArticle(null)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-zinc-300 hover:bg-zinc-100 text-zinc-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+                >
+                  Tutup
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedArticle(null);
+                    scrollToSurvey();
+                  }}
+                  className="w-full sm:w-auto bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg transition-colors cursor-pointer"
+                >
+                  Klaim Penawaran & Jadwalkan Survey Gratis →
+                </button>
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Hidden Google Translate Element Container */}
-        <div id="google_translate_element" style={{ display: "none" }} />
-      </div>
+      {/* 2. Modal Dialog Legal: Kebijakan Privasi, Ketentuan, & Cookie */}
+      {legalModal && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-in fade-in duration-200"
+          onClick={() => setLegalModal(null)}
+        >
+          <div
+            className="bg-white text-zinc-900 rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-zinc-200 p-5 sm:p-8 space-y-5 animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header Modal */}
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-red-100 text-[#C81E27] flex items-center justify-center font-bold text-sm">
+                  {legalModal === "privacy" && "🛡️"}
+                  {legalModal === "terms" && "📜"}
+                  {legalModal === "cookie" && "🍪"}
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-black text-zinc-950">
+                    {legalModal === "privacy" && "Kebijakan Privasi"}
+                    {legalModal === "terms" && "Ketentuan Layanan"}
+                    {legalModal === "cookie" && "Pengaturan Cookie"}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-zinc-500 font-medium">
+                    PT Vecos Indonesia Berjaya • Pembaruan Terakhir 2026
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setLegalModal(null)}
+                aria-label="Tutup modal"
+                className="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 flex items-center justify-center font-bold transition-colors cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Konten Kebijakan Privasi */}
+            {legalModal === "privacy" && (
+              <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                <p>
+                  Selamat datang di VECOS (PT Vecos Indonesia Berjaya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
+                </p>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">1. Data yang Kami Kumpulkan</h4>
+                  <p>
+                    Informasi yang Anda berikan melalui form survey atau kontak WhatsApp, meliputi: Nama, Nomor Telepon/WhatsApp, Alamat/Lokasi Properti, Jenis Properti, dan Keluhan Infestasi Hama yang dialami.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">2. Penggunaan Data</h4>
+                  <p>
+                    Data digunakan secara eksklusif untuk keperluan penjadwalan survey lokasi gratis, konsultasi teknis Integrated Pest Management (IPM), penerbitan sertifikat garansi pengerjaan, dan pelayanan pelanggan purna jual. Kami <strong>tidak pernah</strong> menjual atau menyebarluaskan data Anda kepada pihak ketiga.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">3. Keamanan Informasi</h4>
+                  <p>
+                    Seluruh formulir dan transmisi data diproteksi dengan enkripsi berstandar industri. Hanya teknisi berwenang dan tim operasional resmi VECOS yang memiliki hak akses terbatas untuk kunjungan survey lokasi.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Konten Ketentuan Layanan */}
+            {legalModal === "terms" && (
+              <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                <p>
+                  Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Indonesia Berjaya.
+                </p>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">1. Survey & Konsultasi Gratis</h4>
+                  <p>
+                    Layanan inspeksi dan estimasi biaya awal oleh tim teknisi bersertifikasi VECOS adalah 100% Bebas Biaya (Gratis) tanpa kewajiban pemesanan langsung bagi pelanggan di wilayah jangkauan kami.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">2. Standar Keselamatan Kimia</h4>
+                  <p>
+                    Semua bahan pestisida, termitisida, dan disinfektan yang diaplikasikan telah terdaftar resmi di Kementerian Pertanian dan Kementerian Kesehatan RI, diformulasikan ramah lingkungan (*odorless & eco-friendly*), aman bagi anak-anak serta hewan peliharaan.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-zinc-900 text-sm">3. Sertifikat Garansi Resmi</h4>
+                  <p>
+                    Setiap pengerjaan anti rayap (termitisida barrier & baiting) dan paket komersial bergaransi dilengkapi sertifikat garansi tertulis. Jika hama muncul kembali selama masa garansi aktif, VECOS akan melakukan penanganan ulang (re-treatment) tanpa biaya tambahan.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Konten Pengaturan Cookie */}
+            {legalModal === "cookie" && (
+              <div className="space-y-5 text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                <p>
+                  Website VECOS menggunakan cookie untuk meningkatkan pengalaman navigasi, mengingat preferensi layanan, dan menganalisis trafik kunjungan secara anonim. Anda dapat menyesuaikan izin cookie di bawah ini:
+                </p>
+
+                <div className="space-y-3">
+                  {/* Cookie 1: Esensial */}
+                  <div className="flex items-start justify-between gap-4 p-3.5 bg-zinc-50 rounded-xl border border-zinc-200">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-zinc-900">Cookie Esensial</span>
+                        <span className="text-[10px] bg-zinc-200 text-zinc-700 px-2 py-0.5 rounded-full font-bold">Wajib</span>
+                      </div>
+                      <p className="text-[11px] sm:text-xs text-zinc-500">
+                        Diperlukan untuk keamanan website, pemrosesan form survey, dan fungsionalitas dasar navigasi.
+                      </p>
+                    </div>
+                    <input type="checkbox" checked disabled className="mt-1 h-4 w-4 accent-[#C81E27] cursor-not-allowed" />
+                  </div>
+
+                  {/* Cookie 2: Fungsional */}
+                  <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
+                    <div className="space-y-0.5">
+                      <span className="font-bold text-zinc-900">Cookie Fungsionalitas</span>
+                      <p className="text-[11px] sm:text-xs text-zinc-500">
+                        Mengingat pilihan bahasa, preferensi wilayah, dan riwayat kalkulasi kebutuhan hama Anda.
+                      </p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      checked={functionalCookies}
+                      onChange={(e) => setFunctionalCookies(e.target.checked)}
+                      className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
+                    />
+                  </div>
+
+                  {/* Cookie 3: Analitik */}
+                  <div className="flex items-start justify-between gap-4 p-3.5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 transition-colors">
+                    <div className="space-y-0.5">
+                      <span className="font-bold text-zinc-900">Cookie Kinerja & Analisis</span>
+                      <p className="text-[11px] sm:text-xs text-zinc-500">
+                        Membantu kami memahami halaman yang paling banyak diakses untuk meningkatkan performa situs.
+                      </p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      checked={analyticsCookies}
+                      onChange={(e) => setAnalyticsCookies(e.target.checked)}
+                      className="mt-1 h-4 w-4 accent-[#C81E27] cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                {cookieSaved && (
+                  <div className="p-2.5 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-800 text-xs font-bold text-center animate-in fade-in">
+                    ✓ Preferensi cookie Anda berhasil disimpan!
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Footer Modal: Tombol Aksi */}
+            <div className="pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-end gap-2.5">
+              {legalModal === "cookie" ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAnalyticsCookies(true);
+                      setFunctionalCookies(true);
+                      setCookieSaved(true);
+                      setTimeout(() => {
+                        setCookieSaved(false);
+                        setLegalModal(null);
+                      }, 1200);
+                    }}
+                    className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-colors cursor-pointer"
+                  >
+                    Terima Semua
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setCookieSaved(true);
+                      setTimeout(() => {
+                        setCookieSaved(false);
+                        setLegalModal(null);
+                      }, 1200);
+                    }}
+                    className="px-5 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
+                  >
+                    Simpan Pengaturan
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setLegalModal(null)}
+                  className="px-6 py-2 rounded-xl bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-extrabold shadow-md transition-all cursor-pointer"
+                >
+                  Saya Mengerti & Tutup
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 3. Modal Preferensi Bahasa & Negara */}
+      {isLangModalOpen && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/60 flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+          }}
+          onClick={() => setIsLangModalOpen(false)}
+        >
+          <div
+            className="relative max-w-lg w-full animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Tombol Close (X) di samping kanan atas card sesuai desain referensi */}
+            <button
+              type="button"
+              onClick={() => setIsLangModalOpen(false)}
+              className="absolute -top-12 right-0 sm:-right-14 sm:top-0 p-2.5 rounded-xl bg-[#1c2230]/90 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-300 hover:text-white transition-colors cursor-pointer shadow-lg"
+              aria-label="Tutup preferensi bahasa"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Card Dialog Modal */}
+            <div className="bg-[#141923] border border-zinc-700/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  Pilih preferensi bahasa & negara Anda
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                  Seluruh halaman website akan diterjemahkan secara otomatis sesuai preferensi negara & bahasa yang Anda pilih.
+                </p>
+              </div>
+
+              <div className="space-y-3.5">
+                {/* Select2: Pilihan Negara / Wilayah */}
+                <SearchableSelect
+                  label="Negara / Wilayah"
+                  value={tempCountry}
+                  placeholder="Ketik untuk mencari negara..."
+                  className="z-20"
+                  options={countryList.map((country) => ({
+                    value: country.code,
+                    label: country.name,
+                    icon: country.flag,
+                  }))}
+                  onChange={(val) => handleCountryChange(val)}
+                />
+
+                {/* Select2: Pilihan Bahasa */}
+                <SearchableSelect
+                  label="Bahasa Terjemahan"
+                  value={tempLang}
+                  placeholder="Ketik untuk mencari bahasa..."
+                  className="z-10"
+                  options={languageList.map((lang) => ({
+                    value: lang.code,
+                    label: lang.name,
+                    subLabel: lang.nativeName,
+                  }))}
+                  onChange={(val) => setTempLang(val)}
+                />
+              </div>
+
+              {/* Info Card Status Bahasa */}
+              <div className="bg-[#1a202d] rounded-xl p-3 border border-zinc-700/50 flex items-center justify-between text-xs text-zinc-300">
+                <span className="flex items-center gap-1.5">
+                  <span>{countryList.find((c) => c.code === tempCountry)?.flag || "🌐"}</span>
+                  <span>
+                    {countryList.find((c) => c.code === tempCountry)?.name.split("(")[0]}
+                  </span>
+                </span>
+                <span className="font-bold text-[#E5282E]">
+                  {languageList.find((l) => l.code === tempLang)?.nativeName || tempLang}
+                </span>
+              </div>
+
+              {/* Tombol Aksi: Warna Brand Merah VECOS (#C81E27) */}
+              <div className="flex justify-end pt-1">
+                <button
+                  type="button"
+                  onClick={() => applyLanguagePreference(tempCountry, tempLang)}
+                  className="bg-[#C81E27] hover:bg-[#b01820] active:scale-95 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-red-900/30 transition-all cursor-pointer"
+                >
+                  Perbarui preferensi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Hidden Google Translate Element Container */}
+      <div id="google_translate_element" style={{ display: "none" }} />
     </div>
   );
 }
