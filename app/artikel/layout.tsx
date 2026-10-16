@@ -250,6 +250,65 @@ export default function ArticleLayout({
   const [analyticsCookies, setAnalyticsCookies] = useState(false);
   const [cookieSaved, setCookieSaved] = useState(false);
 
+  // Status apakah ada modal yang sedang terbuka
+  const isAnyModalOpen = Boolean(legalModal || isLangModalOpen);
+
+  // Survey Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    propertyType: "",
+    pestType: "",
+    complaint: "",
+    location: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setTimeout(() => {
+      setFormSubmitted(false);
+      setFormData({
+        name: "",
+        propertyType: "",
+        pestType: "",
+        complaint: "",
+        location: "",
+      });
+    }, 4500);
+  };
+
+  // FAQ items & state
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqList = [
+    {
+      question: "Apa itu Vecos ?",
+      answer:
+        "Vecos adalah perusahaan jasa pengendalian hama (pest control) profesional bersertifikasi yang berfokus pada Integrated Pest Management (IPM). Kami melindungi hunian residensial, gedung perkantoran, restoran, dan industri dengan metode ramah lingkungan, aman bagi keluarga, dan bergaransi tuntas.",
+    },
+    {
+      question: "Berapa Harga Jasa Vecos ?",
+      answer:
+        "Biaya layanan Vecos sangat fleksibel dan transparan, disesuaikan dengan luas area properti, jenis hama yang menyerang, dan tingkat infestasi. Kami menyediakan layanan Survey Lokasi & Konsultasi GRATIS untuk memberikan estimasi biaya yang paling efisien.",
+    },
+    {
+      question: "Apakah Vecos Menyediakan Jasa Pest Control Untuk Rumah ?",
+      answer:
+        "Ya, tentu saja! Vecos memiliki paket khusus hunian keluarga dengan formulasi bahan kimia berstandar Kemenkes yang tidak berbau menyengat (odorless) serta aman bagi anak-anak, ibu hamil, dan hewan peliharaan.",
+    },
+    {
+      question: "Berapa Biaya Survey atau Inspeksi Hama Vecos?",
+      answer:
+        "Layanan survey lokasi dan inspeksi hama awal oleh tim teknisi profesional Vecos adalah 100% GRATIS tanpa dipungut biaya apapun untuk seluruh area jangkauan kami.",
+    },
+  ];
+
+
   const openLangModal = () => {
     setTempCountry(currentCountry);
     const country = countryList.find((c) => c.code === currentCountry) || countryList[0];
@@ -634,115 +693,271 @@ export default function ArticleLayout({
       </main>
 
       {/* ======================================================== */}
-      {/* 2. FOOTER PERSIS HALAMAN UTAMA (MERAH PENUH #E02428)      */}
+      {/* 2. SECTION: SURVEY FORM, FAQ & FOOTER FLOW (FULL WIDTH)  */}
       {/* ======================================================== */}
-      <footer className="w-full bg-[#E02428] text-white pt-12 sm:pt-16 pb-0 shadow-2xl relative z-10">
-        <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12">
-          {/* 2 Kolom Link Navigasi Putih */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 text-xs sm:text-sm md:text-base font-semibold leading-relaxed">
-            <ul className="space-y-1.5 sm:space-y-2">
-              <li><Link href="/#beranda" className="hover:underline transition-all">Beranda</Link></li>
-              <li><Link href="/#form-survey" className="hover:underline transition-all">Hubungi kami</Link></li>
-              <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
-              <li><Link href="/#tentang" className="hover:underline transition-all">Tentang Vecos</Link></li>
-
-            </ul>
-
-            <ul className="space-y-1.5 sm:space-y-2">
-              <li><Link href="/#layanan" className="hover:underline transition-all">Pembasmi Serangga</Link></li>
-              <li><Link href="/#layanan" className="hover:underline transition-all">Pembasmi Tikus</Link></li>
-              <li><Link href="/#layanan" className="hover:underline transition-all">Anti Rayap</Link></li>
-              <li><Link href="/#penawaran" className="hover:underline transition-all">Disinfeksi</Link></li>
-              <li><Link href="/#prime-shield" className="hover:underline transition-all">Prime Shield-01</Link></li>
-            </ul>
+      <div className={`relative w-full mt-10 sm:mt-16 overflow-visible ${isAnyModalOpen ? "z-0" : ""}`}>
+        {/* 1. Banner Survey dengan Foto Customer (Full Width) */}
+        <div id="form-survey" className="w-full relative z-0 overflow-hidden shadow-2xl border-t-4 border-[#dc2626] min-h-[480px] sm:min-h-[640px] md:min-h-[740px] lg:min-h-[800px] flex items-center justify-center">
+          {/* Foto Customer Asli */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/image_form.png"
+              alt="Survey & Konsultasi Tim Vecos"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            {/* Pelapis Gelap (Dark Overlay) */}
+            <div className="absolute inset-0 bg-black/50 pointer-events-none" />
           </div>
 
-          {/* Baris Brand, Kontak & Badge */}
-          <div className="flex items-center justify-between gap-3 sm:gap-4 pt-2 pb-5 sm:pb-8 border-b border-white/20">
-            {/* Sisi Kiri: Brand, Sosmed, Telepon & Hak Cipta */}
-            <div className="space-y-1.5 sm:space-y-2.5">
-              <span className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-white block">
-                VECOS
-              </span>
-
-              <div className="flex items-center gap-1.5 sm:gap-2.5">
-                <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Instagram">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
-                </a>
-                <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Facebook">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" /></svg>
-                </a>
-                <a href="https://wa.me/6285743681500" target="_blank" rel="noopener noreferrer" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="WhatsApp">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" /></svg>
-                </a>
-              </div>
-
-              <div className="text-xs sm:text-sm md:text-base font-bold text-white pt-0.5">
-                0857-4368-1500
-              </div>
-
-              <div className="text-[10px] sm:text-xs text-white/90 leading-tight">
-                <p>PT Vecos Intitama Mulya</p>
-              </div>
-            </div>
-
-            {/* Sisi Kanan: Badge Vecos Proffing Defender */}
-            <div className="bg-[#d2d4d8] text-zinc-900 px-2 sm:px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg flex items-center gap-2 sm:gap-3.5 max-w-[155px] xs:max-w-[185px] sm:max-w-xs shrink-0">
-              <div className="w-7 h-9 sm:w-10 sm:h-12 relative shrink-0">
-                <Image
-                  src="/images/pestcontrol.png"
-                  alt="Vecos Proffing Defender"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div>
-                <div className="text-[9.5px] sm:text-xs md:text-sm font-extrabold leading-tight text-[#3a3f4d]">
-                  Vecos Proffing<br />Defender
+          {/* Form Input di Tengah Section */}
+          <div className="relative z-10 w-full pt-8 sm:pt-14 pb-16 sm:pb-28 md:pb-32 px-3 sm:px-4 flex flex-col items-center justify-center">
+            {formSubmitted ? (
+              <div className="p-5 sm:p-8 bg-emerald-900/90 backdrop-blur-md border border-emerald-400 rounded-2xl text-center space-y-2 max-w-sm sm:max-w-md w-full">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto text-base sm:text-lg font-bold">
+                  ✓
                 </div>
-                <div className="text-[7.5px] sm:text-[9px] md:text-[10px] text-[#555a66] leading-tight pt-0.5 line-clamp-2">
-                  Layanan penutupan celah hama di setiap titik properti anda.
+                <h4 className="text-sm sm:lg font-bold text-white">Permintaan Berhasil Terkirim!</h4>
+                <p className="text-xs sm:text-sm text-emerald-100">
+                  Tim VECOS akan segera menghubungi Anda untuk jadwal survey lokasi gratis.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="w-full max-w-sm sm:max-w-lg space-y-2 sm:space-y-3">
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Nama /Perusahaan"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-white/95 text-zinc-900 placeholder:text-zinc-500 border border-zinc-200/90 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-red-500 shadow-sm"
+                  />
                 </div>
+
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Jenis Properti"
+                    value={formData.propertyType}
+                    onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
+                    className="w-full bg-white/95 text-zinc-900 placeholder:text-zinc-500 border border-zinc-200/90 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-red-500 shadow-sm"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Jenis Hama"
+                    value={formData.pestType}
+                    onChange={(e) => setFormData({ ...formData, pestType: e.target.value })}
+                    className="w-full bg-white/95 text-zinc-900 placeholder:text-zinc-500 border border-zinc-200/90 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-red-500 shadow-sm"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Keluhan Anda"
+                    value={formData.complaint}
+                    onChange={(e) => setFormData({ ...formData, complaint: e.target.value })}
+                    className="w-full bg-white/95 text-zinc-900 placeholder:text-zinc-500 border border-zinc-200/90 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-red-500 shadow-sm"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Alamat Anda"
+                    value={formData.location}
+                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    className="w-full bg-white/95 text-zinc-900 placeholder:text-zinc-500 border border-zinc-200/90 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-red-500 shadow-sm"
+                  />
+                </div>
+
+                <div className="pt-0.5 sm:pt-1 space-y-2">
+                  <button
+                    type="submit"
+                    className="w-full bg-[#E5282E] hover:bg-[#d02026] text-white font-bold text-xs sm:text-sm md:text-base py-2.5 sm:py-3.5 rounded-xl shadow-lg transition-colors cursor-pointer"
+                  >
+                    Amankan Properti Anda
+                  </button>
+
+                  <p className="text-[11px] sm:text-xs text-center text-zinc-200/90 leading-relaxed px-2 font-normal">
+                    Lihat{" "}
+                    <button
+                      type="button"
+                      onClick={() => setLegalModal("privacy")}
+                      className="text-white underline underline-offset-2 hover:text-red-400 font-semibold cursor-pointer transition-colors"
+                    >
+                      kebijakan privasi kami
+                    </button>{" "}
+                    untuk melihat komitmen kami untuk melindungi dan menghormati privasi anda serta cara mengelola preferensi anda.
+                  </p>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* 2. Card FAQ (Full Width Melayang Di Atas Survey dan Footer) */}
+        <div className={`w-full relative ${isAnyModalOpen ? "z-0 pointer-events-none" : "z-20"} -mt-12 sm:-mt-24 md:-mt-28 -mb-12 sm:-mb-24 md:-mb-28`}>
+          <div className="w-full bg-[#d2d5dc] rounded-2xl sm:rounded-3xl lg:rounded-[36px] py-5 sm:py-10 md:py-12 px-3 sm:px-8 md:px-12 shadow-2xl border-y border-zinc-300/80">
+            <div className="w-full max-w-7xl mx-auto grid grid-cols-12 gap-2.5 sm:gap-6 md:gap-8 items-center">
+              {/* Sisi Kiri: Frequently Question for Vecos */}
+              <div className="col-span-5 sm:col-span-4">
+                <h2 className="text-xs sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#3a3e48] tracking-tight leading-[1.15]">
+                  <span className="block">Frequently</span>
+                  <span className="block">Question</span>
+                  <span className="block">for</span>
+                  <span className="block">Vecos</span>
+                </h2>
+              </div>
+
+              {/* Sisi Kanan: 4 Accordion Pill */}
+              <div className="col-span-7 sm:col-span-8 space-y-2 sm:space-y-3 w-full">
+                {faqList.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div key={idx} className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+                      <button
+                        type="button"
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full text-left px-2.5 sm:px-6 py-2 sm:py-3.5 bg-[#b2b7bf] hover:bg-[#a6abb3] text-white flex items-center justify-between gap-1.5 sm:gap-2 font-bold text-[10px] sm:text-sm md:text-base transition-colors cursor-pointer leading-tight"
+                      >
+                        <span className="break-words">{faq.question}</span>
+                        <span className="shrink-0 text-white font-black text-xs sm:text-lg ml-1">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+
+                      {isOpen && (
+                        <div className="px-3 sm:px-6 py-2.5 sm:py-4 text-[10px] sm:text-sm text-zinc-800 leading-relaxed bg-[#e5e8ef] border-t border-zinc-300/70 font-medium">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Strip Paling Bawah: Copyright Kiri & Menu Legal Biru Kanan (Sesuai Referensi) */}
-        <div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
-          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
-            {/* Sisi Kiri: Copyright */}
-            <div className="text-zinc-600 font-normal">
-              Copyright © 2026 PT Vecos Intitama Mulya . All Rights Reserved
+        {/* 3. Footer Merah Penuh */}
+        <footer className="w-full bg-[#E02428] text-white pt-18 sm:pt-36 md:pt-40 pb-0 shadow-2xl relative z-10">
+          <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12">
+            {/* 2 Kolom Link Navigasi Putih */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 text-xs sm:text-sm md:text-base font-semibold leading-relaxed">
+              <ul className="space-y-1.5 sm:space-y-2">
+                <li><Link href="/#beranda" className="hover:underline transition-all">Beranda</Link></li>
+                <li><Link href="#form-survey" className="hover:underline transition-all">Hubungi kami</Link></li>
+                <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
+                <li><Link href="/#tentang" className="hover:underline transition-all">Tentang Vecos</Link></li>
+              </ul>
+
+              <ul className="space-y-1.5 sm:space-y-2">
+                <li><Link href="/#layanan" className="hover:underline transition-all">Pembasmi Serangga</Link></li>
+                <li><Link href="/#layanan" className="hover:underline transition-all">Pembasmi Tikus</Link></li>
+                <li><Link href="/#layanan" className="hover:underline transition-all">Anti Rayap</Link></li>
+                <li><Link href="/#penawaran" className="hover:underline transition-all">Disinfeksi</Link></li>
+                <li><Link href="/#prime-shield" className="hover:underline transition-all">Prime Shield-01</Link></li>
+              </ul>
             </div>
 
-            {/* Sisi Kanan: Menu Kebijakan Privasi, Ketentuan Layanan, Pengaturan Cookie */}
-            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-7 font-normal">
-              <button
-                type="button"
-                onClick={() => setLegalModal("privacy")}
-                className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
-              >
-                Kebijakan Privasi
-              </button>
-              <button
-                type="button"
-                onClick={() => setLegalModal("terms")}
-                className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
-              >
-                Ketentuan Layanan
-              </button>
-              <button
-                type="button"
-                onClick={() => setLegalModal("cookie")}
-                className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
-              >
-                Pengaturan Cookie
-              </button>
+            {/* Baris Brand, Kontak & Badge */}
+            <div className="flex items-center justify-between gap-3 sm:gap-4 pt-2 pb-5 sm:pb-8 border-b border-white/20">
+              {/* Sisi Kiri: Brand, Sosmed, Telepon & Hak Cipta */}
+              <div className="space-y-1.5 sm:space-y-2.5">
+                <span className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-white block">
+                  VECOS
+                </span>
+
+                <div className="flex items-center gap-1.5 sm:gap-2.5">
+                  <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Instagram">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                  </a>
+                  <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Facebook">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" /></svg>
+                  </a>
+                  <a href="https://wa.me/6285743681500" target="_blank" rel="noopener noreferrer" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="WhatsApp">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" /></svg>
+                  </a>
+                </div>
+
+                <div className="text-xs sm:text-sm md:text-base font-bold text-white pt-0.5">
+                  0857-4368-1500
+                </div>
+
+                <div className="text-[10px] sm:text-xs text-white/90 leading-tight">
+                  <p>PT Vecos Intitama Mulya</p>
+                </div>
+              </div>
+
+              {/* Sisi Kanan: Badge Vecos Proffing Defender */}
+              <div className="bg-[#d2d4d8] text-zinc-900 px-2 sm:px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg flex items-center gap-2 sm:gap-3.5 max-w-[155px] xs:max-w-[185px] sm:max-w-xs shrink-0">
+                <div className="w-7 h-9 sm:w-10 sm:h-12 relative shrink-0">
+                  <Image
+                    src="/images/pestcontrol.png"
+                    alt="Vecos Proffing Defender"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="text-[9.5px] sm:text-xs md:text-sm font-extrabold leading-tight text-[#3a3f4d]">
+                    Vecos Proffing<br />Defender
+                  </div>
+                  <div className="text-[7.5px] sm:text-[9px] md:text-[10px] text-[#555a66] leading-tight pt-0.5 line-clamp-2">
+                    Layanan penutupan celah hama di setiap titik properti anda.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+
+          {/* Strip Paling Bawah: Copyright Kiri & Menu Legal Biru Kanan (Sesuai Referensi) */}
+          <div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
+              {/* Sisi Kiri: Copyright */}
+              <div className="text-zinc-600 font-normal">
+                Copyright © 2026 PT Vecos Intitama Mulya . All Rights Reserved
+              </div>
+
+              {/* Sisi Kanan: Menu Kebijakan Privasi, Ketentuan Layanan, Pengaturan Cookie */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-7 font-normal">
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("privacy")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Kebijakan Privasi
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("terms")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Ketentuan Layanan
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLegalModal("cookie")}
+                  className="text-[#0070ba] hover:underline cursor-pointer transition-colors"
+                >
+                  Pengaturan Cookie
+                </button>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+
 
       {/* ======================================================== */}
       {/* GLOBAL MODALS (ROOT LEVEL Z-[999])                       */}
