@@ -44,26 +44,19 @@ export async function generateMetadata({
 }
 
 const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
-  rumah: { image: "/images/artikel/residential.png" },
-  disinfeksi: { image: "/images/banner/pc/2.png" },
-  "layanan-vecos": { image: "/images/banner/pc/3.png" },
-  kampus: { image: "/images/artikel/school.jpg" },
-  hotel: { image: "/images/artikel/hotel.jpg" },
-  restauran: { image: "/images/artikel/restaurant.jpg" },
-  "rumah-sakit": { image: "/images/artikel/hospital.jpg" },
-  bandara: { image: "/images/artikel/airport.jpg" },
-  warehouse: { image: "/images/artikel/warehouse.jpg" },
-  cafe: { image: "/images/penawaran/9.png" },
-  hipermarket: { image: "/images/artikel/retail.jpg" },
-  kantor: { image: "/images/artikel/office.png" },
-  "pabrik-makanan": { image: "/images/penawaran/11.png" },
-  apartemen: { image: "/images/offer_rumah.jpg" },
-  mall: { image: "/images/penawaran/6.png" },
-  "data-center": { image: "/images/penawaran/7.png" },
-  bioskop: { image: "/images/penawaran/8.png" },
-  "pabrik-manufaktur": { image: "/images/artikel/manufacture.jpg" },
-  "tempat-ibadah": { image: "/images/penawaran/2.png" },
-  gym: { image: "/images/penawaran/4.png" },
+  rumah: { image: "/images/artikel/rumah/bannerpc.png", imageMobile: "/images/artikel/rumah/bannermobile.png" },
+  disinfeksi: { image: "/images/banner/pc/2.png", imageMobile: "" },
+  "layanan-vecos": { image: "/images/banner/pc/3.png", imageMobile: "" },
+  kampus: { image: "/images/artikel/kampus/bannerpc.png", imageMobile: "/images/artikel/kampus/bannermobile.png" },
+  hotel: { image: "/images/artikel/hotel/bannerpc.png", imageMobile: "/images/artikel/hotel/bannermobile.png" },
+  restauran: { image: "/images/artikel/restauran/bannerpc.png", imageMobile: "/images/artikel/restauran/bannermobile.png" },
+  "rumah-sakit": { image: "/images/artikel/rumah-sakit/bannerpc.png", imageMobile: "/images/artikel/rumah-sakit/bannermobile.png" },
+  bandara: { image: "/images/artikel/bandara/bannerpc.png", imageMobile: "/images/artikel/bandara/bannermobile.png" },
+  warehouse: { image: "/images/artikel/warehouse/bannerpc.png", imageMobile: "/images/artikel/warehouse/bannermobile.png" },
+  cafe: { image: "/images/artikel/cafe/bannerpc.png", imageMobile: "/images/artikel/cafe/bannermobile.png" },
+  hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/hipermarket/bannermobile.png" },
+  kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/kantor/bannermobile.png" },
+  "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/pabrik-makanan/bannermobile.png" },
 };
 
 const propertyTitleMap: Record<string, string> = {
@@ -109,10 +102,10 @@ async function ArticleContent({
       {/* ======================================================== */}
       {/* 1. HERO SECTION (FULL 1 SCREEN + CENTERED TEXT & BUTTONS) */}
       {/* ======================================================== */}
-      <section className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[580px] overflow-hidden bg-zinc-950 text-white flex items-center justify-center shadow-2xl">
-        {/* Background Banner Image Mobile & Desktop */}
+      <section className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[580px] overflow-hidden bg-zinc-100 text-white flex items-center justify-center shadow-2xl">
+        {/* Background Banner Image Mobile & Desktop (100% Cerah, Tanpa Efek Gelap) */}
         <div className="absolute inset-0 z-0">
-          {banner.imageMobile ? (
+          {banner.imageMobile && banner.imageMobile.trim() !== "" ? (
             <>
               <Image
                 src={banner.imageMobile}
@@ -138,17 +131,13 @@ async function ArticleContent({
               className="object-cover object-center scale-105"
             />
           )}
-
-          {/* Dark Overlay Gradient untuk kontras maksimal */}
-          <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/70 pointer-events-none" />
         </div>
 
         {/* Hero Content Container (Tampil di Tengah Penuh) */}
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
           <div className="w-full space-y-6 sm:space-y-8 flex flex-col items-center justify-center text-center">
             {/* Judul Hero: Nama Properti di Tengah */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.12] tracking-tight drop-shadow-2xl uppercase text-center max-w-4xl">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.12] tracking-tight uppercase text-center max-w-4xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_12px_rgba(0,0,0,0.85)]">
               {propertyTitle}
             </h1>
 
