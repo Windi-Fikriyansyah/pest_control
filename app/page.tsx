@@ -1089,6 +1089,8 @@ export default function Home() {
     location: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submittedCode, setSubmittedCode] = useState("");
+  const [waLink, setWaLink] = useState("");
 
   // Pest pagination state: 0 = 6 hama pertama (1-6), 1 = sisanya (7-11)
   const [pestPage, setPestPage] = useState(0);
@@ -1148,17 +1150,59 @@ export default function Home() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 1. Generate Kode Unik Survey (Format: VCS-SRV-YYMMDD-XXXX)
+    const now = new Date();
+    const y = String(now.getFullYear()).slice(-2);
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    const randomHex = Math.random().toString(36).substring(2, 6).toUpperCase();
+    const surveyCode = `VCS-SRV-${y}${m}${d}-${randomHex}`;
+
+    const dateFormatted = now.toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    const timeFormatted = now.toLocaleTimeString("id-ID", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    // 2. Format teks WhatsApp terstruktur dengan data form dan kodenya
+    const message = 
+`*FORMULIR PENGAJUAN SURVEY VECOS*
+━━━━━━━━━━━━━━━━━━━━━
+📋 *Kode Survey:* ${surveyCode}
+📅 *Waktu:* ${dateFormatted}, ${timeFormatted} WIB
+
+👤 *Nama / Perusahaan:*
+${formData.name || "-"}
+
+🏢 *Jenis Properti:*
+${formData.propertyType || "-"}
+
+🦟 *Jenis Hama:*
+${formData.pestType || "-"}
+
+📝 *Keluhan Anda:*
+${formData.complaint || "-"}
+
+📍 *Alamat / Lokasi:*
+${formData.location || "-"}
+━━━━━━━━━━━━━━━━━━━━━
+Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengendalian hama untuk data di atas. Mohon konfirmasi jadwalnya. Terima kasih.`;
+
+    // Nomor Call Center resmi di hero section: 0857-4368-1500 (Format WA: 6285743681500)
+    const waUrl = `https://wa.me/6285743681500?text=${encodeURIComponent(message)}`;
+
+    setSubmittedCode(surveyCode);
+    setWaLink(waUrl);
     setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: "",
-        propertyType: "",
-        pestType: "",
-        complaint: "",
-        location: "",
-      });
-    }, 4500);
+
+    if (typeof window !== "undefined") {
+      window.open(waUrl, "_blank");
+    }
   };
 
   // Pest items data - 11 Macam Hama (Tampilan 6 hama utama, sisanya 5 hama via icon selanjutnya)
@@ -2381,14 +2425,62 @@ export default function Home() {
           {/* Form Input di Tengah Section */}
           <div className="relative z-10 w-full pt-8 sm:pt-14 pb-16 sm:pb-28 md:pb-32 px-3 sm:px-4 flex flex-col items-center justify-center">
             {formSubmitted ? (
-              <div className="p-5 sm:p-8 bg-emerald-900/90 backdrop-blur-md border border-emerald-400 rounded-2xl text-center space-y-2 max-w-sm sm:max-w-md w-full">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto text-base sm:text-lg font-bold">
+              <div className="p-5 sm:p-8 bg-white/95 backdrop-blur-md border border-emerald-400 rounded-2xl text-center space-y-3 max-w-sm sm:max-w-md w-full shadow-2xl animate-in zoom-in-95 duration-200">
+                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold shadow-md">
                   ✓
                 </div>
-                <h4 className="text-sm sm:text-lg font-bold text-white">Permintaan Berhasil Terkirim!</h4>
-                <p className="text-xs sm:text-sm text-emerald-100">
-                  Tim VECOS akan segera menghubungi Anda untuk jadwal survey lokasi gratis.
-                </p>
+                <div className="space-y-1">
+                  <h4 className="text-base sm:text-xl font-black text-zinc-900">
+                    Permintaan Survey Terkirim!
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600">
+                    Formulir Anda telah diteruskan ke WhatsApp Call Center VECOS.
+                  </p>
+                </div>
+
+                {submittedCode && (
+                  <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-3 text-center space-y-0.5">
+                    <span className="text-[11px] font-medium text-zinc-500 block uppercase tracking-wider">
+                      Kode Pengajuan Survey
+                    </span>
+                    <span className="text-base sm:text-lg font-mono font-black text-[#C81E27] tracking-wider block">
+                      {submittedCode}
+                    </span>
+                  </div>
+                )}
+
+                <div className="pt-2 flex flex-col gap-2">
+                  {waLink && (
+                    <a
+                      href={waLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs sm:text-sm py-3 rounded-xl shadow-md transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" />
+                      </svg>
+                      <span>Buka Chat WhatsApp</span>
+                    </a>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setFormData({
+                        name: "",
+                        propertyType: "",
+                        pestType: "",
+                        complaint: "",
+                        location: "",
+                      });
+                    }}
+                    className="text-xs text-zinc-500 hover:text-zinc-800 font-semibold py-1 transition-colors cursor-pointer"
+                  >
+                    ← Kirim Formulir Baru
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="w-full max-w-sm sm:max-w-lg space-y-2 sm:space-y-3">
