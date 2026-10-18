@@ -222,14 +222,14 @@ const offerSlides: OfferSlide[] = [
   },
   {
     id: 5,
-    title: "Perlindungan Pest Control Café & Coffee Shop",
+    title: "Perlindungan Pest Control Coffee Shop",
     subtitle:
       "Menjaga estetika, higienitas bar kopi, dan kenyamanan nongkrong pelanggan bebas dari kecoa, semut, dan lalat dengan treatment senyap.",
-    image: "/images/penawaran/9.png",
-    tag: "Café & Coffee Shop",
+    image: "/images/penawaran/cafe.png",
+    tag: "Coffee Shop",
     slug: "cafe",
     article: {
-      title: "Pengendalian Hama Higienis untuk Café & Kedai Kopi Modern",
+      title: "Pengendalian Hama Higienis untuk Kedai Kopi Modern",
       date: "3 Oktober 2026",
       readTime: "3 Menit Baca",
       content: [
@@ -246,11 +246,11 @@ const offerSlides: OfferSlide[] = [
   },
   {
     id: 6,
-    title: "Pengendalian Hama Fasilitas Pabrik Industri Makanan",
+    title: "Pengendalian Hama Fasilitas Manufaktur",
     subtitle:
       "Solusi terintegrasi audit HACCP, BRC, dan BPOM untuk memastikan lini produksi dan packaging bebas kontaminasi hama biologis.",
-    image: "/images/penawaran/11.png",
-    tag: "Pabrik Industri Makanan",
+    image: "/images/penawaran/manufaktur.png",
+    tag: "Manufaktur",
     slug: "pabrik-makanan",
     article: {
       title: "Protokol Audit HACCP & Pengendalian Hama Industri Makanan",
@@ -445,14 +445,14 @@ const specialOfferServices = [
   },
   {
     id: 5,
-    title: "CAFÉ & COFFEE SHOP",
-    image: "/images/penawaran/9.png",
+    title: "KEDAI KOPI",
+    image: "/images/penawaran/cafe.png",
     slug: "cafe",
   },
   {
     id: 6,
-    title: "PABRIK INDUSTRI MAKANAN",
-    image: "/images/penawaran/11.png",
+    title: "MANUFAKTUR",
+    image: "/images/penawaran/manufaktur.png",
     slug: "pabrik-makanan",
   },
   {

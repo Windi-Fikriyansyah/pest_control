@@ -15304,897 +15304,255 @@ export const articles: Article[] = [
         ]
       },
       {
-        "type": "paragraph",
-        "text": "Area Restoran",
-        "runs": [
-          {
-            "text": "Area ",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Restoran",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Jenis Hama Spesifik",
-        "runs": [
-          {
-            "text": "Jenis Hama ",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Spesifik",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Bahaya Utama",
-        "runs": [
-          {
-            "text": "Bahaya",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Utama",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Dapur & Penyimpanan",
-        "runs": [
-          {
-            "text": "Dapur",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " & ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Penyimpanan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kecoa Jerman, Tikus, Lalat",
-        "runs": [
-          {
-            "text": "Kecoa",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Jerman, Tikus, Lalat",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kontaminasi silang bakteri (Salmonella, E. coli), kerusakan bahan makanan.",
-        "runs": [
-          {
-            "text": "Kontaminasi",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "silang",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "bakteri",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " (Salmonella, E. coli), ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kerusakan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "bahan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "makanan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ".",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Ruang Makan (Dining Area)",
-        "runs": [
-          {
-            "text": "Ruang Makan (Dining Area)",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Semut, Lalat, Tikus",
-        "runs": [
-          {
-            "text": "Semut",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", Lalat, Tikus",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Mengganggu kenyamanan pelanggan, kesan kotor, risiko penyakit berbahaya.",
-        "runs": [
-          {
-            "text": "Mengganggu",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kenyamanan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "pelanggan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kesan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kotor",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "risiko",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "penyakit",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "berbahaya",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ".",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Area Pembuangan Sampah & Loading Dock",
-        "runs": [
-          {
-            "text": "Area ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Pembuangan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Sampah",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " & Loading Dock",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Lalat, Tikus, Kecoa Americana",
-        "runs": [
-          {
-            "text": "Lalat, Tikus, ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Kecoa",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Ameri",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "cana",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Tempat berkembang biak utama (breeding ground), sumber bau tak sedap.",
-        "runs": [
-          {
-            "text": "Tempat",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "berkembang",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "biak",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "utama",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " (breeding ground), ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "sumber",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "bau",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "tak",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "sedap",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ".",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Area Gudang / Stockroom",
-        "runs": [
-          {
-            "text": "Area Gudang / Stockroom",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kutu Beras, Tikus, Rayap",
-        "runs": [
-          {
-            "text": "Kutu Beras, Tikus, Rayap",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kerusakan inventaris stok, kerugian finansial akibat produk terbuang.",
-        "runs": [
-          {
-            "text": "Kerusakan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "inventaris",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "stok",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kerugian",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "finansial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "akibat",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "produk",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "terbuang",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ".",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Area Saluran Air (Drainase)",
-        "runs": [
-          {
-            "text": "Area ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Saluran",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Air (",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Drainase",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ")",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kecoa, Nyamuk, Lalat Buah",
-        "runs": [
-          {
-            "text": "Kecoa",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Nyamuk",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", Lalat ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Buah",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Penyebaran kuman ke seluruh area dapur melalui pipa.",
-        "runs": [
-          {
-            "text": "Penyebaran",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kuman",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "ke",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "seluruh",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " area ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "dapur",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "melalui",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " pipa.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
+        "type": "table",
+        "rows": [
+          [
+            {
+              "text": "Area Restoran",
+              "runs": [
+                {
+                  "text": "Area Restoran",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Jenis Hama Spesifik",
+              "runs": [
+                {
+                  "text": "Jenis Hama Spesifik",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Bahaya Utama",
+              "runs": [
+                {
+                  "text": "Bahaya Utama",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Dapur & Penyimpanan",
+              "runs": [
+                {
+                  "text": "Dapur & Penyimpanan",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kecoa Jerman, Tikus, Lalat",
+              "runs": [
+                {
+                  "text": "Kecoa Jerman, Tikus, Lalat",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kontaminasi silang bakteri (Salmonella, E. coli), kerusakan bahan makanan.",
+              "runs": [
+                {
+                  "text": "Kontaminasi silang bakteri (Salmonella, E. coli), kerusakan bahan makanan.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Ruang Makan (Dining Area)",
+              "runs": [
+                {
+                  "text": "Ruang Makan (Dining Area)",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Semut, Lalat, Tikus",
+              "runs": [
+                {
+                  "text": "Semut, Lalat, Tikus",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Mengganggu kenyamanan pelanggan, kesan kotor, risiko penyakit berbahaya.",
+              "runs": [
+                {
+                  "text": "Mengganggu kenyamanan pelanggan, kesan kotor, risiko penyakit berbahaya.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Area Pembuangan Sampah & Loading Dock",
+              "runs": [
+                {
+                  "text": "Area Pembuangan Sampah & Loading Dock",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Lalat, Tikus, Kecoa Americana",
+              "runs": [
+                {
+                  "text": "Lalat, Tikus, Kecoa Americana",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Tempat berkembang biak utama (breeding ground), sumber bau tak sedap.",
+              "runs": [
+                {
+                  "text": "Tempat berkembang biak utama (breeding ground), sumber bau tak sedap.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Area Gudang / Stockroom",
+              "runs": [
+                {
+                  "text": "Area Gudang / Stockroom",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kutu Beras, Tikus, Rayap",
+              "runs": [
+                {
+                  "text": "Kutu Beras, Tikus, Rayap",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kerusakan inventaris stok, kerugian finansial akibat produk terbuang.",
+              "runs": [
+                {
+                  "text": "Kerusakan inventaris stok, kerugian finansial akibat produk terbuang.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Area Saluran Air (Drainase)",
+              "runs": [
+                {
+                  "text": "Area Saluran Air (Drainase)",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kecoa, Nyamuk, Lalat Buah",
+              "runs": [
+                {
+                  "text": "Kecoa, Nyamuk, Lalat Buah",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Penyebaran kuman ke seluruh area dapur melalui pipa.",
+              "runs": [
+                {
+                  "text": "Penyebaran kuman ke seluruh area dapur melalui pipa.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ]
+        ]
       },
       {
         "type": "heading",
