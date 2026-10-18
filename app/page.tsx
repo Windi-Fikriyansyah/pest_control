@@ -1533,7 +1533,7 @@ export default function Home() {
       {/* ======================================================== */}
       <section
         id="beranda"
-        className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[620px] max-h-[1080px] overflow-hidden bg-zinc-900 shadow-md flex flex-col justify-between"
+        className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[620px] sm:min-h-[640px] max-h-[1080px] overflow-hidden bg-zinc-900 shadow-md flex flex-col justify-between"
       >
         {/* Container Slide Gambar & Teks */}
         <div className="relative w-full h-full flex items-center">
@@ -1568,7 +1568,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30 md:from-black/80 md:via-black/50 md:to-transparent pointer-events-none"></div>
 
                 {/* Content Box Teks & Tombol berada di dalam gambar carousel */}
-                <div className="relative h-full w-full px-5 sm:px-10 md:px-16 lg:px-24 flex flex-col justify-start pt-9 xs:pt-12 sm:pt-6 sm:justify-center pb-64 sm:pb-40 md:pb-44 lg:pb-48">
+                <div className="relative h-full w-full px-5 sm:px-10 md:px-16 lg:px-24 flex flex-col justify-start pt-9 xs:pt-12 sm:pt-6 sm:justify-center pb-[280px] sm:pb-[285px] md:pb-[295px] lg:pb-[310px]">
                   <div className="max-w-xl lg:max-w-2xl space-y-2.5 sm:space-y-4">
                     {/* Judul Hero Slide */}
                     <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black text-white leading-tight tracking-tight drop-shadow-md">
