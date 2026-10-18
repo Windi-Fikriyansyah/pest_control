@@ -14689,9 +14689,15 @@ export const articles: Article[] = [
         "isList": false,
         "images": []
       },
+
       {
         "type": "image",
         "src": "/images/artikel/pabrik-makanan/image3.png",
+        "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
+      },
+      {
+        "type": "image",
+        "src": "/images/artikel/pabrik-makanan/image5.png",
         "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
       },
       {
@@ -20952,11 +20958,11 @@ export const articles: Article[] = [
           ]
         ]
       },
-      {
-        "type": "image",
-        "src": "/images/artikel/rumah/image3.png",
-        "alt": "Waspada Ancaman Hama di Rumah Anda : Kenali Jenis dan Solusi"
-      },
+      // {
+      //   "type": "image",
+      //   "src": "/images/artikel/rumah/image3.png",
+      //   "alt": "Waspada Ancaman Hama di Rumah Anda : Kenali Jenis dan Solusi"
+      // },
       {
         "type": "image",
         "src": "/images/artikel/rumah/image4.png",
@@ -23495,11 +23501,11 @@ export const articles: Article[] = [
         "src": "/images/artikel/warehouse/image3.png",
         "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
       },
-      {
-        "type": "image",
-        "src": "/images/artikel/warehouse/image4.png",
-        "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
-      },
+      // {
+      //   "type": "image",
+      //   "src": "/images/artikel/warehouse/image4.png",
+      //   "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
+      // },
       {
         "type": "heading",
         "level": 3,
@@ -24321,7 +24327,7 @@ export const articles: Article[] = [
     ],
     "id": 13
   },
-{
+  {
     "id": 14,
     "slug": "apartemen",
     "title": "Menjaga Kenyamanan Hunian Vertikal: Solusi Pest Control untuk Apartemen & Kondominium",

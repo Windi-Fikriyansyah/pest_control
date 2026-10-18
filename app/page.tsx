@@ -24,9 +24,7 @@ const heroSlides = [
   },
   {
     id: 2,
-    title: "Perlindungan Sterilisasi maksimal untuk Ruang Kerja dan Hunian Bebas Virus",
-    subtitle:
-      "Disinfeksi cold fogging uap mikro berstandar medis untuk membasmi 99.9% patogen dan virus berbahaya tanpa residu kimia berlebih.",
+    title: "Pengendalian Hama Terstruktur untuk properti lebih aman",
     image: "/images/banner/pc/2.png",
     imageMobile: "/images/banner/mobile/2.png",
     callCenter: "0857-4368-1500",
@@ -35,9 +33,9 @@ const heroSlides = [
   },
   {
     id: 3,
-    title: "Amankan Properti Anda dari Ancaman Rayap",
+    title: "Disinfeksi Perlindungan dari Virus Berbahaya",
     subtitle:
-      "Garansi 7 Bulan.",
+      "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari virus berbahaya",
     image: "/images/banner/pc/3.png",
     imageMobile: "/images/banner/mobile/3.png",
     callCenter: "0857-4368-1500",
@@ -46,9 +44,7 @@ const heroSlides = [
   },
   {
     id: 4,
-    title: "Tempat Belajar yang Terbebas dari Hama",
-    subtitle:
-      "Menciptakan lingkungan belajar yang bersih, aman dan bebas hama bagi siswa dan staff.",
+    title: "Lindungi Investasi Properti Anda dari Kerusakan Hama",
     image: "/images/banner/pc/4.png",
     imageMobile: "/images/banner/mobile/4.png",
     callCenter: "0857-4368-1500",
@@ -57,20 +53,20 @@ const heroSlides = [
   },
   {
     id: 5,
-    title: "Perlindungan Pest Control Hotel & Resort",
+    title: "Perlindungan Area Luar yang Nyaman Bebas Nyamuk Tanpa Kebisingan Operasional.",
     subtitle:
-      "Menjaga kenyamanan tamu kualitas sanitasi dan reputasi bisnis Anda dari ancaman Hama.",
-    image: "/images/banner/pc/5.png",
-    imageMobile: "/images/banner/mobile/5.png",
+      "",
+    image: "/images/banner/pc/update5.png",
+    imageMobile: "/images/banner/mobile/update5.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "hotel",
   },
   {
     id: 6,
-    title: "Perlindungan Pest Control Restaurant",
+    title: "Lindungi Bangunan Anda dari Rayap Sejak Awal Fondasi",
     subtitle:
-      "Pencegahan dini bahaya hama di area dapur, penyimpanan bahan baku, hingga area Makan.",
+      "",
     image: "/images/banner/pc/6.png",
     imageMobile: "/images/banner/mobile/6.png",
     callCenter: "0857-4368-1500",
@@ -79,9 +75,9 @@ const heroSlides = [
   },
   {
     id: 7,
-    title: "Perlindungan Pest Control Hospital",
+    title: "Bebaskan Gedung & Restoran Anda dari Ancaman Tikus dengan Solusi Profesional.",
     subtitle:
-      "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan.",
+      "",
     image: "/images/banner/pc/7.png",
     imageMobile: "/images/banner/mobile/7.png",
     callCenter: "0857-4368-1500",
@@ -90,20 +86,18 @@ const heroSlides = [
   },
   {
     id: 8,
-    title: "Perlindungan Pest Control Airport",
+    title: "Jangan Biarkan Area Luar Gedung Jadi Sarang DBD. Basmi Sebelum Berdampak pada Bisnis Anda.",
     subtitle:
-      "Mitra terpercaya pengendalian Hama Bandara.",
-    image: "/images/banner/pc/8.png",
-    imageMobile: "/images/banner/mobile/8.png",
+      "",
+    image: "/images/banner/pc/update8.png",
+    imageMobile: "/images/banner/mobile/update8.png",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "bandara",
   },
   {
     id: 9,
-    title: "Sistem Pengendalian & Monitoring Hama Terpadu",
-    subtitle:
-      "Pemasangan monitoring bait station profesional untuk proteksi aset properti dan industri jangka panjang.",
+    title: "Prime Shield - 01 Perangkap Khusus Lalat Teknologi German",
     image: "/images/banner/pc/9.png",
     imageMobile: "/images/banner/mobile/9.png",
     callCenter: "0857-4368-1500",
