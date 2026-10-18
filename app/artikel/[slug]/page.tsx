@@ -82,6 +82,75 @@ const propertyTitleMap: Record<string, string> = {
   gym: "Gym & Pusat Kebugaran",
 };
 
+const pestList = [
+  {
+    name: "Rayap Tanah",
+    latin: "Macrotermes",
+    image: "/images/binatang/rayap tanah.png",
+    imageClass: "object-contain p-0 scale-110",
+  },
+  {
+    name: "Lalat Hijau",
+    latin: "Lucilia Cericata",
+    image: "/images/binatang/lalat hijau.png",
+    imageClass: "object-contain p-0 w-full h-full scale-125",
+  },
+  {
+    name: "Kecoa Selokan",
+    latin: "Periplaneta Americana",
+    image: "/images/binatang/kecoa amerikana.png",
+    imageClass: "object-contain p-0 w-full h-full scale-125 translate-x-3 sm:translate-x-4",
+  },
+  {
+    name: "Nyamuk DBD",
+    latin: "Aydesaygepti",
+    image: "/images/binatang/nyamuk aeydes.png",
+    imageClass: "object-contain p-1",
+  },
+  {
+    name: "Tikus Atap",
+    latin: "Rattus Ratus",
+    image: "/images/binatang/tikus.png",
+    imageClass: "object-contain p-2",
+  },
+  {
+    name: "Kutu Kasur",
+    latin: "Cimex Lactularius",
+    image: "/images/binatang/kutu kasur.png",
+    imageClass: "object-contain p-4.5 sm:p-6",
+  },
+  {
+    name: "Semut Rangrang",
+    latin: "Oecophylla smaragdina",
+    image: "/images/binatang/semut rang rang.png",
+    imageClass: "object-contain p-2.5 sm:p-3",
+  },
+  {
+    name: "Kelelawar Nighu",
+    latin: "Pipistrellus",
+    image: "/images/binatang/kelelawar.png",
+    imageClass: "object-contain p-2",
+  },
+  {
+    name: "Tawon Vespa",
+    latin: "Vespa Affinis",
+    image: "/images/binatang/tawon vespa.png",
+    imageClass: "object-contain p-2.5 sm:p-3",
+  },
+  {
+    name: "Burung Greja",
+    latin: "Passer montanus",
+    image: "/images/binatang/burung greja.png",
+    imageClass: "object-contain p-2",
+  },
+  {
+    name: "Ular Weling",
+    latin: "Bungarus.Candidus",
+    image: "/images/binatang/ular weling.png",
+    imageClass: "object-contain p-2.5 sm:p-3",
+  },
+];
+
 async function ArticleContent({
   params,
 }: {
@@ -145,7 +214,7 @@ async function ArticleContent({
             <div className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-3.5 sm:gap-5">
               {/* Tombol Amankan Properti Anda */}
               <a
-                href="#form-survey"
+                href="/#form-survey"
                 className="bg-[#C81E27] hover:bg-[#b01820] active:scale-95 text-white font-extrabold text-xs sm:text-sm md:text-base lg:text-lg px-7 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-xl shadow-red-700/50 hover:shadow-red-700/80 transition-all cursor-pointer inline-flex items-center gap-2.5 group"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-none stroke-current stroke-2 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
@@ -194,6 +263,52 @@ async function ArticleContent({
           {article.elements.map((el, idx) => {
             // 1. Gambar
             if (el.type === "image" && el.src) {
+              const isImage2 = /image2\./i.test(el.src) || el.src.toLowerCase().includes("image2");
+              if (isImage2) {
+                return (
+                  <div key={idx} className="my-10 space-y-8 sm:space-y-10">
+                    {/* Grid 4 Kolom di Desktop Sesuai Gambar Referensi (Tanpa Judul & Deskripsi) */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-8 sm:gap-y-10 gap-x-4 sm:gap-x-6 lg:gap-8 text-center justify-items-center">
+                      {pestList.map((pest) => (
+                        <a
+                          key={pest.name}
+                          href="/#form-survey"
+                          className="flex flex-col items-center group cursor-pointer"
+                          title={`Pilih ${pest.name} untuk konsultasi survey`}
+                        >
+                          {/* Circle Container (Ukuran sama persis dengan halaman utama) */}
+                          <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#dce0e6] border-2 border-zinc-200 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
+                            <Image
+                              src={pest.image}
+                              alt={pest.name}
+                              fill
+                              className={`${pest.imageClass || "object-contain p-2"} group-hover:scale-108 transition-transform duration-300`}
+                            />
+                          </div>
+
+                          {/* Nama Hama */}
+                          <h4 className="mt-3.5 text-xs sm:text-sm md:text-base font-medium text-zinc-800 group-hover:text-[#C81E27] transition-colors leading-tight">
+                            {pest.name}
+                          </h4>
+                          {/* Nama Latin (Bold sesuai gambar) */}
+                          <p className="text-[11px] sm:text-xs md:text-sm font-bold text-zinc-950 mt-1 leading-tight">
+                            {pest.latin}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+
+                    {/* VECOS Signature Logo & Red Bar di Bawah Section (Persis Sesuai Gambar Referensi) */}
+                    <div className="pt-8 sm:pt-10 flex flex-col items-start border-t border-zinc-100">
+                      <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[#C81E27] tracking-wider uppercase font-sans">
+                        VECOS
+                      </span>
+                      <div className="w-full h-2 sm:h-2.5 bg-[#C81E27] mt-3"></div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <figure key={idx} className="my-8">
                   <div className="w-full rounded-2xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
@@ -404,16 +519,16 @@ async function ArticleContent({
             return null;
           })}
 
+
           {/* Bagian Penutup Artikel */}
           <div className="pt-8 mt-10 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#C81E27] text-white flex items-center justify-center font-black text-sm">
                 V
               </div>
-              <div>
-                <p className="text-xs font-bold text-zinc-900">Ditinjau oleh Tim Teknis VECOS</p>
-                <p className="text-[11px] text-zinc-500">Divisi Pengendalian Hama & Sanitasi Lingkungan</p>
-              </div>
+              <span className="text-xs font-bold text-zinc-600">
+                PT Vecos Indonesia Berjaya • Layanan Pengendalian Hama Profesional
+              </span>
             </div>
 
             <div className="flex items-center gap-2">
