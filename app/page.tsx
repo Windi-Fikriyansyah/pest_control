@@ -53,7 +53,7 @@ const heroSlides = [
   },
   {
     id: 5,
-    title: "Perlindungan Area Luar yang Nyaman Bebas Nyamuk Tanpa Kebisingan Operasional.",
+    title: "Perlindungan Area Luar yang Nyaman Bebas Nyamuk Tanpa Kebisingan Operasional",
     subtitle:
       "",
     image: "/images/banner/pc/update5.png",
@@ -75,7 +75,7 @@ const heroSlides = [
   },
   {
     id: 7,
-    title: "Bebaskan Gedung & Restoran Anda dari Ancaman Tikus dengan Solusi Profesional.",
+    title: "Bebaskan Gedung & Restoran Anda dari Ancaman Tikus dengan Solusi Profesional",
     subtitle:
       "",
     image: "/images/banner/pc/7.png",
@@ -86,9 +86,9 @@ const heroSlides = [
   },
   {
     id: 8,
-    title: "Jangan Biarkan Area Luar Gedung Jadi Sarang DBD. Basmi Sebelum Berdampak pada Bisnis Anda.",
+    title: "Jangan Biarkan Area Luar Gedung Jadi Sarang DBD",
     subtitle:
-      "",
+      "Basmi Sebelum Berdampak pada Bisnis Anda",
     image: "/images/banner/pc/update8.png",
     imageMobile: "/images/banner/mobile/update8.png",
     callCenter: "0857-4368-1500",
