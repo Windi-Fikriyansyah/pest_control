@@ -908,6 +908,72 @@ export default function Home() {
     }
   }, [isAnyModalOpen]);
 
+  // State dan scroll listener untuk tombol Scroll to Top (hilang saat di atas, muncul saat scroll ke bawah)
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        setShowScrollTop(window.scrollY > 120);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // State & handler untuk Menu Popup Chat Widget (Amankan Properti Anda & WhatsApp)
+  const [isChatMenuOpen, setIsChatMenuOpen] = useState(false);
+  const [csReferenceCode, setCsReferenceCode] = useState("");
+  const chatWidgetRef = useRef<HTMLDivElement | null>(null);
+
+  // Generate Kode Referensi CS setiap kali menu chat dibuka
+  useEffect(() => {
+    if (isChatMenuOpen) {
+      const now = new Date();
+      const y = String(now.getFullYear()).slice(-2);
+      const m = String(now.getMonth() + 1).padStart(2, "0");
+      const d = String(now.getDate()).padStart(2, "0");
+      const rand = Math.random().toString(36).substring(2, 6).toUpperCase();
+      setCsReferenceCode(`${y}${m}${d}-${rand}`);
+    }
+  }, [isChatMenuOpen]);
+
+  // Tutup menu popup chat jika klik di luar area widget
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (chatWidgetRef.current && !chatWidgetRef.current.contains(e.target as Node)) {
+        setIsChatMenuOpen(false);
+      }
+    };
+    if (isChatMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isChatMenuOpen]);
+
+  const handleAmankanPropertiClick = () => {
+    setIsChatMenuOpen(false);
+    const el = document.getElementById("form-survey");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsChatMenuOpen(false);
+    const now = new Date();
+    const y = String(now.getFullYear()).slice(-2);
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    const rand = Math.random().toString(36).substring(2, 6).toUpperCase();
+    const code = csReferenceCode || `${y}${m}${d}-${rand}`;
+    const text = `Halo Customer Service, saya ingin menyampaikan pertanyaan/komplain. (Kode Referensi CS ${code})`;
+    window.open(`https://wa.me/6285743681500?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  };
+
   // Timer loading progress 5 detik untuk Banner Penawaran (Akurat, tidak melangkah)
   useEffect(() => {
     if (selectedArticle !== null) return;
@@ -3138,6 +3204,142 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
       {/* Hidden Google Translate Element Container */}
       <div id="google_translate_element" style={{ display: "none" }} />
+
+      {/* Floating Action Widget & Popup Menu: Fixed di Ujung Bawah Kanan (Warna Merah Transparan) */}
+      <div
+        ref={chatWidgetRef}
+        className={`fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-40 flex items-end gap-2.5 sm:gap-3 transition-opacity duration-300 ${
+          isAnyModalOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        {/* Popup Menu Dialog (Tampil saat tombol icon chat diklik) */}
+        <div
+          className={`bg-[#C81E27]/85 backdrop-blur-md border border-white/20 rounded-[18px] shadow-2xl shadow-red-950/50 p-2 sm:p-2.5 text-white w-64 sm:w-72 transition-all duration-200 ease-out origin-bottom-right ${
+            isChatMenuOpen
+              ? "opacity-100 translate-x-0 scale-100 pointer-events-auto"
+              : "opacity-0 translate-x-3 scale-95 pointer-events-none"
+          }`}
+        >
+          {/* Menu 1: Amankan Properti Anda */}
+          <button
+            type="button"
+            onClick={handleAmankanPropertiClick}
+            className="w-full flex items-center gap-3 px-3 py-2.5 sm:px-3.5 sm:py-3 rounded-xl hover:bg-white/15 active:scale-98 transition-all cursor-pointer text-left group"
+          >
+            {/* Icon Headset / Amankan Properti Sesuai Referensi */}
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+              <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                <circle cx="12" cy="11" r="3" />
+              </svg>
+            </div>
+            <span className="font-bold text-xs sm:text-sm text-white flex-1">Amankan Properti Anda</span>
+            {/* Arrow diagonal ↗ */}
+            <svg
+              className="w-4 h-4 text-white/80 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </button>
+
+          {/* Menu 2: Whatsapp dengan Pesan Template CS Referensi */}
+          <a
+            href="https://wa.me/6285743681500"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
+            className="w-full flex items-center gap-3 px-3 py-2.5 sm:px-3.5 sm:py-3 rounded-xl hover:bg-white/15 active:scale-98 transition-all cursor-pointer text-left group mt-0.5"
+          >
+            {/* Icon WhatsApp Sesuai Referensi */}
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+              <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-white" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </div>
+            <span className="font-bold text-xs sm:text-sm text-white flex-1">Whatsapp</span>
+            {/* Arrow diagonal ↗ */}
+            <svg
+              className="w-4 h-4 text-white/80 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Capsule Widget Vertikal (Warna Merah Transparan) */}
+        <div
+          className={`flex flex-col items-center justify-between bg-[#C81E27]/85 backdrop-blur-md text-white rounded-[14px] shadow-2xl border border-white/20 w-11 sm:w-12 transition-all duration-300 ease-in-out overflow-hidden ${
+            showScrollTop ? "h-24 sm:h-[102px] py-1.5" : "h-11 sm:h-12 py-0"
+          }`}
+        >
+          {/* Tombol Atas: Scroll Kembali ke Atas (Hilang saat di paling atas, muncul saat scroll turun) */}
+          <div
+            className={`w-full flex items-center justify-center transition-all duration-300 ease-in-out overflow-hidden ${
+              showScrollTop
+                ? "h-11 sm:h-12 opacity-100 scale-100 pointer-events-auto"
+                : "h-0 opacity-0 scale-75 pointer-events-none"
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="w-full h-full flex items-center justify-center text-white/90 hover:text-white hover:scale-110 active:scale-90 transition-all cursor-pointer group"
+              title="Kembali ke Atas"
+              aria-label="Scroll to top"
+            >
+              <svg
+                className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 19V5M5 12l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Tombol Bawah: Klik untuk Toggle Menu Chat */}
+          <div className="w-full h-11 sm:h-12 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => setIsChatMenuOpen((prev) => !prev)}
+              className="w-full h-full flex items-center justify-center text-white/90 hover:text-white hover:scale-110 active:scale-90 transition-all cursor-pointer group"
+              title="Menu Bantuan & Chat WhatsApp"
+              aria-label="Menu Bantuan & Chat WhatsApp"
+            >
+              <svg
+                className={`w-5 h-5 transition-transform duration-200 ${isChatMenuOpen ? "scale-115 text-white" : "group-hover:scale-105"}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                <line x1="7.5" y1="9" x2="16.5" y2="9" strokeWidth="2.2" />
+                <line x1="7.5" y1="13" x2="13.5" y2="13" strokeWidth="2.2" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

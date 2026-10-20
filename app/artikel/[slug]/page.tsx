@@ -44,19 +44,19 @@ export async function generateMetadata({
 }
 
 const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
-  rumah: { image: "/images/artikel/rumah/bannerpc.png", imageMobile: "/images/artikel/rumah/bannermobile.png" },
+  rumah: { image: "/images/artikel/rumah/bannerpc.png", imageMobile: "/images/artikel/mobile/11.png" },
   disinfeksi: { image: "/images/banner/pc/2.png", imageMobile: "" },
   "layanan-vecos": { image: "/images/banner/pc/3.png", imageMobile: "" },
-  kampus: { image: "/images/artikel/kampus/bannerpc.png", imageMobile: "/images/artikel/kampus/bannermobile.png" },
-  hotel: { image: "/images/artikel/hotel/bannerpc.png", imageMobile: "/images/artikel/hotel/bannermobile.png" },
-  restauran: { image: "/images/artikel/restauran/bannerpc.png", imageMobile: "/images/artikel/restauran/bannermobile.png" },
-  "rumah-sakit": { image: "/images/artikel/rumah-sakit/bannerpc.png", imageMobile: "/images/artikel/rumah-sakit/bannermobile.png" },
-  bandara: { image: "/images/artikel/bandara/bannerpc.png", imageMobile: "/images/artikel/bandara/bannermobile.png" },
-  warehouse: { image: "/images/artikel/warehouse/bannerpc.png", imageMobile: "/images/artikel/warehouse/bannermobile.png" },
-  cafe: { image: "/images/artikel/cafe/bannerpc.png", imageMobile: "/images/artikel/cafe/bannermobile.png" },
-  hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/hipermarket/bannermobile.png" },
-  kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/kantor/bannermobile.png" },
-  "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/pabrik-makanan/bannermobile.png" },
+  kampus: { image: "/images/artikel/kampus/bannerpc.png", imageMobile: "/images/mobile/kampus/7.png" },
+  hotel: { image: "/images/artikel/hotel/bannerpc.png", imageMobile: "/images/artikel/mobile/8.png" },
+  restauran: { image: "/images/artikel/restauran/bannerpc.png", imageMobile: "/images/artikel/mobile/5.png" },
+  "rumah-sakit": { image: "/images/artikel/rumah-sakit/bannerpc.png", imageMobile: "/images/artikel/mobile/10.png" },
+  bandara: { image: "/images/artikel/bandara/bannerpc.png", imageMobile: "/images/artikel/mobile/9.png" },
+  warehouse: { image: "/images/artikel/warehouse/bannerpc.png", imageMobile: "/images/artikel/mobile/4.png" },
+  cafe: { image: "/images/artikel/cafe/bannerpc.png", imageMobile: "/images/artikel/mobile/2.png" },
+  hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/mobile/6.png" },
+  kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/mobile/3.png" },
+  "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
 };
 
 const propertyTitleMap: Record<string, string> = {
@@ -239,9 +239,9 @@ async function ArticleContent({
       </section>
 
       {/* ======================================================== */}
-      {/* 2. KONTEN UTAMA ARTIKEL                                  */}
+      {/* 2. KONTEN UTAMA ARTIKEL (FULL WIDTH)                     */}
       {/* ======================================================== */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+      <section className="w-full px-2 sm:px-4 md:px-6 lg:px-8 pt-6 sm:pt-10">
         {/* Badan Konten Artikel Dokumen Lengkap */}
         <article className="w-full bg-white p-6 sm:p-10 md:p-14 rounded-3xl border border-zinc-200/90 shadow-sm space-y-6">
           {/* Header Artikel Dokumen */}
@@ -252,13 +252,6 @@ async function ArticleContent({
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-zinc-950 leading-tight tracking-tight">
               {article.title}
             </h2>
-            <div className="flex items-center gap-2.5 text-xs text-zinc-400 font-medium pt-2.5">
-              <span>📅 {article.date}</span>
-              <span>•</span>
-              <span>⏱️ {article.readTime}</span>
-              <span>•</span>
-              <span>📝 {article.wordCount} Kata</span>
-            </div>
           </div>
           {article.elements.map((el, idx) => {
             // 1. Gambar
@@ -580,8 +573,8 @@ export default function ArticleDetailPage({
   return (
     <Suspense
       fallback={
-        <div className="w-full min-h-[60vh] flex items-center justify-center p-8 sm:p-12">
-          <div className="animate-pulse space-y-4 max-w-4xl w-full">
+        <div className="w-full min-h-[60vh] flex items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8">
+          <div className="animate-pulse space-y-4 w-full">
             <div className="h-8 bg-zinc-200 rounded-lg w-2/3"></div>
             <div className="h-4 bg-zinc-200 rounded w-1/3"></div>
             <div className="h-72 bg-zinc-200 rounded-2xl w-full mt-6"></div>
