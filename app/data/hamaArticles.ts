@@ -4035,11 +4035,6 @@ export const hamaArticles: Article[] = [
         "alt": "Burung Greja"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/burung/image5.png",
-        "alt": "Burung Greja"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Apakah boleh membasmi atau meracuni burung di dalam bangunan?",
@@ -10627,11 +10622,6 @@ export const hamaArticles: Article[] = [
         "alt": "Kelelawar"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/kalelawar/image5.png",
-        "alt": "Kelelawar"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Apakah kelelawar yang bersarang di plafon rumah berbahaya bagi kesehatan?",
@@ -13599,16 +13589,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/kalelawar/image6.png",
-        "alt": "Kelelawar"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/kalelawar/image7.png",
-        "alt": "Kelelawar"
-      }
     ]
   },
   {
@@ -24208,11 +24188,6 @@ export const hamaArticles: Article[] = [
         "alt": "Kecoa"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/kecoa/image6.png",
-        "alt": "Kecoa"
-      },
-      {
         "type": "paragraph",
         "text": "Q&A",
         "runs": [
@@ -26407,11 +26382,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/kecoa/image7.png",
-        "alt": "Kecoa"
-      }
     ]
   },
   {
@@ -30545,11 +30515,6 @@ export const hamaArticles: Article[] = [
         "alt": "Kutu Kasur"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/kutu/image5.png",
-        "alt": "Kutu Kasur"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Dari mana asalnya kutu busuk di dalam kamar tidur?",
@@ -32830,11 +32795,6 @@ export const hamaArticles: Article[] = [
         ],
         "isList": true,
         "images": []
-      },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/kutu/image6.png",
-        "alt": "Kutu Kasur"
       }
     ]
   },
@@ -39458,11 +39418,7 @@ export const hamaArticles: Article[] = [
         "isList": false,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/lalat/image6.png",
-        "alt": "Lalat"
-      }
+
     ]
   },
   {
@@ -43450,11 +43406,6 @@ export const hamaArticles: Article[] = [
         "alt": "Nyamuk"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/nyamuk/image5.png",
-        "alt": "Nyamuk"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Apakah obat nyamuk bakar atau semprot kalengan efektif menyelesaikan masalah nyamuk secara total?",
@@ -46122,11 +46073,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/nyamuk/image6.png",
-        "alt": "Nyamuk"
-      }
     ]
   },
   {
@@ -49587,11 +49533,6 @@ export const hamaArticles: Article[] = [
         "alt": "Rayap"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/rayap/image5.png",
-        "alt": "Rayap"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Dari mana asalnya rayap dan bagaimana mereka bisa masuk ke dalam rumah?",
@@ -52360,11 +52301,7 @@ export const hamaArticles: Article[] = [
         "isList": false,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/rayap/image6.png",
-        "alt": "Rayap"
-      }
+
     ]
   },
   {
@@ -56423,11 +56360,6 @@ export const hamaArticles: Article[] = [
         "alt": "Semut"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/semut/image5.png",
-        "alt": "Semut"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Dari mana asalnya semut yang tiba-tiba muncul di dalam rumah?",
@@ -58835,11 +58767,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/semut/image6.png",
-        "alt": "Semut"
-      }
     ]
   },
   {
@@ -62275,11 +62202,6 @@ export const hamaArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikelhama/tawon/image4.png",
-        "alt": "Tawon"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/tawon/image5.png",
         "alt": "Tawon"
       },
       {
@@ -68114,11 +68036,6 @@ export const hamaArticles: Article[] = [
         "alt": "Tikus"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/tikus/image5.png",
-        "alt": "Tikus"
-      },
-      {
         "type": "paragraph",
         "text": "Kenapa tiba-tiba ada tikus di plafon, padahal rumah selalu bersih?\"",
         "runs": [
@@ -70613,11 +70530,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/tikus/image6.png",
-        "alt": "Tikus"
-      }
     ]
   },
   {
@@ -74254,11 +74166,6 @@ export const hamaArticles: Article[] = [
         "alt": "Ular"
       },
       {
-        "type": "image",
-        "src": "/images/artikelhama/ular/image5.png",
-        "alt": "Ular"
-      },
-      {
         "type": "heading",
         "level": 3,
         "text": "Apakah benar menaburkan garam atau kapur barus bisa mengusir ular?",
@@ -76547,11 +76454,6 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/ular/image6.png",
-        "alt": "Ular"
-      }
     ]
   }
 ];
