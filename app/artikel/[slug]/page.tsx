@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { articles, Article, ArticleElement, ArticleRun } from "@/app/data/articles";
+import CallCenterButton from "@/app/components/CallCenterButton";
 
 export async function generateStaticParams() {
   return articles.map((article) => ({
@@ -172,7 +173,7 @@ async function ArticleContent({
       {/* 1. HERO SECTION (FULL 1 SCREEN + CENTERED TEXT & BUTTONS) */}
       {/* ======================================================== */}
       <section className="relative w-full h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] min-h-[580px] overflow-hidden bg-zinc-100 text-white flex items-center justify-center shadow-2xl">
-        {/* Background Banner Image Mobile & Desktop (100% Cerah, Tanpa Efek Gelap) */}
+        {/* Background Banner Image Mobile & Desktop dengan overlay sedikit gelap */}
         <div className="absolute inset-0 z-0">
           {banner.imageMobile && banner.imageMobile.trim() !== "" ? (
             <>
@@ -200,6 +201,9 @@ async function ArticleContent({
               className="object-cover object-center scale-105"
             />
           )}
+
+          {/* Dark Overlay halus agar background sedikit gelap & teks lebih jelas */}
+          <div className="absolute inset-0 bg-black/40 pointer-events-none" />
         </div>
 
         {/* Hero Content Container (Tampil di Tengah Penuh) */}
@@ -223,16 +227,8 @@ async function ArticleContent({
                 <span>Amankan Properti Anda</span>
               </a>
 
-              {/* Tombol Call No HP */}
-              <a
-                href="tel:085743681500"
-                className="bg-white/95 hover:bg-white active:scale-95 text-zinc-900 font-extrabold text-xs sm:text-sm md:text-base lg:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-xl transition-all cursor-pointer inline-flex items-center gap-2.5 border border-white"
-              >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-[#C81E27]" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                </svg>
-                <span>Call Center : 0857-4368-1500</span>
-              </a>
+              {/* Tombol Call Center WhatsApp */}
+              <CallCenterButton className="bg-white/95 hover:bg-white active:scale-95 text-zinc-900 font-extrabold text-xs sm:text-sm md:text-base lg:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-xl transition-all cursor-pointer inline-flex items-center gap-2.5 border border-white" />
             </div>
           </div>
         </div>
@@ -527,15 +523,7 @@ async function ArticleContent({
                 <span>Amankan Properti Anda</span>
               </a>
 
-              <a
-                href="tel:085743681500"
-                className="bg-zinc-100 hover:bg-zinc-200 active:scale-95 text-zinc-900 font-extrabold text-xs sm:text-sm md:text-base px-6 sm:px-7 py-3.5 sm:py-4 rounded-full transition-all cursor-pointer inline-flex items-center gap-2 border border-zinc-200"
-              >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-[#C81E27]" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                </svg>
-                <span>Call Center : 0857-4368-1500</span>
-              </a>
+              <CallCenterButton className="bg-zinc-200 hover:bg-zinc-300 active:scale-95 text-zinc-900 font-extrabold text-xs sm:text-sm md:text-base px-6 sm:px-7 py-3.5 sm:py-4 rounded-full transition-all cursor-pointer inline-flex items-center gap-2 border border-zinc-300 shadow-sm" />
             </div>
 
             {/* Footer Meta Artikel */}

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import CallCenterButton from "@/app/components/CallCenterButton";
 
 // =========================================================================
 // PANDUAN PENGGANTIAN GAMBAR & KONTEN BANNER SLIDE UTAMA (HERO SECTION):
@@ -1702,14 +1703,13 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                         {slide.ctaText}
                       </Link>
 
-                      {/* Pill Call Center (Murni Teks Tanpa Icon Apapun) */}
-                      <a
-                        href={`tel:${slide.callCenter.replace(/[^0-9]/g, "")}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center bg-white/95 hover:bg-white text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold shadow-sm transition-all"
+                      {/* Pill Call Center (Murni Teks Tanpa Icon Apapun - Direct to WhatsApp CS) */}
+                      <CallCenterButton
+                        showIcon={false}
+                        className="inline-flex items-center bg-white/95 hover:bg-white text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold shadow-sm transition-all cursor-pointer"
                       >
                         <span>Call Center : {slide.callCenter}</span>
-                      </a>
+                      </CallCenterButton>
                     </div>
                   </div>
                 </div>
