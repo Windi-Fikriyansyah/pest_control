@@ -58,6 +58,19 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/mobile/6.png" },
   kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/mobile/3.png" },
   "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
+  // Hama articles banner PC & Mobile
+  burung: { image: "/images/artikelhama/image hama/burung greja.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/burung greja.jpg" },
+  kalelawar: { image: "/images/artikelhama/image hama/kelelawar.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/kelelawar.jpg" },
+  kelelawar: { image: "/images/artikelhama/image hama/kelelawar.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/kelelawar.jpg" },
+  kecoa: { image: "/images/artikelhama/image hama/kecoa.png", imageMobile: "/images/artikelhama/image hama/mobile image/kecoa.png" },
+  kutu: { image: "/images/artikelhama/image hama/kutu.png", imageMobile: "/images/artikelhama/image hama/mobile image/kutu.png" },
+  lalat: { image: "/images/artikelhama/image hama/lalat.png", imageMobile: "/images/artikelhama/image hama/mobile image/lalat.png" },
+  nyamuk: { image: "/images/artikelhama/image hama/nyamuk.png", imageMobile: "/images/artikelhama/image hama/mobile image/nyamuk.png" },
+  rayap: { image: "/images/artikelhama/image hama/rayap.png", imageMobile: "/images/artikelhama/image hama/mobile image/rayap.png" },
+  semut: { image: "/images/artikelhama/image hama/semut.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/semut.jpg" },
+  tawon: { image: "/images/artikelhama/image hama/tawon.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/tawon.jpg" },
+  tikus: { image: "/images/artikelhama/image hama/tikus.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/tikus.jpg" },
+  ular: { image: "/images/artikelhama/image hama/ular.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/ular.jpg" },
 };
 
 const propertyTitleMap: Record<string, string> = {
@@ -81,72 +94,96 @@ const propertyTitleMap: Record<string, string> = {
   "pabrik-manufaktur": "Pabrik Manufaktur",
   "tempat-ibadah": "Tempat Ibadah",
   gym: "Gym & Pusat Kebugaran",
+  // Hama title map
+  burung: "Burung Greja",
+  kalelawar: "Kelelawar",
+  kelelawar: "Kelelawar",
+  kecoa: "Kecoa",
+  kutu: "Kutu Kasur",
+  lalat: "Lalat",
+  nyamuk: "Nyamuk",
+  rayap: "Rayap Tanah",
+  semut: "Semut Rangrang",
+  tawon: "Tawon Vespa",
+  tikus: "Tikus",
+  ular: "Ular Weling",
 };
 
 const pestList = [
   {
     name: "Rayap Tanah",
     latin: "Macrotermes",
+    slug: "rayap",
     image: "/images/binatang/rayap tanah.png",
     imageClass: "object-contain p-0 scale-110",
   },
   {
     name: "Lalat Hijau",
     latin: "Lucilia Cericata",
+    slug: "lalat",
     image: "/images/binatang/lalat hijau.png",
     imageClass: "object-contain p-0 w-full h-full scale-125",
   },
   {
     name: "Kecoa Selokan",
     latin: "Periplaneta Americana",
+    slug: "kecoa",
     image: "/images/binatang/kecoa amerikana.png",
     imageClass: "object-contain p-0 w-full h-full scale-125 translate-x-3 sm:translate-x-4",
   },
   {
     name: "Nyamuk DBD",
     latin: "Aydesaygepti",
+    slug: "nyamuk",
     image: "/images/binatang/nyamuk aeydes.png",
     imageClass: "object-contain p-1",
   },
   {
     name: "Tikus Atap",
     latin: "Rattus Ratus",
+    slug: "tikus",
     image: "/images/binatang/tikus.png",
     imageClass: "object-contain p-2",
   },
   {
     name: "Kutu Kasur",
     latin: "Cimex Lactularius",
+    slug: "kutu",
     image: "/images/binatang/kutu kasur.png",
     imageClass: "object-contain p-4.5 sm:p-6",
   },
   {
     name: "Semut Rangrang",
     latin: "Oecophylla smaragdina",
+    slug: "semut",
     image: "/images/binatang/semut rang rang.png",
     imageClass: "object-contain p-2.5 sm:p-3",
   },
   {
     name: "Kelelawar Nighu",
     latin: "Pipistrellus",
+    slug: "kalelawar",
     image: "/images/binatang/kelelawar.png",
     imageClass: "object-contain p-2",
   },
   {
     name: "Tawon Vespa",
     latin: "Vespa Affinis",
+    slug: "tawon",
     image: "/images/binatang/tawon vespa.png",
     imageClass: "object-contain p-2.5 sm:p-3",
   },
   {
     name: "Burung Greja",
     latin: "Passer montanus",
+    slug: "burung",
     image: "/images/binatang/burung greja.png",
     imageClass: "object-contain p-2",
   },
   {
     name: "Ular Weling",
     latin: "Bungarus.Candidus",
+    slug: "ular",
     image: "/images/binatang/ular weling.png",
     imageClass: "object-contain p-2.5 sm:p-3",
   },
@@ -252,18 +289,18 @@ async function ArticleContent({
           {article.elements.map((el, idx) => {
             // 1. Gambar
             if (el.type === "image" && el.src) {
-              const isImage2 = /image2\./i.test(el.src) || el.src.toLowerCase().includes("image2");
+              const isImage2 = !el.src.includes("artikelhama") && (/image2\./i.test(el.src) || el.src.toLowerCase().includes("image2"));
               if (isImage2) {
                 return (
                   <div key={idx} className="my-10 space-y-8 sm:space-y-10">
                     {/* Grid 4 Kolom di Desktop Sesuai Gambar Referensi (Tanpa Judul & Deskripsi) */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-8 sm:gap-y-10 gap-x-4 sm:gap-x-6 lg:gap-8 text-center justify-items-center">
                       {pestList.map((pest) => (
-                        <a
+                        <Link
                           key={pest.name}
-                          href="/#form-survey"
+                          href={`/artikel/${pest.slug}`}
                           className="flex flex-col items-center group cursor-pointer"
-                          title={`Pilih ${pest.name} untuk konsultasi survey`}
+                          title={`Lihat panduan hama ${pest.name}`}
                         >
                           {/* Circle Container (Ukuran sama persis dengan halaman utama) */}
                           <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#dce0e6] border-2 border-zinc-200 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
@@ -283,7 +320,7 @@ async function ArticleContent({
                           <p className="text-[11px] sm:text-xs md:text-sm font-bold text-zinc-950 mt-1 leading-tight">
                             {pest.latin}
                           </p>
-                        </a>
+                        </Link>
                       ))}
                     </div>
 

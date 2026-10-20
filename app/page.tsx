@@ -1276,62 +1276,73 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
   const pestList = [
     {
       name: "Rayap Tanah",
+      slug: "rayap",
       latin: "Coptotermes formosanus",
       image: "/images/binatang/rayap tanah.png",
       imageClass: "object-contain p-0 scale-110",
     },
     {
       name: "Lalat Hijau",
+      slug: "lalat",
       latin: "Lucilia sericata",
       image: "/images/binatang/lalat hijau.png",
       imageClass: "object-contain p-0 w-full h-full scale-125",
     },
     {
       name: "Kecoa Amerikana",
+      slug: "kecoa",
       latin: "Periplaneta americana",
       image: "/images/binatang/kecoa amerikana.png",
       imageClass: "object-contain p-0 w-full h-full scale-125 translate-x-9",
     },
     {
       name: "Tikus",
+      slug: "tikus",
       latin: "Rattus norvegicus",
       image: "/images/binatang/tikus.png",
     },
     {
       name: "Kutu Kasur",
+      slug: "kutu",
       latin: "Cimex lectularius",
       image: "/images/binatang/kutu kasur.png",
       imageClass: "object-contain p-4.5 sm:p-6",
     },
     {
       name: "Semut Rang Rang",
+      slug: "semut",
       latin: "Oecophylla smaragdina",
       image: "/images/binatang/semut rang rang.png",
       imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
       name: "Nyamuk Aeydes",
+      slug: "nyamuk",
       latin: "Aedes aegypti",
       image: "/images/binatang/nyamuk aeydes.png",
     },
     {
       name: "Tawon Vespa",
+      slug: "tawon",
       latin: "Vespa affinis",
       image: "/images/binatang/tawon vespa.png",
       imageClass: "object-contain p-2.5 sm:p-3",
     },
     {
       name: "Kelelawar",
+      slug: "kalelawar",
       latin: "Chiroptera",
       image: "/images/binatang/kelelawar.png",
     },
     {
       name: "Burung Greja",
+      slug: "burung",
       latin: "Passer montanus",
       image: "/images/binatang/burung greja.png",
     },
     {
       name: "Ular Weling",
+      slug: "ular",
       latin: "Bungarus candidus",
       image: "/images/binatang/ular weling.png",
       imageClass: "object-contain p-2.5 sm:p-3",
@@ -2181,12 +2192,10 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               <div
                 key={pest.name}
                 onClick={() => {
-                  setSelectedPest(pest.name);
-                  setFormData((prev) => ({ ...prev, pestType: pest.name }));
-                  scrollToSurvey();
+                  router.push(`/artikel/${pest.slug}`);
                 }}
                 className="flex flex-col items-center group cursor-pointer"
-                title={`Pilih ${pest.name} untuk survey`}
+                title={`Pelajari panduan hama ${pest.name}`}
               >
                 <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#e9ecf0] border-2 border-zinc-200 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
                   <Image

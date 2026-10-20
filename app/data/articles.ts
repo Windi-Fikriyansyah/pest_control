@@ -41,7 +41,7 @@ export interface Article {
   elements: ArticleElement[];
 }
 
-export const articles: Article[] = [
+const propertyArticles: Article[] = [
   {
     "slug": "bandara",
     "title": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara",
@@ -24115,3 +24115,7 @@ export const articles: Article[] = [
     ]
   }
 ];
+
+import { hamaArticles } from "./hamaArticles";
+
+export const articles: Article[] = [...propertyArticles, ...hamaArticles];
