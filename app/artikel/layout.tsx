@@ -811,11 +811,11 @@ export default function ArticleLayout({
             <div className="w-full max-w-7xl mx-auto grid grid-cols-12 gap-2.5 sm:gap-6 md:gap-8 items-center">
               {/* Sisi Kiri: Frequently Question for Vecos */}
               <div className="col-span-5 sm:col-span-4">
-                <h2 className="text-xs sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#3a3e48] tracking-tight leading-[1.15]">
-                  <span className="block">Frequently</span>
-                  <span className="block">Question</span>
-                  <span className="block">for</span>
-                  <span className="block">Vecos</span>
+                <h2 className="text-base sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#3a3e48] tracking-tight leading-tight">
+                  <span className="block">Pertanyaan</span>
+                  <span className="block">Seputar</span>
+                  <span className="block">Pengendalian Hama</span>
+                  <span className="block text-primary">Vecos</span>
                 </h2>
               </div>
 

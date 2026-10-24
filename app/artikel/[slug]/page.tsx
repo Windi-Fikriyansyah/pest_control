@@ -95,18 +95,18 @@ const propertyTitleMap: Record<string, string> = {
   "tempat-ibadah": "Tempat Ibadah",
   gym: "Gym & Pusat Kebugaran",
   // Hama title map
-  burung: "Burung Greja",
+  burung: "Burung",
   kalelawar: "Kelelawar",
   kelelawar: "Kelelawar",
   kecoa: "Kecoa",
-  kutu: "Kutu Kasur",
+  kutu: "Kutu",
   lalat: "Lalat",
   nyamuk: "Nyamuk",
-  rayap: "Rayap Tanah",
-  semut: "Semut Rangrang",
-  tawon: "Tawon Vespa",
+  rayap: "Rayap",
+  semut: "Semut",
+  tawon: "Lebah",
   tikus: "Tikus",
-  ular: "Ular Weling",
+  ular: "Ular",
 };
 
 const pestList = [

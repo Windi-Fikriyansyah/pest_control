@@ -1237,8 +1237,8 @@ export default function Home() {
     });
 
     // 2. Format teks WhatsApp terstruktur dengan data form dan kodenya
-    const message = 
-`*FORMULIR PENGAJUAN SURVEY VECOS*
+    const message =
+      `*FORMULIR PENGAJUAN SURVEY VECOS*
 ━━━━━━━━━━━━━━━━━━━━━
 📋 *Kode Survey:* ${surveyCode}
 📅 *Waktu:* ${dateFormatted}, ${timeFormatted} WIB
@@ -1773,17 +1773,17 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     onChange={(e) => setSelectedPest(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
                   >
-                    <option value="Rayap Tanah">Rayap Tanah</option>
-                    <option value="Lalat Hijau">Lalat Hijau</option>
-                    <option value="Kecoa Amerikana">Kecoa Amerikana</option>
+                    <option value="Rayap Tanah">Rayap</option>
+                    <option value="Lalat Hijau">Lalat</option>
+                    <option value="Kecoa Amerikana">Kecoa</option>
                     <option value="Tikus">Tikus</option>
-                    <option value="Kutu Kasur">Kutu Kasur</option>
-                    <option value="Semut Rang Rang">Semut Rang Rang</option>
-                    <option value="Nyamuk Aeydes">Nyamuk Aeydes</option>
-                    <option value="Tawon Vespa">Tawon Vespa</option>
+                    <option value="Kutu Kasur">Kutu</option>
+                    <option value="Semut Rang Rang">Semut</option>
+                    <option value="Nyamuk Aeydes">Nyamuk</option>
+                    <option value="Tawon Vespa">Lebah</option>
                     <option value="Kelelawar">Kelelawar</option>
-                    <option value="Burung Greja">Burung Greja</option>
-                    <option value="Ular Weling">Ular Weling</option>
+                    <option value="Burung Greja">Burung</option>
+                    <option value="Ular Weling">Ular</option>
                   </select>
                 </div>
               </div>
@@ -2645,11 +2645,11 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             <div className="w-full max-w-7xl mx-auto grid grid-cols-12 gap-2.5 sm:gap-6 md:gap-8 items-center">
               {/* Sisi Kiri: Frequently Question for Vecos */}
               <div className="col-span-5 sm:col-span-4">
-                <h2 className="text-xs sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#3a3e48] tracking-tight leading-[1.15]">
-                  <span className="block">Frequently</span>
-                  <span className="block">Question</span>
-                  <span className="block">for</span>
-                  <span className="block">Vecos</span>
+                <h2 className="text-base sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#3a3e48] tracking-tight leading-tight">
+                  <span className="block">Pertanyaan</span>
+                  <span className="block">Seputar</span>
+                  <span className="block">Pengendalian Hama</span>
+                  <span className="block text-primary">Vecos</span>
                 </h2>
               </div>
 
@@ -3217,17 +3217,15 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
       {/* Floating Action Widget & Popup Menu: Fixed di Ujung Bawah Kanan (Warna Merah Transparan) */}
       <div
         ref={chatWidgetRef}
-        className={`fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-40 flex items-end gap-2.5 sm:gap-3 transition-opacity duration-300 ${
-          isAnyModalOpen ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+        className={`fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-40 flex items-end gap-2.5 sm:gap-3 transition-opacity duration-300 ${isAnyModalOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
       >
         {/* Popup Menu Dialog (Tampil saat tombol icon chat diklik) */}
         <div
-          className={`bg-[#C81E27]/85 backdrop-blur-md border border-white/20 rounded-[18px] shadow-2xl shadow-red-950/50 p-2 sm:p-2.5 text-white w-64 sm:w-72 transition-all duration-200 ease-out origin-bottom-right ${
-            isChatMenuOpen
-              ? "opacity-100 translate-x-0 scale-100 pointer-events-auto"
-              : "opacity-0 translate-x-3 scale-95 pointer-events-none"
-          }`}
+          className={`bg-[#C81E27]/85 backdrop-blur-md border border-white/20 rounded-[18px] shadow-2xl shadow-red-950/50 p-2 sm:p-2.5 text-white w-64 sm:w-72 transition-all duration-200 ease-out origin-bottom-right ${isChatMenuOpen
+            ? "opacity-100 translate-x-0 scale-100 pointer-events-auto"
+            : "opacity-0 translate-x-3 scale-95 pointer-events-none"
+            }`}
         >
           {/* Menu 1: Amankan Properti Anda */}
           <button
@@ -3290,17 +3288,15 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
         {/* Capsule Widget Vertikal (Warna Merah Transparan) */}
         <div
-          className={`flex flex-col items-center justify-between bg-[#C81E27]/85 backdrop-blur-md text-white rounded-[14px] shadow-2xl border border-white/20 w-11 sm:w-12 transition-all duration-300 ease-in-out overflow-hidden ${
-            showScrollTop ? "h-24 sm:h-[102px] py-1.5" : "h-11 sm:h-12 py-0"
-          }`}
+          className={`flex flex-col items-center justify-between bg-[#C81E27]/85 backdrop-blur-md text-white rounded-[14px] shadow-2xl border border-white/20 w-11 sm:w-12 transition-all duration-300 ease-in-out overflow-hidden ${showScrollTop ? "h-24 sm:h-[102px] py-1.5" : "h-11 sm:h-12 py-0"
+            }`}
         >
           {/* Tombol Atas: Scroll Kembali ke Atas (Hilang saat di paling atas, muncul saat scroll turun) */}
           <div
-            className={`w-full flex items-center justify-center transition-all duration-300 ease-in-out overflow-hidden ${
-              showScrollTop
-                ? "h-11 sm:h-12 opacity-100 scale-100 pointer-events-auto"
-                : "h-0 opacity-0 scale-75 pointer-events-none"
-            }`}
+            className={`w-full flex items-center justify-center transition-all duration-300 ease-in-out overflow-hidden ${showScrollTop
+              ? "h-11 sm:h-12 opacity-100 scale-100 pointer-events-auto"
+              : "h-0 opacity-0 scale-75 pointer-events-none"
+              }`}
           >
             <button
               type="button"

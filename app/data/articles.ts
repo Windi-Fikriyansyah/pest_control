@@ -13930,7 +13930,7 @@ const propertyArticles: Article[] = [
       {
         "type": "heading",
         "level": 1,
-        "text": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan",
+        "text": "Penerapan Pengendalian Hama Terpadu (IPM) demi Menjamin Higienitas Pabrik Makanan",
         "runs": [
           {
             "text": "Menjaga",
