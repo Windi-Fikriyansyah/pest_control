@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LayananDropdownMenu from "@/app/components/LayananDropdownMenu";
 
 // =========================================================================
 // DATA NEGARA & BAHASA UNTUK TRANSLASI OTOMATIS
@@ -464,42 +465,12 @@ export default function ArticleLayout({
               </button>
 
               {layananDropdownOpen && (
-                <div className="absolute top-full left-0 mt-3 w-56 bg-white rounded-xl shadow-xl border border-zinc-200 py-2 z-50 animate-in fade-in-50">
-                  <Link
-                    href="/#layanan"
-                    onClick={() => setLayananDropdownOpen(false)}
-                    className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
-                  >
-                    Pembasmi Serangga
-                  </Link>
-                  <Link
-                    href="/#layanan"
-                    onClick={() => setLayananDropdownOpen(false)}
-                    className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
-                  >
-                    Pembasmi Tikus
-                  </Link>
-                  <Link
-                    href="/#layanan"
-                    onClick={() => setLayananDropdownOpen(false)}
-                    className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
-                  >
-                    Anti Rayap
-                  </Link>
-                  <Link
-                    href="/#penawaran"
-                    onClick={() => setLayananDropdownOpen(false)}
-                    className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
-                  >
-                    Disinfeksi Ruangan
-                  </Link>
-                  <Link
-                    href="/#prime-shield"
-                    onClick={() => setLayananDropdownOpen(false)}
-                    className="block px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-red-50 hover:text-[#C81E27]"
-                  >
-                    Prime Shield-01 Trap
-                  </Link>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[360px] sm:w-[410px] md:w-[420px] bg-white rounded-2xl shadow-2xl border border-zinc-200/90 p-2 sm:p-3 z-50 animate-in fade-in-50 zoom-in-95 duration-150">
+                  <LayananDropdownMenu
+                    onItemClick={() => setLayananDropdownOpen(false)}
+                    isArticlePage={true}
+                    variant="desktop"
+                  />
                 </div>
               )}
             </div>
@@ -591,57 +562,15 @@ export default function ArticleLayout({
                 </svg>
               </button>
               {mobileLayananOpen && (
-                <div className="pl-4 py-2 space-y-2 bg-zinc-50 border-b border-zinc-100 rounded-lg my-1 animate-in fade-in-50">
-                  <Link
-                    href="/#layanan"
-                    onClick={() => {
+                <div className="py-1 bg-white border-b border-zinc-100 animate-in fade-in-50">
+                  <LayananDropdownMenu
+                    onItemClick={() => {
                       setMobileLayananOpen(false);
                       setMobileMenuOpen(false);
                     }}
-                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
-                  >
-                    • Pembasmi Serangga
-                  </Link>
-                  <Link
-                    href="/#layanan"
-                    onClick={() => {
-                      setMobileLayananOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
-                  >
-                    • Pembasmi Tikus
-                  </Link>
-                  <Link
-                    href="/#layanan"
-                    onClick={() => {
-                      setMobileLayananOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
-                  >
-                    • Anti Rayap Fondasi
-                  </Link>
-                  <Link
-                    href="/#penawaran"
-                    onClick={() => {
-                      setMobileLayananOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
-                  >
-                    • Disinfeksi Ruangan
-                  </Link>
-                  <Link
-                    href="/#prime-shield"
-                    onClick={() => {
-                      setMobileLayananOpen(false);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block text-xs font-semibold text-zinc-700 hover:text-[#C81E27] py-1"
-                  >
-                    • Prime Shield-01 Trap
-                  </Link>
+                    isArticlePage={true}
+                    variant="mobile"
+                  />
                 </div>
               )}
             </div>

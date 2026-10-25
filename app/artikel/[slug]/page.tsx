@@ -71,6 +71,27 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   tawon: { image: "/images/artikelhama/image hama/tawon.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/tawon.jpg" },
   tikus: { image: "/images/artikelhama/image hama/tikus.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/tikus.jpg" },
   ular: { image: "/images/artikelhama/image hama/ular.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/ular.jpg" },
+  // Layanan articles banner PC & Mobile (isi path gambar mobile pada imageMobile jika sudah ada)
+  "pengendalian-serangga": {
+    image: "/images/artikellayanan/inpeksi.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/inpeksi.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/pengendalian-serangga/mobile.png"
+  },
+  "pengendalian-tikus": {
+    image: "/images/artikellayanan/inspection.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/inspection.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/pengendalian-tikus/mobile.png"
+  },
+  "sistem-proteksi-rayap": {
+    image: "/images/artikellayanan/anti-rayap.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/anti-rayap.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/sistem-proteksi-rayap/mobile.png"
+  },
+  "disinfeksi-sterilisasi": {
+    image: "/images/artikellayanan/disinveksi.jpeg",
+    imageMobile: "/images/artikellayanan/image mobile/disinfeksi.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikel/disinfeksi/bannermobile.png"
+  },
+  "prime-shield-01-trap": {
+    image: "/images/artikellayanan/prime.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/prime.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/prime-shield-01-trap/mobile.png"
+  },
 };
 
 const propertyTitleMap: Record<string, string> = {
@@ -107,6 +128,12 @@ const propertyTitleMap: Record<string, string> = {
   tawon: "Lebah",
   tikus: "Tikus",
   ular: "Ular",
+  // Layanan title map
+  "pengendalian-serangga": "Pengendalian Serangga",
+  "pengendalian-tikus": "Pengendalian Tikus",
+  "sistem-proteksi-rayap": "Sistem Proteksi Rayap",
+  "disinfeksi-sterilisasi": "Disinfeksi & Sterilisasi",
+  "prime-shield-01-trap": "Prime Shield-01 Trap",
 };
 
 const pestList = [
@@ -289,7 +316,7 @@ async function ArticleContent({
           {article.elements.map((el, idx) => {
             // 1. Gambar
             if (el.type === "image" && el.src) {
-              const isImage2 = !el.src.includes("artikelhama") && (/image2\./i.test(el.src) || el.src.toLowerCase().includes("image2"));
+              const isImage2 = !el.src.includes("artikelhama") && !el.src.includes("artikellayanan") && (/image2\./i.test(el.src) || el.src.toLowerCase().includes("image2"));
               if (isImage2) {
                 return (
                   <div key={idx} className="my-10 space-y-8 sm:space-y-10">

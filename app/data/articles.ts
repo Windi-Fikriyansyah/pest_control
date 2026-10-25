@@ -24117,5 +24117,6 @@ const propertyArticles: Article[] = [
 ];
 
 import { hamaArticles } from "./hamaArticles";
+import { layananArticles } from "./layananArticles";
 
-export const articles: Article[] = [...propertyArticles, ...hamaArticles];
+export const articles: Article[] = [...propertyArticles, ...hamaArticles, ...layananArticles];
