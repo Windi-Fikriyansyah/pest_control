@@ -2851,7 +2851,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     {legalModal === "cookie" && "Pengaturan Cookie"}
                   </h3>
                   <p className="text-[11px] sm:text-xs text-zinc-500 font-medium">
-                    PT Vecos Indonesia Berjaya • Pembaruan Terakhir 2026
+                    PT Vecos Intitama Mulya • Pembaruan Terakhir 2026
                   </p>
                 </div>
               </div>
@@ -2870,7 +2870,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             {legalModal === "privacy" && (
               <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
                 <p>
-                  Selamat datang di VECOS (PT Vecos Indonesia Berjaya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
+                  Selamat datang di VECOS (PT Vecos Intitama Mulya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
                 </p>
 
                 <div className="space-y-2">
@@ -2900,7 +2900,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             {legalModal === "terms" && (
               <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
                 <p>
-                  Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Indonesia Berjaya.
+                  Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Intitama Mulya.
                 </p>
 
                 <div className="space-y-2">

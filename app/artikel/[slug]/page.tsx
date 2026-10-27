@@ -597,7 +597,7 @@ async function ArticleContent({
                   V
                 </div>
                 <span className="text-xs font-bold text-zinc-600">
-                  PT Vecos Indonesia Berjaya • Layanan Pengendalian Hama Profesional
+                  PT Vecos Intitama Mulya • Layanan Pengendalian Hama Profesional
                 </span>
               </div>
 

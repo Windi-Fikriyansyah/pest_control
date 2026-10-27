@@ -922,7 +922,7 @@ export default function ArticleLayout({
             {legalModal === "privacy" && (
               <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
                 <p>
-                  Selamat datang di VECOS (PT Vecos Indonesia Berjaya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
+                  Selamat datang di VECOS (PT Vecos Intitama Mulya). Kami berkomitmen penuh untuk menghormati dan menjaga kerahasiaan data pribadi pelanggan, baik pemilik hunian pribadi maupun entitas bisnis/komersial.
                 </p>
                 <div className="space-y-2">
                   <h4 className="font-extrabold text-zinc-900 text-sm">1. Data yang Kami Kumpulkan</h4>
@@ -949,7 +949,7 @@ export default function ArticleLayout({
             {legalModal === "terms" && (
               <div className="space-y-4 text-xs sm:text-sm text-zinc-700 leading-relaxed">
                 <p>
-                  Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Indonesia Berjaya.
+                  Ketentuan Layanan ini mengatur penggunaan jasa pengendalian hama terpadu (Integrated Pest Management) yang disediakan oleh PT Vecos Intitama Mulya.
                 </p>
                 <div className="space-y-2">
                   <h4 className="font-extrabold text-zinc-900 text-sm">1. Survey & Konsultasi Gratis</h4>
