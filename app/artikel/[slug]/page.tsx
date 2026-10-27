@@ -362,6 +362,131 @@ async function ArticleContent({
                 );
               }
 
+              // 1.1 Khusus Gambar Diagram IPM / Vecos Proofing Defender (image4 pada artikel hama atau properti) -> Tampilan 2 Kolom
+              const isIpmDiagram =
+                (el.src.includes("artikelhama") && (
+                  (el.src.toLowerCase().includes("image4") && !el.src.toLowerCase().includes("kecoa/image4")) ||
+                  el.src.toLowerCase().includes("kecoa/image5")
+                )) ||
+                (!el.src.includes("artikellayanan") && el.src.toLowerCase().includes("image4") && [
+                  "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
+                ].some((k) => el.src.toLowerCase().includes(k)));
+
+              if (isIpmDiagram) {
+                return (
+                  <div
+                    key={idx}
+                    className="my-10 sm:my-14 rounded-3xl bg-gradient-to-br from-zinc-50 via-white to-red-50/25 border border-zinc-200/90 shadow-sm overflow-hidden p-6 sm:p-8 md:p-10 lg:p-12 transition-all hover:shadow-md"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                      {/* Kolom 1 (Kiri): Judul dan Penjelasan Metode IPM */}
+                      <div className="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-6">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100/70 border border-red-200/80 text-[#C81E27] text-xs font-black uppercase tracking-wider w-fit">
+                          <span className="w-2 h-2 rounded-full bg-[#C81E27] animate-pulse" />
+                          <span>Integrated Pest Management (IPM)</span>
+                        </div>
+
+                        <div className="space-y-2">
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-950 leading-[1.2] tracking-tight">
+                            Solusi Perlindungan Properti Menyeluruh dan Berkelanjutan
+                          </h3>
+                          <div className="w-24 h-1.5 bg-[#C81E27] rounded-full" />
+                        </div>
+
+                        <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
+                          VECOS menerapkan pendekatan <strong>Integrated Pest Management (IPM)</strong> berstandar profesional untuk memberikan perlindungan menyeluruh dan berkelanjutan. Kami menggabungkan inspeksi mendalam, sanitasi, proteksi penutupan celah fisik (<em>Vecos Proofing Defender</em>), serta monitoring rutin agar properti Anda senantiasa bebas dari risiko infestasi hama.
+                        </p>
+
+                        {/* 4 Pilar Metode IPM */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                          <div className="p-3.5 rounded-2xl bg-white border border-zinc-200/80 shadow-xs flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-xl bg-red-50 text-[#C81E27] flex items-center justify-center font-bold text-sm shrink-0">
+                              1
+                            </div>
+                            <div>
+                              <h4 className="text-xs sm:text-sm font-extrabold text-zinc-900 leading-tight">
+                                Inspeksi & Survey
+                              </h4>
+                              <p className="text-[11px] sm:text-xs text-zinc-500 mt-0.5 leading-snug">
+                                Identifikasi dini area & titik rawan sarang hama.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="p-3.5 rounded-2xl bg-white border border-zinc-200/80 shadow-xs flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-xl bg-red-50 text-[#C81E27] flex items-center justify-center font-bold text-sm shrink-0">
+                              2
+                            </div>
+                            <div>
+                              <h4 className="text-xs sm:text-sm font-extrabold text-zinc-900 leading-tight">
+                                Eksklusi & Proofing
+                              </h4>
+                              <p className="text-[11px] sm:text-xs text-zinc-500 mt-0.5 leading-snug">
+                                Penutupan celah akses masuk hama secara presisi.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="p-3.5 rounded-2xl bg-white border border-zinc-200/80 shadow-xs flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-xl bg-red-50 text-[#C81E27] flex items-center justify-center font-bold text-sm shrink-0">
+                              3
+                            </div>
+                            <div>
+                              <h4 className="text-xs sm:text-sm font-extrabold text-zinc-900 leading-tight">
+                                Treatment & Sanitasi
+                              </h4>
+                              <p className="text-[11px] sm:text-xs text-zinc-500 mt-0.5 leading-snug">
+                                Pengendalian chemical & non-chemical ramah lingkungan.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="p-3.5 rounded-2xl bg-white border border-zinc-200/80 shadow-xs flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-xl bg-red-50 text-[#C81E27] flex items-center justify-center font-bold text-sm shrink-0">
+                              4
+                            </div>
+                            <div>
+                              <h4 className="text-xs sm:text-sm font-extrabold text-zinc-900 leading-tight">
+                                Monitoring Berkala
+                              </h4>
+                              <p className="text-[11px] sm:text-xs text-zinc-500 mt-0.5 leading-snug">
+                                Evaluasi rutin & laporan temuan berkala terpercaya.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="pt-2 flex flex-wrap items-center gap-3">
+                          <a
+                            href="/#form-survey"
+                            className="inline-flex items-center gap-2 bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md shadow-red-700/20 hover:shadow-red-700/40 transition-all cursor-pointer group"
+                          >
+                            <span>Jadwalkan Survey Gratis</span>
+                            <svg className="w-4 h-4 fill-none stroke-current stroke-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </a>
+                          <CallCenterButton className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-zinc-900 border border-zinc-300 font-extrabold text-xs sm:text-sm px-5 py-3 rounded-full shadow-xs transition-all cursor-pointer" />
+                        </div>
+                      </div>
+
+                      {/* Kolom 2 (Kanan): Gambar Diagram IPM & Proofing Defender */}
+                      <div className="lg:col-span-5 flex justify-center items-center">
+                        <div className="relative w-full max-w-md lg:max-w-none rounded-2xl sm:rounded-3xl bg-white border border-zinc-200/90 p-4 sm:p-6 shadow-xs hover:shadow-md transition-shadow">
+                          <img
+                            src={el.src}
+                            alt={el.alt || "Solusi Perlindungan Properti Menyeluruh dan Berkelanjutan - VECOS"}
+                            loading="lazy"
+                            className="w-full h-auto object-contain rounded-xl max-h-[520px] mx-auto block"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <figure key={idx} className="my-8">
                   <div className="w-full rounded-2xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
