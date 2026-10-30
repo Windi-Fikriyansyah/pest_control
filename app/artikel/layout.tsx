@@ -476,7 +476,7 @@ export default function ArticleLayout({
             </div>
 
             <Link
-              href="/#tentang"
+              href="/tentang-vecos"
               className="text-xs lg:text-sm font-extrabold uppercase text-zinc-800 hover:text-[#C81E27] tracking-wider transition-colors"
             >
               TENTANG VECOS
@@ -575,7 +575,7 @@ export default function ArticleLayout({
               )}
             </div>
             <Link
-              href="/#tentang"
+              href="/tentang-vecos"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-sm font-extrabold uppercase text-zinc-800 py-2 border-b border-zinc-100"
             >
@@ -787,7 +787,7 @@ export default function ArticleLayout({
                 <li><Link href="/#beranda" className="hover:underline transition-all">Beranda</Link></li>
                 <li><Link href="#form-survey" className="hover:underline transition-all">Hubungi kami</Link></li>
                 <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
-                <li><Link href="/#tentang" className="hover:underline transition-all">Tentang Vecos</Link></li>
+                <li><Link href="/tentang-vecos" className="hover:underline transition-all">Tentang Vecos</Link></li>
               </ul>
 
               <ul className="space-y-1.5 sm:space-y-2">

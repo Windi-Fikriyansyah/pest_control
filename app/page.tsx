@@ -1438,7 +1438,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             </div>
 
             <a
-              href="#tentang"
+              href="/tentang-vecos"
               className="text-xs lg:text-sm font-extrabold uppercase text-zinc-800 hover:text-[#C81E27] tracking-wider transition-colors"
             >
               TENTANG VECOS
@@ -1538,7 +1538,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               )}
             </div>
             <a
-              href="#tentang"
+              href="/tentang-vecos"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-sm font-extrabold uppercase text-zinc-800 py-2 border-b border-zinc-100"
             >
@@ -2621,7 +2621,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 <li><a href="#beranda" className="hover:underline transition-all">Beranda</a></li>
                 <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
                 <li><a href="#layanan" className="hover:underline transition-all">Layanan kami</a></li>
-                <li><a href="#tentang" className="hover:underline transition-all">Tentang Vecos</a></li>
+                <li><a href="/tentang-vecos" className="hover:underline transition-all">Tentang Vecos</a></li>
 
 
               </ul>
