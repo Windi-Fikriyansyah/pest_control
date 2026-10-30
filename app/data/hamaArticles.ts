@@ -946,7 +946,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/burung/image2.png",
+        "src": "/images/artikelhama/gambarjenis/burung.png",
         "alt": "Burung Greja"
       },
       {
@@ -23237,47 +23237,7 @@ export const hamaArticles: Article[] = [
         "isList": true,
         "images": []
       },
-      {
-        "type": "paragraph",
-        "text": "Standar Metode Treatment Profesional (Integrated Pest Management)",
-        "runs": [
-          {
-            "text": "Standar",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Metode Treatment ",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Profesional",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " (Integrated Pest Management)",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "image",
-        "src": "/images/artikelhama/kecoa/image3.png",
-        "alt": "Kecoa"
-      },
+
       {
         "type": "image",
         "src": "/images/artikelhama/kecoa/image4.png",
@@ -27337,7 +27297,7 @@ export const hamaArticles: Article[] = [
             "italic": false,
             "underline": false,
             "images": [
-              "/images/artikelhama/kutu/image2.png"
+              "/images/artikelhama/gambarjenis/kutu.png"
             ]
           },
           {
@@ -27657,9 +27617,12 @@ export const hamaArticles: Article[] = [
           }
         ],
         "isList": false,
-        "images": [
-          "/images/artikelhama/kutu/image2.png"
-        ]
+        "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikelhama/kutu/image2.png",
+        "alt": "Kutu Busuk"
       },
       {
         "type": "paragraph",
@@ -33603,7 +33566,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/lalat/image2.png",
+        "src": "/images/artikelhama/gambarjenis/lalat.png",
         "alt": "Lalat"
       },
       {
@@ -42081,6 +42044,11 @@ export const hamaArticles: Article[] = [
         ]
       },
       {
+        "type": "image",
+        "src": "/images/artikelhama/nyamuk/image3.png",
+        "alt": "Nyamuk"
+      },
+      {
         "type": "paragraph",
         "text": "Abatisasi (atau sering disebut juga sebagai larvasidasi) adalah metode pengendalian vektor penyakit—khususnya nyamuk Aedes aegypti pembawa virus Demam Berdarah Dengue (DBD)—dengan cara menaburkan bahan kimia khusus (larvasida) ke dalam wadah atau tempat penampungan air",
         "runs": [
@@ -46822,9 +46790,12 @@ export const hamaArticles: Article[] = [
           }
         ],
         "isList": false,
-        "images": [
-          "/images/artikelhama/rayap/image2.png"
-        ]
+        "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikelhama/gambarjenis/rayap.png",
+        "alt": "Rayap"
       },
       {
         "type": "paragraph",
@@ -53003,7 +52974,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/semut/image2.png",
+        "src": "/images/artikelhama/gambarjenis/semut.png",
         "alt": "Semut"
       },
       {
@@ -59529,9 +59500,12 @@ export const hamaArticles: Article[] = [
           }
         ],
         "isList": false,
-        "images": [
-          "/images/artikelhama/tawon/image2.png"
-        ]
+        "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikelhama/gambarjenis/lebah.png",
+        "alt": "Tawon"
       },
       {
         "type": "heading",
@@ -65085,9 +65059,12 @@ export const hamaArticles: Article[] = [
           }
         ],
         "isList": false,
-        "images": [
-          "/images/artikelhama/tikus/image2.png"
-        ]
+        "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikelhama/tikus/image2.png",
+        "alt": "Tikus"
       },
       {
         "type": "paragraph",
@@ -71281,7 +71258,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/ular/image2.png",
+        "src": "/images/artikelhama/gambarjenis/ular.png",
         "alt": "Ular"
       },
       {

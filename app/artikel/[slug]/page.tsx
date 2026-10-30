@@ -497,6 +497,36 @@ async function ArticleContent({
                 );
               }
 
+              // 1.2 Khusus Gambar 4-Panel Treatment pada Artikel Hama (image3 atau kecoa/image4)
+              const isHamaTreatmentImage =
+                (el.src || '').includes("artikelhama") && (
+                  ((el.src || '').toLowerCase().includes("image3") && !(el.src || '').toLowerCase().includes("kecoa/image3")) ||
+                  (el.src || '').toLowerCase().includes("kecoa/image4")
+                );
+
+              if (isHamaTreatmentImage) {
+                return (
+                  <figure key={idx} className="my-10 sm:my-12">
+                    <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
+                      <img
+                        src={el.src}
+                        alt="Standar Metode Treatment Profesional (Integrated Pest Management)"
+                        loading="lazy"
+                        className="w-full max-w-full h-auto object-contain rounded-xl sm:rounded-2xl max-h-[85vh] mx-auto block"
+                      />
+                    </div>
+                    <div className="mt-5 sm:mt-6 space-y-2 sm:space-y-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-zinc-950 tracking-tight leading-tight">
+                        Standar Metode Treatment Profesional (Integrated Pest Management)
+                      </h3>
+                      <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-normal text-justify sm:text-left">
+                        Kami menerapkan metode kerja yang terstruktur, aman, dan efisien demi menghadirkan lingkungan yang bersih dan nyaman. Melalui perencanaan matang dan penggunaan teknologi modern, kami memastikan setiap prosedur dijalankan sesuai standar keselamatan tinggi demi hasil yang optimal dan tahan lama.
+                      </p>
+                    </div>
+                  </figure>
+                );
+              }
+
               return (
                 <figure key={idx} className="my-8">
                   <div className="w-full rounded-2xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
@@ -518,6 +548,9 @@ async function ArticleContent({
 
             // 2. Heading
             if (el.type === "heading" && el.text) {
+              if (el.text.trim() === "Standar Metode Treatment Profesional (Integrated Pest Management)") {
+                return null;
+              }
               // Jangan duplikasi jika heading 1 sama persis dengan judul artikel di atas
               if (idx === 0 && el.text.trim() === article.title.trim()) {
                 return null;
