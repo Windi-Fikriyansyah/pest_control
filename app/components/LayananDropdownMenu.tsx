@@ -189,7 +189,7 @@ export default function LayananDropdownMenu({
       id: "proffing-defender",
       title: "Vecos Proofing Defender",
       badgeTitle: "DEFENDER",
-      desc: "Layanan penutupan celah hama di setiap titik properti anda",
+      desc: "Penutupan Celah Masuk Hama",
       badgeDesc: "PROTEKSI",
       href: "/artikel/vecos-proofing-defender",
       icon: (

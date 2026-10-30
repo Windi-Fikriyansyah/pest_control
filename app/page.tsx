@@ -1431,7 +1431,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   <LayananDropdownMenu
                     onItemClick={() => setLayananDropdownOpen(false)}
                     isArticlePage={false}
-                      variant="desktop"
+                    variant="desktop"
                   />
                 </div>
               )}
@@ -2218,7 +2218,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 <span className="block">Defender</span>
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-[#4f5563] font-medium leading-relaxed max-w-xl">
-                Layanan penutupan celah hama di setiap titik properti anda.
+                Penutupan Celah Masuk Hama
               </p>
             </div>
           </div>
@@ -2787,7 +2787,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             </div>
           </div>
 
-        
+
 
         </footer>
       </div>

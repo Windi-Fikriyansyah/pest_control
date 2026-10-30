@@ -16605,6 +16605,11 @@ export const layananArticles: Article[] = [
         ]
       },
       {
+        "type": "image",
+        "src": "/images/artikellayanan/Proffing.png",
+        "alt": "Ilustrasi Penutupan Celah Hama - Vecos Proofing Defender"
+      },
+      {
         "type": "paragraph",
         "text": "Layanan Vecos Proofing Defender memberikan perlindungan jangka panjang dengan berbagai manfaat mendasar:",
         "runs": [
@@ -17097,6 +17102,11 @@ export const layananArticles: Article[] = [
             "images": []
           }
         ]
+      },
+      {
+        "type": "image",
+        "src": "/images/pestcontrol.png",
+        "alt": "Ilustrasi Penutupan Celah Hama - Vecos Proofing Defender"
       },
       {
         "type": "paragraph",
