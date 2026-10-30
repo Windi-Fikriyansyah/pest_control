@@ -2126,7 +2126,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 className="flex flex-col items-center group cursor-pointer"
                 title={`Pelajari panduan hama ${pest.name}`}
               >
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#e9ecf0] border-2 border-zinc-200 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden bg-[#cbd2dc] border-2 border-zinc-300 group-hover:border-[#C81E27] shadow-xs group-hover:shadow-md transition-all">
                   <Image
                     src={pest.image}
                     alt={pest.name}

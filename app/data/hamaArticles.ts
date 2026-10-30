@@ -71263,22 +71263,8 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "paragraph",
-        "text": "  Gigitan Ular Berbisa Bersifat Mematikan: Bisa ular yang bersifat neurotoksik (menyerang sistem saraf) dapat menyebabkan kelumpuhan dan gagal napas, sementara jenis hemotoksik merusak jaringan darah dan organ dalam jika tidak segera diberi antivenom.",
+        "text": "Gigitan Ular Berbisa Bersifat Mematikan: Bisa ular yang bersifat neurotoksik (menyerang sistem saraf) dapat menyebabkan kelumpuhan dan gagal napas, sementara jenis hemotoksik merusak jaringan darah dan organ dalam jika tidak segera diberi antivenom.",
         "runs": [
-          {
-            "text": "",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "  ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
           {
             "text": "Gigitan",
             "bold": true,
@@ -71637,27 +71623,13 @@ export const hamaArticles: Article[] = [
             "images": []
           }
         ],
-        "isList": false,
+        "isList": true,
         "images": []
       },
       {
         "type": "paragraph",
-        "text": "  Lilitan Ular Besar Mampu Meremukkan Tulang: Ular jenis constrictor (seperti ular sanca) tidak menggunakan racun, melainkan melilit mangsa atau manusia dengan kekuatan luar biasa untuk menghentikan aliran darah dan meremukkan tulang rusuk.",
+        "text": "Lilitan Ular Besar Mampu Meremukkan Tulang: Ular jenis constrictor (seperti ular sanca) tidak menggunakan racun, melainkan melilit mangsa atau manusia dengan kekuatan luar biasa untuk menghentikan aliran darah dan meremukkan tulang rusuk.",
         "runs": [
-          {
-            "text": "",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "  ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
           {
             "text": "Lilitan",
             "bold": true,
@@ -72044,27 +72016,13 @@ export const hamaArticles: Article[] = [
             "images": []
           }
         ],
-        "isList": false,
+        "isList": true,
         "images": []
       },
       {
         "type": "paragraph",
-        "text": "  Risiko Infeksi Sekunder dari Bakteri: Luka gigitan ular—baik dari jenis berbisa maupun tidak—berisiko tinggi mengalami infeksi bakteri parah akibat air liur dan gigi ular yang terkontaminasi kuman dari mangsa sebelumnya.",
+        "text": "Risiko Infeksi Sekunder dari Bakteri: Luka gigitan ular—baik dari jenis berbisa maupun tidak—berisiko tinggi mengalami infeksi bakteri parah akibat air liur dan gigi ular yang terkontaminasi kuman dari mangsa sebelumnya.",
         "runs": [
-          {
-            "text": "",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "  ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
           {
             "text": "Risiko",
             "bold": true,
@@ -72465,7 +72423,7 @@ export const hamaArticles: Article[] = [
             "images": []
           }
         ],
-        "isList": false,
+        "isList": true,
         "images": []
       },
       {
