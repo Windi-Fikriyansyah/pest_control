@@ -14,11 +14,6 @@ export const layananArticles: Article[] = [
     "elements": [
       {
         "type": "image",
-        "src": "/images/artikellayanan/pengendalian-serangga/image1.jpeg",
-        "alt": "Pengendalian Serangga"
-      },
-      {
-        "type": "image",
         "src": "/images/artikellayanan/pengendalian-serangga/image2.jpeg",
         "alt": "Pengendalian Serangga"
       },
@@ -6366,11 +6361,6 @@ export const layananArticles: Article[] = [
     "excerpt": "Kehadiran tikus di dalam properti bukan sekadar masalah kebersihan, melainkan ancaman serius bagi kesehatan, keamanan bangunan, serta kelangsungan bisnis. Tikus dikenal sebagai salah satu hama paling cerdik, destruktif, ...",
     "elements": [
       {
-        "type": "image",
-        "src": "/images/artikellayanan/pengendalian-tikus/image1.jpg",
-        "alt": "Pengendalian Tikus"
-      },
-      {
         "type": "heading",
         "level": 2,
         "text": "Solusi Ampuh Pengendalian Hama Tikus untuk Rumah dan Bisnis Anda",
@@ -7346,11 +7336,7 @@ export const layananArticles: Article[] = [
     "coverImage": "/images/artikellayanan/sistem-proteksi-rayap/image1.png",
     "excerpt": "Rayap sering kali disebut sebagai \"silent destroyer\" atau perusak diam-diam. Tanpa disadari, koloni rayap dapat menggerogoti struktur bangunan, pondasi kayu, kusem, pintu, hingga dokumen penting dari dalam. Kerugian yang...",
     "elements": [
-      {
-        "type": "image",
-        "src": "/images/artikellayanan/sistem-proteksi-rayap/image1.png",
-        "alt": "Sistem Proteksi Rayap"
-      },
+
       {
         "type": "heading",
         "level": 2,
@@ -13290,53 +13276,7 @@ export const layananArticles: Article[] = [
     "coverImage": "/images/artikellayanan/disinfeksi-sterilisasi/image1.jpg",
     "excerpt": "Setiap jenis virus memiliki karakteristik penyebaran, ketahanan di permukaan benda, dan target area penularan yang berbeda-beda. Untuk memberikan perlindungan yang efektif, proses disinfeksi harus disesuaikan secara spes...",
     "elements": [
-      {
-        "type": "image",
-        "src": "/images/artikellayanan/disinfeksi-sterilisasi/image1.jpg",
-        "alt": "Disinfeksi & Sterilisasi"
-      },
-      {
-        "type": "heading",
-        "level": 1,
-        "text": "Panduan Komprehensif: Pemetaan Jenis Virus, Area Risiko, & Solusi Disinfeksi",
-        "runs": [
-          {
-            "text": "Panduan ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Komprehensif",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ": ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Pemetaan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Jenis Virus, Area Risiko, & Solusi Disinfeksi",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ]
-      },
+
       {
         "type": "paragraph",
         "text": "Setiap jenis virus memiliki karakteristik penyebaran, ketahanan di permukaan benda, dan target area penularan yang berbeda-beda. Untuk memberikan perlindungan yang efektif, proses disinfeksi harus disesuaikan secara spesifik dengan karakteristik patogen dan tata letak area fasilitas Anda.",
