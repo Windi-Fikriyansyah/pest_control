@@ -57,7 +57,7 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   cafe: { image: "/images/artikel/cafe/bannerpc.png", imageMobile: "/images/artikel/mobile/2.png" },
   hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/mobile/6.png" },
   kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/mobile/3.png" },
-  "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
+  "pabrik-makanan": { image: "/images/artikel/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
   // Hama articles banner PC & Mobile
   burung: { image: "/images/artikelhama/image hama/burung greja.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/burung greja.jpg" },
   kalelawar: { image: "/images/artikelhama/image hama/kelelawar.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/kelelawar.jpg" },
