@@ -2199,7 +2199,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
         {/* ======================================================== */}
         {/* 6. CARD: VECOS PROFFING DEFENDER (FULL WIDTH)            */}
         {/* ======================================================== */}
-        <section className="w-full">
+        <section className="w-full" id="proffing-defender">
           <div className="w-full rounded-2xl sm:rounded-3xl bg-[#d2d4d8] border border-zinc-300/80 p-5 sm:p-8 md:p-10 shadow-sm flex items-center gap-4 sm:gap-7 md:gap-9">
             <div className="shrink-0 relative w-16 h-18 sm:w-24 sm:h-28 md:w-28 md:h-32 flex items-center justify-center">
               <Image
@@ -2658,7 +2658,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   <li><Link href="/artikel/sistem-proteksi-rayap" className="hover:underline transition-all">Sistem Proteksi Rayap</Link></li>
                   <li><Link href="/artikel/disinfeksi-sterilisasi" className="hover:underline transition-all">Disinfeksi & Sterilisasi</Link></li>
                   <li><Link href="/artikel/prime-shield-01-trap" className="hover:underline transition-all">Prime Shield-01</Link></li>
-                  <li><a href="#form-survey" className="hover:underline transition-all">Vecos Proffing Defender</a></li>
+                  <li><Link href="/artikel/vecos-proofing-defender" className="hover:underline transition-all">Vecos Proofing Defender</Link></li>
                 </ul>
               </div>
 

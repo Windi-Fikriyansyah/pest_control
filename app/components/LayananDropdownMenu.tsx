@@ -14,8 +14,6 @@ export default function LayananDropdownMenu({
   isArticlePage = false,
   variant = "desktop",
 }: LayananDropdownMenuProps) {
-  const prefix = isArticlePage ? "/" : "";
-
   const mainServices = [
     {
       id: "serangga",
@@ -154,38 +152,69 @@ export default function LayananDropdownMenu({
     },
   ];
 
-  const specialHardware = {
-    id: "prime-shield",
-    title: "Prime Shield-01 Trap",
-    badgeTitle: "HARDWARE",
-    desc: "Sistem perangkap lalat indoor",
-    badgeDesc: "BARU",
-    href: "/artikel/prime-shield-01-trap",
-    icon: (
-      <svg
-        className="w-7 h-7 sm:w-8 sm:h-8 text-zinc-900 shrink-0"
-        viewBox="0 0 32 32"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Left Arrow pointing left */}
-        <path d="M8 17H3M3 17L5.5 14.5M3 17L5.5 19.5" />
-        {/* Right Arrow pointing right */}
-        <path d="M24 17H29M29 17L26.5 14.5M29 17L26.5 19.5" />
-        {/* Trap Lid */}
-        <path d="M12 12C12 10.5 13.8 9.5 16 9.5C18.2 9.5 20 10.5 20 12" />
-        <rect x="10.5" y="12" width="11" height="2.2" rx="0.8" />
-        {/* Cylinder Body */}
-        <path d="M11.5 14.2L12.5 24.5C12.5 25.8 14 26.8 16 26.8C18 26.8 19.5 25.8 19.5 24.5L20.5 14.2" />
-        {/* Vertical Grate Bars */}
-        <path d="M14.5 14.2V25" />
-        <path d="M17.5 14.2V25" />
-      </svg>
-    ),
-  };
+  const specialServices = [
+    {
+      id: "prime-shield",
+      title: "Prime Shield-01 Trap",
+      badgeTitle: "HARDWARE",
+      desc: "Sistem perangkap lalat indoor",
+      badgeDesc: "BARU",
+      href: "/artikel/prime-shield-01-trap",
+      icon: (
+        <svg
+          className="w-7 h-7 sm:w-8 sm:h-8 text-zinc-900 shrink-0"
+          viewBox="0 0 32 32"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Left Arrow pointing left */}
+          <path d="M8 17H3M3 17L5.5 14.5M3 17L5.5 19.5" />
+          {/* Right Arrow pointing right */}
+          <path d="M24 17H29M29 17L26.5 14.5M29 17L26.5 19.5" />
+          {/* Trap Lid */}
+          <path d="M12 12C12 10.5 13.8 9.5 16 9.5C18.2 9.5 20 10.5 20 12" />
+          <rect x="10.5" y="12" width="11" height="2.2" rx="0.8" />
+          {/* Cylinder Body */}
+          <path d="M11.5 14.2L12.5 24.5C12.5 25.8 14 26.8 16 26.8C18 26.8 19.5 25.8 19.5 24.5L20.5 14.2" />
+          {/* Vertical Grate Bars */}
+          <path d="M14.5 14.2V25" />
+          <path d="M17.5 14.2V25" />
+        </svg>
+      ),
+    },
+    {
+      id: "proffing-defender",
+      title: "Vecos Proofing Defender",
+      badgeTitle: "DEFENDER",
+      desc: "Layanan penutupan celah hama di setiap titik properti anda",
+      badgeDesc: "PROTEKSI",
+      href: "/artikel/vecos-proofing-defender",
+      icon: (
+        <svg
+          className="w-7 h-7 sm:w-8 sm:h-8 text-zinc-900 shrink-0"
+          viewBox="0 0 32 32"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Shield Outline */}
+          <path d="M16 4.5L7 8.5V15.5C7 21.8 10.8 26.8 16 28.5C21.2 26.8 25 21.8 25 15.5V8.5L16 4.5Z" />
+          {/* Brick / Proofing Sealing Barrier lines inside */}
+          <path d="M11 13H21" />
+          <path d="M10 17.5H22" />
+          <path d="M12 22H20" />
+          <path d="M14 13V17.5" />
+          <path d="M18 13V17.5" />
+          <path d="M16 17.5V22" />
+        </svg>
+      ),
+    },
+  ];
 
   return (
     <div className={`w-full ${variant === "desktop" ? "space-y-1" : "space-y-1 pt-1"}`}>
@@ -224,56 +253,59 @@ export default function LayananDropdownMenu({
         </Link>
       ))}
 
-      {/* Garis Pemisah & Judul Section: PERANGKAT KHUSUS */}
+      {/* Garis Pemisah & Judul Section: PERANGKAT & PROTEKSI KHUSUS */}
       <div className="pt-2 pb-1">
         <div className="border-t border-zinc-200/80 mb-2.5" />
         <span className="text-[11px] font-bold tracking-wider uppercase text-zinc-400 px-3 block">
-          PERANGKAT KHUSUS
+          PERANGKAT &amp; PROTEKSI KHUSUS
         </span>
       </div>
 
-      {/* Item Perangkat Khusus: Prime Shield-01 Trap */}
-      <Link
-        href={specialHardware.href}
-        onClick={onItemClick}
-        className="flex items-center gap-3.5 sm:gap-4 px-3 py-2.5 rounded-xl hover:bg-zinc-50 active:bg-zinc-100 transition-colors group cursor-pointer text-left w-full"
-      >
-        {/* Trap Icon */}
-        <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg group-hover:scale-105 transition-transform">
-          {specialHardware.icon}
-        </div>
-
-        {/* Teks Judul & Deskripsi dengan Badges */}
-        <div className="flex-1 min-w-0 pr-2">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h4 className="text-[14px] sm:text-[15px] font-bold text-zinc-950 group-hover:text-[#C81E27] transition-colors leading-snug">
-              {specialHardware.title}
-            </h4>
-            <span className="text-[9.5px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-100/80 text-[#C81E27] leading-none shrink-0">
-              {specialHardware.badgeTitle}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
-            <span className="text-xs text-zinc-500 leading-normal font-normal">
-              {specialHardware.desc}
-            </span>
-            <span className="text-[9.5px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-100/80 text-[#C81E27] leading-none shrink-0">
-              {specialHardware.badgeDesc}
-            </span>
-          </div>
-        </div>
-
-        {/* Chevron Panah Kanan */}
-        <svg
-          className="w-4 h-4 text-zinc-400 group-hover:text-[#C81E27] group-hover:translate-x-0.5 transition-all shrink-0 ml-auto"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+      {/* Item Perangkat & Proteksi Khusus */}
+      {specialServices.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          onClick={onItemClick}
+          className="flex items-center gap-3.5 sm:gap-4 px-3 py-2.5 rounded-xl hover:bg-zinc-50 active:bg-zinc-100 transition-colors group cursor-pointer text-left w-full"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M9 5l7 7-7 7" />
-        </svg>
-      </Link>
+          {/* Icon */}
+          <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg group-hover:scale-105 transition-transform">
+            {item.icon}
+          </div>
+
+          {/* Teks Judul & Deskripsi dengan Badges */}
+          <div className="flex-1 min-w-0 pr-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h4 className="text-[14px] sm:text-[15px] font-bold text-zinc-950 group-hover:text-[#C81E27] transition-colors leading-snug">
+                {item.title}
+              </h4>
+              <span className="text-[9.5px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-100/80 text-[#C81E27] leading-none shrink-0">
+                {item.badgeTitle}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
+              <span className="text-xs text-zinc-500 leading-normal font-normal">
+                {item.desc}
+              </span>
+              <span className="text-[9.5px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-100/80 text-[#C81E27] leading-none shrink-0">
+                {item.badgeDesc}
+              </span>
+            </div>
+          </div>
+
+          {/* Chevron Panah Kanan */}
+          <svg
+            className="w-4 h-4 text-zinc-400 group-hover:text-[#C81E27] group-hover:translate-x-0.5 transition-all shrink-0 ml-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      ))}
     </div>
   );
 }

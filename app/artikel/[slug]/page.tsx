@@ -92,6 +92,14 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
     image: "/images/artikellayanan/prime.jpg",
     imageMobile: "/images/artikellayanan/image mobile/prime.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/prime-shield-01-trap/mobile.png"
   },
+  "vecos-proofing-defender": {
+    image: "/images/artikellayanan/defender.jpg",
+    imageMobile: "/images/artikellayanan/defendermobile.jpg",
+  },
+  "vecos-proffing-defender": {
+    image: "/images/artikellayanan/inpeksi.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/inpeksi.jpg",
+  },
 };
 
 const propertyTitleMap: Record<string, string> = {
@@ -134,6 +142,8 @@ const propertyTitleMap: Record<string, string> = {
   "sistem-proteksi-rayap": "Sistem Proteksi Rayap",
   "disinfeksi-sterilisasi": "Disinfeksi & Sterilisasi",
   "prime-shield-01-trap": "Prime Shield-01 Trap",
+  "vecos-proofing-defender": "Vecos Proofing Defender",
+  "vecos-proffing-defender": "Vecos Proofing Defender",
 };
 
 const pestList = [

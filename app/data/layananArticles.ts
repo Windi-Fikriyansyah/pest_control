@@ -16513,5 +16513,993 @@ export const layananArticles: Article[] = [
       }
     ],
     "id": 205
+  },
+  {
+    "id": 206,
+    "slug": "vecos-proofing-defender",
+    "title": "Vecos Proofing Defender: Lindungi Properti Komersial Anda dari Hama dengan Sistem Penutupan Celah Profesional",
+    "category": "Proteksi Khusus & Pest Exclusion",
+    "date": "15 Oktober 2026",
+    "readTime": "3 Menit Baca",
+    "wordCount": 420,
+    "coverImage": "/images/pestcontrol.png",
+    "excerpt": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Vecos Proofing Defender hadir sebagai solusi unggulan pencegahan fisik (pest exclusion) dengan menutup seluruh celah potensial.",
+    "elements": [
+      {
+        "type": "image",
+        "src": "/images/artikellayanan/Untitled-1.png",
+        "alt": "Vecos Proofing Defender"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "",
+        "runs": [
+          {
+            "text": "Vecos Proofing Defender: Lindungi Properti Komersial Anda dari Hama dengan Sistem Penutupan Celah Profesional",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Pendekatan pengendalian hama modern menuntut perlindungan proaktif yang menghentikan masalah langsung dari akarnya.",
+        "runs": [
+          {
+            "text": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Pendekatan pengendalian hama modern menuntut perlindungan proaktif yang menghentikan masalah langsung dari akarnya.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Vecos Proofing Defender hadir sebagai solusi unggulan dari Vecos Pest Control yang fokus pada tindakan pencegahan fisik (pest exclusion). Kami menutup setiap celah, retakan, dan jalur masuk potensial di seluruh bagian properti komersial Anda untuk memastikan hama tidak memiliki jalan masuk sedikit pun.",
+        "runs": [
+          {
+            "text": "Vecos Proofing Defender",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": " hadir sebagai solusi unggulan dari Vecos Pest Control yang fokus pada tindakan pencegahan fisik (pest exclusion). Kami menutup setiap celah, retakan, dan jalur masuk potensial di seluruh bagian properti komersial Anda untuk memastikan hama tidak memiliki jalan masuk sedikit pun.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Penutupan Celah (Proofing) Sangat Krusial untuk Bisnis?",
+        "runs": [
+          {
+            "text": "Mengapa Penutupan Celah (Proofing) Sangat Krusial untuk Bisnis?",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Penggunaan bahan kimia saja tidak cukup jika celah akses hama tetap terbuka. Tikus, kecoak, dan serangga lainnya dapat masuk melalui celah yang sangat kecil—seekor tikus rumah hanya membutuhkan celah sebesar 0,6 cm untuk menyusup ke dalam gedung Anda.",
+        "runs": [
+          {
+            "text": "Penggunaan bahan kimia saja tidak cukup jika celah akses hama tetap terbuka. Tikus, kecoak, dan serangga lainnya dapat masuk melalui celah yang sangat kecil—seekor tikus rumah hanya membutuhkan celah sebesar 0,6 cm untuk menyusup ke dalam gedung Anda.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Layanan Vecos Proofing Defender memberikan perlindungan jangka panjang dengan berbagai manfaat mendasar:",
+        "runs": [
+          {
+            "text": "Layanan Vecos Proofing Defender memberikan perlindungan jangka panjang dengan berbagai manfaat mendasar:",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Mencegah Kerusakan Aset & Infrastruktur: Menghentikan tikus menggigit kabel listrik, struktur kayu, dan inventaris barang.",
+        "runs": [
+          {
+            "text": "Mencegah Kerusakan Aset & Infrastruktur: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Menghentikan tikus menggigit kabel listrik, struktur kayu, dan inventaris barang.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Memenuhi Standar Audit & Halal/HACCP: Membantu fasilitas industri makanan, hotel, dan restoran lolos inspeksi kebersihan dan regulasi keamanan pangan.",
+        "runs": [
+          {
+            "text": "Memenuhi Standar Audit & Halal/HACCP: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Membantu fasilitas industri makanan, hotel, dan restoran lolos inspeksi kebersihan dan regulasi keamanan pangan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Mengurangi Penggunaan Bahan Kimia: Dengan menutup jalur masuk, ketergantungan pada pestisida kimia dapat dipangkas secara signifikan.",
+        "runs": [
+          {
+            "text": "Mengurangi Penggunaan Bahan Kimia: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Dengan menutup jalur masuk, ketergantungan pada pestisida kimia dapat dipangkas secara signifikan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Menjaga Reputasi Bisnis: Mencegah munculnya hama di area publik yang dapat merusak citra merek Anda di mata pelanggan.",
+        "runs": [
+          {
+            "text": "Menjaga Reputasi Bisnis: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Mencegah munculnya hama di area publik yang dapat merusak citra merek Anda di mata pelanggan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Area Properti Komersial yang Kami Amankan",
+        "runs": [
+          {
+            "text": "Area Properti Komersial yang Kami Amankan",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Tim teknisi ahli kami siap menyisir dan mengamankan seluruh bagian gedung komersial Anda:",
+        "runs": [
+          {
+            "text": "Tim teknisi ahli kami siap menyisir dan mengamankan seluruh bagian gedung komersial Anda:",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "1. Area Eksterior & Fondasi Gedung",
+        "runs": [
+          {
+            "text": "1. Area Eksterior & Fondasi Gedung",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan celah pada selubung bangunan, struktur dinding luar, dan sambungan beton.",
+        "runs": [
+          {
+            "text": "Penutupan celah pada selubung bangunan, struktur dinding luar, dan sambungan beton.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Pemasangan jaring baja (mesh guard) pada lubang drainase, ventilasi udara, dan saluran air.",
+        "runs": [
+          {
+            "text": "Pemasangan jaring baja (mesh guard) pada lubang drainase, ventilasi udara, dan saluran air.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Pemasangan door sweep tahan gigitan pada bagian bawah pintu keluar-masuk utama maupun pintu pemuatan (loading dock).",
+        "runs": [
+          {
+            "text": "Pemasangan door sweep tahan gigitan pada bagian bawah pintu keluar-masuk utama maupun pintu pemuatan (loading dock).",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "2. Jalur Pipanisasi & Instalasi Utilitas",
+        "runs": [
+          {
+            "text": "2. Jalur Pipanisasi & Instalasi Utilitas",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penyegelan celah di sekitar pipa AC, saluran kabel listrik, dan pipa pembuangan yang menembus dinding.",
+        "runs": [
+          {
+            "text": "Penyegelan celah di sekitar pipa AC, saluran kabel listrik, dan pipa pembuangan yang menembus dinding.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan akses pada ruang kontrol listrik dan ruang mesin.",
+        "runs": [
+          {
+            "text": "Penutupan akses pada ruang kontrol listrik dan ruang mesin.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "3. Area Interior & Atap",
+        "runs": [
+          {
+            "text": "3. Area Interior & Atap",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan celah di balik kabinet dapur komersial, area pantry, dan ruang penyimpanan bahan makanan.",
+        "runs": [
+          {
+            "text": "Penutupan celah di balik kabinet dapur komersial, area pantry, dan ruang penyimpanan bahan makanan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Proteksi celah plafon, rongga atap, serta saluran HVAC/ductwork dari gangguan burung dan tikus.",
+        "runs": [
+          {
+            "text": "Proteksi celah plafon, rongga atap, serta saluran HVAC/ductwork dari gangguan burung dan tikus.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Metode Kerja Vecos Proofing Defender",
+        "runs": [
+          {
+            "text": "Metode Kerja Vecos Proofing Defender",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "1. Inspeksi & Pemetaan Jalur Masuk: Audit komprehensif pada titik rawan. Tim profesional kami melakukan inspeksi menyeluruh pada seluruh struktur interior dan eksterior gedung untuk mengidentifikasi celah aktif maupun titik lemah potensial.",
+        "runs": [
+          {
+            "text": "1. Inspeksi & Pemetaan Jalur Masuk: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Audit komprehensif pada titik rawan. Tim profesional kami melakukan inspeksi menyeluruh pada seluruh struktur interior dan eksterior gedung untuk mengidentifikasi celah aktif maupun titik lemah potensial.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "2. Pilihan Material Berkualitas Tinggi: Tahan lama dan anti-gigitan hama. Kami menggunakan material kelas industri seperti steel wool, kawat stainless steel tebal, sealant khusus, pelat logam, serta karet industri yang tidak mudah rusak oleh iklim maupun gigitan hama.",
+        "runs": [
+          {
+            "text": "2. Pilihan Material Berkualitas Tinggi: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Tahan lama dan anti-gigitan hama. Kami menggunakan material kelas industri seperti steel wool, kawat stainless steel tebal, sealant khusus, pelat logam, serta karet industri yang tidak mudah rusak oleh iklim maupun gigitan hama.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "3. Eksekusi Penutupan Celah: Pengerjaan presisi oleh teknisi berpengalaman. Pemasangan material dilakukan secara rapi tanpa mengganggu estetika bangunan maupun operasional harian bisnis Anda.",
+        "runs": [
+          {
+            "text": "3. Eksekusi Penutupan Celah: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Pengerjaan presisi oleh teknisi berpengalaman. Pemasangan material dilakukan secara rapi tanpa mengganggu estetika bangunan maupun operasional harian bisnis Anda.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "4. Monitoring & Laporan Audit: Dokumentasi lengkap untuk kebutuhan audit. Kami memberikan laporan detail mengenai titik-titik yang telah di-proofing beserta rekomendasi perawatan berlanjut.",
+        "runs": [
+          {
+            "text": "4. Monitoring & Laporan Audit: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Dokumentasi lengkap untuk kebutuhan audit. Kami memberikan laporan detail mengenai titik-titik yang telah di-proofing beserta rekomendasi perawatan berlanjut.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Memilih Vecos Pest Control?",
+        "runs": [
+          {
+            "text": "Mengapa Memilih Vecos Pest Control?",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "“Solusi hama terbaik bukan sekadar membasmi yang ada di dalam, tetapi memastikan yang di luar tidak akan pernah bisa masuk.”",
+        "runs": [
+          {
+            "text": "“Solusi hama terbaik bukan sekadar membasmi yang ada di dalam, tetapi memastikan yang di luar tidak akan pernah bisa masuk.”",
+            "bold": true,
+            "italic": true,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Dengan kombinasi tenaga ahli bersertifikasi, penggunaan material berstandar industri, dan pendekatan metode Integrated Pest Management (IPM), Vecos Proofing Defender memastikan investasi properti komersial Anda terlindungi secara optimal 24/7.",
+        "runs": [
+          {
+            "text": "Dengan kombinasi tenaga ahli bersertifikasi, penggunaan material berstandar industri, dan pendekatan metode Integrated Pest Management (IPM), Vecos Proofing Defender memastikan investasi properti komersial Anda terlindungi secara optimal 24/7.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "slug": "vecos-proffing-defender",
+    "title": "Vecos Proofing Defender: Lindungi Properti Komersial Anda dari Hama dengan Sistem Penutupan Celah Profesional",
+    "category": "Proteksi Khusus & Pest Exclusion",
+    "date": "15 Oktober 2026",
+    "readTime": "3 Menit Baca",
+    "wordCount": 420,
+    "coverImage": "/images/pestcontrol.png",
+    "excerpt": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Vecos Proofing Defender hadir sebagai solusi unggulan pencegahan fisik (pest exclusion) dengan menutup seluruh celah potensial.",
+    "elements": [
+      {
+        "type": "image",
+        "src": "/images/pestcontrol.png",
+        "alt": "Vecos Proofing Defender"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Vecos Proofing Defender: Lindungi Properti Komersial Anda dari Hama dengan Sistem Penutupan Celah Profesional",
+        "runs": [
+          {
+            "text": "Vecos Proofing Defender: Lindungi Properti Komersial Anda dari Hama dengan Sistem Penutupan Celah Profesional",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Pendekatan pengendalian hama modern menuntut perlindungan proaktif yang menghentikan masalah langsung dari akarnya.",
+        "runs": [
+          {
+            "text": "Menjaga bangunan komersial tetap bebas dari hama bukan sekadar masalah penyemprotan bahan kimia secara berkala. Pendekatan pengendalian hama modern menuntut perlindungan proaktif yang menghentikan masalah langsung dari akarnya.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Vecos Proofing Defender hadir sebagai solusi unggulan dari Vecos Pest Control yang fokus pada tindakan pencegahan fisik (pest exclusion). Kami menutup setiap celah, retakan, dan jalur masuk potensial di seluruh bagian properti komersial Anda untuk memastikan hama tidak memiliki jalan masuk sedikit pun.",
+        "runs": [
+          {
+            "text": "Vecos Proofing Defender",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": " hadir sebagai solusi unggulan dari Vecos Pest Control yang fokus pada tindakan pencegahan fisik (pest exclusion). Kami menutup setiap celah, retakan, dan jalur masuk potensial di seluruh bagian properti komersial Anda untuk memastikan hama tidak memiliki jalan masuk sedikit pun.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Penutupan Celah (Proofing) Sangat Krusial untuk Bisnis?",
+        "runs": [
+          {
+            "text": "Mengapa Penutupan Celah (Proofing) Sangat Krusial untuk Bisnis?",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Penggunaan bahan kimia saja tidak cukup jika celah akses hama tetap terbuka. Tikus, kecoak, dan serangga lainnya dapat masuk melalui celah yang sangat kecil—seekor tikus rumah hanya membutuhkan celah sebesar 0,6 cm untuk menyusup ke dalam gedung Anda.",
+        "runs": [
+          {
+            "text": "Penggunaan bahan kimia saja tidak cukup jika celah akses hama tetap terbuka. Tikus, kecoak, dan serangga lainnya dapat masuk melalui celah yang sangat kecil—seekor tikus rumah hanya membutuhkan celah sebesar 0,6 cm untuk menyusup ke dalam gedung Anda.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Layanan Vecos Proofing Defender memberikan perlindungan jangka panjang dengan berbagai manfaat mendasar:",
+        "runs": [
+          {
+            "text": "Layanan Vecos Proofing Defender memberikan perlindungan jangka panjang dengan berbagai manfaat mendasar:",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Mencegah Kerusakan Aset & Infrastruktur: Menghentikan tikus menggigit kabel listrik, struktur kayu, dan inventaris barang.",
+        "runs": [
+          {
+            "text": "Mencegah Kerusakan Aset & Infrastruktur: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Menghentikan tikus menggigit kabel listrik, struktur kayu, dan inventaris barang.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Memenuhi Standar Audit & Halal/HACCP: Membantu fasilitas industri makanan, hotel, dan restoran lolos inspeksi kebersihan dan regulasi keamanan pangan.",
+        "runs": [
+          {
+            "text": "Memenuhi Standar Audit & Halal/HACCP: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Membantu fasilitas industri makanan, hotel, dan restoran lolos inspeksi kebersihan dan regulasi keamanan pangan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Mengurangi Penggunaan Bahan Kimia: Dengan menutup jalur masuk, ketergantungan pada pestisida kimia dapat dipangkas secara signifikan.",
+        "runs": [
+          {
+            "text": "Mengurangi Penggunaan Bahan Kimia: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Dengan menutup jalur masuk, ketergantungan pada pestisida kimia dapat dipangkas secara signifikan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Menjaga Reputasi Bisnis: Mencegah munculnya hama di area publik yang dapat merusak citra merek Anda di mata pelanggan.",
+        "runs": [
+          {
+            "text": "Menjaga Reputasi Bisnis: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Mencegah munculnya hama di area publik yang dapat merusak citra merek Anda di mata pelanggan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Area Properti Komersial yang Kami Amankan",
+        "runs": [
+          {
+            "text": "Area Properti Komersial yang Kami Amankan",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Tim teknisi ahli kami siap menyisir dan mengamankan seluruh bagian gedung komersial Anda:",
+        "runs": [
+          {
+            "text": "Tim teknisi ahli kami siap menyisir dan mengamankan seluruh bagian gedung komersial Anda:",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "1. Area Eksterior & Fondasi Gedung",
+        "runs": [
+          {
+            "text": "1. Area Eksterior & Fondasi Gedung",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan celah pada selubung bangunan, struktur dinding luar, dan sambungan beton.",
+        "runs": [
+          {
+            "text": "Penutupan celah pada selubung bangunan, struktur dinding luar, dan sambungan beton.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Pemasangan jaring baja (mesh guard) pada lubang drainase, ventilasi udara, dan saluran air.",
+        "runs": [
+          {
+            "text": "Pemasangan jaring baja (mesh guard) pada lubang drainase, ventilasi udara, dan saluran air.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Pemasangan door sweep tahan gigitan pada bagian bawah pintu keluar-masuk utama maupun pintu pemuatan (loading dock).",
+        "runs": [
+          {
+            "text": "Pemasangan door sweep tahan gigitan pada bagian bawah pintu keluar-masuk utama maupun pintu pemuatan (loading dock).",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "2. Jalur Pipanisasi & Instalasi Utilitas",
+        "runs": [
+          {
+            "text": "2. Jalur Pipanisasi & Instalasi Utilitas",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penyegelan celah di sekitar pipa AC, saluran kabel listrik, dan pipa pembuangan yang menembus dinding.",
+        "runs": [
+          {
+            "text": "Penyegelan celah di sekitar pipa AC, saluran kabel listrik, dan pipa pembuangan yang menembus dinding.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan akses pada ruang kontrol listrik dan ruang mesin.",
+        "runs": [
+          {
+            "text": "Penutupan akses pada ruang kontrol listrik dan ruang mesin.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "3. Area Interior & Atap",
+        "runs": [
+          {
+            "text": "3. Area Interior & Atap",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Penutupan celah di balik kabinet dapur komersial, area pantry, dan ruang penyimpanan bahan makanan.",
+        "runs": [
+          {
+            "text": "Penutupan celah di balik kabinet dapur komersial, area pantry, dan ruang penyimpanan bahan makanan.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "Proteksi celah plafon, rongga atap, serta saluran HVAC/ductwork dari gangguan burung dan tikus.",
+        "runs": [
+          {
+            "text": "Proteksi celah plafon, rongga atap, serta saluran HVAC/ductwork dari gangguan burung dan tikus.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Metode Kerja Vecos Proofing Defender",
+        "runs": [
+          {
+            "text": "Metode Kerja Vecos Proofing Defender",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "1. Inspeksi & Pemetaan Jalur Masuk: Audit komprehensif pada titik rawan. Tim profesional kami melakukan inspeksi menyeluruh pada seluruh struktur interior dan eksterior gedung untuk mengidentifikasi celah aktif maupun titik lemah potensial.",
+        "runs": [
+          {
+            "text": "1. Inspeksi & Pemetaan Jalur Masuk: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Audit komprehensif pada titik rawan. Tim profesional kami melakukan inspeksi menyeluruh pada seluruh struktur interior dan eksterior gedung untuk mengidentifikasi celah aktif maupun titik lemah potensial.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "2. Pilihan Material Berkualitas Tinggi: Tahan lama dan anti-gigitan hama. Kami menggunakan material kelas industri seperti steel wool, kawat stainless steel tebal, sealant khusus, pelat logam, serta karet industri yang tidak mudah rusak oleh iklim maupun gigitan hama.",
+        "runs": [
+          {
+            "text": "2. Pilihan Material Berkualitas Tinggi: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Tahan lama dan anti-gigitan hama. Kami menggunakan material kelas industri seperti steel wool, kawat stainless steel tebal, sealant khusus, pelat logam, serta karet industri yang tidak mudah rusak oleh iklim maupun gigitan hama.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "3. Eksekusi Penutupan Celah: Pengerjaan presisi oleh teknisi berpengalaman. Pemasangan material dilakukan secara rapi tanpa mengganggu estetika bangunan maupun operasional harian bisnis Anda.",
+        "runs": [
+          {
+            "text": "3. Eksekusi Penutupan Celah: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Pengerjaan presisi oleh teknisi berpengalaman. Pemasangan material dilakukan secara rapi tanpa mengganggu estetika bangunan maupun operasional harian bisnis Anda.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "isList": true,
+        "text": "4. Monitoring & Laporan Audit: Dokumentasi lengkap untuk kebutuhan audit. Kami memberikan laporan detail mengenai titik-titik yang telah di-proofing beserta rekomendasi perawatan berlanjut.",
+        "runs": [
+          {
+            "text": "4. Monitoring & Laporan Audit: ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          },
+          {
+            "text": "Dokumentasi lengkap untuk kebutuhan audit. Kami memberikan laporan detail mengenai titik-titik yang telah di-proofing beserta rekomendasi perawatan berlanjut.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Memilih Vecos Pest Control?",
+        "runs": [
+          {
+            "text": "Mengapa Memilih Vecos Pest Control?",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "“Solusi hama terbaik bukan sekadar membasmi yang ada di dalam, tetapi memastikan yang di luar tidak akan pernah bisa masuk.”",
+        "runs": [
+          {
+            "text": "“Solusi hama terbaik bukan sekadar membasmi yang ada di dalam, tetapi memastikan yang di luar tidak akan pernah bisa masuk.”",
+            "bold": true,
+            "italic": true,
+            "underline": false,
+            "images": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Dengan kombinasi tenaga ahli bersertifikasi, penggunaan material berstandar industri, dan pendekatan metode Integrated Pest Management (IPM), Vecos Proofing Defender memastikan investasi properti komersial Anda terlindungi secara optimal 24/7.",
+        "runs": [
+          {
+            "text": "Dengan kombinasi tenaga ahli bersertifikasi, penggunaan material berstandar industri, dan pendekatan metode Integrated Pest Management (IPM), Vecos Proofing Defender memastikan investasi properti komersial Anda terlindungi secara optimal 24/7.",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "images": []
+          }
+        ]
+      }
+    ]
   }
 ];

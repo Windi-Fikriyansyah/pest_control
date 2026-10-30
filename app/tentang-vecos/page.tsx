@@ -1630,7 +1630,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   <li><Link href="/artikel/sistem-proteksi-rayap" className="hover:underline transition-all">Sistem Proteksi Rayap</Link></li>
                   <li><Link href="/artikel/disinfeksi-sterilisasi" className="hover:underline transition-all">Disinfeksi & Sterilisasi</Link></li>
                   <li><Link href="/artikel/prime-shield-01-trap" className="hover:underline transition-all">Prime Shield-01</Link></li>
-                  <li><a href="#form-survey" className="hover:underline transition-all">Vecos Proffing Defender</a></li>
+                  <li><Link href="/artikel/vecos-proofing-defender" className="hover:underline transition-all">Vecos Proofing Defender</Link></li>
                 </ul>
               </div>
 
