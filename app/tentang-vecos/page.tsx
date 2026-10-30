@@ -1586,73 +1586,145 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
         {/* 3. Footer Merah Penuh */}
         <footer className="w-full bg-[#E02428] text-white pt-18 sm:pt-36 md:pt-40 pb-0 shadow-2xl relative z-10">
-          <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12">
-            <div className="grid grid-cols-2 gap-4 sm:gap-8 text-xs sm:text-sm md:text-base font-semibold leading-relaxed">
-              <ul className="space-y-1.5 sm:space-y-2">
-                <li><Link href="/" className="hover:underline transition-all">Beranda</Link></li>
-                <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
-                <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
-                <li><Link href="/tentang-vecos" className="hover:underline transition-all">Tentang Vecos</Link></li>
-              </ul>
+          <div className="w-full px-4 sm:px-6 lg:px-12 space-y-8 sm:space-y-12 pb-8 sm:pb-12 border-b border-white/20">
+            {/* 1. Baris Teks Bahan Kimia & Logo Produsen Terpercaya */}
+            <div className="space-y-3 sm:space-y-4 max-w-4xl">
+              <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed font-medium">
+                Kami menggunakan bahan kimia berstandar industri<br className="hidden sm:inline" />
+                {" "}dari produsen terpercaya yang ramah lingkungan<br className="hidden sm:inline" />
+                {" "}dan aman untuk area hunian
+              </p>
 
-              <ul className="space-y-1.5 sm:space-y-2">
-                <li><Link href="/artikel/pengendalian-serangga" className="hover:underline transition-all">Pembasmi Serangga</Link></li>
-                <li><Link href="/artikel/pengendalian-tikus" className="hover:underline transition-all">Pembasmi Tikus</Link></li>
-                <li><Link href="/artikel/sistem-proteksi-rayap" className="hover:underline transition-all">Anti Rayap</Link></li>
-                <li><Link href="/artikel/disinfeksi-sterilisasi" className="hover:underline transition-all">Disinfeksi</Link></li>
-                <li><Link href="/artikel/prime-shield-01-trap" className="hover:underline transition-all">Prime Shield-01</Link></li>
-              </ul>
+              {/* Strip Logo Bahan Kimia Terpercaya (Siap diganti oleh user) */}
+              <div className="pt-1">
+                <div className="relative max-w-2xl w-full">
+                  <Image
+                    src="/images/footer-chemical-partners.png"
+                    alt="Mitra Bahan Kimia Berstandar Industri: Sumitomo Chemical, Bayer, BASF, Exterra, Envu, Syngenta"
+                    width={725}
+                    height={75}
+                    className="w-full h-auto object-contain rounded-lg"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="flex items-center justify-between gap-3 sm:gap-4 pt-2 pb-5 sm:pb-8 border-b border-white/20">
-              <div className="space-y-1.5 sm:space-y-2.5">
-                <span className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-white block">
+            {/* 2. Grid Navigasi, Layanan & Kontak Brand VECOS */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pt-2 sm:pt-4 items-start">
+              {/* Kolom 1: Navigasi Utama */}
+              <div className="md:col-span-3 lg:col-span-3">
+                <ul className="space-y-2.5 sm:space-y-3.5 text-sm sm:text-base md:text-lg font-bold text-white leading-relaxed">
+                  <li><Link href="/" className="hover:underline transition-all">Beranda</Link></li>
+                  <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
+                  <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
+                  <li><Link href="/tentang-vecos" className="hover:underline transition-all">Tentang Vecos</Link></li>
+                </ul>
+              </div>
+
+              {/* Kolom 2: Layanan Kami */}
+              <div className="md:col-span-5 lg:col-span-5">
+                <ul className="space-y-2.5 sm:space-y-3.5 text-sm sm:text-base md:text-lg font-bold text-white leading-relaxed">
+                  <li><Link href="/artikel/pengendalian-serangga" className="hover:underline transition-all">Pengendalian Serangga</Link></li>
+                  <li><Link href="/artikel/pengendalian-tikus" className="hover:underline transition-all">Pengendalian Tikus</Link></li>
+                  <li><Link href="/artikel/sistem-proteksi-rayap" className="hover:underline transition-all">Sistem Proteksi Rayap</Link></li>
+                  <li><Link href="/artikel/disinfeksi-sterilisasi" className="hover:underline transition-all">Disinfeksi & Sterilisasi</Link></li>
+                  <li><Link href="/artikel/prime-shield-01-trap" className="hover:underline transition-all">Prime Shield-01</Link></li>
+                  <li><a href="#form-survey" className="hover:underline transition-all">Vecos Proffing Defender</a></li>
+                </ul>
+              </div>
+
+              {/* Kolom 3: Brand VECOS, Sosmed, NIB & Call Center */}
+              <div className="md:col-span-4 lg:col-span-4 space-y-3 sm:space-y-4">
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-wider text-white block font-sans">
                   VECOS
                 </span>
 
-                <div className="flex items-center gap-1.5 sm:gap-2.5">
-                  <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Instagram">
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                {/* Ikon Sosial Media (Instagram, Email, WhatsApp, Facebook) */}
+                <div className="flex items-center gap-2 sm:gap-2.5">
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com/vecos.id?cplk=NjViZm5jemRlZGtl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Instagram"
+                  >
+                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
                   </a>
-                  <a href="#" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="Facebook">
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" /></svg>
+
+                  {/* Email */}
+                  <a
+                    href="mailto:cs@vecos.co.id"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Email"
+                  >
+                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
                   </a>
-                  <a href="https://wa.me/6285743681500" target="_blank" rel="noopener noreferrer" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#991419] hover:bg-[#801014] flex items-center justify-center text-white transition-colors" aria-label="WhatsApp">
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" /></svg>
+
+                  {/* WhatsApp */}
+                  <a
+                    href="https://wa.me/6285743681500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="WhatsApp"
+                  >
+                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" />
+                    </svg>
+                  </a>
+
+                  {/* Facebook */}
+                  <a
+                    href="https://www.facebook.com/share/1DpUJuH49y/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Facebook"
+                  >
+                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
+                    </svg>
                   </a>
                 </div>
 
-                <div className="text-xs sm:text-sm md:text-base font-bold text-white pt-0.5">
-                  0857-4368-1500
-                </div>
-
-                <div className="text-[10px] sm:text-xs text-white/90 leading-tight">
-                  <p>PT Vecos Intitama Mulya</p>
-                </div>
-              </div>
-
-              <div className="bg-[#d2d4d8] text-zinc-900 px-2 sm:px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg flex items-center gap-2 sm:gap-3.5 max-w-[155px] xs:max-w-[185px] sm:max-w-xs shrink-0">
-                <div className="w-7 h-9 sm:w-10 sm:h-12 relative shrink-0">
-                  <Image
-                    src="/images/pestcontrol.png"
-                    alt="Vecos Proffing Defender"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div>
-                  <div className="text-[9.5px] sm:text-xs md:text-sm font-extrabold leading-tight text-[#3a3f4d]">
-                    Vecos Proffing<br />Defender
+                {/* Detail PT & NIB */}
+                <div className="space-y-0.5 text-white">
+                  <div className="text-sm sm:text-base font-bold">
+                    PT Vecos Intitama Mulya
                   </div>
-                  <div className="text-[7.5px] sm:text-[9px] md:text-[10px] text-[#555a66] leading-tight pt-0.5 line-clamp-2">
-                    Layanan penutupan celah hama di setiap titik properti anda.
+                  <div className="text-xs sm:text-sm text-white/90">
+                    Nomor Induk Berusaha
                   </div>
+                  <div className="text-xs sm:text-sm font-semibold tracking-wide text-white">
+                    NIB : 1903240165201
+                  </div>
+                </div>
+
+                {/* Call Center Pill Button */}
+                <div className="pt-1">
+                  <a
+                    href="https://wa.me/6285743681500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border-2 border-white text-white hover:bg-white hover:text-[#E02428] font-bold text-xs sm:text-sm transition-all shadow-md group"
+                  >
+                    <svg className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.28-.28.37-.67.25-1.02A11.36 11.36 0 0 1 8.5 4.31c0-.55-.45-1-1-1H4.11c-.55 0-1 .45-1 1C3.11 13.58 10.42 20.89 19.42 20.89c.55 0 1-.45 1-1v-3.51c0-.55-.45-1-1-1z" />
+                    </svg>
+                    <span>0857-4368-1500</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
+          
+<div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
               <div className="text-zinc-600 font-normal">
                 Copyright © 2026 PT Vecos Intitama Mulya . All Rights Reserved

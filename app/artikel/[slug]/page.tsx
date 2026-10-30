@@ -316,7 +316,7 @@ async function ArticleContent({
           {article.elements.map((el, idx) => {
             // 1. Gambar
             if (el.type === "image" && el.src) {
-              const isImage2 = !el.src.includes("artikelhama") && !el.src.includes("artikellayanan") && (/image2\./i.test(el.src) || el.src.toLowerCase().includes("image2"));
+              const isImage2 = !(el.src || '').includes("artikelhama") && !(el.src || '').includes("artikellayanan") && (/image2\./i.test(el.src) || (el.src || '').toLowerCase().includes("image2"));
               if (isImage2) {
                 return (
                   <div key={idx} className="my-10 space-y-8 sm:space-y-10">
@@ -364,13 +364,13 @@ async function ArticleContent({
 
               // 1.1 Khusus Gambar Diagram IPM / Vecos Proofing Defender (image4 pada artikel hama atau properti) -> Tampilan 2 Kolom
               const isIpmDiagram =
-                (el.src.includes("artikelhama") && (
-                  (el.src.toLowerCase().includes("image4") && !el.src.toLowerCase().includes("kecoa/image4")) ||
-                  el.src.toLowerCase().includes("kecoa/image5")
+                ((el.src || '').includes("artikelhama") && (
+                  ((el.src || '').toLowerCase().includes("image4") && !(el.src || '').toLowerCase().includes("kecoa/image4")) ||
+                  (el.src || '').toLowerCase().includes("kecoa/image5")
                 )) ||
-                (!el.src.includes("artikellayanan") && el.src.toLowerCase().includes("image4") && [
+                (!(el.src || '').includes("artikellayanan") && (el.src || '').toLowerCase().includes("image4") && [
                   "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
-                ].some((k) => el.src.toLowerCase().includes(k)));
+                ].some((k) => (el.src || '').toLowerCase().includes(k)));
 
               if (isIpmDiagram) {
                 return (
