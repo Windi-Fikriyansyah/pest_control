@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { articles, Article, ArticleElement, ArticleRun } from "@/app/data/articles";
+import { hamaArticles } from "@/app/data/hamaArticles";
+import { layananArticles } from "@/app/data/layananArticles";
 import CallCenterButton from "@/app/components/CallCenterButton";
+import PropertyOurClientCarousel from "@/app/components/PropertyOurClientCarousel";
 
 export async function generateStaticParams() {
   return articles.map((article) => ({
@@ -240,6 +243,7 @@ async function ArticleContent({
 
   const banner = heroBannerMap[article.slug] || { image: article.coverImage };
   const propertyTitle = propertyTitleMap[article.slug] || article.title;
+  const isPropertyArticle = !hamaArticles.some((h) => h.slug === article.slug) && !layananArticles.some((l) => l.slug === article.slug);
 
   return (
     <div className="w-full pb-16">
@@ -378,9 +382,14 @@ async function ArticleContent({
                   ((el.src || '').toLowerCase().includes("image4") && !(el.src || '').toLowerCase().includes("kecoa/image4")) ||
                   (el.src || '').toLowerCase().includes("kecoa/image5")
                 )) ||
-                (!(el.src || '').includes("artikellayanan") && (el.src || '').toLowerCase().includes("image4") && [
-                  "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
-                ].some((k) => (el.src || '').toLowerCase().includes(k)));
+                (!(el.src || '').includes("artikellayanan") && (
+                  ((el.src || '').toLowerCase().includes("image4") && [
+                    "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
+                  ].some((k) => (el.src || '').toLowerCase().includes(k))) ||
+                  (el.src || '').toLowerCase().includes("rumah/image5") ||
+                  (el.src || '').toLowerCase().includes("warehouse/image5") ||
+                  (el.src || '').toLowerCase().includes("pabrik-makanan/image5")
+                ));
 
               if (isIpmDiagram) {
                 return (
@@ -740,6 +749,10 @@ async function ArticleContent({
             return null;
           })}
 
+          {/* Section Our Client khusus semua artikel area properti */}
+          {isPropertyArticle && (
+            <PropertyOurClientCarousel />
+          )}
 
           {/* Bagian Penutup Artikel */}
           <div className="pt-8 mt-12 border-t border-zinc-200 space-y-6">

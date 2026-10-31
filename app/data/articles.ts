@@ -41,7 +41,7 @@ export interface Article {
   elements: ArticleElement[];
 }
 
-const propertyArticles: Article[] = [
+export const propertyArticles: Article[] = [
   {
     "slug": "bandara",
     "title": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara",
@@ -473,11 +473,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/bandara/image4.png",
-        "alt": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/bandara/image5.png",
         "alt": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara"
       }
     ],
@@ -1971,11 +1966,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/cafe/image4.png",
-        "alt": "Menjaga Kenyamanan Pelanggan: Solusi Pengendalian Hama untuk Café Anda"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/cafe/image5.png",
         "alt": "Menjaga Kenyamanan Pelanggan: Solusi Pengendalian Hama untuk Café Anda"
       }
     ],
@@ -5278,11 +5268,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/hipermarket/image4.png",
         "alt": "Menjaga Higienitas Retail: Solusi Pest Control untuk Hipermarket"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/hipermarket/image5.png",
-        "alt": "Menjaga Higienitas Retail: Solusi Pest Control untuk Hipermarket"
       }
     ],
     "id": 4
@@ -7013,11 +6998,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/hotel/image4.png",
-        "alt": "Menjaga Reputasi Bintang Lima: Solusi Pengendalian Hama untuk Hotel"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/hotel/image5.png",
         "alt": "Menjaga Reputasi Bintang Lima: Solusi Pengendalian Hama untuk Hotel"
       }
     ],
@@ -8986,11 +8966,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/kampus/image4.png",
         "alt": "Menciptakan Lingkungan Belajar yang Sehat: Solusi Pest Control untuk Kampus & Sekolah"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/kampus/image5.png",
-        "alt": "Menciptakan Lingkungan Belajar yang Sehat: Solusi Pest Control untuk Kampus & Sekolah"
       }
     ],
     "id": 6
@@ -10553,11 +10528,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/kantor/image4.png",
-        "alt": "Menjaga Produktivitas Kantor: Solusi Pengendalian Hama untuk Gedung Perkantoran"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/kantor/image5.png",
         "alt": "Menjaga Produktivitas Kantor: Solusi Pengendalian Hama untuk Gedung Perkantoran"
       }
     ],
@@ -14407,11 +14377,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/pabrik-makanan/image5.png",
         "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/pabrik-makanan/image4.png",
-        "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
       }
     ],
     "id": 9
@@ -18224,11 +18189,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/rumah-sakit/image4.png",
         "alt": "Standar Higienitas Medis: Solusi Pengendalian Hama untuk Rumah Sakit"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/rumah-sakit/image5.png",
-        "alt": "Standar Higienitas Medis: Solusi Pengendalian Hama untuk Rumah Sakit"
       }
     ],
     "id": 11
@@ -21390,6 +21350,11 @@ const propertyArticles: Article[] = [
         ],
         "isList": false,
         "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikel/rumah/image5.png",
+        "alt": "Solusi Perlindungan Properti Menyeluruh dan Berkelanjutan - VECOS"
       }
     ],
     "id": 12
@@ -23383,11 +23348,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/warehouse/image5.png",
-        "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/warehouse/image6.png",
         "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
       }
     ],
