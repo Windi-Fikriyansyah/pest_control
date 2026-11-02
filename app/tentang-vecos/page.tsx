@@ -663,12 +663,12 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
           {/* Sisi Kanan: Menu Navigasi Desktop & Language Toggle menempel ke kanan */}
           <div className="hidden md:flex items-center gap-7 lg:gap-10 pr-6 sm:pr-10 lg:pr-14">
-            <a
-              href="#form-survey"
+            <Link
+              href="/hubungi-kami"
               className="text-xs lg:text-sm font-extrabold uppercase text-zinc-800 hover:text-[#C81E27] tracking-wider transition-colors"
             >
               HUBUNGI KAMI
-            </a>
+            </Link>
 
             {/* Dropdown Layanan Kami */}
             <div className="relative" ref={layananDropdownRef}>
@@ -761,13 +761,13 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-zinc-200 bg-white px-5 pt-3 pb-6 space-y-3 shadow-lg">
-            <a
-              href="#form-survey"
+            <Link
+              href="/hubungi-kami"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-sm font-extrabold uppercase text-[#C81E27] py-2 border-b border-zinc-100"
             >
               HUBUNGI KAMI
-            </a>
+            </Link>
             <div>
               <button
                 type="button"
@@ -1616,7 +1616,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               <div className="md:col-span-3 lg:col-span-3">
                 <ul className="space-y-2.5 sm:space-y-3.5 text-sm sm:text-base md:text-lg font-bold text-white leading-relaxed">
                   <li><Link href="/" className="hover:underline transition-all">Beranda</Link></li>
-                  <li><a href="#form-survey" className="hover:underline transition-all">Hubungi kami</a></li>
+                  <li><Link href="/hubungi-kami" className="hover:underline transition-all">Hubungi kami</Link></li>
                   <li><Link href="/#layanan" className="hover:underline transition-all">Layanan kami</Link></li>
                   <li><Link href="/tentang-vecos" className="hover:underline transition-all">Tentang Vecos</Link></li>
                 </ul>
