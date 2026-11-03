@@ -41,7 +41,7 @@ export interface Article {
   elements: ArticleElement[];
 }
 
-const propertyArticles: Article[] = [
+export const propertyArticles: Article[] = [
   {
     "slug": "bandara",
     "title": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara",
@@ -473,11 +473,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/bandara/image4.png",
-        "alt": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/bandara/image5.png",
         "alt": "Menjaga Standar Keamanan & Sterilitas: Solusi Pest Control untuk Bandara"
       }
     ],
@@ -1971,11 +1966,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/cafe/image4.png",
-        "alt": "Menjaga Kenyamanan Pelanggan: Solusi Pengendalian Hama untuk Café Anda"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/cafe/image5.png",
         "alt": "Menjaga Kenyamanan Pelanggan: Solusi Pengendalian Hama untuk Café Anda"
       }
     ],
@@ -5278,11 +5268,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/hipermarket/image4.png",
         "alt": "Menjaga Higienitas Retail: Solusi Pest Control untuk Hipermarket"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/hipermarket/image5.png",
-        "alt": "Menjaga Higienitas Retail: Solusi Pest Control untuk Hipermarket"
       }
     ],
     "id": 4
@@ -7013,11 +6998,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/hotel/image4.png",
-        "alt": "Menjaga Reputasi Bintang Lima: Solusi Pengendalian Hama untuk Hotel"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/hotel/image5.png",
         "alt": "Menjaga Reputasi Bintang Lima: Solusi Pengendalian Hama untuk Hotel"
       }
     ],
@@ -8986,11 +8966,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/kampus/image4.png",
         "alt": "Menciptakan Lingkungan Belajar yang Sehat: Solusi Pest Control untuk Kampus & Sekolah"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/kampus/image5.png",
-        "alt": "Menciptakan Lingkungan Belajar yang Sehat: Solusi Pest Control untuk Kampus & Sekolah"
       }
     ],
     "id": 6
@@ -9262,547 +9237,255 @@ const propertyArticles: Article[] = [
         ]
       },
       {
-        "type": "paragraph",
-        "text": "Area Kantor",
-        "runs": [
-          {
-            "text": "Area Kantor",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Jenis Hama Spesifik",
-        "runs": [
-          {
-            "text": "Jenis Hama Spesifik",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Bahaya Utama",
-        "runs": [
-          {
-            "text": "Bahaya",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " Utama",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Ruang Kerja & Cubicle",
-        "runs": [
-          {
-            "text": "Ruang ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Kerja",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " & Cubicle",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Semut, Kecoa, Kutu Debu",
-        "runs": [
-          {
-            "text": "Semut, Kecoa, Kutu Debu",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Gangguan konsentrasi, risiko alergi, dan penyebaran kuman di meja kerja.",
-        "runs": [
-          {
-            "text": "Gangguan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "konsentrasi",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "risiko",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "alergi",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", dan penyebaran kuman di meja kerja.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Server Room / Ruang IT",
-        "runs": [
-          {
-            "text": "Server Room / Ruang IT",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Tikus, Semut",
-        "runs": [
-          {
-            "text": "Tikus, Semut",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Risiko korsleting kabel, kerusakan hardware mahal, dan gangguan data kritis.",
-        "runs": [
-          {
-            "text": "Risiko",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "korsleting",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kabel",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kerusakan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " hardware mahal, dan gangguan data kritis.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Pantry & Ruang Istirahat",
-        "runs": [
-          {
-            "text": "Pantry & Ruang Istirahat",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kecoa, Lalat, Semut",
-        "runs": [
-          {
-            "text": "Kecoa",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", Lalat, ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Semut",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kontaminasi makanan, penyebaran penyakit (Salmonella), dan bau tak sedap.",
-        "runs": [
-          {
-            "text": "Kontaminasi",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "makanan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "penyebaran",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "penyakit",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " (Salmonella), dan bau tak sedap.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Area Gudang / Arsip",
-        "runs": [
-          {
-            "text": "Area Gudang / Arsip",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Rayap, Silverfish, Kutu Buku",
-        "runs": [
-          {
-            "text": "Rayap, Silverfish, Kutu Buku",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kerusakan permanen pada dokumen fisik, arsip penting, dan furnitur kantor.",
-        "runs": [
-          {
-            "text": "Kerusakan",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "permanen",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " pada ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "dokumen",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " fisik, arsip penting, dan furnitur kantor.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Area Toilet & Drainase",
-        "runs": [
-          {
-            "text": "Area Toilet & Drainase",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Kecoa, Nyamuk, Lalat",
-        "runs": [
-          {
-            "text": "Kecoa",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "Nyamuk",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": ", Lalat",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
-        "text": "Sumber kuman dan penyakit yang terbawa oleh karyawan ke area kerja.",
-        "runs": [
-          {
-            "text": "Sumber",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "kuman",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " dan ",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": "penyakit",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          },
-          {
-            "text": " yang terbawa oleh karyawan ke area kerja.",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
+        "type": "table",
+        "rows": [
+          [
+            {
+              "text": "Area Kantor",
+              "runs": [
+                {
+                  "text": "Area Kantor",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Jenis Hama Spesifik",
+              "runs": [
+                {
+                  "text": "Jenis Hama Spesifik",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Bahaya Utama",
+              "runs": [
+                {
+                  "text": "Bahaya Utama",
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Ruang Kerja & Cubicle",
+              "runs": [
+                {
+                  "text": "Ruang Kerja & Cubicle",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Semut, Kecoa, Kutu Debu",
+              "runs": [
+                {
+                  "text": "Semut, Kecoa, Kutu Debu",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Gangguan konsentrasi, risiko alergi, dan penyebaran kuman di meja kerja.",
+              "runs": [
+                {
+                  "text": "Gangguan konsentrasi, risiko alergi, dan penyebaran kuman di meja kerja.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Server Room / Ruang IT",
+              "runs": [
+                {
+                  "text": "Server Room / Ruang IT",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Tikus, Semut",
+              "runs": [
+                {
+                  "text": "Tikus, Semut",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Risiko korsleting kabel, kerusakan hardware mahal, dan gangguan data kritis.",
+              "runs": [
+                {
+                  "text": "Risiko korsleting kabel, kerusakan hardware mahal, dan gangguan data kritis.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Pantry & Ruang Istirahat",
+              "runs": [
+                {
+                  "text": "Pantry & Ruang Istirahat",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kecoa, Lalat, Semut",
+              "runs": [
+                {
+                  "text": "Kecoa, Lalat, Semut",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kontaminasi makanan, penyebaran penyakit (Salmonella), dan bau tak sedap.",
+              "runs": [
+                {
+                  "text": "Kontaminasi makanan, penyebaran penyakit (Salmonella), dan bau tak sedap.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Area Gudang / Arsip",
+              "runs": [
+                {
+                  "text": "Area Gudang / Arsip",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Rayap, Silverfish, Kutu Buku",
+              "runs": [
+                {
+                  "text": "Rayap, Silverfish, Kutu Buku",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kerusakan permanen pada dokumen fisik, arsip penting, dan furnitur kantor.",
+              "runs": [
+                {
+                  "text": "Kerusakan permanen pada dokumen fisik, arsip penting, dan furnitur kantor.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ],
+          [
+            {
+              "text": "Area Toilet & Drainase",
+              "runs": [
+                {
+                  "text": "Area Toilet & Drainase",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Kecoa, Nyamuk, Lalat",
+              "runs": [
+                {
+                  "text": "Kecoa, Nyamuk, Lalat",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            },
+            {
+              "text": "Sumber kuman dan penyakit yang terbawa oleh karyawan ke area kerja.",
+              "runs": [
+                {
+                  "text": "Sumber kuman dan penyakit yang terbawa oleh karyawan ke area kerja.",
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "images": []
+                }
+              ],
+              "images": []
+            }
+          ]
+        ]
       },
       {
         "type": "heading",
@@ -10845,11 +10528,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/kantor/image4.png",
-        "alt": "Menjaga Produktivitas Kantor: Solusi Pengendalian Hama untuk Gedung Perkantoran"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/kantor/image5.png",
         "alt": "Menjaga Produktivitas Kantor: Solusi Pengendalian Hama untuk Gedung Perkantoran"
       }
     ],
@@ -14699,11 +14377,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/pabrik-makanan/image5.png",
         "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/pabrik-makanan/image4.png",
-        "alt": "Menjaga Keamanan Pangan: Solusi Pest Control untuk Industri Pabrik Makanan"
       }
     ],
     "id": 9
@@ -18516,11 +18189,6 @@ const propertyArticles: Article[] = [
         "type": "image",
         "src": "/images/artikel/rumah-sakit/image4.png",
         "alt": "Standar Higienitas Medis: Solusi Pengendalian Hama untuk Rumah Sakit"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/rumah-sakit/image5.png",
-        "alt": "Standar Higienitas Medis: Solusi Pengendalian Hama untuk Rumah Sakit"
       }
     ],
     "id": 11
@@ -21682,6 +21350,11 @@ const propertyArticles: Article[] = [
         ],
         "isList": false,
         "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikel/rumah/image5.png",
+        "alt": "Solusi Perlindungan Properti Menyeluruh dan Berkelanjutan - VECOS"
       }
     ],
     "id": 12
@@ -23675,11 +23348,6 @@ const propertyArticles: Article[] = [
       {
         "type": "image",
         "src": "/images/artikel/warehouse/image5.png",
-        "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
-      },
-      {
-        "type": "image",
-        "src": "/images/artikel/warehouse/image6.png",
         "alt": "Melindungi Aset & Inventaris: Solusi Pest Control untuk Gudang & Warehouse"
       }
     ],

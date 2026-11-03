@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { articles, Article, ArticleElement, ArticleRun } from "@/app/data/articles";
+import { hamaArticles } from "@/app/data/hamaArticles";
+import { layananArticles } from "@/app/data/layananArticles";
 import CallCenterButton from "@/app/components/CallCenterButton";
+import PropertyOurClientCarousel from "@/app/components/PropertyOurClientCarousel";
 
 export async function generateStaticParams() {
   return articles.map((article) => ({
@@ -57,7 +60,7 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   cafe: { image: "/images/artikel/cafe/bannerpc.png", imageMobile: "/images/artikel/mobile/2.png" },
   hipermarket: { image: "/images/artikel/hipermarket/bannerpc.png", imageMobile: "/images/artikel/mobile/6.png" },
   kantor: { image: "/images/artikel/kantor/bannerpc.png", imageMobile: "/images/artikel/mobile/3.png" },
-  "pabrik-makanan": { image: "/images/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
+  "pabrik-makanan": { image: "/images/artikel/pabrik-makanan/bannerpc.png", imageMobile: "/images/artikel/mobile/1.png" },
   // Hama articles banner PC & Mobile
   burung: { image: "/images/artikelhama/image hama/burung greja.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/burung greja.jpg" },
   kalelawar: { image: "/images/artikelhama/image hama/kelelawar.jpg", imageMobile: "/images/artikelhama/image hama/mobile image/kelelawar.jpg" },
@@ -91,6 +94,14 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   "prime-shield-01-trap": {
     image: "/images/artikellayanan/prime.jpg",
     imageMobile: "/images/artikellayanan/image mobile/prime.jpg", // Masukkan path gambar mobile di sini, contoh: "/images/artikellayanan/prime-shield-01-trap/mobile.png"
+  },
+  "vecos-proofing-defender": {
+    image: "/images/artikellayanan/defender.jpg",
+    imageMobile: "/images/artikellayanan/defendermobile.jpg",
+  },
+  "vecos-proffing-defender": {
+    image: "/images/artikellayanan/inpeksi.jpg",
+    imageMobile: "/images/artikellayanan/image mobile/inpeksi.jpg",
   },
 };
 
@@ -134,6 +145,8 @@ const propertyTitleMap: Record<string, string> = {
   "sistem-proteksi-rayap": "Sistem Proteksi Rayap",
   "disinfeksi-sterilisasi": "Disinfeksi & Sterilisasi",
   "prime-shield-01-trap": "Prime Shield-01 Trap",
+  "vecos-proofing-defender": "Vecos Proofing Defender",
+  "vecos-proffing-defender": "Vecos Proofing Defender",
 };
 
 const pestList = [
@@ -230,6 +243,7 @@ async function ArticleContent({
 
   const banner = heroBannerMap[article.slug] || { image: article.coverImage };
   const propertyTitle = propertyTitleMap[article.slug] || article.title;
+  const isPropertyArticle = !hamaArticles.some((h) => h.slug === article.slug) && !layananArticles.some((l) => l.slug === article.slug);
 
   return (
     <div className="w-full pb-16">
@@ -316,7 +330,7 @@ async function ArticleContent({
           {article.elements.map((el, idx) => {
             // 1. Gambar
             if (el.type === "image" && el.src) {
-              const isImage2 = !el.src.includes("artikelhama") && !el.src.includes("artikellayanan") && (/image2\./i.test(el.src) || el.src.toLowerCase().includes("image2"));
+              const isImage2 = !(el.src || '').includes("artikelhama") && !(el.src || '').includes("artikellayanan") && (/image2\./i.test(el.src) || (el.src || '').toLowerCase().includes("image2"));
               if (isImage2) {
                 return (
                   <div key={idx} className="my-10 space-y-8 sm:space-y-10">
@@ -364,13 +378,18 @@ async function ArticleContent({
 
               // 1.1 Khusus Gambar Diagram IPM / Vecos Proofing Defender (image4 pada artikel hama atau properti) -> Tampilan 2 Kolom
               const isIpmDiagram =
-                (el.src.includes("artikelhama") && (
-                  (el.src.toLowerCase().includes("image4") && !el.src.toLowerCase().includes("kecoa/image4")) ||
-                  el.src.toLowerCase().includes("kecoa/image5")
+                ((el.src || '').includes("artikelhama") && (
+                  ((el.src || '').toLowerCase().includes("image4") && !(el.src || '').toLowerCase().includes("kecoa/image4")) ||
+                  (el.src || '').toLowerCase().includes("kecoa/image5")
                 )) ||
-                (!el.src.includes("artikellayanan") && el.src.toLowerCase().includes("image4") && [
-                  "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
-                ].some((k) => el.src.toLowerCase().includes(k)));
+                (!(el.src || '').includes("artikellayanan") && (
+                  ((el.src || '').toLowerCase().includes("image4") && [
+                    "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
+                  ].some((k) => (el.src || '').toLowerCase().includes(k))) ||
+                  (el.src || '').toLowerCase().includes("rumah/image5") ||
+                  (el.src || '').toLowerCase().includes("warehouse/image5") ||
+                  (el.src || '').toLowerCase().includes("pabrik-makanan/image5")
+                ));
 
               if (isIpmDiagram) {
                 return (
@@ -487,6 +506,36 @@ async function ArticleContent({
                 );
               }
 
+              // 1.2 Khusus Gambar 4-Panel Treatment pada Artikel Hama (image3 atau kecoa/image4)
+              const isHamaTreatmentImage =
+                (el.src || '').includes("artikelhama") && (
+                  ((el.src || '').toLowerCase().includes("image3") && !(el.src || '').toLowerCase().includes("kecoa/image3")) ||
+                  (el.src || '').toLowerCase().includes("kecoa/image4")
+                );
+
+              if (isHamaTreatmentImage) {
+                return (
+                  <figure key={idx} className="my-10 sm:my-12">
+                    <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
+                      <img
+                        src={el.src}
+                        alt="Standar Metode Treatment Profesional (Integrated Pest Management)"
+                        loading="lazy"
+                        className="w-full max-w-full h-auto object-contain rounded-xl sm:rounded-2xl max-h-[85vh] mx-auto block"
+                      />
+                    </div>
+                    <div className="mt-5 sm:mt-6 space-y-2 sm:space-y-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-zinc-950 tracking-tight leading-tight">
+                        Standar Metode Treatment Profesional (Integrated Pest Management)
+                      </h3>
+                      <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-normal text-justify sm:text-left">
+                        Kami menerapkan metode kerja yang terstruktur, aman, dan efisien demi menghadirkan lingkungan yang bersih dan nyaman. Melalui perencanaan matang dan penggunaan teknologi modern, kami memastikan setiap prosedur dijalankan sesuai standar keselamatan tinggi demi hasil yang optimal dan tahan lama.
+                      </p>
+                    </div>
+                  </figure>
+                );
+              }
+
               return (
                 <figure key={idx} className="my-8">
                   <div className="w-full rounded-2xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
@@ -508,6 +557,9 @@ async function ArticleContent({
 
             // 2. Heading
             if (el.type === "heading" && el.text) {
+              if (el.text.trim() === "Standar Metode Treatment Profesional (Integrated Pest Management)") {
+                return null;
+              }
               // Jangan duplikasi jika heading 1 sama persis dengan judul artikel di atas
               if (idx === 0 && el.text.trim() === article.title.trim()) {
                 return null;
@@ -697,6 +749,10 @@ async function ArticleContent({
             return null;
           })}
 
+          {/* Section Our Client khusus semua artikel area properti */}
+          {isPropertyArticle && (
+            <PropertyOurClientCarousel />
+          )}
 
           {/* Bagian Penutup Artikel */}
           <div className="pt-8 mt-12 border-t border-zinc-200 space-y-6">
