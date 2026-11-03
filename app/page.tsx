@@ -27,6 +27,7 @@ const heroSlides = [
   {
     id: 2,
     title: "Pengendalian Hama Terstruktur untuk properti lebih aman",
+    subtitle: "Metode Terstruktur Berbasis Integrated Pest Management Solusi Aman untuk Lingkungan, Bisnis, dan Keluarga Anda",
     image: "/images/banner/pc/2.png",
     imageMobile: "/images/banner/mobile/2.png",
     callCenter: "0857-4368-1500",
@@ -47,6 +48,7 @@ const heroSlides = [
   {
     id: 4,
     title: "Lindungi Investasi Properti Anda dari Kerusakan Hama",
+    subtitle: "Proteksi Aset Berstandar Tinggi: Solusi Cerdas Jaga Properti Bebas Hama, Kokoh, dan Bebas Risiko Kerugian",
     image: "/images/banner/pc/4.png",
     imageMobile: "/images/banner/mobile/4.png",
     callCenter: "0857-4368-1500",
@@ -57,7 +59,7 @@ const heroSlides = [
     id: 5,
     title: "Perlindungan Area Luar yang Nyaman Bebas Nyamuk Tanpa Kebisingan Operasional",
     subtitle:
-      "",
+      "Teknologi Proteksi Senyap yang Melumpuhkan Nyamuk Secara Presisi— Menghadirkan Kenyamanan Area Terbuka Tanpa Suara Mesin Bising dan Tanpa Bau Menyengat",
     image: "/images/banner/pc/update5.png",
     imageMobile: "/images/banner/mobile/update5.png",
     callCenter: "0857-4368-1500",
@@ -68,7 +70,7 @@ const heroSlides = [
     id: 6,
     title: "Lindungi Bangunan Anda dari Rayap Sejak Awal Fondasi",
     subtitle:
-      "",
+      "Cegah Kerusakan Jutaan Rupiah di Masa Depan, Benteng Perlindungan Presisi dan Aman Sebelum Bangunan Berdiri",
     image: "/images/banner/pc/6.png",
     imageMobile: "/images/banner/mobile/6.png",
     callCenter: "0857-4368-1500",
@@ -79,7 +81,7 @@ const heroSlides = [
     id: 7,
     title: "Bebaskan Gedung & Restoran Anda dari Ancaman Tikus dengan Solusi Profesional",
     subtitle:
-      "",
+      "Jangan biarkan tikus merusak reputasi brand dan keamanan aset Anda. Terapkan sistem proteksi profesional sekarang juga",
     image: "/images/banner/pc/7.png",
     imageMobile: "/images/banner/mobile/7.png",
     callCenter: "0857-4368-1500",
