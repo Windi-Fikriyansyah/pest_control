@@ -873,28 +873,37 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             </a>
           </div>
 
-          {/* Card 4: Legalitas & Kantor */}
+          {/* Card 4: Alamat & Legalitas Kantor */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-zinc-200/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                🏢
+                📍
               </div>
               <div>
                 <h3 className="font-extrabold text-zinc-900 text-base sm:text-lg">
-                  Legalitas &amp; Kantor
+                  Alamat Kantor
                 </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
+                <p className="text-xs font-bold text-zinc-600 mt-0.5">
                   PT Vecos Intitama Mulya
                 </p>
               </div>
-              <p className="text-[11px] text-zinc-600 leading-relaxed">
-                NIB: <span className="font-mono font-bold text-zinc-900">1903240165201</span><br />
+              <p className="text-xs text-zinc-700 leading-relaxed font-medium">
+                JL. Jawa Raya lll, Blok DM. 4, No. 21, Kunciran, Pinang, Tangerang, Indonesia 15144
+              </p>
+              <p className="text-[11px] text-zinc-500 leading-relaxed pt-1.5 border-t border-zinc-100">
+                NIB: <span className="font-mono font-bold text-zinc-800">1903240165201</span><br />
                 Sertifikasi Tenaga Ahli Kemenkes RI
               </p>
             </div>
-            <div className="mt-5 py-2 px-3 bg-amber-50/80 rounded-xl border border-amber-200 text-[11px] text-amber-800 text-center font-bold">
-              ✓ Berizin Resmi &amp; Terverifikasi
-            </div>
+            <a
+              href="https://maps.google.com/?q=JL.+Jawa+Raya+lll,+Blok+DM.+4,+No.+21,+Kunciran,+Pinang,+Tangerang,+Indonesia+15144"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+            >
+              <span>Petunjuk Arah (Maps)</span>
+              <span>↗</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1211,7 +1220,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   </a>
                 </div>
 
-                {/* Detail PT & NIB */}
+                {/* Detail PT, NIB & Alamat */}
                 <div className="space-y-0.5 text-white">
                   <div className="text-sm sm:text-base font-bold">
                     PT Vecos Intitama Mulya
@@ -1221,6 +1230,9 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   </div>
                   <div className="text-xs sm:text-sm font-semibold tracking-wide text-white">
                     NIB : 1903240165201
+                  </div>
+                  <div className="text-xs text-white/80 pt-1 leading-relaxed max-w-xs">
+                    JL. Jawa Raya lll, Blok DM. 4, No. 21, Kunciran, Pinang, Tangerang, Indonesia 15144
                   </div>
                 </div>
 

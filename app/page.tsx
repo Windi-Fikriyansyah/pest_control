@@ -101,7 +101,8 @@ const heroSlides = [
   },
   {
     id: 9,
-    title: "Prime Shield - 01 Perangkap Khusus Lalat Teknologi German",
+    title: "Prime Shield - 01 | The Ultimate Commercial Fly Trap",
+    subtitle: "Jangan beri celah bagi lalat untuk merusak standar higienitas bisnis Anda. Amankan restoran, hotel, dan gedung komersial Anda sekarang dengan teknologi Jerman paling higienis dan terpercaya",
     image: "/images/banner/pc/9.png",
     imageMobile: "/images/banner/mobile/9.png",
     callCenter: "0857-4368-1500",
