@@ -1657,7 +1657,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
                   {/* Email */}
                   <a
-                    href="mailto:cs@vecos.co.id"
+                    href="mailto:info@vecos.co.id"
                     className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
                     aria-label="Email"
                   >
@@ -1723,8 +1723,8 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               </div>
             </div>
           </div>
-          
-<div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
+
+          <div className="bg-[#f0f3f8] border-t border-zinc-200/90 py-3 sm:py-3.5 px-4 sm:px-8 lg:px-12 text-[11px] sm:text-xs text-zinc-600">
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
               <div className="text-zinc-600 font-normal">
                 Copyright © 2026 PT Vecos Intitama Mulya . All Rights Reserved

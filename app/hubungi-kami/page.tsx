@@ -861,11 +861,11 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 </p>
               </div>
               <p className="text-xs sm:text-sm font-bold text-zinc-800 break-all font-mono">
-                cs@vecos.co.id
+                info@vecos.co.id
               </p>
             </div>
             <a
-              href="mailto:cs@vecos.co.id"
+              href="mailto:info@vecos.co.id"
               className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
             >
               <span>Kirim Email</span>
@@ -1175,7 +1175,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
                   {/* Email */}
                   <a
-                    href="mailto:cs@vecos.co.id"
+                    href="mailto:info@vecos.co.id"
                     className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
                     aria-label="Email"
                   >

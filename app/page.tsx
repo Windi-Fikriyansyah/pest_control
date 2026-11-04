@@ -520,7 +520,7 @@ const clientLogosRow2 = [
   { name: "Logo 14", image: "/images/logo/14.png", extraZoom: true },
   { name: "Logo 15", image: "/images/logo/15.png" },
   { name: "Logo 16", image: "/images/logo/16.png" },
-  { name: "Logo 17", image: "/images/logo/17.png", extraZoom: true },
+  { name: "Logo 17", image: "/images/logo/17.png?v=3", noZoom: true },
   { name: "Logo 18", image: "/images/logo/18.png" },
 ];
 
@@ -2364,7 +2364,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                         src={client.image}
                         alt={client.name}
                         fill
-                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || client.image.includes("6.png")
+                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
                           ? "scale-100"
                           : (client as any).extraZoom
                             ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
@@ -2391,7 +2391,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                         src={client.image}
                         alt={client.name}
                         fill
-                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || client.image.includes("6.png")
+                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
                           ? "scale-100"
                           : (client as any).extraZoom
                             ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
@@ -2687,7 +2687,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
                   {/* Email */}
                   <a
-                    href="mailto:cs@vecos.co.id"
+                    href="mailto:info@vecos.co.id"
                     className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
                     aria-label="Email"
                   >

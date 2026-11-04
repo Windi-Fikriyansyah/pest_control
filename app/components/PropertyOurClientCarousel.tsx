@@ -28,7 +28,7 @@ const clientLogos: ClientLogo[] = [
   { name: "Logo 14", image: "/images/logo/14.png", extraZoom: true },
   { name: "Logo 15", image: "/images/logo/15.png" },
   { name: "Logo 16", image: "/images/logo/16.png" },
-  { name: "Logo 17", image: "/images/logo/17.png", extraZoom: true },
+  { name: "Logo 17", image: "/images/logo/17.png?v=3", noZoom: true },
   { name: "Logo 18", image: "/images/logo/18.png" },
 ];
 
@@ -162,12 +162,11 @@ export default function PropertyOurClientCarousel() {
                         src={client.image}
                         alt={client.name}
                         fill
-                        className={`object-contain transition-transform duration-300 ${
-                          client.noZoom || client.image.includes("6.png")
-                            ? "scale-100 group-hover:scale-105"
-                            : client.extraZoom
-                              ? "scale-[1.40] sm:scale-[1.50] group-hover:scale-[1.55]"
-                              : "scale-115 sm:scale-125 group-hover:scale-130"
+                          client.noZoom || client.extraZoom === false || client.image.includes("6.png")
+                      ? "scale-100 group-hover:scale-105"
+                      : client.extraZoom
+                      ? "scale-[1.40] sm:scale-[1.50] group-hover:scale-[1.55]"
+                      : "scale-115 sm:scale-125 group-hover:scale-130"
                         }`}
                       />
                     </div>
@@ -187,11 +186,10 @@ export default function PropertyOurClientCarousel() {
             type="button"
             onClick={() => setCurrentSlide(idx)}
             aria-label={`Pindah ke slide ${idx + 1}`}
-            className={`h-2 rounded-full transition-all cursor-pointer ${
-              currentSlide === idx
+            className={`h-2 rounded-full transition-all cursor-pointer ${currentSlide === idx
                 ? "w-7 sm:w-8 bg-[#C81E27]"
                 : "w-2 bg-zinc-300 hover:bg-zinc-400"
-            }`}
+              }`}
           />
         ))}
       </div>
