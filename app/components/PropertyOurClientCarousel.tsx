@@ -162,11 +162,11 @@ export default function PropertyOurClientCarousel() {
                         src={client.image}
                         alt={client.name}
                         fill
-                          client.noZoom || client.extraZoom === false || client.image.includes("6.png")
-                      ? "scale-100 group-hover:scale-105"
-                      : client.extraZoom
-                      ? "scale-[1.40] sm:scale-[1.50] group-hover:scale-[1.55]"
-                      : "scale-115 sm:scale-125 group-hover:scale-130"
+                      className={`object-contain transition-transform duration-300 ${client.noZoom || client.extraZoom === false || client.image.includes("6.png")
+                          ? "scale-100 group-hover:scale-105"
+                          : client.extraZoom
+                            ? "scale-[1.40] sm:scale-[1.50] group-hover:scale-[1.55]"
+                            : "scale-115 sm:scale-125 group-hover:scale-130"
                         }`}
                       />
                     </div>
@@ -187,8 +187,8 @@ export default function PropertyOurClientCarousel() {
             onClick={() => setCurrentSlide(idx)}
             aria-label={`Pindah ke slide ${idx + 1}`}
             className={`h-2 rounded-full transition-all cursor-pointer ${currentSlide === idx
-                ? "w-7 sm:w-8 bg-[#C81E27]"
-                : "w-2 bg-zinc-300 hover:bg-zinc-400"
+              ? "w-7 sm:w-8 bg-[#C81E27]"
+              : "w-2 bg-zinc-300 hover:bg-zinc-400"
               }`}
           />
         ))}
