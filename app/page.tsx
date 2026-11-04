@@ -2216,7 +2216,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
 
             <div className="space-y-1 sm:space-y-1.5 flex-1">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#3a3f4d] tracking-tight leading-snug">
-                <span className="block">Vecos Proffing</span>
+                <span className="block">Vecos Proofing</span>
                 <span className="block">Defender</span>
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-[#4f5563] font-medium leading-relaxed max-w-xl">
