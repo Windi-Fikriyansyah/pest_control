@@ -2029,6 +2029,11 @@ export const propertyArticles: Article[] = [
         ]
       },
       {
+        "type": "image",
+        "src": "/images/disinfectant vecos.jpeg",
+        "alt": "Panduan Komprehensif: Pemetaan Jenis Virus, Area Risiko, & Solusi Disinfeksi"
+      },
+      {
         "type": "paragraph",
         "text": "Setiap jenis virus memiliki karakteristik penyebaran, ketahanan di permukaan benda, dan target area penularan yang berbeda-beda. Untuk memberikan perlindungan yang efektif, proses disinfeksi harus disesuaikan secara spesifik dengan karakteristik patogen dan tata letak area fasilitas Anda.",
         "runs": [
