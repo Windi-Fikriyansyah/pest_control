@@ -136,7 +136,7 @@ const propertyTitleMap: Record<string, string> = {
   nyamuk: "Nyamuk",
   rayap: "Rayap",
   semut: "Semut",
-  tawon: "Lebah",
+  tawon: "TAWON/LEBAH",
   tikus: "Tikus",
   ular: "Ular",
   // Layanan title map

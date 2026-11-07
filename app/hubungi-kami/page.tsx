@@ -816,7 +816,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               href="https://wa.me/6285743681500?text=Halo%20Tim%20VECOS%2C%20saya%20ingin%20konsultasi%20layanan%20pengendalian%20hama."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
             >
               <span>Hubungi Sekarang</span>
               <span>↗</span>
@@ -841,9 +841,12 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 08:00 – 17:00 WIB
               </p>
             </div>
-            <div className="mt-5 py-2 px-3 bg-zinc-50 rounded-xl border border-zinc-200 text-[11px] text-zinc-600 text-center font-medium">
-              Layanan survey &amp; darurat siaga
-            </div>
+            <a
+              href="#form-survey"
+              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+            >
+              <span>Layanan survey &amp; darurat siaga</span>
+            </a>
           </div>
 
           {/* Card 3: Email Resmi */}
@@ -866,7 +869,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             </div>
             <a
               href="mailto:info@vecos.co.id"
-              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
             >
               <span>Kirim Email</span>
               <span>✉</span>
@@ -899,7 +902,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               href="https://maps.google.com/?q=JL.+Jawa+Raya+lll,+Blok+DM.+4,+No.+21,+Kunciran,+Pinang,+Tangerang,+Indonesia+15144"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+              className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#C81E27] hover:bg-[#b01820] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
             >
               <span>Petunjuk Arah (Maps)</span>
               <span>↗</span>
