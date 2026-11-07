@@ -39895,15 +39895,6 @@ export const hamaArticles: Article[] = [
         "text": "Padahal, di balik ukurannya yang kecil dan ringkih, nyamuk dinobatkan sebagai salah satu hewan paling mematikan di dunia. Nyamuk adalah vektor atau pembawa utama berbagai penyakit berbahaya yang dapat mengancam keselamatan nyawa manusia.",
         "runs": [
           {
-            "text": "",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": [
-              "/images/artikelhama/nyamuk/image2.png"
-            ]
-          },
-          {
             "text": "Padahal",
             "bold": false,
             "italic": false,
@@ -40262,9 +40253,12 @@ export const hamaArticles: Article[] = [
           }
         ],
         "isList": false,
-        "images": [
-          "/images/artikelhama/nyamuk/image2.png"
-        ]
+        "images": []
+      },
+      {
+        "type": "image",
+        "src": "/images/artikelhama/gambarjenis/nyamuk.png",
+        "alt": "Nyamuk"
       },
       {
         "type": "paragraph",
