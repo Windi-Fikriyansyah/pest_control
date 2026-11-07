@@ -536,6 +536,28 @@ async function ArticleContent({
                 );
               }
 
+              // 1.3 Khusus Gambar Jenis Hama (/images/artikelhama/gambarjenis) -> Tampilan Full Width di Desktop
+              const isGambarJenis = (el.src || '').includes("/images/artikelhama/gambarjenis");
+              if (isGambarJenis) {
+                return (
+                  <figure key={idx} className="my-8 sm:my-10 w-full">
+                    <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4">
+                      <img
+                        src={el.src}
+                        alt={el.alt || article.title}
+                        loading="lazy"
+                        className="w-full h-auto block rounded-xl sm:rounded-2xl"
+                      />
+                    </div>
+                    {el.caption && (
+                      <figcaption className="text-center text-xs text-zinc-500 italic mt-2.5">
+                        {el.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
+
               return (
                 <figure key={idx} className="my-8">
                   <div className="w-full rounded-2xl overflow-hidden shadow-sm border border-zinc-200 bg-white p-2 sm:p-4 flex justify-center items-center">
@@ -691,7 +713,7 @@ async function ArticleContent({
                           src={imgSrc}
                           alt={article.title}
                           loading="lazy"
-                          className="w-full max-w-full h-auto object-contain rounded-xl max-h-[85vh] mx-auto block"
+                          className={imgSrc.includes("/images/artikelhama/gambarjenis") ? "w-full h-auto block rounded-xl" : "w-full max-w-full h-auto object-contain rounded-xl max-h-[85vh] mx-auto block"}
                         />
                       </div>
                     ))}

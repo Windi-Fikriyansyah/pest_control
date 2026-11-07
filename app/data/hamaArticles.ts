@@ -27292,15 +27292,6 @@ export const hamaArticles: Article[] = [
         "text": "Banyak orang mencoba membasmi kutu busuk menggunakan semprotan serangga biasa atau sekadar menjemur kasur di bawah terik matahari. Sayangnya, metode konvensional ini jarang berhasil secara tuntas.",
         "runs": [
           {
-            "text": "",
-            "bold": true,
-            "italic": false,
-            "underline": false,
-            "images": [
-              "/images/artikelhama/gambarjenis/kutu.png"
-            ]
-          },
-          {
             "text": "Banyak orang ",
             "bold": false,
             "italic": false,
@@ -27621,8 +27612,8 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/kutu/image2.png",
-        "alt": "Kutu Busuk"
+        "src": "/images/artikelhama/gambarjenis/kutu.png",
+        "alt": "Kutu Kasur"
       },
       {
         "type": "paragraph",
