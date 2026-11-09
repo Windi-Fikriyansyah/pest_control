@@ -117,6 +117,7 @@ interface OfferSlide {
   title: string;
   subtitle: string;
   image: string;
+  imageClass?: string;
   tag: string;
   slug: string;
   article: {
@@ -135,6 +136,7 @@ const offerSlides: OfferSlide[] = [
     subtitle:
       "Perlindungan maksimal struktur bangunan dan perabot kayu dengan metode barrier dan baiting ramah lingkungan tanpa bau menyengat.",
     image: "/images/penawaran/2.png",
+    imageClass: "object-right sm:object-center",
     tag: "Hunian & Rumah Tinggal",
     slug: "rumah",
     article: {
@@ -1891,7 +1893,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     alt={slide.title}
                     fill
                     priority={idx === 0}
-                    className="object-cover object-center scale-108 group-hover:scale-112 transition-transform duration-700"
+                    className={`object-cover ${slide.imageClass || "object-center"} scale-108 group-hover:scale-112 transition-transform duration-700`}
                   />
 
                   {/* Dark Gradient Overlay */}
