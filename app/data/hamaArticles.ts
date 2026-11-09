@@ -8044,7 +8044,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/kalelawar/image2.png",
+        "src": "/images/artikelhama/gambarjenis/kelelawar.png",
         "alt": "Kelelawar"
       },
       {
@@ -14578,7 +14578,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/kalelawar/image2.png",
+        "src": "/images/artikelhama/gambarjenis/kelelawar.png",
         "alt": "Kelelawar"
       },
       {
@@ -21387,7 +21387,7 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "image",
-        "src": "/images/artikelhama/kecoa/image2.png",
+        "src": "/images/artikelhama/gambarjenis/kecoa.png",
         "alt": "Kecoa"
       },
       {
