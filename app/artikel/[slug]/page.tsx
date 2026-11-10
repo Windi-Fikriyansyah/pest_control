@@ -21,7 +21,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
+  const normalizedSlug = slug === "restaurant" ? "restauran" : slug;
+  const article = articles.find((a) => a.slug === normalizedSlug || a.slug === slug);
 
   if (!article) {
     return {
@@ -54,6 +55,7 @@ const heroBannerMap: Record<string, { image: string; imageMobile?: string }> = {
   kampus: { image: "/images/artikel/kampus/bannerpc.png", imageMobile: "/images/mobile/kampus/7.png" },
   hotel: { image: "/images/artikel/hotel/bannerpc.png", imageMobile: "/images/artikel/mobile/8.png" },
   restauran: { image: "/images/artikel/restauran/bannerpc.png", imageMobile: "/images/artikel/mobile/5.png" },
+  restaurant: { image: "/images/artikel/restauran/bannerpc.png", imageMobile: "/images/artikel/mobile/5.png" },
   "rumah-sakit": { image: "/images/artikel/rumah-sakit/bannerpc.png", imageMobile: "/images/artikel/mobile/10.png" },
   bandara: { image: "/images/artikel/bandara/bannerpc.png", imageMobile: "/images/artikel/mobile/9.png" },
   warehouse: { image: "/images/artikel/warehouse/bannerpc.png", imageMobile: "/images/artikel/mobile/4.png" },
@@ -110,6 +112,7 @@ const propertyTitleMap: Record<string, string> = {
   kantor: "Office / Perkantoran",
   hotel: "Hotel & Resort",
   restauran: "Restoran & Kuliner",
+  restaurant: "Restoran & Kuliner",
   cafe: "Café & Coffee Shop",
   "pabrik-makanan": "Pabrik Industri Makanan",
   "rumah-sakit": "Rumah Sakit & Medis",
@@ -235,7 +238,8 @@ async function ArticleContent({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
+  const normalizedSlug = slug === "restaurant" ? "restauran" : slug;
+  const article = articles.find((a) => a.slug === normalizedSlug || a.slug === slug);
 
   if (!article) {
     notFound();
@@ -384,7 +388,7 @@ async function ArticleContent({
                 )) ||
                 (!(el.src || '').includes("artikellayanan") && (
                   ((el.src || '').toLowerCase().includes("image4") && [
-                    "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "rumah-sakit"
+                    "bandara", "cafe", "hipermarket", "hotel", "kampus", "kantor", "restauran", "restaurant", "rumah-sakit"
                   ].some((k) => (el.src || '').toLowerCase().includes(k))) ||
                   (el.src || '').toLowerCase().includes("rumah/image5") ||
                   (el.src || '').toLowerCase().includes("warehouse/image5") ||

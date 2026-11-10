@@ -1981,15 +1981,11 @@ export const propertyArticles: Article[] = [
     "coverImage": "/images/artikel/disinfeksi/image1.jpg",
     "excerpt": "Setiap jenis virus memiliki karakteristik penyebaran, ketahanan di permukaan benda, dan target area penularan yang berbeda-beda. Untuk memberikan perlindungan yang efektif, proses disinfeksi harus disesuaikan secara spes...",
     "elements": [
-      {
-        "type": "image",
-        "src": "/images/artikel/disinfeksi/image1.jpg",
-        "alt": "disinfeksi"
-      },
+
       {
         "type": "heading",
         "level": 1,
-        "text": "Panduan Komprehensif: Pemetaan Jenis Virus, Area Risiko, & Solusi Disinfeksi",
+        "text": "",
         "runs": [
           {
             "text": "Panduan ",

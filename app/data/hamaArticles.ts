@@ -52964,21 +52964,6 @@ export const hamaArticles: Article[] = [
       },
       {
         "type": "paragraph",
-        "text": "\\",
-        "runs": [
-          {
-            "text": "\\",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "images": []
-          }
-        ],
-        "isList": false,
-        "images": []
-      },
-      {
-        "type": "paragraph",
         "text": "1. Vektor Pembawa Patogen dan Bakteri Penyakit Mematikan",
         "runs": [
           {
