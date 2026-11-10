@@ -1,0 +1,715 @@
+{
+  "count": 101,
+  "totalBeforeMB": "165.88",
+  "totalAfterMB": "51.18",
+  "savedMB": "114.70",
+  "list": [
+    {
+      "file": "public\\images\\artikel\\bandara\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1935,
+      "afterKB": 945,
+      "savedKB": 990
+    },
+    {
+      "file": "public\\images\\artikel\\bandara\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\bandara\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\bandara\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\cafe\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1643,
+      "afterKB": 794,
+      "savedKB": 849
+    },
+    {
+      "file": "public\\images\\artikel\\cafe\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\cafe\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\cafe\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\disinfeksi\\bannermobile.png",
+      "origDim": "2279x3062",
+      "beforeKB": 2478,
+      "afterKB": 869,
+      "savedKB": 1609
+    },
+    {
+      "file": "public\\images\\artikel\\disinfeksi\\image1.jpg",
+      "origDim": "6720x4480",
+      "beforeKB": 2618,
+      "afterKB": 220,
+      "savedKB": 2398
+    },
+    {
+      "file": "public\\images\\artikel\\hipermarket\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 2146,
+      "afterKB": 1038,
+      "savedKB": 1108
+    },
+    {
+      "file": "public\\images\\artikel\\hipermarket\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\hipermarket\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\hipermarket\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\hotel\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1840,
+      "afterKB": 849,
+      "savedKB": 991
+    },
+    {
+      "file": "public\\images\\artikel\\hotel\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\hotel\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\hotel\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\kampus\\bannerpc.png",
+      "origDim": "2479x1571",
+      "beforeKB": 1736,
+      "afterKB": 772,
+      "savedKB": 964
+    },
+    {
+      "file": "public\\images\\artikel\\kampus\\image1.jpg",
+      "origDim": "6000x4000",
+      "beforeKB": 1203,
+      "afterKB": 212,
+      "savedKB": 991
+    },
+    {
+      "file": "public\\images\\artikel\\kampus\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\kampus\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\kampus\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\kantor\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1513,
+      "afterKB": 794,
+      "savedKB": 719
+    },
+    {
+      "file": "public\\images\\artikel\\kantor\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\kantor\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\kantor\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\layanan-vecos\\image2.png",
+      "origDim": "1249x2054",
+      "beforeKB": 443,
+      "afterKB": 350,
+      "savedKB": 93
+    },
+    {
+      "file": "public\\images\\artikel\\layanan-vecos\\image3.png",
+      "origDim": "2901x3712",
+      "beforeKB": 540,
+      "afterKB": 244,
+      "savedKB": 296
+    },
+    {
+      "file": "public\\images\\artikel\\pabrik-makanan\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 2119,
+      "afterKB": 1008,
+      "savedKB": 1110
+    },
+    {
+      "file": "public\\images\\artikel\\pabrik-makanan\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\pabrik-makanan\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\pabrik-makanan\\image5.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\restauran\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1945,
+      "afterKB": 842,
+      "savedKB": 1102
+    },
+    {
+      "file": "public\\images\\artikel\\restauran\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\rumah\\bannerpc.png",
+      "origDim": "2479x1571",
+      "beforeKB": 1963,
+      "afterKB": 1034,
+      "savedKB": 929
+    },
+    {
+      "file": "public\\images\\artikel\\rumah\\image5.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\rumah-sakit\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1793,
+      "afterKB": 797,
+      "savedKB": 996
+    },
+    {
+      "file": "public\\images\\artikel\\rumah-sakit\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\rumah-sakit\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\rumah-sakit\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\bannerpc.png",
+      "origDim": "2478x1571",
+      "beforeKB": 2233,
+      "afterKB": 1104,
+      "savedKB": 1129
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\image1.jpg",
+      "origDim": "7360x4912",
+      "beforeKB": 3770,
+      "afterKB": 432,
+      "savedKB": 3337
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\image2.png",
+      "origDim": "2193x2442",
+      "beforeKB": 492,
+      "afterKB": 321,
+      "savedKB": 171
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\image3.png",
+      "origDim": "2381x943",
+      "beforeKB": 1186,
+      "afterKB": 603,
+      "savedKB": 583
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\image4.png",
+      "origDim": "2193x639",
+      "beforeKB": 100,
+      "afterKB": 99,
+      "savedKB": 1
+    },
+    {
+      "file": "public\\images\\artikel\\warehouse\\image5.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\burung\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\burung.png",
+      "origDim": "5054x4613",
+      "beforeKB": 1215,
+      "afterKB": 278,
+      "savedKB": 937
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\kutu.png",
+      "origDim": "3600x3147",
+      "beforeKB": 485,
+      "afterKB": 224,
+      "savedKB": 261
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\lalat.png",
+      "origDim": "4975x4663",
+      "beforeKB": 1548,
+      "afterKB": 331,
+      "savedKB": 1217
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\lebah.png",
+      "origDim": "4955x4485",
+      "beforeKB": 1329,
+      "afterKB": 355,
+      "savedKB": 973
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\nyamuk.png",
+      "origDim": "5465x3625",
+      "beforeKB": 782,
+      "afterKB": 194,
+      "savedKB": 588
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\rayap.png",
+      "origDim": "4603x4169",
+      "beforeKB": 918,
+      "afterKB": 261,
+      "savedKB": 657
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\semut.png",
+      "origDim": "3600x3134",
+      "beforeKB": 624,
+      "afterKB": 315,
+      "savedKB": 309
+    },
+    {
+      "file": "public\\images\\artikelhama\\gambarjenis\\ular.png",
+      "origDim": "8315x4104",
+      "beforeKB": 2267,
+      "afterKB": 194,
+      "savedKB": 2073
+    },
+    {
+      "file": "public\\images\\artikelhama\\kalelawar\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\kecoa\\image5.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\kutu\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\lalat\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\nyamuk\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\rayap\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\semut\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\tawon\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\tikus\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikelhama\\ular\\image3.png",
+      "origDim": "1926x527",
+      "beforeKB": 518,
+      "afterKB": 451,
+      "savedKB": 67
+    },
+    {
+      "file": "public\\images\\artikelhama\\ular\\image4.png",
+      "origDim": "3264x4305",
+      "beforeKB": 719,
+      "afterKB": 219,
+      "savedKB": 500
+    },
+    {
+      "file": "public\\images\\artikellayanan\\Proffing.png",
+      "origDim": "6034x4025",
+      "beforeKB": 7859,
+      "afterKB": 814,
+      "savedKB": 7045
+    },
+    {
+      "file": "public\\images\\artikellayanan\\Untitled-1.png",
+      "origDim": "7265x4055",
+      "beforeKB": 17702,
+      "afterKB": 1353,
+      "savedKB": 16349
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\1.png",
+      "origDim": "2379x3201",
+      "beforeKB": 2036,
+      "afterKB": 686,
+      "savedKB": 1350
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\2.png",
+      "origDim": "2279x3062",
+      "beforeKB": 2478,
+      "afterKB": 869,
+      "savedKB": 1609
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\3.png",
+      "origDim": "2461x3306",
+      "beforeKB": 3190,
+      "afterKB": 1080,
+      "savedKB": 2110
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\4.png",
+      "origDim": "2280x3064",
+      "beforeKB": 2868,
+      "afterKB": 1012,
+      "savedKB": 1856
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\6.png",
+      "origDim": "2422x3255",
+      "beforeKB": 3566,
+      "afterKB": 1047,
+      "savedKB": 2519
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\7.png",
+      "origDim": "2204x2960",
+      "beforeKB": 2768,
+      "afterKB": 1042,
+      "savedKB": 1725
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\9.png",
+      "origDim": "3660x4922",
+      "beforeKB": 4888,
+      "afterKB": 877,
+      "savedKB": 4011
+    },
+    {
+      "file": "public\\images\\banner\\mobile\\update5.png",
+      "origDim": "2398x3222",
+      "beforeKB": 2914,
+      "afterKB": 902,
+      "savedKB": 2011
+    },
+    {
+      "file": "public\\images\\banner\\pc\\1.png",
+      "origDim": "2891x1543",
+      "beforeKB": 679,
+      "afterKB": 279,
+      "savedKB": 401
+    },
+    {
+      "file": "public\\images\\banner\\pc\\2.png",
+      "origDim": "2891x1543",
+      "beforeKB": 1470,
+      "afterKB": 479,
+      "savedKB": 992
+    },
+    {
+      "file": "public\\images\\banner\\pc\\3.png",
+      "origDim": "2890x1543",
+      "beforeKB": 2884,
+      "afterKB": 881,
+      "savedKB": 2004
+    },
+    {
+      "file": "public\\images\\banner\\pc\\4.png",
+      "origDim": "2891x1543",
+      "beforeKB": 1512,
+      "afterKB": 598,
+      "savedKB": 914
+    },
+    {
+      "file": "public\\images\\banner\\pc\\6.png",
+      "origDim": "2890x1543",
+      "beforeKB": 2168,
+      "afterKB": 837,
+      "savedKB": 1331
+    },
+    {
+      "file": "public\\images\\banner\\pc\\7.png",
+      "origDim": "2890x1544",
+      "beforeKB": 1822,
+      "afterKB": 678,
+      "savedKB": 1143
+    },
+    {
+      "file": "public\\images\\banner\\pc\\9.png",
+      "origDim": "2891x1544",
+      "beforeKB": 2006,
+      "afterKB": 832,
+      "savedKB": 1174
+    },
+    {
+      "file": "public\\images\\banner\\pc\\update5.png",
+      "origDim": "2891x1543",
+      "beforeKB": 1864,
+      "afterKB": 692,
+      "savedKB": 1172
+    },
+    {
+      "file": "public\\images\\banner\\pc\\update8.png",
+      "origDim": "3122x1610",
+      "beforeKB": 1844,
+      "afterKB": 612,
+      "savedKB": 1231
+    },
+    {
+      "file": "public\\images\\disinfectant vecos.jpeg",
+      "origDim": "6720x4480",
+      "beforeKB": 2618,
+      "afterKB": 220,
+      "savedKB": 2398
+    },
+    {
+      "file": "public\\images\\image_form.png",
+      "origDim": "3847x2601",
+      "beforeKB": 2935,
+      "afterKB": 614,
+      "savedKB": 2321
+    },
+    {
+      "file": "public\\images\\offer\\kampus.jpeg",
+      "origDim": "6000x4000",
+      "beforeKB": 1203,
+      "afterKB": 212,
+      "savedKB": 991
+    },
+    {
+      "file": "public\\images\\offer\\warehouse.jpeg",
+      "origDim": "7360x4912",
+      "beforeKB": 3770,
+      "afterKB": 432,
+      "savedKB": 3337
+    },
+    {
+      "file": "public\\images\\penawaran\\1.png",
+      "origDim": "2890x1449",
+      "beforeKB": 2708,
+      "afterKB": 820,
+      "savedKB": 1888
+    },
+    {
+      "file": "public\\images\\penawaran\\10.png",
+      "origDim": "2921x1464",
+      "beforeKB": 1583,
+      "afterKB": 547,
+      "savedKB": 1036
+    },
+    {
+      "file": "public\\images\\penawaran\\2.png",
+      "origDim": "2890x1448",
+      "beforeKB": 627,
+      "afterKB": 264,
+      "savedKB": 364
+    },
+    {
+      "file": "public\\images\\penawaran\\4.png",
+      "origDim": "2891x1449",
+      "beforeKB": 1986,
+      "afterKB": 640,
+      "savedKB": 1346
+    },
+    {
+      "file": "public\\images\\penawaran\\5.png",
+      "origDim": "2922x1464",
+      "beforeKB": 1526,
+      "afterKB": 500,
+      "savedKB": 1026
+    },
+    {
+      "file": "public\\images\\penawaran\\6.png",
+      "origDim": "2922x1464",
+      "beforeKB": 1544,
+      "afterKB": 617,
+      "savedKB": 926
+    },
+    {
+      "file": "public\\images\\penawaran\\7.png",
+      "origDim": "2890x1449",
+      "beforeKB": 2708,
+      "afterKB": 820,
+      "savedKB": 1888
+    },
+    {
+      "file": "public\\images\\penawaran\\8.png",
+      "origDim": "2891x1448",
+      "beforeKB": 698,
+      "afterKB": 293,
+      "savedKB": 405
+    },
+    {
+      "file": "public\\images\\penawaran\\cafe.png",
+      "origDim": "2478x1571",
+      "beforeKB": 1643,
+      "afterKB": 794,
+      "savedKB": 849
+    },
+    {
+      "file": "public\\images\\penawaran\\manufaktur.png",
+      "origDim": "2478x1571",
+      "beforeKB": 2119,
+      "afterKB": 1008,
+      "savedKB": 1110
+    },
+    {
+      "file": "public\\images\\prime-shield.png",
+      "origDim": "3419x2809",
+      "beforeKB": 3054,
+      "afterKB": 907,
+      "savedKB": 2146
+    }
+  ]
+}

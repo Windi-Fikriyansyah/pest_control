@@ -922,7 +922,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               alt="Survey & Konsultasi Tim Vecos"
               fill
               className="object-cover object-center"
-              priority
             />
             {/* Pelapis Gelap (Dark Overlay) agar background lebih kontras & sedikit gelap */}
             <div className="absolute inset-0 bg-black/50 pointer-events-none" />
@@ -1134,7 +1133,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     width={725}
                     height={75}
                     className="w-full h-auto object-contain rounded-lg"
-                    priority
                   />
                 </div>
               </div>

@@ -634,7 +634,6 @@ export default function ArticleLayout({
               alt="Survey & Konsultasi Tim Vecos"
               fill
               className="object-cover object-center"
-              priority
             />
             {/* Pelapis Gelap (Dark Overlay) */}
             <div className="absolute inset-0 bg-black/50 pointer-events-none" />
@@ -798,7 +797,6 @@ export default function ArticleLayout({
                     width={725}
                     height={75}
                     className="w-full h-auto object-contain rounded-lg"
-                    priority
                   />
                 </div>
               </div>

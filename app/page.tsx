@@ -2045,7 +2045,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               width={3419}
               height={2809}
               className="w-full h-auto block scale-106 sm:scale-108 transition-transform duration-700"
-              priority
             />
 
             {/* Teks: VECOS Prime Shield-01 (Diperbesar sedikit agar lebih jelas & tegas) */}
@@ -2213,7 +2212,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 width={120}
                 height={136}
                 className="w-full h-auto object-contain drop-shadow-sm"
-                priority
               />
             </div>
 
@@ -2425,7 +2423,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               alt="Survey & Konsultasi Tim Vecos"
               fill
               className="object-cover object-center"
-              priority
             />
             {/* Pelapis Gelap (Dark Overlay) agar background lebih kontras & sedikit gelap */}
             <div className="absolute inset-0 bg-black/50 pointer-events-none" />
@@ -2637,7 +2634,6 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     width={725}
                     height={75}
                     className="w-full h-auto object-contain rounded-lg"
-                    priority
                   />
                 </div>
               </div>

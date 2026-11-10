@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgKelabang" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#dce1e6"/>
+    </radialGradient>
+    <linearGradient id="bodySegment" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a1c0d"/>
+      <stop offset="50%" stop-color="#b83216"/>
+      <stop offset="100%" stop-color="#691206"/>
+    </linearGradient>
+    <filter id="shadowCentipede" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#bgKelabang)"/>
+
+  <!-- Centipede Curve -->
+  <g filter="url(#shadowCentipede)" transform="translate(60, 30) rotate(-25, 200, 220)">
+    <!-- Antennae -->
+    <path d="M 120 100 Q 90 70 60 75" stroke="#e07216" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 130 95 Q 115 55 95 40" stroke="#e07216" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Head -->
+    <ellipse cx="135" cy="110" rx="18" ry="16" fill="#691206"/>
+    <!-- Poison fangs (forcipules) -->
+    <path d="M 125 100 Q 115 106 120 114" stroke="#222" stroke-width="3" fill="none"/>
+    <path d="M 145 100 Q 155 106 150 114" stroke="#222" stroke-width="3" fill="none"/>
+
+    <!-- Segment 1 to 14 with legs on both sides -->
+    <!-- Seg 1 -->
+    <ellipse cx="142" cy="128" rx="17" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 125 128 Q 105 125 90 140" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 159 128 Q 179 125 194 140" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 2 -->
+    <ellipse cx="150" cy="148" rx="18" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 132 148 Q 110 148 95 165" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 168 148 Q 190 148 205 165" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 3 -->
+    <ellipse cx="160" cy="168" rx="19" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 141 168 Q 118 172 102 192" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 179 168 Q 202 172 218 192" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 4 -->
+    <ellipse cx="172" cy="188" rx="19" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 153 188 Q 130 195 112 218" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 191 188 Q 214 195 232 218" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 5 -->
+    <ellipse cx="185" cy="208" rx="20" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 165 208 Q 140 218 122 242" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 205 208 Q 228 218 245 242" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 6 -->
+    <ellipse cx="198" cy="228" rx="20" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 178 228 Q 152 240 135 268" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 218 228 Q 242 240 258 268" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 7 -->
+    <ellipse cx="208" cy="250" rx="19" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 189 250 Q 162 265 145 295" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 227 250 Q 252 265 268 295" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 8 -->
+    <ellipse cx="214" cy="272" rx="19" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 195 272 Q 170 290 152 320" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 233 272 Q 258 290 274 320" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 9 -->
+    <ellipse cx="215" cy="295" rx="18" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 197 295 Q 172 315 155 348" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 233 295 Q 258 315 275 348" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 10 -->
+    <ellipse cx="210" cy="318" rx="17" ry="11" fill="url(#bodySegment)"/>
+    <path d="M 193 318 Q 168 340 150 372" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 227 318 Q 252 340 268 372" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Seg 11 (Tail) -->
+    <ellipse cx="202" cy="340" rx="15" ry="10" fill="url(#bodySegment)"/>
+    <!-- Long tail legs (Terminal legs) -->
+    <path d="M 194 345 Q 175 385 160 420" stroke="#e07216" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 210 345 Q 225 385 240 420" stroke="#e07216" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

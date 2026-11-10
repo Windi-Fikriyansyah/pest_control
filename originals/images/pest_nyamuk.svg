@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgNyamuk" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#dce1e6"/>
+    </radialGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3036"/>
+      <stop offset="100%" stop-color="#111317"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#bgNyamuk)"/>
+
+  <!-- Nyamuk Group -->
+  <g filter="url(#shadow)" transform="translate(70, 40) rotate(-10, 200, 200)">
+    <!-- Long Legs with Aedes stripes -->
+    <!-- Hind leg left -->
+    <path d="M 180 210 Q 110 130 90 70 T 40 40" fill="none" stroke="#222" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 110 130 L 105 120" stroke="#fff" stroke-width="4.5"/>
+    <path d="M 90 70 L 85 62" stroke="#fff" stroke-width="4.5"/>
+
+    <!-- Hind leg right -->
+    <path d="M 230 220 Q 310 140 340 70 T 380 40" fill="none" stroke="#222" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 310 140 L 315 130" stroke="#fff" stroke-width="4.5"/>
+    <path d="M 340 70 L 345 62" stroke="#fff" stroke-width="4.5"/>
+
+    <!-- Middle legs -->
+    <path d="M 170 230 Q 100 240 60 290 T 30 360" fill="none" stroke="#2a2d32" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 100 240 L 95 244" stroke="#fff" stroke-width="4"/>
+    <path d="M 60 290 L 55 300" stroke="#fff" stroke-width="4"/>
+
+    <path d="M 235 235 Q 310 250 350 300 T 380 370" fill="none" stroke="#2a2d32" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 310 250 L 315 254" stroke="#fff" stroke-width="4"/>
+    <path d="M 350 300 L 355 310" stroke="#fff" stroke-width="4"/>
+
+    <!-- Front legs -->
+    <path d="M 185 245 Q 130 310 100 370 T 80 420" fill="none" stroke="#333" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M 220 245 Q 270 310 300 370 T 320 420" fill="none" stroke="#333" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Translucent Wings -->
+    <ellipse cx="140" cy="180" rx="90" ry="24" transform="rotate(-40, 140, 180)" fill="#a0c8d7" fill-opacity="0.45" stroke="#608696" stroke-width="1.5"/>
+    <path d="M 195 210 Q 140 170 85 140" stroke="#486a78" stroke-width="1" fill="none" opacity="0.6"/>
+
+    <ellipse cx="265" cy="185" rx="90" ry="24" transform="rotate(40, 265, 185)" fill="#a0c8d7" fill-opacity="0.45" stroke="#608696" stroke-width="1.5"/>
+    <path d="M 210 210 Q 265 175 320 145" stroke="#486a78" stroke-width="1" fill="none" opacity="0.6"/>
+
+    <!-- Slender Abdomen (Segmented with white bands) -->
+    <path d="M 190 220 C 190 170 195 120 202 70 C 209 120 214 170 214 220 Z" fill="url(#bodyGrad)"/>
+    <path d="M 194 185 Q 202 188 210 185" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <path d="M 196 155 Q 202 158 208 155" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <path d="M 198 125 Q 202 128 206 125" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <path d="M 200 95 Q 202 97 204 95" stroke="#fff" stroke-width="2" fill="none"/>
+
+    <!-- Thorax -->
+    <ellipse cx="202" cy="235" rx="18" ry="22" fill="#222" stroke="#444" stroke-width="1"/>
+    <!-- Lyre pattern on scutum (Aedes signature) -->
+    <path d="M 194 225 Q 202 232 210 225" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="202" cy="242" r="2" fill="#fff"/>
+
+    <!-- Head -->
+    <circle cx="202" cy="265" r="11" fill="#181a1d"/>
+    <ellipse cx="197" cy="263" rx="4.5" ry="6" fill="#000"/>
+    <ellipse cx="207" cy="263" rx="4.5" ry="6" fill="#000"/>
+
+    <!-- Long Proboscis (Stinger) -->
+    <path d="M 202 274 L 202 335" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+    <!-- Palps & Antennae (Plumose) -->
+    <path d="M 200 270 Q 185 285 178 300" stroke="#333" stroke-width="1.5" fill="none"/>
+    <path d="M 204 270 Q 219 285 226 300" stroke="#333" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,565 @@
+[
+  {
+    "file": "desktop_artikel.png",
+    "status": "DIFF",
+    "diffPixels": 56,
+    "totalPixels": 26143200,
+    "diffPercent": "0.0002%"
+  },
+  {
+    "file": "desktop_artikel_apartemen.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0001%"
+  },
+  {
+    "file": "desktop_artikel_bandara.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22041",
+    "afterSize": "1440x22040"
+  },
+  {
+    "file": "desktop_artikel_bioskop.png",
+    "status": "DIFF",
+    "diffPixels": 84,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0004%"
+  },
+  {
+    "file": "desktop_artikel_burung.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22726",
+    "afterSize": "1440x22725"
+  },
+  {
+    "file": "desktop_artikel_cafe.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22041",
+    "afterSize": "1440x22040"
+  },
+  {
+    "file": "desktop_artikel_data-center.png",
+    "status": "DIFF",
+    "diffPixels": 142,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0007%"
+  },
+  {
+    "file": "desktop_artikel_disinfeksi-sterilisasi.png",
+    "status": "DIFF",
+    "diffPixels": 30,
+    "totalPixels": 22929120,
+    "diffPercent": "0.0001%"
+  },
+  {
+    "file": "desktop_artikel_disinfeksi.png",
+    "status": "DIFF",
+    "diffPixels": 250,
+    "totalPixels": 24553440,
+    "diffPercent": "0.0010%"
+  },
+  {
+    "file": "desktop_artikel_gym.png",
+    "status": "DIFF",
+    "diffPixels": 93,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0004%"
+  },
+  {
+    "file": "desktop_artikel_hipermarket.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x21731",
+    "afterSize": "1440x21730"
+  },
+  {
+    "file": "desktop_artikel_hotel.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22017",
+    "afterSize": "1440x22016"
+  },
+  {
+    "file": "desktop_artikel_kalelawar.png",
+    "status": "DIFF",
+    "diffPixels": 813,
+    "totalPixels": 32192640,
+    "diffPercent": "0.0025%"
+  },
+  {
+    "file": "desktop_artikel_kampus.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22281",
+    "afterSize": "1440x22280"
+  },
+  {
+    "file": "desktop_artikel_kantor.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22041",
+    "afterSize": "1440x22040"
+  },
+  {
+    "file": "desktop_artikel_kecoa.png",
+    "status": "DIFF",
+    "diffPixels": 793,
+    "totalPixels": 32221440,
+    "diffPercent": "0.0025%"
+  },
+  {
+    "file": "desktop_artikel_kutu.png",
+    "status": "DIFF",
+    "diffPixels": 3306,
+    "totalPixels": 32438880,
+    "diffPercent": "0.0102%"
+  },
+  {
+    "file": "desktop_artikel_lalat.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22742",
+    "afterSize": "1440x22741"
+  },
+  {
+    "file": "desktop_artikel_layanan-vecos.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x18054",
+    "afterSize": "1440x18053"
+  },
+  {
+    "file": "desktop_artikel_mall.png",
+    "status": "DIFF",
+    "diffPixels": 62,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0003%"
+  },
+  {
+    "file": "desktop_artikel_nyamuk.png",
+    "status": "DIFF",
+    "diffPixels": 390365,
+    "totalPixels": 32280480,
+    "diffPercent": "1.2093%"
+  },
+  {
+    "file": "desktop_artikel_pabrik-makanan.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x21953",
+    "afterSize": "1440x21952"
+  },
+  {
+    "file": "desktop_artikel_pabrik-manufaktur.png",
+    "status": "DIFF",
+    "diffPixels": 39,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0002%"
+  },
+  {
+    "file": "desktop_artikel_pengendalian-serangga.png",
+    "status": "DIFF",
+    "diffPixels": 2680,
+    "totalPixels": 24027840,
+    "diffPercent": "0.0112%"
+  },
+  {
+    "file": "desktop_artikel_pengendalian-tikus.png",
+    "status": "DIFF",
+    "diffPixels": 71,
+    "totalPixels": 23143680,
+    "diffPercent": "0.0003%"
+  },
+  {
+    "file": "desktop_artikel_prime-shield-01-trap.png",
+    "status": "DIFF",
+    "diffPixels": 89,
+    "totalPixels": 22266720,
+    "diffPercent": "0.0004%"
+  },
+  {
+    "file": "desktop_artikel_rayap.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22548",
+    "afterSize": "1440x22547"
+  },
+  {
+    "file": "desktop_artikel_restauran.png",
+    "status": "DIFF",
+    "diffPixels": 1101,
+    "totalPixels": 26418240,
+    "diffPercent": "0.0042%"
+  },
+  {
+    "file": "desktop_artikel_rumah-sakit.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22041",
+    "afterSize": "1440x22040"
+  },
+  {
+    "file": "desktop_artikel_rumah.png",
+    "status": "DIFF",
+    "diffPixels": 1252,
+    "totalPixels": 31589280,
+    "diffPercent": "0.0040%"
+  },
+  {
+    "file": "desktop_artikel_semut.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22685",
+    "afterSize": "1440x22684"
+  },
+  {
+    "file": "desktop_artikel_sistem-proteksi-rayap.png",
+    "status": "DIFF",
+    "diffPixels": 217,
+    "totalPixels": 23328000,
+    "diffPercent": "0.0009%"
+  },
+  {
+    "file": "desktop_artikel_tawon.png",
+    "status": "DIFF",
+    "diffPixels": 31744,
+    "totalPixels": 32312160,
+    "diffPercent": "0.0982%"
+  },
+  {
+    "file": "desktop_artikel_tempat-ibadah.png",
+    "status": "DIFF",
+    "diffPixels": 73,
+    "totalPixels": 20855520,
+    "diffPercent": "0.0004%"
+  },
+  {
+    "file": "desktop_artikel_tikus.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22501",
+    "afterSize": "1440x22500"
+  },
+  {
+    "file": "desktop_artikel_ular.png",
+    "status": "DIFF",
+    "diffPixels": 21068,
+    "totalPixels": 31680000,
+    "diffPercent": "0.0665%"
+  },
+  {
+    "file": "desktop_artikel_vecos-proofing-defender.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x16991",
+    "afterSize": "1440x16992"
+  },
+  {
+    "file": "desktop_artikel_warehouse.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "1440x22330",
+    "afterSize": "1440x22329"
+  },
+  {
+    "file": "desktop_home.png",
+    "status": "DIFF",
+    "diffPixels": 187,
+    "totalPixels": 29458080,
+    "diffPercent": "0.0006%"
+  },
+  {
+    "file": "desktop_hubungi-kami.png",
+    "status": "DIFF",
+    "diffPixels": 196,
+    "totalPixels": 17772480,
+    "diffPercent": "0.0011%"
+  },
+  {
+    "file": "desktop_tentang.png",
+    "status": "DIFF",
+    "diffPixels": 791,
+    "totalPixels": 24750720,
+    "diffPercent": "0.0032%"
+  },
+  {
+    "file": "mobile_artikel.png",
+    "status": "DIFF",
+    "diffPixels": 30,
+    "totalPixels": 5185440,
+    "diffPercent": "0.0006%"
+  },
+  {
+    "file": "mobile_artikel_apartemen.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_bandara.png",
+    "status": "DIFF",
+    "diffPixels": 657,
+    "totalPixels": 3748680,
+    "diffPercent": "0.0175%"
+  },
+  {
+    "file": "mobile_artikel_bioskop.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_burung.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "390x10599",
+    "afterSize": "390x10598"
+  },
+  {
+    "file": "mobile_artikel_cafe.png",
+    "status": "DIFF",
+    "diffPixels": 657,
+    "totalPixels": 3692520,
+    "diffPercent": "0.0178%"
+  },
+  {
+    "file": "mobile_artikel_data-center.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_disinfeksi-sterilisasi.png",
+    "status": "DIFF",
+    "diffPixels": 32,
+    "totalPixels": 2808780,
+    "diffPercent": "0.0011%"
+  },
+  {
+    "file": "mobile_artikel_disinfeksi.png",
+    "status": "DIFF",
+    "diffPixels": 36,
+    "totalPixels": 2985060,
+    "diffPercent": "0.0012%"
+  },
+  {
+    "file": "mobile_artikel_gym.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_hipermarket.png",
+    "status": "DIFF",
+    "diffPixels": 645,
+    "totalPixels": 3699930,
+    "diffPercent": "0.0174%"
+  },
+  {
+    "file": "mobile_artikel_hotel.png",
+    "status": "DIFF",
+    "diffPixels": 657,
+    "totalPixels": 3692520,
+    "diffPercent": "0.0178%"
+  },
+  {
+    "file": "mobile_artikel_kalelawar.png",
+    "status": "DIFF",
+    "diffPixels": 151,
+    "totalPixels": 4004520,
+    "diffPercent": "0.0038%"
+  },
+  {
+    "file": "mobile_artikel_kampus.png",
+    "status": "DIFF",
+    "diffPixels": 673,
+    "totalPixels": 3832530,
+    "diffPercent": "0.0176%"
+  },
+  {
+    "file": "mobile_artikel_kantor.png",
+    "status": "DIFF",
+    "diffPixels": 657,
+    "totalPixels": 3692520,
+    "diffPercent": "0.0178%"
+  },
+  {
+    "file": "mobile_artikel_kecoa.png",
+    "status": "DIFF",
+    "diffPixels": 161,
+    "totalPixels": 3908190,
+    "diffPercent": "0.0041%"
+  },
+  {
+    "file": "mobile_artikel_kutu.png",
+    "status": "DIFF",
+    "diffPixels": 1483,
+    "totalPixels": 3996330,
+    "diffPercent": "0.0371%"
+  },
+  {
+    "file": "mobile_artikel_lalat.png",
+    "status": "DIFF",
+    "diffPixels": 4155,
+    "totalPixels": 4053270,
+    "diffPercent": "0.1025%"
+  },
+  {
+    "file": "mobile_artikel_layanan-vecos.png",
+    "status": "DIFF",
+    "diffPixels": 53,
+    "totalPixels": 3013140,
+    "diffPercent": "0.0018%"
+  },
+  {
+    "file": "mobile_artikel_mall.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_nyamuk.png",
+    "status": "DIFF",
+    "diffPixels": 1188,
+    "totalPixels": 4055610,
+    "diffPercent": "0.0293%"
+  },
+  {
+    "file": "mobile_artikel_pabrik-makanan.png",
+    "status": "DIFF",
+    "diffPixels": 673,
+    "totalPixels": 3579810,
+    "diffPercent": "0.0188%"
+  },
+  {
+    "file": "mobile_artikel_pabrik-manufaktur.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_pengendalian-serangga.png",
+    "status": "DIFF",
+    "diffPixels": 29,
+    "totalPixels": 3290820,
+    "diffPercent": "0.0009%"
+  },
+  {
+    "file": "mobile_artikel_pengendalian-tikus.png",
+    "status": "DIFF",
+    "diffPixels": 29,
+    "totalPixels": 3166800,
+    "diffPercent": "0.0009%"
+  },
+  {
+    "file": "mobile_artikel_prime-shield-01-trap.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2379390,
+    "diffPercent": "0.0012%"
+  },
+  {
+    "file": "mobile_artikel_rayap.png",
+    "status": "DIFF",
+    "diffPixels": 2668,
+    "totalPixels": 3926520,
+    "diffPercent": "0.0679%"
+  },
+  {
+    "file": "mobile_artikel_restauran.png",
+    "status": "DIFF",
+    "diffPixels": 161,
+    "totalPixels": 3145740,
+    "diffPercent": "0.0051%"
+  },
+  {
+    "file": "mobile_artikel_rumah-sakit.png",
+    "status": "DIFF",
+    "diffPixels": 657,
+    "totalPixels": 3814200,
+    "diffPercent": "0.0172%"
+  },
+  {
+    "file": "mobile_artikel_rumah.png",
+    "status": "DIFF",
+    "diffPixels": 151,
+    "totalPixels": 3883230,
+    "diffPercent": "0.0039%"
+  },
+  {
+    "file": "mobile_artikel_semut.png",
+    "status": "DIFF",
+    "diffPixels": 1759,
+    "totalPixels": 4048200,
+    "diffPercent": "0.0435%"
+  },
+  {
+    "file": "mobile_artikel_sistem-proteksi-rayap.png",
+    "status": "DIFF",
+    "diffPixels": 29,
+    "totalPixels": 3101670,
+    "diffPercent": "0.0009%"
+  },
+  {
+    "file": "mobile_artikel_tawon.png",
+    "status": "DIFF",
+    "diffPixels": 2322,
+    "totalPixels": 3819660,
+    "diffPercent": "0.0608%"
+  },
+  {
+    "file": "mobile_artikel_tempat-ibadah.png",
+    "status": "DIFF",
+    "diffPixels": 28,
+    "totalPixels": 2061540,
+    "diffPercent": "0.0014%"
+  },
+  {
+    "file": "mobile_artikel_tikus.png",
+    "status": "DIFF",
+    "diffPixels": 161,
+    "totalPixels": 3915990,
+    "diffPercent": "0.0041%"
+  },
+  {
+    "file": "mobile_artikel_ular.png",
+    "status": "DIFF",
+    "diffPixels": 2056,
+    "totalPixels": 3804840,
+    "diffPercent": "0.0540%"
+  },
+  {
+    "file": "mobile_artikel_vecos-proofing-defender.png",
+    "status": "DIFF",
+    "diffPixels": 122,
+    "totalPixels": 3052920,
+    "diffPercent": "0.0040%"
+  },
+  {
+    "file": "mobile_artikel_warehouse.png",
+    "status": "DIMENSION_MISMATCH",
+    "baseSize": "390x9756",
+    "afterSize": "390x9755"
+  },
+  {
+    "file": "mobile_home.png",
+    "status": "DIFF",
+    "diffPixels": 113,
+    "totalPixels": 4282200,
+    "diffPercent": "0.0026%"
+  },
+  {
+    "file": "mobile_hubungi-kami.png",
+    "status": "DIFF",
+    "diffPixels": 31,
+    "totalPixels": 2054910,
+    "diffPercent": "0.0015%"
+  },
+  {
+    "file": "mobile_tentang-vecos.png",
+    "status": "DIFF",
+    "diffPixels": 161,
+    "totalPixels": 3660150,
+    "diffPercent": "0.0044%"
+  },
+  {
+    "file": "mobile_tentang.png",
+    "status": "DIFF",
+    "diffPixels": 161,
+    "totalPixels": 3660150,
+    "diffPercent": "0.0044%"
+  }
+]
