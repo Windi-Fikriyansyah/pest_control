@@ -188,22 +188,6 @@ export default function CookieConsent() {
                   menampilkan promosi dan penawaran relevan bagi Anda (<strong>Cookie Iklan</strong>).
                 </p>
 
-                {/* Badge Kategori Cookie */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                    Esensial
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                    Analitik
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-800 border border-purple-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
-                    Iklan & Pemasaran
-                  </span>
-                </div>
-
                 {/* Tombol Aksi Utama */}
                 <div className="flex flex-col sm:flex-row gap-2.5">
                   <button
