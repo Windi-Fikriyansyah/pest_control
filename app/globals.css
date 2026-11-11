@@ -29,13 +29,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #C81E27;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a3141c;
 }
@@ -44,6 +47,7 @@ body {
 .card-hover-effect {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card-hover-effect:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12);
@@ -52,19 +56,21 @@ body {
 /* Infinite Marquee Animations for Our Client (2 Baris Berlawanan Arah) */
 @keyframes marquee-to-right {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
+
   100% {
-    transform: translateX(0%);
+    transform: translate3d(0%, 0, 0);
   }
 }
 
 @keyframes marquee-to-left {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0%, 0, 0);
   }
+
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -73,6 +79,8 @@ body {
   width: max-content;
   animation: marquee-to-right 32s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .animate-marquee-left {
@@ -80,6 +88,8 @@ body {
   width: max-content;
   animation: marquee-to-left 32s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .animate-marquee-right:hover,
@@ -117,7 +127,6 @@ body {
 }
 
 /* Sembunyikan banner bar bagian atas Google Translate */
-body > .skiptranslate {
+body>.skiptranslate {
   display: none !important;
 }
-

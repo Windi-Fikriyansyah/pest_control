@@ -6,6 +6,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,6 +23,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/banner/mobile/1.webp"
+          type="image/webp"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/banner/pc/1.webp"
+          type="image/webp"
+          media="(min-width: 768px)"
+          fetchPriority="high"
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased bg-white text-zinc-900" suppressHydrationWarning>
         {children}
       </body>

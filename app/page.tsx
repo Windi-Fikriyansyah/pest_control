@@ -18,8 +18,8 @@ const heroSlides = [
     title: "Jangan Biarkan Hama Merusak Tempat yang Paling Anda Jaga",
     subtitle:
       "Baik untuk Bisnis Anda dari kerugian maupun kenyamanan Rumah Anda, ambil kembali kendali penuh dan lindungi aset berharga dari ancaman hama secara tuntas dan bergaransi.",
-    image: "/images/banner/pc/1.png",
-    imageMobile: "/images/banner/mobile/1.png",
+    image: "/images/banner/pc/1.webp",
+    imageMobile: "/images/banner/mobile/1.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "rumah",
@@ -28,8 +28,8 @@ const heroSlides = [
     id: 2,
     title: "Pengendalian Hama Terstruktur untuk properti lebih aman",
     subtitle: "Metode Terstruktur Berbasis Integrated Pest Management Solusi Aman untuk Lingkungan, Bisnis, dan Keluarga Anda",
-    image: "/images/banner/pc/2.png",
-    imageMobile: "/images/banner/mobile/2.png",
+    image: "/images/banner/pc/2.webp",
+    imageMobile: "/images/banner/mobile/2.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "disinfeksi",
@@ -39,8 +39,8 @@ const heroSlides = [
     title: "Disinfeksi Perlindungan dari Virus Berbahaya",
     subtitle:
       "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari virus berbahaya",
-    image: "/images/banner/pc/3.png",
-    imageMobile: "/images/banner/mobile/3.png",
+    image: "/images/banner/pc/3.webp",
+    imageMobile: "/images/banner/mobile/3.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "layanan-vecos",
@@ -49,8 +49,8 @@ const heroSlides = [
     id: 4,
     title: "Lindungi Investasi Properti Anda dari Kerusakan Hama",
     subtitle: "Proteksi Aset Berstandar Tinggi: Solusi Cerdas Jaga Properti Bebas Hama, Kokoh, dan Bebas Risiko Kerugian",
-    image: "/images/banner/pc/4.png",
-    imageMobile: "/images/banner/mobile/4.png",
+    image: "/images/banner/pc/4.webp",
+    imageMobile: "/images/banner/mobile/4.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "kampus",
@@ -60,8 +60,8 @@ const heroSlides = [
     title: "Perlindungan Area Luar yang Nyaman Bebas Nyamuk Tanpa Kebisingan Operasional",
     subtitle:
       "Teknologi Proteksi Senyap yang Melumpuhkan Nyamuk Secara Presisi— Menghadirkan Kenyamanan Area Terbuka Tanpa Suara Mesin Bising dan Tanpa Bau Menyengat",
-    image: "/images/banner/pc/update5.png",
-    imageMobile: "/images/banner/mobile/update5.png",
+    image: "/images/banner/pc/update5.webp",
+    imageMobile: "/images/banner/mobile/update5.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "hotel",
@@ -71,8 +71,8 @@ const heroSlides = [
     title: "Lindungi Bangunan Anda dari Rayap Sejak Awal Fondasi",
     subtitle:
       "Cegah Kerusakan Jutaan Rupiah di Masa Depan, Benteng Perlindungan Presisi dan Aman Sebelum Bangunan Berdiri",
-    image: "/images/banner/pc/6.png",
-    imageMobile: "/images/banner/mobile/6.png",
+    image: "/images/banner/pc/6.webp",
+    imageMobile: "/images/banner/mobile/6.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "restauran",
@@ -82,8 +82,8 @@ const heroSlides = [
     title: "Bebaskan Gedung & Restoran Anda dari Ancaman Tikus dengan Solusi Profesional",
     subtitle:
       "Jangan biarkan tikus merusak reputasi brand dan keamanan aset Anda. Terapkan sistem proteksi profesional sekarang juga",
-    image: "/images/banner/pc/7.png",
-    imageMobile: "/images/banner/mobile/7.png",
+    image: "/images/banner/pc/7.webp",
+    imageMobile: "/images/banner/mobile/7.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "rumah-sakit",
@@ -93,8 +93,8 @@ const heroSlides = [
     title: "Jangan Biarkan Area Luar Gedung Jadi Sarang DBD",
     subtitle:
       "Basmi Sebelum Berdampak pada Bisnis Anda",
-    image: "/images/banner/pc/update8.png",
-    imageMobile: "/images/banner/mobile/update8.png",
+    image: "/images/banner/pc/update8.webp",
+    imageMobile: "/images/banner/mobile/update8.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "bandara",
@@ -103,8 +103,8 @@ const heroSlides = [
     id: 9,
     title: "Prime Shield - 01 | The Ultimate Commercial Fly Trap",
     subtitle: "Jangan beri celah bagi lalat untuk merusak standar higienitas bisnis Anda. Amankan restoran, hotel, dan gedung komersial Anda sekarang dengan teknologi Jerman paling higienis dan terpercaya",
-    image: "/images/banner/pc/9.png",
-    imageMobile: "/images/banner/mobile/9.png",
+    image: "/images/banner/pc/9.webp",
+    imageMobile: "/images/banner/mobile/9.webp",
     callCenter: "0857-4368-1500",
     ctaText: "Amankan Properti Anda",
     slug: "warehouse",
@@ -135,7 +135,7 @@ const offerSlides: OfferSlide[] = [
     title: "Inspeksi Menyeluruh Bebas Rayap & Hama Rumah Tinggal",
     subtitle:
       "Perlindungan maksimal struktur bangunan dan perabot kayu dengan metode barrier dan baiting ramah lingkungan tanpa bau menyengat.",
-    image: "/images/penawaran/2.png",
+    image: "/images/penawaran/2.webp",
     imageClass: "object-right sm:object-center",
     tag: "Hunian & Rumah Tinggal",
     slug: "rumah",
@@ -184,7 +184,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pest Control Hotel & Resort Bintang",
     subtitle:
       "Menjaga kenyamanan tamu, sanitasi kamar, dan reputasi bisnis Anda dari ancaman kutu busuk, serangga, dan hama dengan penanganan steril tanpa bau.",
-    image: "/images/penawaran/4.png",
+    image: "/images/penawaran/4.webp",
     tag: "Hospitality & Perhotelan",
     slug: "hotel",
     article: {
@@ -232,7 +232,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pest Control Coffee Shop",
     subtitle:
       "Menjaga estetika, higienitas bar kopi, dan kenyamanan nongkrong pelanggan bebas dari kecoa, semut, dan lalat dengan treatment senyap.",
-    image: "/images/penawaran/cafe.png",
+    image: "/images/penawaran/cafe.webp",
     tag: "Coffee Shop",
     slug: "cafe",
     article: {
@@ -256,7 +256,7 @@ const offerSlides: OfferSlide[] = [
     title: "Pengendalian Hama Fasilitas Manufaktur",
     subtitle:
       "Solusi terintegrasi audit HACCP, BRC, dan BPOM untuk memastikan lini produksi dan packaging bebas kontaminasi hama biologis.",
-    image: "/images/penawaran/manufaktur.png",
+    image: "/images/penawaran/manufaktur.webp",
     tag: "Manufaktur",
     slug: "pabrik-makanan",
     article: {
@@ -280,7 +280,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Fasilitas Medis & Rumah Sakit",
     subtitle:
       "Sterilisasi dan pengendalian hama ketat sesuai standar keselamatan fasilitas kesehatan untuk memutus rantai penularan kuman dan infeksi.",
-    image: "/images/penawaran/10.png",
+    image: "/images/penawaran/10.webp",
     tag: "Healthcare & Fasilitas Medis",
     slug: "rumah-sakit",
     article: {
@@ -328,7 +328,7 @@ const offerSlides: OfferSlide[] = [
     title: "Perlindungan Pengendalian Hama Bandara & Transportasi",
     subtitle:
       "Mitra terpercaya pengendalian hama bandara, terminal, dan sarana transportasi publik berskala besar untuk kenyamanan mobilitas publik.",
-    image: "/images/penawaran/5.png",
+    image: "/images/penawaran/5.webp",
     tag: "Transportasi Publik & Bandara",
     slug: "bandara",
     article: {
@@ -400,7 +400,7 @@ const offerSlides: OfferSlide[] = [
     title: "Disinfeksi & Sterilisasi Perlindungan Dari Virus Berbahaya",
     subtitle:
       "Layanan disinfeksi profesional untuk memastikan area aktivitas anda bebas dari kuman, bakteri patogen, dan virus berbahaya dengan metode ULV Cold Fogging.",
-    image: "/images/penawaran/1.png",
+    image: "/images/penawaran/1.webp",
     tag: "Disinfeksi & Sterilisasi",
     slug: "disinfeksi",
     article: {
@@ -775,6 +775,7 @@ export default function Home() {
   const [tempLang, setTempLang] = useState("id");
 
   const openLangModal = () => {
+    loadGoogleTranslate();
     setTempCountry(currentCountry);
     const country = countryList.find((c) => c.code === currentCountry) || countryList[0];
     if (country.supportedLangs.includes(currentLang)) {
@@ -793,8 +794,32 @@ export default function Home() {
     }
   };
 
-  // Google Translate initialization & read active googtrans cookie
+  const [isMounted, setIsMounted] = useState(false);
+
+  const loadGoogleTranslate = () => {
+    if (typeof document === "undefined" || document.getElementById("google-translate-script")) return;
+    (window as any).googleTranslateElementInit = () => {
+      if ((window as any).google?.translate?.TranslateElement) {
+        new (window as any).google.translate.TranslateElement(
+          {
+            pageLanguage: "id",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    };
+
+    const script = document.createElement("script");
+    script.id = "google-translate-script";
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    document.body.appendChild(script);
+  };
+
+  // Google Translate initialization & read active googtrans cookie (Deferred for LCP)
   useEffect(() => {
+    setIsMounted(true);
     if (typeof document !== "undefined") {
       const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
       if (match) {
@@ -804,30 +829,21 @@ export default function Home() {
           setCurrentLang(targetLang);
           const found = countryList.find((c) => c.defaultLang === targetLang || c.supportedLangs.includes(targetLang));
           if (found) setCurrentCountry(found.code);
+          loadGoogleTranslate();
+          return;
         }
       }
 
-      if (!document.getElementById("google-translate-script")) {
-        (window as any).googleTranslateElementInit = () => {
-          if ((window as any).google?.translate?.TranslateElement) {
-            new (window as any).google.translate.TranslateElement(
-              {
-                pageLanguage: "id",
-                autoDisplay: false,
-              },
-              "google_translate_element"
-            );
-          }
-        };
-
-        const script = document.createElement("script");
-        script.id = "google-translate-script";
-        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-        script.async = true;
-        document.body.appendChild(script);
+        // Tunda pemuatan script Google Translate pihak ketiga sampai main thread menganggur
+        if ("requestIdleCallback" in window) {
+          (window as any).requestIdleCallback(() => {
+            setTimeout(loadGoogleTranslate, 2500);
+          });
+        } else {
+          setTimeout(loadGoogleTranslate, 3500);
+        }
       }
-    }
-  }, []);
+    }, []);
 
   const applyLanguagePreference = (countryCode: string, langCode: string) => {
     setCurrentCountry(countryCode);
@@ -1482,7 +1498,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-zinc-800 hover:text-[#C81E27] focus:outline-hidden"
+              className="p-3 min-w-[48px] min-h-[48px] flex items-center justify-center text-zinc-800 hover:text-[#C81E27] focus:outline-hidden cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? (
@@ -1595,6 +1611,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
         <div className="relative w-full h-full flex items-center">
           {heroSlides.map((slide, index) => {
             const isActive = index === currentSlide;
+            if (!isMounted && index > 0) return null;
             return (
               <div
                 key={slide.id}
@@ -1608,6 +1625,8 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   alt={slide.title}
                   fill
                   priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, 1px"
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="md:hidden object-cover object-center scale-105 transition-transform duration-700"
                 />
 
@@ -1617,6 +1636,8 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   alt={slide.title}
                   fill
                   priority={index === 0}
+                  sizes="(min-width: 769px) 100vw, 1px"
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="hidden md:block object-cover object-center scale-110 transition-transform duration-700"
                 />
 
@@ -1643,6 +1664,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                       <Link
                         href={`/artikel/${slide.slug}`}
                         onClick={(e) => e.stopPropagation()}
+                        aria-label={`${slide.ctaText} untuk ${slide.title}`}
                         className="bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-7 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-700/40 hover:shadow-red-700/60 transition-all cursor-pointer inline-flex items-center"
                       >
                         {slide.ctaText}
@@ -1702,7 +1724,10 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   </svg>
                 </div>
                 <div className="flex-1">
+                  <label htmlFor="select-pest" className="sr-only">Pilih Jenis Hama</label>
                   <select
+                    id="select-pest"
+                    aria-label="Pilih Jenis Hama"
                     value={selectedPest}
                     onChange={(e) => setSelectedPest(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
@@ -1731,7 +1756,10 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   </svg>
                 </div>
                 <div className="flex-1">
+                  <label htmlFor="select-property" className="sr-only">Pilih Jenis Properti</label>
                   <select
+                    id="select-property"
+                    aria-label="Pilih Jenis Properti"
                     value={selectedProperty}
                     onChange={(e) => setSelectedProperty(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5"
@@ -1783,7 +1811,10 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
+                  <label htmlFor="select-location" className="sr-only">Pilih Lokasi Layanan</label>
                   <select
+                    id="select-location"
+                    aria-label="Pilih Lokasi Layanan"
                     value={selectedLocation}
                     onChange={(e) => setSelectedLocation(e.target.value)}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base font-bold text-zinc-900 focus:outline-hidden cursor-pointer py-0.5 truncate"
@@ -1820,7 +1851,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               <button
                 type="button"
                 onClick={handleUseCurrentLocation}
-                className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border shadow-sm text-xs sm:text-sm font-semibold transition-all cursor-pointer group select-none ${detectedAddress
+                className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-2.5 min-h-[44px] rounded-lg border shadow-sm text-xs sm:text-sm font-semibold transition-all cursor-pointer group select-none ${detectedAddress
                   ? "bg-blue-50 border-blue-300 text-[#00629b]"
                   : "bg-white/95 hover:bg-white border-zinc-200/90 text-[#00629b] hover:text-[#004e7c]"
                   }`}
@@ -1880,6 +1911,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             {/* Slide List */}
             {offerSlides.map((slide, idx) => {
               const isActive = idx === currentOffer;
+              if (!isMounted && idx > 0) return null;
               return (
                 <div
                   key={slide.id}
@@ -1892,7 +1924,9 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     src={slide.image}
                     alt={slide.title}
                     fill
-                    priority={idx === 0}
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                    loading="lazy"
+                    decoding="async"
                     className={`object-cover ${slide.imageClass || "object-center"} scale-108 group-hover:scale-112 transition-transform duration-700`}
                   />
 
@@ -1914,6 +1948,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                         <Link
                           href={`/artikel/${slide.slug}`}
                           onClick={(e) => e.stopPropagation()}
+                          aria-label={`Klaim Penawaran untuk ${slide.title}`}
                           className="inline-flex items-center gap-2 bg-[#C81E27] hover:bg-[#b01820] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-900/40 hover:shadow-red-900/60 transition-all cursor-pointer hover:translate-x-1"
                         >
                           <span>Klaim Penawaran</span>
@@ -1936,7 +1971,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 type="button"
                 onClick={prevOffer}
                 aria-label="Geser Penawaran Sebelumnya"
-                className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
+                className="relative w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
               >
                 {/* Thin Hollow Circle Ring */}
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 44 44">
@@ -1968,7 +2003,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 type="button"
                 onClick={nextOffer}
                 aria-label="Geser Penawaran Selanjutnya"
-                className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
+                className="relative w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-zinc-900 hover:text-[#C81E27] transition-colors cursor-pointer group select-none"
               >
                 {/* Circular Progress Arc */}
                 <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 44 44">
@@ -2010,21 +2045,25 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             </div>
 
             {/* Sisi Kanan: Titik-titik (Pagination Dots) Sesuai Warna Web (#C81E27) */}
-            <div className="flex items-center gap-2">
-              {offerSlides.map((_, idx) => {
-                const isActive = idx === currentOffer;
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => goToOffer(idx)}
-                    aria-label={`Lihat penawaran ${idx + 1}`}
-                    className={`rounded-full transition-all cursor-pointer ${isActive
-                      ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#C81E27] scale-110"
-                      : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-200 hover:bg-[#C81E27]/50"
-                      }`}
-                  />
-                );
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                {offerSlides.map((_, idx) => {
+                  const isActive = idx === currentOffer;
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => goToOffer(idx)}
+                      aria-label={`Lihat penawaran ${idx + 1}`}
+                    className = "w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center cursor-pointer -m-1"
+                    >
+                    <span
+                      className={`rounded-full transition-all block ${isActive
+                        ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#C81E27] scale-110"
+                        : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-200 hover:bg-[#C81E27]/50"
+                        }`}
+                    />
+                  </button>
+              );
               })}
             </div>
           </div>
@@ -2237,9 +2276,9 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
                 Penawaran Spesial
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-500 font-medium">
-                Geser untuk menjelajahi layanan penawaran khusus properti Anda
-              </p>
+                <p className="text-xs sm:text-sm text-zinc-600 font-medium">
+                  Geser untuk menjelajahi layanan penawaran khusus properti Anda
+                </p>
             </div>
 
             {/* Icon Geser (Navigasi Panah Kiri & Kanan) */}
@@ -2248,7 +2287,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 type="button"
                 onClick={scrollSpecialOfferLeft}
                 aria-label="Geser layanan ke kiri"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-300 bg-white hover:bg-[#C81E27] hover:text-white hover:border-[#C81E27] text-zinc-700 flex items-center justify-center transition-all shadow-xs hover:shadow-md cursor-pointer active:scale-95"
+                className="w-12 h-12 rounded-full border border-zinc-300 bg-white hover:bg-[#C81E27] hover:text-white hover:border-[#C81E27] text-zinc-700 flex items-center justify-center transition-all shadow-xs hover:shadow-md cursor-pointer active:scale-95"
                 title="Geser ke kiri"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2260,7 +2299,7 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                 type="button"
                 onClick={scrollSpecialOfferRight}
                 aria-label="Geser layanan ke kanan"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C81E27] hover:bg-[#b01820] text-white flex items-center justify-center transition-all shadow-md shadow-red-700/30 hover:shadow-lg cursor-pointer active:scale-95"
+                className="w-12 h-12 rounded-full bg-[#C81E27] hover:bg-[#b01820] text-white flex items-center justify-center transition-all shadow-md shadow-red-700/30 hover:shadow-lg cursor-pointer active:scale-95"
                 title="Geser ke kanan"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2292,6 +2331,9 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     src={service.image}
                     alt={service.title}
                     fill
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 280px, 380px"
                     className="object-cover group-hover:scale-108 transition-transform duration-700"
                   />
 
@@ -2340,9 +2382,9 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
                 Our Client
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-500 font-medium">
-                Dipercaya oleh institusi, fasilitas publik, perhotelan, dan korporasi terkemuka
-              </p>
+                <p className="text-xs sm:text-sm text-zinc-600 font-medium">
+                  Dipercaya oleh institusi, fasilitas publik, perhotelan, dan korporasi terkemuka
+                </p>
             </div>
           </div>
 
@@ -2354,26 +2396,29 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             {/* BARIS 1: Bergerak Lambat ke Kanan */}
             <div className="w-full overflow-hidden">
               <div className="animate-marquee-right flex items-center gap-3 sm:gap-5 py-1">
-                {[...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1, ...clientLogosRow1].map((client, idx) => (
-                  <div
-                    key={`row1-${idx}`}
-                    className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
-                    title={client.name}
-                  >
-                    <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
-                      <Image
-                        src={client.image}
-                        alt={client.name}
-                        fill
-                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
-                          ? "scale-100"
-                          : (client as any).extraZoom
-                            ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
-                            : "scale-120 sm:scale-130 hover:scale-135"
-                          }`}
-                      />
-                    </div>
+                  { [...clientLogosRow1, ...clientLogosRow1].map((client, idx) => (
+                <div
+                  key={`row1-${idx}`}
+                  className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                  title={client.name}
+                >
+                  <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
+                    <Image
+                      src={client.image}
+                      alt={client.name}
+                      fill
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 640px) 160px, 224px"
+                      className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
+                        ? "scale-100"
+                        : (client as any).extraZoom
+                          ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
+                          : "scale-120 sm:scale-130 hover:scale-135"
+                        }`}
+                    />
                   </div>
+                </div>
                 ))}
               </div>
             </div>
@@ -2381,26 +2426,29 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
             {/* BARIS 2: Bergerak Lambat ke Kiri */}
             <div className="w-full overflow-hidden">
               <div className="animate-marquee-left flex items-center gap-3 sm:gap-5 py-1">
-                {[...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2, ...clientLogosRow2].map((client, idx) => (
-                  <div
-                    key={`row2-${idx}`}
-                    className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
-                    title={client.name}
-                  >
-                    <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
-                      <Image
-                        src={client.image}
-                        alt={client.name}
-                        fill
-                        className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
-                          ? "scale-100"
-                          : (client as any).extraZoom
-                            ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
-                            : "scale-120 sm:scale-130 hover:scale-135"
-                          }`}
-                      />
-                    </div>
+                  { [...clientLogosRow2, ...clientLogosRow2].map((client, idx) => (
+                <div
+                  key={`row2-${idx}`}
+                  className="h-16 sm:h-22 w-40 xs:w-48 sm:w-56 px-3 sm:px-4 py-2 bg-white/95 rounded-xl sm:rounded-2xl border border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-red-200 transition-all flex items-center justify-center shrink-0"
+                  title={client.name}
+                >
+                  <div className="relative w-full h-full max-h-11 sm:max-h-15 flex items-center justify-center">
+                    <Image
+                      src={client.image}
+                      alt={client.name}
+                      fill
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 640px) 160px, 224px"
+                      className={`object-contain transition-transform duration-300 ${(client as any).noZoom || (client as any).extraZoom === false || client.image.includes("6.png")
+                        ? "scale-100"
+                        : (client as any).extraZoom
+                          ? "scale-[1.45] sm:scale-[1.55] hover:scale-[1.60]"
+                          : "scale-120 sm:scale-130 hover:scale-135"
+                        }`}
+                    />
                   </div>
+                </div>
                 ))}
               </div>
             </div>
@@ -2676,23 +2724,23 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     href="https://www.instagram.com/vecos.id?cplk=NjViZm5jemRlZGtl"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
-                    aria-label="Instagram"
+                    className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Instagram Resmi VECOS"
                   >
-                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
+                      <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
                   </a>
 
                   {/* Email */}
                   <a
                     href="mailto:info@vecos.co.id"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
-                    aria-label="Email"
+                    className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Kirim Email ke VECOS"
                   >
-                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
+                      <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
                   </a>
 
                   {/* WhatsApp */}
@@ -2700,12 +2748,12 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     href="https://wa.me/6285743681500"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
-                    aria-label="WhatsApp"
+                    className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Hubungi WhatsApp Customer Care VECOS"
                   >
-                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" />
-                    </svg>
+                      <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.84a8.196 8.196 0 0 1-5.83 2.41c-1.47 0-2.92-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25" />
+                      </svg>
                   </a>
 
                   {/* Facebook */}
@@ -2713,12 +2761,12 @@ Halo Tim VECOS, saya ingin mengajukan jadwal survey lokasi dan konsultasi pengen
                     href="https://www.facebook.com/share/1DpUJuH49y/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
-                    aria-label="Facebook"
+                    className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-black/20 hover:bg-black/35 border border-white/20 flex items-center justify-center text-white transition-all shadow-xs"
+                    aria-label="Facebook Resmi VECOS"
                   >
-                    <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-                      <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
-                    </svg>
+                      <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
+                      </svg>
                   </a>
                 </div>
 
