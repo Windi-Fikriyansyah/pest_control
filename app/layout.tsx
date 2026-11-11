@@ -14,6 +14,17 @@ export const metadata: Metadata = {
   title: "VECOS - Jasa Pengendalian Hama & Pest Control Profesional Bergaransi",
   description: "Solusi perlindungan hama terbaik untuk hunian dan bisnis Anda. Bersertifikasi resmi, aman untuk keluarga & hewan peliharaan, bergaransi dengan teknologi Vecos Proofing Defender.",
   keywords: "pest control, jasa pembasmi hama, anti rayap, pembasmi kecoa, pengendali tikus, disinfeksi ruangan, vecos",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+  verification: {
+    google: "gBrCtAW0efqOiPXAMB-0RS8wVOVT9wk9sBHxHtZeMYk",
+  },
+  alternates: {
+    canonical: "https://vecos.co.id",
+  },
 };
 
 export default function RootLayout({
