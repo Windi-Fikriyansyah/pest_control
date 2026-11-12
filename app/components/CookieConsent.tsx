@@ -113,45 +113,9 @@ export default function CookieConsent() {
     savePreferences(analyticsEnabled, marketingEnabled);
   };
 
-  const handleOpenPreferences = () => {
-    setShowDetails(true);
-    setIsVisible(true);
-  };
-
   return (
     <>
-      {/* 1. Tombol Mengambang (Reopen Trigger) di Sudut Kiri Bawah saat consent sudah disimpan */}
-      {hasConsented && !isVisible && (
-        <button
-          type="button"
-          onClick={handleOpenPreferences}
-          className="fixed bottom-5 left-4 sm:left-5 z-50 bg-white hover:bg-zinc-50 text-zinc-800 hover:text-[#C81E27] py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-full shadow-xl border border-zinc-300 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C81E27] flex items-center gap-1.5 sm:gap-2 group backdrop-blur-xs cursor-pointer"
-          title="Pengaturan Privasi & Cookie"
-          aria-label="Buka Pengaturan Cookie"
-        >
-          <svg
-            className="w-4 h-4 sm:w-5 sm:h-5 text-[#C81E27] transition-transform group-hover:rotate-12 shrink-0"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-            <path d="M8.5 8.5v.01" />
-            <path d="M16 15.5v.01" />
-            <path d="M12 12v.01" />
-            <path d="M11 17v.01" />
-            <path d="M7 14v.01" />
-          </svg>
-          <span className="text-xs font-bold text-zinc-800 group-hover:text-[#C81E27]">
-            Cookie
-          </span>
-        </button>
-      )}
-
-      {/* 2. Pop-up Cookie Modal: Bottom Sheet di Mobile, Centered Modal di Desktop */}
+      {/* Pop-up Cookie Modal: Bottom Sheet di Mobile, Centered Modal di Desktop */}
       {isVisible && (
         <div
           role="dialog"

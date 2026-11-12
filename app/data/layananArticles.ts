@@ -15022,6 +15022,11 @@ export const layananArticles: Article[] = [
     "excerpt": "Penyebaran bakteri berbahaya seperti E. coli dan Salmonella sering kali bermula dari hinggapnya lalat pada produk atau area kerja. Tanpa penanganan yang tepat, gangguan skala kecil dapat dengan cepat merusak kepercayaan ...",
     "elements": [
       {
+        "type": "image",
+        "src": "/images/Prime.webp",
+        "alt": "Prime Shield-01 Trap: Solusi Pengendalian Hama Serangga Terbang untuk Menjaga Standar Higienitas Bisnis Anda"
+      },
+      {
         "type": "heading",
         "level": 2,
         "text": "Solusi Pengendalian Hama Serangga Terbang untuk Menjaga Standar Higienitas Bisnis Anda",
