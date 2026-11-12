@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export interface CookiePreferences {
   essential: boolean;
@@ -19,6 +21,18 @@ export default function CookieConsent() {
   // Status toggle preferensi
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
   const [marketingEnabled, setMarketingEnabled] = useState(true);
+
+  // Kunci scroll halaman web saat modal cookie tampil
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVisible]);
 
   // Cek apakah user sudah pernah menentukan preferensi sebelumnya
   useEffect(() => {
@@ -111,12 +125,12 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={handleOpenPreferences}
-          className="fixed bottom-5 left-5 z-40 bg-white/95 hover:bg-white text-zinc-700 hover:text-emerald-700 p-2.5 sm:p-3 rounded-full shadow-lg border border-zinc-200/90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 flex items-center gap-2 group backdrop-blur-xs"
+          className="fixed bottom-5 left-5 z-40 bg-white/95 hover:bg-white text-zinc-700 hover:text-[#C81E27] p-2.5 sm:p-3 rounded-full shadow-lg border border-zinc-200/90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C81E27] flex items-center gap-2 group backdrop-blur-xs cursor-pointer"
           title="Pengaturan Privasi & Cookie"
           aria-label="Buka Pengaturan Cookie"
         >
           <svg
-            className="w-5 h-5 text-emerald-600 transition-transform group-hover:rotate-12"
+            className="w-5 h-5 text-[#C81E27] transition-transform group-hover:rotate-12"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -137,170 +151,195 @@ export default function CookieConsent() {
         </button>
       )}
 
-      {/* 2. Pop-up Cookie Banner / Modal */}
+      {/* 2. Pop-up Cookie Modal Centered dengan Dark Overlay & Card Putih */}
       {isVisible && (
         <div
           role="dialog"
           aria-modal="true"
           aria-labelledby="cookie-consent-title"
-          className="fixed bottom-4 left-4 right-4 sm:left-6 sm:bottom-6 sm:max-w-lg z-50 animate-in fade-in slide-in-from-bottom-5 duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-300"
         >
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-zinc-200/90 p-5 sm:p-6 text-zinc-900 transition-all">
-            {/* Header Popup */}
-            <div className="flex items-start gap-3.5 mb-3">
-              <div className="p-2.5 bg-emerald-50 text-emerald-700 rounded-xl shrink-0 border border-emerald-100">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-                  <path d="M8.5 8.5v.01" />
-                  <path d="M16 15.5v.01" />
-                  <path d="M12 12v.01" />
-                  <path d="M11 17v.01" />
-                  <path d="M7 14v.01" />
-                </svg>
+          <div className="relative w-full max-w-[480px] bg-white border border-zinc-200/90 rounded-[24px] sm:rounded-[28px] shadow-2xl shadow-zinc-950/30 p-6 sm:p-8 text-zinc-900 animate-in zoom-in-95 duration-200">
+            {/* Header: Logo VECOS Cookie */}
+            <div className="flex flex-col items-center text-center mb-5">
+              <div className="relative w-44 sm:w-52 h-12 sm:h-14 mb-4">
+                <Image
+                  src="/images/cookie.png"
+                  alt="VECOS Pest Control"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <div className="flex-1 min-w-0">
-                <h3
-                  id="cookie-consent-title"
-                  className="text-base sm:text-lg font-bold text-zinc-900 tracking-tight"
-                >
-                  {showDetails ? "Pengaturan Cookie & Privasi" : "Preferensi Cookie & Privasi"}
-                </h3>
-                <p className="text-xs text-zinc-500 font-medium mt-0.5">
-                  PT VECOS Indonesia Sejahtera (vecos.co.id)
-                </p>
-              </div>
+
+              <h2
+                id="cookie-consent-title"
+                className="text-base sm:text-[17px] font-bold text-zinc-900 tracking-tight leading-snug"
+              >
+                {showDetails
+                  ? "Pengaturan Preferensi Cookie"
+                  : "Selamat datang di VECOS, Privasi Anda Berharga!"}
+              </h2>
             </div>
 
-            {/* Tampilan 1: Banner Ringkas Awal */}
+            {/* Tampilan 1: Tampilan Utama (Sesuai Layout Garuda Screenshot) */}
             {!showDetails ? (
               <div>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">
-                  Kami menggunakan cookie untuk memastikan situs berfungsi dengan aman,
-                  menganalisis trafik kunjungan (<strong>Cookie Analitik</strong>), serta
-                  menampilkan promosi dan penawaran relevan bagi Anda (<strong>Cookie Iklan</strong>).
-                </p>
+                {/* Scrollable Text Area */}
+                <div className="max-h-[220px] sm:max-h-[250px] overflow-y-auto pr-2 text-xs sm:text-[13px] leading-relaxed text-zinc-600 space-y-3.5 mb-6 border-r border-transparent hover:border-zinc-300">
+                  <p>
+                    Di vecos.co.id, kami menggunakan cookie untuk membantu situs kami
+                    berfungsi dengan baik, untuk analitik lalu lintas kunjungan (<strong className="text-zinc-800">Cookie Analitik</strong>), serta menyajikan promosi dan penawaran yang dipersonalisasi berdasarkan preferensi Anda (<strong className="text-zinc-800">Cookie Iklan</strong>).
+                  </p>
 
-                {/* Tombol Aksi Utama */}
-                <div className="flex flex-col sm:flex-row gap-2.5">
+                  <p>
+                    Dengan mengklik &quot;Terima Semua&quot;, Anda menyetujui penggunaan semua
+                    cookie. Dengan mengklik &quot;Tolak&quot;, Anda menolak semua cookie selain
+                    cookie penting. Atau, Anda dapat memperbarui preferensi Anda dengan
+                    mengklik &quot;Preferensi Cookie&quot;.
+                  </p>
+
+                  <p className="text-zinc-500 text-[11px] sm:text-xs pt-1">
+                    Baca selengkapnya{" "}
+                    <Link
+                      href="/tentang"
+                      className="text-zinc-800 underline hover:text-[#C81E27] font-medium transition-colors"
+                    >
+                      Kebijakan Privasi
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="/tentang-vecos"
+                      className="text-zinc-800 underline hover:text-[#C81E27] font-medium transition-colors"
+                    >
+                      Syarat Penggunaan
+                    </Link>
+                    , dan{" "}
+                    <button
+                      type="button"
+                      onClick={() => setShowDetails(true)}
+                      className="text-zinc-800 underline hover:text-[#C81E27] font-medium cursor-pointer transition-colors"
+                    >
+                      Kebijakan Cookies
+                    </button>
+                    .
+                  </p>
+                </div>
+
+                {/* Tombol Aksi Vertikal (Stacked Buttons) */}
+                <div className="space-y-2.5">
                   <button
                     type="button"
                     onClick={handleAcceptAll}
-                    className="w-full sm:flex-1 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-2.5 px-4 rounded-xl text-xs sm:text-sm shadow-sm transition-colors text-center focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full bg-[#C81E27] hover:bg-[#b01820] active:bg-[#96141c] text-white font-bold py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md shadow-red-700/20 hover:shadow-red-700/30 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
                   >
                     Terima Semua
                   </button>
+
                   <button
                     type="button"
                     onClick={handleRejectNonEssential}
-                    className="w-full sm:flex-1 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition-colors text-center focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                    className="w-full bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 text-zinc-800 font-semibold py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-200 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-zinc-400"
                   >
-                    Tolak Selain Esensial
+                    Tolak
                   </button>
-                </div>
 
-                <div className="mt-3 text-center">
                   <button
                     type="button"
                     onClick={() => setShowDetails(true)}
-                    className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4 transition-colors"
+                    className="w-full bg-white hover:bg-zinc-50 active:bg-zinc-100 text-zinc-700 hover:text-zinc-900 font-semibold py-2.5 sm:py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-300 shadow-xs transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-zinc-400"
                   >
-                    Atur Preferensi Kustom &rarr;
+                    Preferensi Cookie
                   </button>
                 </div>
               </div>
             ) : (
               /* Tampilan 2: Detail Preferensi / Switch Options */
-              <div className="space-y-3.5 max-h-[60vh] overflow-y-auto pr-1">
-                <p className="text-xs text-zinc-600 leading-relaxed">
+              <div className="space-y-3.5">
+                <p className="text-xs text-zinc-600 leading-relaxed text-center mb-1">
                   Pilih jenis cookie yang Anda izinkan. Cookie esensial wajib aktif untuk keamanan dan fungsi dasar situs.
                 </p>
 
-                {/* Option 1: Cookie Esensial */}
-                <div className="p-3 bg-zinc-50 border border-zinc-200 rounded-xl">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0">
-                      <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
-                        Cookie Esensial
+                <div className="space-y-3 max-h-[50vh] overflow-y-auto pr-1">
+                  {/* Option 1: Cookie Esensial */}
+                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
+                          Cookie Esensial
+                        </span>
+                        <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">
+                          Dibutuhkan untuk keamanan, navigasi, dan fungsi dasar website.
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-[10px] sm:text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                        Selalu Aktif
                       </span>
-                      <p className="text-[11px] text-zinc-500 mt-0.5">
-                        Dibutuhkan untuk keamanan, navigasi, dan fungsi dasar situs.
-                      </p>
                     </div>
-                    <span className="shrink-0 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
-                      Selalu Aktif
-                    </span>
+                  </div>
+
+                  {/* Option 2: Cookie Analitik */}
+                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
+                          Cookie Analitik
+                        </span>
+                        <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">
+                          Membantu kami memahami statistik pengunjung, durasi kunjungan, dan halaman terpopuler untuk peningkatan performa.
+                        </p>
+                      </div>
+                      <label className="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          checked={analyticsEnabled}
+                          onChange={(e) => setAnalyticsEnabled(e.target.checked)}
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-zinc-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#C81E27] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C81E27]"></div>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Option 3: Cookie Iklan & Pemasaran */}
+                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
+                          Cookie Iklan & Pemasaran
+                        </span>
+                        <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">
+                          Digunakan untuk menyajikan iklan dan penawaran promo yang relevan bagi Anda di platform mitra kami (Google, Meta, dll).
+                        </p>
+                      </div>
+                      <label className="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          checked={marketingEnabled}
+                          onChange={(e) => setMarketingEnabled(e.target.checked)}
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-zinc-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#C81E27] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C81E27]"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
 
-                {/* Option 2: Cookie Analitik */}
-                <div className="p-3 bg-zinc-50 border border-zinc-200 rounded-xl">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
-                        Cookie Analitik
-                      </span>
-                      <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">
-                        Membantu kami memahami statistik pengunjung, durasi kunjungan, dan halaman terpopuler untuk peningkatan performa.
-                      </p>
-                    </div>
-                    <label className="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
-                      <input
-                        type="checkbox"
-                        checked={analyticsEnabled}
-                        onChange={(e) => setAnalyticsEnabled(e.target.checked)}
-                        className="sr-only peer"
-                      />
-                      <div className="w-11 h-6 bg-zinc-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
-                    </label>
-                  </div>
-                </div>
-
-                {/* Option 3: Cookie Iklan & Pemasaran */}
-                <div className="p-3 bg-zinc-50 border border-zinc-200 rounded-xl">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
-                        Cookie Iklan & Pemasaran
-                      </span>
-                      <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">
-                        Digunakan untuk menyajikan iklan dan penawaran promo yang relevan bagi Anda di platform mitra kami (Google, Meta, dll).
-                      </p>
-                    </div>
-                    <label className="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
-                      <input
-                        type="checkbox"
-                        checked={marketingEnabled}
-                        onChange={(e) => setMarketingEnabled(e.target.checked)}
-                        className="sr-only peer"
-                      />
-                      <div className="w-11 h-6 bg-zinc-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
-                    </label>
-                  </div>
-                </div>
-
-                {/* Tombol Simpan Preferensi Detail */}
-                <div className="flex gap-2 pt-2">
+                {/* Tombol Simpan & Kembali */}
+                <div className="space-y-2.5 pt-2">
                   <button
                     type="button"
                     onClick={handleSaveCustom}
-                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-2.5 px-4 rounded-xl text-xs sm:text-sm shadow-sm transition-colors text-center focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full bg-[#C81E27] hover:bg-[#b01820] active:bg-[#96141c] text-white font-bold py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md shadow-red-700/20 hover:shadow-red-700/30 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
                   >
                     Simpan Pilihan
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowDetails(false)}
-                    className="bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold py-2.5 px-3 rounded-xl text-xs sm:text-sm transition-colors text-center"
+                    className="w-full bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 text-zinc-700 font-semibold py-2.5 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-200 transition-all text-center cursor-pointer"
                   >
-                    Batal
+                    Kembali
                   </button>
                 </div>
               </div>
@@ -311,4 +350,3 @@ export default function CookieConsent() {
     </>
   );
 }
-
