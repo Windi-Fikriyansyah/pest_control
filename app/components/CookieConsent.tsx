@@ -125,12 +125,12 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={handleOpenPreferences}
-          className="fixed bottom-5 left-5 z-40 bg-white/95 hover:bg-white text-zinc-700 hover:text-[#C81E27] p-2.5 sm:p-3 rounded-full shadow-lg border border-zinc-200/90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C81E27] flex items-center gap-2 group backdrop-blur-xs cursor-pointer"
+          className="fixed bottom-5 left-4 sm:left-5 z-50 bg-white hover:bg-zinc-50 text-zinc-800 hover:text-[#C81E27] py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-full shadow-xl border border-zinc-300 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C81E27] flex items-center gap-1.5 sm:gap-2 group backdrop-blur-xs cursor-pointer"
           title="Pengaturan Privasi & Cookie"
           aria-label="Buka Pengaturan Cookie"
         >
           <svg
-            className="w-5 h-5 text-[#C81E27] transition-transform group-hover:rotate-12"
+            className="w-4 h-4 sm:w-5 sm:h-5 text-[#C81E27] transition-transform group-hover:rotate-12 shrink-0"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -145,24 +145,27 @@ export default function CookieConsent() {
             <path d="M11 17v.01" />
             <path d="M7 14v.01" />
           </svg>
-          <span className="text-xs font-semibold pr-1 hidden sm:inline-block">
+          <span className="text-xs font-bold text-zinc-800 group-hover:text-[#C81E27]">
             Cookie
           </span>
         </button>
       )}
 
-      {/* 2. Pop-up Cookie Modal Centered dengan Dark Overlay & Card Putih */}
+      {/* 2. Pop-up Cookie Modal: Bottom Sheet di Mobile, Centered Modal di Desktop */}
       {isVisible && (
         <div
           role="dialog"
           aria-modal="true"
           aria-labelledby="cookie-consent-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-300"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-300"
         >
-          <div className="relative w-full max-w-[480px] bg-white border border-zinc-200/90 rounded-[24px] sm:rounded-[28px] shadow-2xl shadow-zinc-950/30 p-6 sm:p-8 text-zinc-900 animate-in zoom-in-95 duration-200">
+          <div className="relative w-full sm:max-w-[480px] bg-white border-t sm:border border-zinc-200/90 rounded-t-[24px] rounded-b-none sm:rounded-[28px] shadow-2xl shadow-zinc-950/30 p-5 sm:p-8 pb-6 sm:pb-8 text-zinc-900 animate-in slide-in-from-bottom-6 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-300 max-h-[90vh] sm:max-h-none overflow-y-auto">
+            {/* Indikator Handle Bar khusus Mobile */}
+            <div className="w-10 h-1 bg-zinc-300 rounded-full mx-auto mb-3 sm:hidden" />
+
             {/* Header: Logo VECOS Cookie */}
-            <div className="flex flex-col items-center text-center mb-5">
-              <div className="relative w-44 sm:w-52 h-12 sm:h-14 mb-4">
+            <div className="flex flex-col items-center text-center mb-4 sm:mb-5">
+              <div className="relative w-40 sm:w-52 h-11 sm:h-14 mb-3 sm:mb-4">
                 <Image
                   src="/images/cookie.png"
                   alt="VECOS Pest Control"
@@ -174,7 +177,7 @@ export default function CookieConsent() {
 
               <h2
                 id="cookie-consent-title"
-                className="text-base sm:text-[17px] font-bold text-zinc-900 tracking-tight leading-snug"
+                className="text-sm sm:text-[17px] font-bold text-zinc-900 tracking-tight leading-snug"
               >
                 {showDetails
                   ? "Pengaturan Preferensi Cookie"
@@ -260,9 +263,9 @@ export default function CookieConsent() {
                   Pilih jenis cookie yang Anda izinkan. Cookie esensial wajib aktif untuk keamanan dan fungsi dasar situs.
                 </p>
 
-                <div className="space-y-3 max-h-[50vh] overflow-y-auto pr-1">
+                <div className="space-y-2.5 sm:space-y-3">
                   {/* Option 1: Cookie Esensial */}
-                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                  <div className="p-3 sm:p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
                     <div className="flex items-center justify-between gap-3">
                       <div className="min-w-0">
                         <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
@@ -279,7 +282,7 @@ export default function CookieConsent() {
                   </div>
 
                   {/* Option 2: Cookie Analitik */}
-                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                  <div className="p-3 sm:p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
@@ -302,7 +305,7 @@ export default function CookieConsent() {
                   </div>
 
                   {/* Option 3: Cookie Iklan & Pemasaran */}
-                  <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
+                  <div className="p-3 sm:p-3.5 bg-zinc-50 border border-zinc-200 rounded-xl sm:rounded-2xl">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <span className="text-xs sm:text-sm font-bold text-zinc-900 block">
@@ -326,18 +329,25 @@ export default function CookieConsent() {
                 </div>
 
                 {/* Tombol Simpan & Kembali */}
-                <div className="space-y-2.5 pt-2">
+                <div className="space-y-2 pt-2">
+                  <button
+                    type="button"
+                    onClick={handleAcceptAll}
+                    className="w-full bg-[#C81E27] hover:bg-[#b01820] active:bg-[#96141c] text-white font-bold py-2.5 sm:py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md shadow-red-700/20 hover:shadow-red-700/30 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
+                  >
+                    Terima Semua
+                  </button>
                   <button
                     type="button"
                     onClick={handleSaveCustom}
-                    className="w-full bg-[#C81E27] hover:bg-[#b01820] active:bg-[#96141c] text-white font-bold py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md shadow-red-700/20 hover:shadow-red-700/30 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="w-full bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 text-zinc-800 font-semibold py-2.5 sm:py-3 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-200 transition-all text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-zinc-400"
                   >
-                    Simpan Pilihan
+                    Simpan Pilihan Kustom
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowDetails(false)}
-                    className="w-full bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 text-zinc-700 font-semibold py-2.5 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-200 transition-all text-center cursor-pointer"
+                    className="w-full bg-white hover:bg-zinc-50 active:bg-zinc-100 text-zinc-600 hover:text-zinc-800 font-semibold py-2 px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm border border-zinc-300 transition-all text-center cursor-pointer"
                   >
                     Kembali
                   </button>
